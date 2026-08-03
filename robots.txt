@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gshah810.github.io/TalaThrive-marketing-site/sitemap.xml

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/styles.css">
+  <script src="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/_ds_bundle.js"></script>
+  <style>
+    body { margin:0; background:#ffffff; color:#3B2007; font-family:var(--font-primary),'Outfit',sans-serif; }
+    a { color:#3B2007; text-decoration:none; }
+    a:hover { color:#3B2007; }
+    @media (max-width:860px){ .pdp-grid{ flex-direction:column !important; } .pdp-col{ flex:1 1 100% !important; max-width:none !important; position:static !important; } }
+  </style>
+</helmet>
+<div style="min-height:100vh;background:#ffffff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;overflow-x:clip">
+  <dc-import name="SiteHeader" hint-size="100%,116px"></dc-import>
+
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(16px,3vw,28px) clamp(20px,4.5vw,32px) 8px;font-size:15px;color:#838388">
+    <a href="Shop.dc.html" style="color:#838388" style-hover="color:#3B2007">Shop</a> <span style="margin:0 6px">/</span> <span style="color:#3B2007">Digital Gift Card</span>
+  </div>
+
+  <section style="background:#fff">
+    <div class="pdp-grid" style="max-width:1180px;margin:0 auto;padding:clamp(8px,2vw,24px) clamp(20px,4.5vw,32px) clamp(40px,5vw,64px);display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px);align-items:flex-start">
+
+      <div class="pdp-col" style="flex:1 1 440px;min-width:0;max-width:560px">
+        <div style="border-radius:24px;overflow:hidden;aspect-ratio:1/1;background-color:#F6EBD8;box-shadow:0 20px 48px rgba(8,7,23,0.12)">
+          <img src="https://shop.talathrive.com/cdn/shop/files/Tala_Thrive_Digital_Gift_Card_1.png?v=1775717210&amp;width=1000" alt="Tala Thrive digital gift card for therapy and coaching" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+      </div>
+
+      <div class="pdp-col" style="flex:1 1 400px;min-width:0;max-width:520px;position:sticky;top:96px">
+        <h1 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.06;margin:0 0 12px;color:#3B2007">Digital Gift Card for Therapy and <em style="font-style:normal;color:#E96F0C">Coaching</em></h1>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <span style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:24px;color:#3B2007">{{ price }} AUD</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:600;color:#1B3F37"><span style="width:8px;height:8px;border-radius:50%;background:#1B3F37;display:inline-block"></span>In stock</span>
+        </div>
+
+        <p style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:20px;margin:0 0 10px;color:#3B2007">Give the gift of healing, growth, and connection.</p>
+        <p style="font-size:18px;line-height:1.65;margin:0 0 24px;color:#3B2007">A Tala Thrive Gift Card is the perfect way to show care and support for someone you love. Whether they're beginning their healing journey, deepening their self-discovery, or seeking professional guidance, this gift empowers them to choose what they need most, whether it's therapy sessions or coaching support.</p>
+
+        <p style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 10px;color:#3B2007">Amount</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px">
+          <sc-for list="{{ variants }}" as="v" hint-placeholder-count="3">
+            <button onClick="{{ v.select }}" style="flex:1 1 120px;min-width:0;padding:14px 12px;border-radius:16px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;background:{{ v.bg }};border:1.5px solid {{ v.border }};color:{{ v.color }};transition:all 0.15s;font-family:var(--font-primary),'Outfit',sans-serif">
+              <span style="font-weight:700;font-size:18px">{{ v.label }}</span>
+              <span style="font-size:15px;opacity:0.75">{{ v.priceLabel }}</span>
+            </button>
+          </sc-for>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px">
+          <div style="display:flex;align-items:center;border:1.5px solid #E4D8C4;border-radius:9999px;overflow:hidden">
+            <button onClick="{{ dec }}" aria-label="Decrease quantity" style="width:46px;height:46px;border:none;background:none;cursor:pointer;font-size:20px;color:#3B2007;display:flex;align-items:center;justify-content:center" style-hover="background:#F9F2E6">&minus;</button>
+            <span style="min-width:36px;text-align:center;font-weight:600;font-size:19px;color:#3B2007">{{ qty }}</span>
+            <button onClick="{{ inc }}" aria-label="Increase quantity" style="width:46px;height:46px;border:none;background:none;cursor:pointer;font-size:20px;color:#3B2007;display:flex;align-items:center;justify-content:center" style-hover="background:#F9F2E6">+</button>
+          </div>
+          <button onClick="{{ addToCart }}" style="flex:1 1 200px;min-width:180px;padding:15px 32px;border-radius:9999px;font-weight:500;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-size:18px;background-color:{{ cartBg }};color:#fff;font-family:var(--font-primary),'Outfit',sans-serif;transition:background-color 0.15s,opacity 0.15s" style-hover="opacity:0.9">{{ cartLabel }}</button>
+        </div>
+        <p style="font-size:15px;line-height:1.5;margin:0 0 28px;color:#838388">Delivered digitally by email with simple redemption instructions. Valid for 3 years from purchase.</p>
+
+        <div style="border-top:1px solid rgba(8,7,23,0.08);padding-top:24px;display:flex;flex-direction:column;gap:24px">
+          <div>
+            <h3 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;color:#3B2007">Why choose a Tala Thrive gift card?</h3>
+            <ul style="display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none">
+              <li style="font-size:16px;line-height:1.55;color:#3B2007"><strong style="color:#3B2007">Flexible and thoughtful.</strong> Let your loved one decide whether to use it for therapy or coaching.</li>
+              <li style="font-size:16px;line-height:1.55;color:#3B2007"><strong style="color:#3B2007">No expiry stress.</strong> Cards are valid for 3 years from the date of purchase.</li>
+              <li style="font-size:16px;line-height:1.55;color:#3B2007"><strong style="color:#3B2007">Instant and convenient.</strong> Delivered digitally by email, easy to send a last-minute yet meaningful gift.</li>
+              <li style="font-size:16px;line-height:1.55;color:#3B2007"><strong style="color:#3B2007">Empowering.</strong> A gift that supports resilience, cultural identity, and holistic wellbeing.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;color:#3B2007">Perfect for</h3>
+            <ul style="display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none">
+              <li style="display:flex;gap:10px;font-size:16px;line-height:1.55;color:#3B2007"><span style="color:#E96F0C;flex-shrink:0">&bull;</span>Birthdays, celebrations, or special milestones.</li>
+              <li style="display:flex;gap:10px;font-size:16px;line-height:1.55;color:#3B2007"><span style="color:#E96F0C;flex-shrink:0">&bull;</span>A supportive gesture during tough times.</li>
+              <li style="display:flex;gap:10px;font-size:16px;line-height:1.55;color:#3B2007"><span style="color:#E96F0C;flex-shrink:0">&bull;</span>Those exploring their mental health and personal growth journey.</li>
+              <li style="display:flex;gap:10px;font-size:16px;line-height:1.55;color:#3B2007"><span style="color:#E96F0C;flex-shrink:0">&bull;</span>Anyone who deserves a moment to pause, reflect, and connect.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;color:#3B2007">Product details</h3>
+            <ul style="display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none">
+              <li style="display:flex;gap:10px;font-size:16px;line-height:1.55;color:#3B2007"><span style="color:#E96F0C;flex-shrink:0">&bull;</span>Available in multiple amounts (AUD $165, $330, $500, or equivalent in GBP).</li>
+              <li style="display:flex;gap:10px;font-size:16px;line-height:1.55;color:#3B2007"><span style="color:#E96F0C;flex-shrink:0">&bull;</span>Delivered electronically via email with simple redemption instructions.</li>
+              <li style="display:flex;gap:10px;font-size:16px;line-height:1.55;color:#3B2007"><span style="color:#E96F0C;flex-shrink:0">&bull;</span>Redeemable on all sessions with a therapist, life coach or executive coach at talathrive.com or via the mobile app.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(40px,5vw,72px) 0;background-color:#F6EBD8">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px);text-align:center">
+      <h2 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.08;margin:0 0 16px;color:#3B2007">A gift that goes <em style="font-style:normal;color:#E96F0C">beyond material things.</em></h2>
+      <p style="font-size:19px;line-height:1.65;margin:0 auto;max-width:600px;color:#3B2007">Support someone's resilience, cultural identity, and holistic wellbeing with care that truly sees them.</p>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,320px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { variant: 0, qty: 1, added: false };
+  variants() {
+    return [
+      { label: "1 session", priceLabel: "$165.00", price: "$165.00" },
+      { label: "2 sessions", priceLabel: "$330.00", price: "$330.00" },
+      { label: "3 sessions", priceLabel: "$500.00", price: "$500.00" }
+    ];
+  }
+  renderVals() {
+    const vs = this.variants();
+    const { variant, qty, added } = this.state;
+    return {
+      price: vs[variant].price,
+      variants: vs.map((v, i) => ({
+        label: v.label, priceLabel: v.priceLabel,
+        bg: i === variant ? "#F6C59E" : "#fff",
+        border: i === variant ? "#E96F0C" : "#E4D8C4",
+        color: "#3B2007",
+        select: () => this.setState({ variant: i })
+      })),
+      qty,
+      dec: () => this.setState(s => ({ qty: Math.max(1, s.qty - 1) })),
+      inc: () => this.setState(s => ({ qty: s.qty + 1 })),
+      cartLabel: added ? "Added to cart" : "Add to cart",
+      cartBg: added ? "#1B3F37" : "#E96F0C",
+      addToCart: () => {
+        try {
+          const cart = JSON.parse(localStorage.getItem("tt_cart") || "[]");
+          const v = vs[variant];
+          const key = "giftcard-" + variant;
+          const priceNum = parseInt(v.price.replace(/[^0-9]/g, ""), 10);
+          const ex = cart.find(i => i.key === key);
+          if (ex) ex.qty += this.state.qty;
+          else cart.push({ key, id: "giftcard", title: "Digital Gift Card", variant: v.label, price: priceNum, qty: this.state.qty, img: "https://shop.talathrive.com/cdn/shop/files/Tala_Thrive_Digital_Gift_Card_1.png?v=1775717210&width=1000" });
+          localStorage.setItem("tt_cart", JSON.stringify(cart));
+          window.dispatchEvent(new StorageEvent("storage", { key: "tt_cart" }));
+        } catch (e) {}
+        this.setState({ added: true }); clearTimeout(this._t); this._t = setTimeout(() => this.setState({ added: false }), 2000);
+      }
+    };
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+}
+</script>
+</body>
+</html>

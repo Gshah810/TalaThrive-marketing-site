@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/styles.css">
+  <script src="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/_ds_bundle.js"></script>
+  <style>
+    body { margin:0; background:#ffffff; color:#3B2007; font-family:var(--font-primary),'Outfit',sans-serif; }
+    a { color:#3B2007; text-decoration:none; }
+    a:hover { color:#3B2007; }
+    @media (max-width:820px){ .cart-grid{ flex-direction:column !important; } .cart-summary{ position:static !important; width:100% !important; } .cart-line-img{ width:88px !important; height:88px !important; } }
+  </style>
+</helmet>
+<div style="min-height:100vh;background:#ffffff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;overflow-x:clip;display:flex;flex-direction:column">
+  <dc-import name="SiteHeader" hint-size="100%,116px"></dc-import>
+
+  <main style="flex:1;max-width:1120px;width:100%;margin:0 auto;padding:clamp(28px,4vw,56px) clamp(20px,4.5vw,32px);box-sizing:border-box">
+    <h1 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.05;margin:0 0 clamp(24px,3vw,36px);color:#3B2007">Your cart</h1>
+
+    <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+      <div style="text-align:center;padding:clamp(40px,6vw,80px) 20px;border-radius:24px;background:#F6EBD8">
+        <p style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:22px;margin:0 0 8px;color:#3B2007">Your cart is empty</p>
+        <p style="font-size:18px;margin:0 0 24px;color:#3B2007">Explore the shop and find something that speaks to you.</p>
+        <a href="Shop.dc.html" style="display:inline-flex;align-items:center;gap:8px;padding:15px 32px;border-radius:9999px;color:#fff;font-weight:500;background-color:#E96F0C;transition:opacity 0.15s" style-hover="opacity:0.9">Continue shopping</a>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ hasItems }}" hint-placeholder-val="{{ true }}">
+      <div class="cart-grid" style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,48px);align-items:flex-start">
+        <div style="flex:1 1 440px;min-width:0">
+          <sc-for list="{{ items }}" as="it" hint-placeholder-count="2">
+            <div style="display:flex;gap:clamp(14px,2.5vw,20px);padding:20px 0;border-bottom:1px solid rgba(8,7,23,0.08)">
+              <div class="cart-line-img" style="flex-shrink:0;width:104px;height:104px;border-radius:16px;overflow:hidden;background:#F6EBD8">
+                <img src="{{ it.img }}" alt="{{ it.title }}" style="width:100%;height:100%;object-fit:cover;display:block">
+              </div>
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start">
+                  <div style="min-width:0">
+                    <p style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:19px;margin:0;color:#3B2007">{{ it.title }}</p>
+                    <p style="font-size:15px;margin:4px 0 0;color:#838388">{{ it.variantText }}</p>
+                  </div>
+                  <p style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:19px;margin:0;white-space:nowrap;color:#3B2007">{{ it.lineTotal }}</p>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto">
+                  <div style="display:flex;align-items:center;border:1.5px solid #E4D8C4;border-radius:9999px;overflow:hidden">
+                    <button onClick="{{ it.dec }}" aria-label="Decrease quantity" style="width:38px;height:38px;border:none;background:none;cursor:pointer;font-size:19px;color:#3B2007;display:flex;align-items:center;justify-content:center" style-hover="background:#F9F2E6">&minus;</button>
+                    <span style="min-width:30px;text-align:center;font-weight:600;font-size:18px;color:#3B2007">{{ it.qty }}</span>
+                    <button onClick="{{ it.inc }}" aria-label="Increase quantity" style="width:38px;height:38px;border:none;background:none;cursor:pointer;font-size:19px;color:#3B2007;display:flex;align-items:center;justify-content:center" style-hover="background:#F9F2E6">+</button>
+                  </div>
+                  <button onClick="{{ it.remove }}" style="background:none;border:none;cursor:pointer;font-size:15px;color:#838388;text-decoration:underline;text-underline-offset:2px;font-family:var(--font-primary),'Outfit',sans-serif" style-hover="color:#3B2007">Remove</button>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+          <a href="Shop.dc.html" style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:16px;color:#E96F0C;font-weight:500" style-hover="color:#BD5B00">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="M12 19l-7-7 7-7"></path></svg>Continue shopping
+          </a>
+        </div>
+
+        <div class="cart-summary" style="flex:0 0 340px;max-width:100%;width:340px;position:sticky;top:96px;background:#F6EBD8;border-radius:24px;padding:clamp(24px,3vw,32px)">
+          <h2 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:20px;margin:0 0 20px;color:#3B2007">Order summary</h2>
+          <div style="display:flex;justify-content:space-between;font-size:16px;margin-bottom:12px;color:#3B2007"><span>Subtotal</span><span style="font-weight:600;color:#3B2007">{{ subtotal }}</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:16px;margin-bottom:12px;color:#3B2007"><span>Shipping</span><span>Calculated at checkout</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;padding-top:16px;margin-top:4px;border-top:1px solid rgba(8,7,23,0.12)">
+            <span style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:20px;color:#3B2007">Estimated total</span>
+            <span style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:20px;color:#3B2007">{{ subtotal }}</span>
+          </div>
+          <p style="font-size:14px;line-height:1.5;margin:12px 0 20px;color:#838388">Taxes, discounts and shipping calculated at checkout.</p>
+          <a href="Checkout.dc.html" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;padding:16px 32px;border-radius:9999px;color:#fff;font-weight:500;background-color:#E96F0C;transition:opacity 0.15s" style-hover="opacity:0.9">Check out</a>
+        </div>
+      </div>
+    </sc-if>
+  </main>
+
+  <dc-import name="SiteFooter" hint-size="100%,320px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { cart: [] };
+  componentDidMount() {
+    this._read();
+    this._onStorage = (e) => { if (!e || e.key === "tt_cart") this._read(); };
+    window.addEventListener("storage", this._onStorage);
+  }
+  componentWillUnmount() { window.removeEventListener("storage", this._onStorage); }
+  _read() {
+    let cart = [];
+    try { cart = JSON.parse(localStorage.getItem("tt_cart") || "[]"); } catch (e) {}
+    this.setState({ cart });
+  }
+  _save(cart) {
+    try {
+      localStorage.setItem("tt_cart", JSON.stringify(cart));
+      window.dispatchEvent(new StorageEvent("storage", { key: "tt_cart" }));
+    } catch (e) {}
+    this.setState({ cart });
+  }
+  _fmt(n) { return "$" + n.toFixed(2) + " AUD"; }
+  renderVals() {
+    const cart = this.state.cart;
+    const subtotal = cart.reduce((s, it) => s + it.price * it.qty, 0);
+    return {
+      isEmpty: cart.length === 0,
+      hasItems: cart.length > 0,
+      subtotal: this._fmt(subtotal),
+      items: cart.map((it, idx) => ({
+        title: it.title, img: it.img, qty: it.qty,
+        variantText: it.variant ? it.variant + " · " + this._fmt(it.price) + " each" : this._fmt(it.price) + " each",
+        lineTotal: this._fmt(it.price * it.qty),
+        inc: () => { const c = this.state.cart.slice(); c[idx] = { ...c[idx], qty: c[idx].qty + 1 }; this._save(c); },
+        dec: () => { const c = this.state.cart.slice(); if (c[idx].qty > 1) { c[idx] = { ...c[idx], qty: c[idx].qty - 1 }; } else { c.splice(idx, 1); } this._save(c); },
+        remove: () => { const c = this.state.cart.slice(); c.splice(idx, 1); this._save(c); }
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

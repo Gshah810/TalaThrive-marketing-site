@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/styles.css">
+  <script src="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/_ds_bundle.js"></script>
+  <style>
+    body { margin:0; background:#ffffff; color:#3B2007; font-family:var(--font-primary),'Outfit',sans-serif; }
+    a { color:#3B2007; text-decoration:none; }
+    a:hover { color:#3B2007; }
+    @media (max-width:600px){ .prac-hero-img{ flex:0 1 300px !important; max-width:300px !important; margin:0 auto; } }
+  </style>
+</helmet>
+<div style="min-height:100vh;background:#ffffff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;overflow-x:clip">
+  <dc-import name="SiteHeader" hint-size="100%,116px"></dc-import>
+
+  <section style="background-color:#F6EBD8">
+    <div style="max-width:1280px;margin:0 auto;padding:clamp(44px,5vw,76px) clamp(20px,4.5vw,32px);display:flex;flex-wrap:wrap;gap:48px;align-items:center;justify-content:center">
+      <div style="flex:1 1 420px;min-width:0;max-width:600px">
+        <h1 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(38px,4.8vw,58px);line-height:1.03;margin:0 0 20px;color:#3B2007">Calling all <em style="font-style:normal;color:#E96F0C">Therapists</em> and <em style="font-style:normal;color:#E96F0C">Coaches.</em></h1>
+        <p style="font-size:19px;line-height:1.6;margin:0 0 32px;max-width:520px;color:#3B2007">Request your expression of interest to join our expert group of therapists and coaches, and grow your practice on your own terms, with our support behind the scenes.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <button type="button" onClick="{{ openPicker }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:9999px;color:#fff;font-weight:500;font-family:var(--font-primary),'Outfit',sans-serif;font-size:16px;border:none;cursor:pointer;background-color:#E96F0C;transition:opacity 0.15s" style-hover="opacity:0.9">Start your journey now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></button>
+        </div>
+      </div>
+      <div class="prac-hero-img" style="flex:0 1 480px;min-width:0;max-width:100%">
+        <div style="border-radius:24px;overflow:hidden;aspect-ratio:4/3;background-color:#F6C59E;box-shadow:0 24px 48px rgba(8,7,23,0.12)">
+          <img src="uploads/pasted-1784274339140-0.png" alt="A practitioner in a video session, wearing an earbud and speaking warmly" style="width:100%;height:100%;object-fit:cover;object-position:32% 90%;display:block">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(44px,5vw,76px) 0;background:#fff">
+    <div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px)">
+      <div style="max-width:620px;margin:0 auto clamp(32px,4vw,48px);text-align:center">
+        <h2 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.05;margin:0;color:#3B2007">Why join <em style="font-style:normal;color:#E96F0C">Tala Thrive?</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+        <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="3">
+          <div style="border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 6px 24px rgba(8,7,23,0.07);display:flex;flex-direction:column;transition:transform 0.25s cubic-bezier(0.22,1,0.36,1),box-shadow 0.25s" style-hover="transform:translateY(-4px);box-shadow:0 16px 40px rgba(8,7,23,0.1)">
+            <div style="height:180px;overflow:hidden;background-color:#F6C59E">
+              <sc-if value="{{ r.img }}" hint-placeholder-val="{{ false }}"><img src="{{ r.img }}" alt="{{ r.title }}" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if>
+            </div>
+            <div style="padding:26px;display:flex;flex-direction:column;gap:12px">
+              <h3 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:21px;line-height:1.2;margin:0;color:#3B2007">{{ r.title }}</h3>
+              <p style="font-size:16px;line-height:1.65;margin:0;color:#3B2007">{{ r.desc }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="text-align:center;margin-top:clamp(32px,4vw,48px)">
+        <button type="button" onClick="{{ openPicker }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:9999px;color:#fff;font-weight:500;font-family:var(--font-primary),'Outfit',sans-serif;font-size:16px;border:none;cursor:pointer;background-color:#E96F0C;transition:opacity 0.15s" style-hover="opacity:0.9">Join our Community of Practitioners <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-started" style="padding:clamp(44px,5vw,76px) 0;background-color:#F6EBD8">
+    <div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px)">
+      <div style="max-width:620px;margin:0 auto clamp(32px,4vw,48px);text-align:center">
+        <h2 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.05;margin:0 0 12px;color:#3B2007;white-space:nowrap">How to get started on <em style="font-style:normal;color:#E96F0C">Tala Thrive.</em></h2>
+        <p style="font-size:19px;line-height:1.6;margin:0;color:#3B2007">From sign-up to your first session.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:stretch">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <div style="flex:1 1 0;min-width:200px;background:#fff;border-radius:20px;padding:28px 22px 30px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;box-shadow:0 6px 24px rgba(8,7,23,0.06)">
+            <sc-if value="{{ s.img }}" hint-placeholder-val="{{ false }}"><img src="{{ s.img }}" alt="{{ s.title }} illustration" style="width:100%;max-width:240px;height:210px;object-fit:contain;object-position:center;display:block;margin:0 auto"></sc-if>
+            <h3 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:20px;line-height:1.25;margin:0;color:#3B2007">{{ s.title }}</h3>
+            <p style="font-size:16px;line-height:1.6;margin:0;color:#3B2007">{{ s.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <div style="text-align:center;margin-top:clamp(32px,4vw,48px)">
+        <button type="button" onClick="{{ openPicker }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 36px;border-radius:9999px;color:#fff;font-weight:500;font-family:var(--font-primary),'Outfit',sans-serif;font-size:16px;border:none;cursor:pointer;background-color:#E96F0C;transition:opacity 0.15s" style-hover="opacity:0.9">Get Started <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Practitioner FAQ" style="padding:clamp(44px,5vw,76px) 0;background:#fff">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px);display:flex;flex-direction:column;gap:clamp(28px,3.5vw,44px)">
+      <div style="align-self:stretch;min-width:0;text-align:center;max-width:620px;margin:0 auto">
+        <h2 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1.05;margin:0 0 16px;color:#3B2007">Practitioner <em style="font-style:normal;color:#E96F0C">questions.</em></h2>
+        <p style="font-size:16px;line-height:1.625;margin:0;color:#3B2007">Still unsure about something? Email us at <a href="mailto:practitioners@talathrive.com" style="color:#E96F0C;text-decoration:underline;text-underline-offset:2px">support@talathrive.com</a></p>
+      </div>
+      <div style="align-self:stretch;min-width:0;border-top:1px solid rgba(8,7,23,0.08)">
+        <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="6">
+          <div style="border-bottom:1px solid rgba(8,7,23,0.08)">
+            <button type="button" onClick="{{ faq.toggle }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:24px 0;text-align:left;gap:24px;background:none;border:none;cursor:pointer;font-family:var(--font-primary),'Outfit',sans-serif">
+              <span style="font-weight:500;line-height:1.375;font-size:18px;color:#3B2007">{{ faq.q }}</span>
+              <span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.3s;background-color:{{ faq.circBg }};color:{{ faq.circColor }}">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s;transform:rotate({{ faq.rot }}deg)"><path d="M6 9l6 6 6-6"></path></svg>
+              </span>
+            </button>
+            <div style="display:grid;transition:grid-template-rows 0.3s;grid-template-rows:{{ faq.rows }}">
+              <div style="overflow:hidden">
+                <p style="font-size:16px;line-height:1.625;margin:0;padding:0 40px 24px 0;color:#3B2007">{{ faq.a }}</p>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ pickerOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closePicker }}" style="position:fixed;inset:0;z-index:200;background:rgba(8,7,23,0.55);display:flex;align-items:center;justify-content:center;padding:20px">
+      <div onClick="{{ stop }}" style="width:100%;max-width:440px;background:#fff;border-radius:24px;padding:32px;box-shadow:0 24px 60px rgba(8,7,23,0.24);display:flex;flex-direction:column;gap:8px">
+        <h3 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:26px;line-height:1.15;margin:0;color:#3B2007">Where are you <em style="font-style:normal;color:#E96F0C">based?</em></h3>
+        <p style="font-size:16px;line-height:1.6;margin:0 0 16px;color:#3B2007">We'll take you to the right expression of interest form.</p>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <button type="button" onClick="{{ chooseAU }}" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 24px;border-radius:9999px;border:none;cursor:pointer;color:#fff;font-weight:500;font-size:16px;font-family:var(--font-primary),'Outfit',sans-serif;background-color:#E96F0C;transition:opacity 0.15s" style-hover="opacity:0.9">Australia</button>
+          <button type="button" onClick="{{ chooseIntl }}" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 24px;border-radius:9999px;cursor:pointer;background:transparent;border:1.5px solid #B2B2B5;color:#3B2007;font-weight:500;font-size:16px;font-family:var(--font-primary),'Outfit',sans-serif;transition:border-color 0.15s" style-hover="border-color:#3B2007">Outside Australia</button>
+        </div>
+        <button type="button" onClick="{{ closePicker }}" style="margin-top:8px;align-self:center;background:none;border:none;cursor:pointer;color:#838388;font-size:15px;font-family:var(--font-primary),'Outfit',sans-serif">Cancel</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { pickerOpen: false, openFaq: -1 };
+  go(url) { window.open(url, "_blank", "noopener"); this.setState({ pickerOpen: false }); }
+  renderVals() {
+    const openFaq = this.state.openFaq;
+    const FAQ = [
+      { q: "What qualifications do I need to join?", a: "You need current registration or accreditation with a recognised professional body in your country, relevant qualifications in therapy, counselling or coaching, and professional indemnity insurance." },
+      { q: "How much does it cost to join?", a: "Nothing. There are no listing or subscription fees. We only take a share of completed sessions, so you never pay to be on the platform." },
+      { q: "How do I get paid?", a: "Payments are processed monthly for all completed sessions, directly into your nominated account. You'll see a clear statement of sessions and fees each cycle." },
+      { q: "Do I set my own availability and rates?", a: "You set your availability, session length and the areas of focus you take on. We work with you on rates so they are fair to you and accessible to clients." },
+      { q: "How do clients get matched with me?", a: "Clients complete an onboarding questionnaire covering cultural background, language, and what they're seeking. Our matching surfaces practitioners whose lived experience and expertise fit." },
+      { q: "How long does the application take?", a: "Most practitioners complete the survey in about 10 minutes. We usually respond within a week to arrange a short online interview, and onboarding follows shortly after approval." },
+      { q: "Can I practise outside Australia?", a: "Yes. We work with practitioners internationally, choose the international form when you register your interest and we'll guide you through local requirements." }
+    ];
+    return {
+      faqs: FAQ.map((f, i) => {
+        const open = openFaq === i;
+        return { ...f, circBg: open ? "#E96F0C" : "#F6C59E", circColor: open ? "#fff" : "#E96F0C", rot: open ? 180 : 0, rows: open ? "1fr" : "0fr", toggle: () => this.setState({ openFaq: open ? -1 : i }) };
+      }),
+      pickerOpen: this.state.pickerOpen,
+      openPicker: () => this.setState({ pickerOpen: true }),
+      closePicker: () => this.setState({ pickerOpen: false }),
+      stop: (e) => e.stopPropagation(),
+      chooseAU: () => this.go("https://airtable.com/appBY6wdmaf9xevtn/pagNIHsVljQGydOeH/form"),
+      chooseIntl: () => this.go("https://airtable.com/app1i6T6CwDlQeouR/paghveMaKvWLuR4Lq/form"),
+      reasons: [
+        { title: "Mission-Driven", desc: "We support clients from diverse backgrounds, incl. migrants, second and third generation individuals, and diaspora communities. Our mission is to connect people with therapists and coaches who 'get it', offering truly culturally aware care.", img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&h=440&fit=crop&auto=format" },
+        { title: "Your Practice, Your Way", desc: "You decide your availability and areas of focus. We take care of client acquisition, admin, and monthly payments. Fit your practice around your life, not the other way around.", img: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=700&h=440&fit=crop&auto=format" },
+        { title: "Fair and Transparent Rates", desc: "No listing fees, no hidden charges. Earn up to twice the rates of other well-known platforms. Just meaningful work, fair pay, and the reassurance of a strong privacy policy that protects you and your clients.", img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&h=440&fit=crop&auto=format" }
+      ],
+      steps: [
+        { n: "1", title: "Fill in our survey", desc: "Tell us briefly about your qualifications and expertise.", img: "assets/step-survey.png" },
+        { n: "2", title: "Online interview", desc: "We want to get to know you and will answer all your questions.", img: "assets/step-interview.png" },
+        { n: "3", title: "Complete your profile", desc: "Once approved, create your profile to get matched with users.", img: "assets/step-profile.png" },
+        { n: "4", title: "Start helping people", desc: "You will start receiving bookings in your calendar.", img: "assets/step-start.png" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

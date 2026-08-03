@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Culturally inclusive employee mental health support | Tala Thrive for employers</title>
+  <meta name="description" content="Therapy, coaching, workshops and self-guided support from practitioners who share your people's culture, language or faith. Works alongside your existing EAP. Request a 20 min demo.">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/styles.css">
+  <script src="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/_ds_bundle.js"></script>
+  <style>
+    body { margin: 0; background: #ffffff; color: #3B2007; font-family: var(--font-primary),'Outfit',sans-serif; }
+    a { color: #3B2007; text-decoration: none; }
+    a:hover { color: #3B2007; }
+    .bz-card { transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s; }
+    .bz-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(8,7,23,0.1); }
+    .bz-grid-4 { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 24px; }
+    .bz-goals { display: grid; grid-template-columns: minmax(0,1fr); gap: 12px 32px; }
+    @media (min-width: 1100px) { .bz-goals { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    .bz-field:focus-visible, .bz-btn:focus-visible, .bz-faq:focus-visible {
+      outline: none; box-shadow: 0 0 0 3px rgba(233,111,12,0.3);
+    }
+    .bz-trust { display: flex; flex-wrap: nowrap; gap: 0 clamp(10px,1.6vw,24px); align-items: center; justify-content: center; }
+    .bz-trust > p { white-space: nowrap; font-size: clamp(11px,1.32vw,16px); }
+    @media (max-width: 767px) { .bz-trust { flex-wrap: wrap; flex-direction: column; gap: 8px; } .bz-trust > p { white-space: normal; font-size: 15px; } .bz-trust-dot { display: none; } }
+    @media (max-width: 520px) {
+      .bz-hero-cta { flex-direction: column !important; align-items: stretch !important; }
+      .bz-hero-cta > a { width: 100%; box-sizing: border-box; }
+    }
+  </style>
+</helmet>
+<div style="min-height:100vh;background:#ffffff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;overflow-x:clip">
+  <dc-import name="SiteHeader" hint-size="100%,116px"></dc-import>
+
+  <section data-screen-label="Hero" style="position:relative;overflow:hidden;background-color:#ffffff">
+    <div style="max-width:1280px;margin:0 auto;padding:clamp(32px,4vw,56px) clamp(20px,4.5vw,32px) clamp(36px,4.5vw,64px);display:flex;flex-wrap:wrap;gap:48px;align-items:center;justify-content:center">
+      <div style="flex:1 1 440px;min-width:0;max-width:600px">
+        
+        <h1 style="font-weight:700;font-size:clamp(38px,4.6vw,58px);line-height:1.05;margin:0 0 20px;color:#3B2007">Wellbeing support your team will <em style="font-style:italic;color:var(--color-orange-500)">actually use.</em></h1>
+        <sc-if value="{{ toneDirect }}" hint-placeholder-val="{{ true }}">
+          <p style="font-size:19px;line-height:1.625;margin:0 0 36px;max-width:540px;color:#3B2007">Tala Thrive works alongside what you already have, matching your people to therapists and coaches who share their culture, language, faith or lived experience.</p>
+        </sc-if>
+        <sc-if value="{{ toneWarm }}" hint-placeholder-val="{{ false }}">
+          <p style="font-size:19px;line-height:1.625;margin:0 0 36px;max-width:540px;color:#3B2007">Most workplaces already offer support. For a lot of people, it still does not feel like it is for them, because using it means spending the first session explaining their background instead of talking about it. Tala Thrive works alongside what you already have, matching your people to therapists and coaches who share their culture, language, faith or lived experience.</p>
+        </sc-if>
+        <div class="bz-hero-cta" style="display:flex;flex-wrap:wrap;gap:12px">
+          <a class="bz-btn" href="#demo" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:9999px;color:#fff;font-weight:500;background-color:var(--color-brand);transition:opacity 0.15s" style-hover="opacity:0.9">Request a 20 min demo <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></a>
+          <a class="bz-btn" href="#offer" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:9999px;font-weight:500;background-color:#F6EBD8;color:#3B2007;transition:background-color 0.15s" style-hover="background-color:#F6C59E">See what's included</a>
+        </div>
+      </div>
+      <div style="flex:1 1 400px;min-width:0;max-width:560px;position:relative;display:flex;justify-content:center">
+        <div style="position:absolute;top:-16px;right:8px;width:min(240px,34vw);height:min(240px,34vw);border-radius:50%;background-color:#F6EBD8;z-index:0"></div>
+        <div style="position:relative;z-index:1;width:100%;border-radius:28px;overflow:hidden;aspect-ratio:4/3;background-color:#F6C59E;box-shadow:0 24px 48px rgba(8,7,23,0.12)">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&amp;h=680&amp;fit=crop&amp;auto=format" alt="Diverse team in a workplace wellbeing session" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Trust strip" style="background-color:#ffffff;border-top:1px solid rgba(82,47,20,0.15);border-bottom:1px solid rgba(82,47,20,0.15);padding:20px 0">
+    <div class="bz-trust" style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px);text-align:center">
+      <p style="margin:0;line-height:1.6;color:#3B2007">Practitioners registered with recognised professional bodies — AHPRA, PACFA, ACA, BACP, ICF</p>
+      <span class="bz-trust-dot" aria-hidden="true" style="flex:0 0 auto;width:5px;height:5px;border-radius:9999px;background-color:var(--color-orange-500)"></span>
+      <p style="margin:0;line-height:1.6;color:#3B2007">Sessions in 35+ languages</p>
+      <span class="bz-trust-dot" aria-hidden="true" style="flex:0 0 auto;width:5px;height:5px;border-radius:9999px;background-color:var(--color-orange-500)"></span>
+      <p style="margin:0;line-height:1.6;color:#3B2007">Works alongside your existing EAP</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Stats" style="padding:clamp(36px,4.5vw,56px) 0;background-color:#F6EBD8">
+    <div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px);display:flex;flex-direction:column;gap:clamp(24px,3vw,36px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+        <div class="bz-card" style="background:#fff;border-radius:28px;padding:clamp(24px,3vw,32px);box-shadow:0 4px 24px rgba(8,7,23,0.06)">
+          <p style="font-weight:700;font-size:clamp(38px,4vw,52px);line-height:1;letter-spacing:-0.02em;margin:0 0 12px;color:var(--color-orange-500)">$67,400</p>
+          <p style="font-size:16px;line-height:1.625;margin:0 0 10px;color:#3B2007">Is the median compensation for a serious mental health claim in Australia, against $16,300 for other injuries. Affected workers are off for a median of 35.7 weeks.</p>
+          <p style="font-size:13px;line-height:1.45;margin:0;color:#6B6B70">Source: Safe Work Australia, Key Work Health and Safety Statistics 2025</p>
+        </div>
+        <div class="bz-card" style="background:#fff;border-radius:28px;padding:clamp(24px,3vw,32px);box-shadow:0 4px 24px rgba(8,7,23,0.06)">
+          <p style="font-weight:700;font-size:clamp(38px,4vw,52px);line-height:1;letter-spacing:-0.02em;margin:0 0 12px;color:var(--color-orange-500)">1 in 2</p>
+          <p style="font-size:16px;line-height:1.625;margin:0 0 10px;color:#3B2007">Australians were born overseas or have a parent who was. A diverse workforce is not a minority group, it is most of your people.</p>
+          <p style="font-size:13px;line-height:1.45;margin:0;color:#6B6B70">Source: Australian Bureau of Statistics</p>
+        </div>
+      </div>
+      <div class="bz-card" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; background: #fff; border-radius: 28px; padding: clamp(24px,3vw,32px); box-shadow: 0 4px 24px rgba(8,7,23,0.06); justify-content: center">
+        <span aria-hidden="true" style="flex:0 0 auto;width:56px;height:56px;border-radius:50%;background-color:#F6EBD8;display:flex;align-items:center;justify-content:center">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-orange-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        </span>
+        <p style="flex: 1 1 320px; min-width: 0; margin: 0; max-width: 820px; font-size: 18px; line-height: 1.625; color: #3B2007; font-weight: 500; font-style: normal">Racism, exclusion and bullying are recognised psychosocial hazards. Across Australia, employers now carry explicit obligations to manage them, and in NSW the Code of Practice became an enforceable benchmark on 1 July 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="offer" data-screen-label="What your people get" style="padding:clamp(36px,4.5vw,56px) 0;background-color:#ffffff">
+    <div style="max-width:1152px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px)">
+      <div style="max-width:640px;margin:0 auto clamp(28px,3.5vw,44px);text-align:center">
+        <h2 style="font-weight:700;font-size:clamp(30px,3.4vw,42px);line-height:1.05;margin:0;color:#3B2007">What your people get.</h2>
+      </div>
+      <div class="bz-grid-4">
+        <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+          <div class="bz-card" style="display:flex;flex-direction:column;gap:12px;background:#fff;border-radius:28px;padding:24px;box-shadow:0 4px 24px rgba(8,7,23,0.06)">
+            <span aria-hidden="true" style="width:44px;height:44px;border-radius:50%;background-color:#F6EBD8;display:flex;align-items:center;justify-content:center;margin-bottom:4px">{{ f.icon }}</span>
+            <h3 style="font-weight:700;font-size:21px;line-height:1.25;margin:0;color:#3B2007">{{ f.title }}</h3>
+            <p style="font-size:16px;line-height:1.625;margin:0;color:#3B2007">{{ f.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Goals" style="padding:clamp(36px,4.5vw,56px) 0;background-color:#F6EBD8">
+    <div style="max-width:1152px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px);display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px);align-items:flex-start">
+      <div style="flex:1 1 320px;min-width:0;max-width:380px">
+        <h2 style="font-weight:700;font-size:clamp(30px,3.4vw,42px);line-height:1.05;margin:0 0 16px;color:#3B2007">Tell us your goal, we'll <em style="font-style:italic;color:var(--color-orange-500)">design the plan.</em></h2>
+        <p style="font-size:19px;line-height:1.625;margin:0 0 28px;color:#3B2007">No fixed packages. We move quickly, and we build self-guided resources specific to your organisation.</p>
+        <a class="bz-btn" href="#demo" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:9999px;color:#fff;font-size:16px;font-weight:500;background-color:var(--color-brand);transition:opacity 0.15s" style-hover="opacity:0.9">Start the conversation <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></a>
+      </div>
+      <div class="bz-goals" style="flex:1 1 520px;min-width:0">
+        <sc-for list="{{ goals }}" as="g" hint-placeholder-count="7">
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-orange-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:5px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4L12 14.01l-3-3"></path></svg>
+            <p style="margin:0;font-size:16px;line-height:1.625;color:#3B2007">{{ g }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Procurement FAQ" style="padding:clamp(44px,5vw,76px) 0;background:#fff">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px);display:flex;flex-direction:column;gap:clamp(24px,3vw,36px)">
+      <div style="text-align:center;max-width:620px;margin:0 auto">
+        <h2 style="font-weight:700;font-size:clamp(30px,3.4vw,42px);line-height:1.05;margin:0;color:#3B2007">Questions procurement always asks.</h2>
+      </div>
+      <div style="align-self:stretch;min-width:0;border-top:1px solid rgba(8,7,23,0.08)">
+        <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="8">
+          <div style="border-bottom:1px solid rgba(8,7,23,0.08)">
+            <button class="bz-faq" type="button" onClick="{{ faq.toggle }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding:24px 0;text-align:left;gap:24px;background:none;border:none;cursor:pointer;font-family:var(--font-primary),'Outfit',sans-serif;border-radius:12px">
+              <span style="font-weight:500;line-height:1.375;font-size:18px;color:#3B2007">{{ faq.q }}</span>
+              <span aria-hidden="true" style="flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.3s;background-color:{{ faq.circBg }};color:{{ faq.circColor }}">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.3s;transform:rotate({{ faq.rot }}deg)"><path d="M6 9l6 6 6-6"></path></svg>
+              </span>
+            </button>
+            <div style="display:grid;transition:grid-template-rows 0.3s;grid-template-rows:{{ faq.rows }}">
+              <div style="overflow:hidden">
+                <p style="font-size:16px;line-height:1.625;margin:0;padding:0 40px 24px 0;color:#3B2007">{{ faq.a }}</p>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" data-screen-label="Demo form" style="padding:clamp(44px,5vw,72px) 0;background-color:#F6EBD8">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px);display:flex;flex-wrap:wrap;gap:clamp(32px,4vw,56px);align-items:flex-start;justify-content:center">
+      <div style="flex:1 1 380px;min-width:0;max-width:480px">
+        <h2 style="font-weight:700;font-size:clamp(30px,3.4vw,44px);line-height:1.05;margin:0 0 18px;color:#3B2007">See how it works for&nbsp;<em style="font-style:italic;color:var(--color-orange-500)">your team.</em></h2>
+        <p style="font-size:19px;line-height:1.625;margin:0 0 28px;color:#3B2007">A 20-minute demo: the platform, the workshops, the self-guided library, and a plan sketched against your goal.</p>
+        <ul style="display:flex;flex-direction:column;gap:12px;margin:0;padding:0;list-style:none">
+          <li style="display:flex;gap:10px;align-items:flex-start">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-orange-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:5px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4L12 14.01l-3-3"></path></svg>
+            <span style="font-size:16px;line-height:1.625;color:#3B2007">A live demo of the platform and app</span>
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-orange-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:5px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4L12 14.01l-3-3"></path></svg>
+            <span style="font-size:16px;line-height:1.625;color:#3B2007">Practitioner coverage by language, culture and location</span>
+          </li>
+          <li style="display:flex;gap:10px;align-items:flex-start">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-orange-500)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:5px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><path d="M22 4L12 14.01l-3-3"></path></svg>
+            <span style="font-size:16px;line-height:1.625;color:#3B2007">Pricing, reporting and a rollout timeline</span>
+          </li>
+        </ul>
+      </div>
+
+      <div style="flex:1 1 380px;min-width:0;max-width:520px;display:flex;flex-direction:column;gap:14px">
+        <sc-if value="{{ showFounding }}" hint-placeholder-val="{{ true }}">
+        <p style="margin:0;font-size:16px;line-height:1.625;color:#3B2007;background:#F9F2E6;border-radius:16px;padding:14px 18px">We are onboarding a small group of founding employer partners in Australia , to provide input into how the program is built.</p>
+        </sc-if>
+        <div style="background:#fff;border-radius:28px;padding:clamp(24px,3vw,36px);box-shadow:0 4px 24px rgba(8,7,23,0.06)">
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding:12px 0">
+            <span aria-hidden="true" style="width:52px;height:52px;border-radius:50%;background-color:var(--color-brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px">✓</span>
+            <h3 style="font-weight:700;font-size:24px;line-height:1.2;margin:0;color:#3B2007">Thanks, we'll be in touch.</h3>
+            <p style="margin:0;font-size:16px;line-height:1.625;color:#3B2007">A member of our partnerships team will email you within one working day to confirm a time for your demo.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:16px">
+          <h3 style="font-weight:700;font-size:24px;line-height:1.2;margin:0 0 2px;color:#3B2007">Request your demo</h3>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <label for="bd-first" style="font-size:15px;font-weight:500;color:#3B2007">First name</label>
+            <input class="bz-field" id="bd-first" type="text" required="{{ true }}" placeholder="Amara" style="width:100%;min-height:44px;box-sizing:border-box;padding:12px 16px;border-radius:14px;font-size:16px;border:1.5px solid #E4D8C4;background:#fff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;outline:none;transition:border-color 0.15s" style-focus="border-color:var(--color-orange-500)">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <label for="bd-email" style="font-size:15px;font-weight:500;color:#3B2007">Work email</label>
+            <input class="bz-field" id="bd-email" type="email" required="{{ true }}" placeholder="you@company.com" style="width:100%;min-height:44px;box-sizing:border-box;padding:12px 16px;border-radius:14px;font-size:16px;border:1.5px solid #E4D8C4;background:#fff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;outline:none;transition:border-color 0.15s" style-focus="border-color:var(--color-orange-500)">
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:16px">
+            <div style="flex:1 1 180px;min-width:0;display:flex;flex-direction:column;gap:7px">
+              <label for="bd-company" style="font-size:15px;font-weight:500;color:#3B2007">Company</label>
+              <input class="bz-field" id="bd-company" type="text" required="{{ true }}" placeholder="Company name" style="width:100%;min-height:44px;box-sizing:border-box;padding:12px 16px;border-radius:14px;font-size:16px;border:1.5px solid #E4D8C4;background:#fff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;outline:none;transition:border-color 0.15s" style-focus="border-color:var(--color-orange-500)">
+            </div>
+            <div style="flex:1 1 180px;min-width:0;display:flex;flex-direction:column;gap:7px">
+              <label for="bd-size" style="font-size:15px;font-weight:500;color:#3B2007">Company size</label>
+              <select class="bz-field" id="bd-size" style="width:100%;min-height:44px;box-sizing:border-box;padding:12px 16px;border-radius:14px;font-size:16px;border:1.5px solid #E4D8C4;background:#fff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;appearance:none;outline:none;transition:border-color 0.15s" style-focus="border-color:var(--color-orange-500)">
+                <option>Select…</option><option>1–50 employees</option><option>51–250 employees</option><option>251–1,000 employees</option><option>1,001–5,000 employees</option><option>5,000+ employees</option>
+              </select>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <label for="bd-hq" style="font-size:15px;font-weight:500;color:#3B2007">Where is your team based?</label>
+            <select class="bz-field" id="bd-hq" style="width:100%;min-height:44px;box-sizing:border-box;padding:12px 16px;border-radius:14px;font-size:16px;border:1.5px solid #E4D8C4;background:#fff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;appearance:none;outline:none;transition:border-color 0.15s" style-focus="border-color:var(--color-orange-500)">
+              <option>Select…</option><option>Australia</option><option>United Kingdom</option><option>New Zealand</option><option>United States</option><option>EU</option><option>Multiple regions</option><option>Other</option>
+            </select>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <label for="bd-goal" style="font-size:15px;font-weight:500;color:#3B2007">What are you trying to solve?</label>
+            <select class="bz-field" id="bd-goal" style="width:100%;min-height:44px;box-sizing:border-box;padding:12px 16px;border-radius:14px;font-size:16px;border:1.5px solid #E4D8C4;background:#fff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;appearance:none;outline:none;transition:border-color 0.15s" style-focus="border-color:var(--color-orange-500)">
+              <option>Select…</option><option>Keeping the people we worked hard to hire</option><option>Fewer sick days, burnout and absenteeism</option><option>Supporting staff through crises in their home countries</option><option>Responding to racism or discrimination at work</option><option>Professional development and executive coaching</option><option>Equipping managers to lead across cultures</option><option>Workshops and awareness programs</option><option>Not sure yet</option>
+            </select>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <label for="bd-notes" style="font-size:15px;font-weight:500;color:#3B2007">Tell us about your needs <span style="font-weight:400;color:#6B6B70">(optional)</span></label>
+            <textarea class="bz-field" id="bd-notes" rows="3" placeholder="e.g. supporting our multilingual frontline teams, manager training, reporting requirements…" style="width:100%;min-height:44px;box-sizing:border-box;padding:12px 16px;border-radius:14px;font-size:16px;border:1.5px solid #E4D8C4;background:#fff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;resize:vertical;outline:none;transition:border-color 0.15s" style-focus="border-color:var(--color-orange-500)"></textarea>
+          </div>
+          <button class="bz-btn" type="submit" style="width:100%;min-height:44px;padding:15px 32px;border-radius:9999px;font-weight:500;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;background-color:var(--color-brand);color:#fff;font-family:var(--font-primary),'Outfit',sans-serif;transition:opacity 0.15s;margin-top:4px" style-hover="opacity:0.9">Request my demo <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></button>
+          <p style="margin:0;font-size:14px;line-height:1.5;color:#6B6B70">We'll only use these details to arrange your demo. See our <a href="PrivacyPolicy.dc.html" style="color:var(--color-orange-500);text-decoration:underline;text-underline-offset:2px">privacy policy</a>.</p>
+        </form>
+        </sc-if>
+        </div>
+        <p style="margin:0;font-size:16px;line-height:1.625;color:#3B2007">Not ready to talk? <a href="#demo" style="color:var(--color-orange-500);font-weight:500;text-decoration:underline;text-underline-offset:3px">Download the employer pack (PDF)</a></p>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Direct&quot;,&quot;Warm&quot;],&quot;default&quot;:&quot;Direct&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Copy&quot;},&quot;showFoundingPartnerLine&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Copy&quot;}}">
+class Component extends DCLogic {
+  state = { submitted: false, openFaq: -1 };
+
+  icon(paths) {
+    return React.createElement('svg', {
+      width: 20, height: 20, viewBox: '0 0 24 24', fill: 'none',
+      stroke: 'var(--color-orange-500)', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round'
+    }, paths.map((d, i) => React.createElement('path', { key: i, d })));
+  }
+
+  renderVals() {
+    const openFaq = this.state.openFaq;
+    const FAQ = [
+      { q: "Does this replace our EAP?", a: "No. Tala Thrive sits alongside your existing provider and is built to reach the people it does not. There is no contract to break and no procurement contest. Most organisations keep their EAP as the general front door and add Tala Thrive for employees who need a practitioner who understands their background." },
+      { q: "Our employees can already access subsidised sessions through Medicare. Why pay for this?", a: "Medicare's Better Access scheme covers a limited number of subsidised sessions a year, and only after a GP appointment to put a Mental Health Treatment Plan in place. In practice your people face a wait for that appointment, a gap fee on most sessions, an annual cap, and very few practitioners who match their background and have availability. Tala Thrive removes the referral step, and matching is the starting point rather than an afterthought." },
+      { q: "What can we as the employer see about individual employees?", a: "Nothing that identifies anyone. You never see who booked, what was discussed, or any clinical detail. Reporting is aggregate only: session volume, utilisation trend, and engagement by language group where that group has at least five people, so no individual can be inferred. Practitioners' clinical records sit under their own professional confidentiality obligations and are never shared with you." },
+      { q: "How are practitioners vetted?", a: "Every therapist and coach is qualified and registered with a recognised professional body before joining, and we verify registration, qualifications and professional indemnity insurance during onboarding: AHPRA for psychologists and PACFA or ACA for counsellors in Australia, BACP or UKCP in the UK, and ICF for coaches. Beyond credentials, each practitioner provides their cultural background, languages and lived experience, which is what the matching runs on, and employees can see all of it on a profile before booking." },
+      { q: "Which countries and languages do you cover?", a: "Sessions are delivered by video, so coverage follows the practitioner network rather than office locations. We currently support employees in Australia, the United Kingdom and the United States, with 35+ languages across the network. If your team includes a background or language we do not yet cover well, tell us on the call. Building out the network around a partner's workforce is part of how we onboard." },
+      { q: "Where is our data stored, and how is it protected?", a: "Employee data is handled under the Australian Privacy Principles set out in the Privacy Act 1988, and under UK GDPR for UK-based teams. We will provide our privacy policy, data processing terms and a security summary on request. Clinical records are held by the treating practitioner under their professional obligations rather than passed to your organisation." },
+      { q: "How long does rollout take?", a: "There is nothing to install. Employees sign up, complete a five-minute questionnaire about what they are looking for, review matched practitioner profiles and book a time directly, on web or through the iOS and Android apps. Workshops and any organisation-specific self-guided content are built separately and take longer, and we will map that against your goal on the call." },
+      { q: "How are we invoiced?", a: "We invoice in AUD, and in GBP for UK-based teams. There are no fixed packages, so we shape the commercial structure around what you need rather than pushing you into a tier, and we will walk you through the options on the call." }
+    ];
+    return {
+      toneDirect: (this.props.heroTone ?? 'Direct') !== 'Warm',
+      toneWarm: (this.props.heroTone ?? 'Direct') === 'Warm',
+      showFounding: this.props.showFoundingPartnerLine ?? true,
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      onSubmit: (e) => { e.preventDefault(); this.setState({ submitted: true }); },
+      faqs: FAQ.map((f, i) => {
+        const open = openFaq === i;
+        return { ...f, circBg: open ? '#E96F0C' : '#F6C59E', circColor: open ? '#fff' : '#E96F0C', rot: open ? 180 : 0, rows: open ? '1fr' : '0fr', toggle: () => this.setState({ openFaq: open ? -1 : i }) };
+      }),
+      features: [
+        { title: "Culturally aware care", desc: "Therapists and coaches who share your people's culture, language, faith or lived experience. 35+ languages across the network, in Australia and internationally.", icon: this.icon(['M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2', 'M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8', 'M22 21v-2a4 4 0 0 0-3-3.87', 'M16 3.13a4 4 0 0 1 0 7.75']) },
+        { title: "Live workshops", desc: "Sessions that reduce stigma, open honest conversations, and help managers lead teams across difference.", icon: this.icon(['M2 3h20', 'M4 3v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3', 'M12 16v5', 'M8 21h8']) },
+        { title: "Support between sessions", desc: "Self-guided programs, tools and wellbeing resources in the app, used any time at their own pace.", icon: this.icon(['M4 19.5A2.5 2.5 0 0 1 6.5 17H20', 'M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z']) },
+        { title: "Reporting you can act on", desc: "Anonymised engagement by language group, session volume and utilisation trends. Enough to evidence what you are doing, never enough to identify anyone.", icon: this.icon(['M3 3v18h18', 'M7 15v-4', 'M12 15V7', 'M17 15v-7']) }
+      ],
+      goals: [
+        "Keep the people you worked hard to hire",
+        "Cut absenteeism, burnout and presenteeism",
+        "Support staff through crises in their home countries and communities",
+        "Respond properly when racism or discrimination surfaces",
+        "Grow your leaders with executive and career coaching",
+        "Equip managers to lead across cultures",
+        "Retain skilled migrant and visa-sponsored hires"
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/styles.css">
+  <script src="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/_ds_bundle.js"></script>
+  <style>
+    body { margin:0; background:#ffffff; color:#3B2007; font-family:var(--font-primary),'Outfit',sans-serif; }
+    a { color:#E96F0C; text-decoration:none; }
+    a:hover { color:#BD5B00; }
+    @media (max-width:760px){
+      .auth-wrap{flex-direction:column !important;}
+      .auth-side, .auth-main{flex:0 0 auto !important;width:100%;box-sizing:border-box;}
+    }
+  </style>
+</helmet>
+<div class="auth-wrap" style="min-height:100vh;display:flex;background:#ffffff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif">
+
+  <div class="auth-side" style="flex:1 1 44%;background-color:#F6EBD8;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(28px,3.5vw,48px);min-width:0">
+    <a href="Homepage%20v2.dc.html" style="display:flex;align-items:center;gap:12px;align-self:flex-start">
+      <img src="uploads/Tala Thrive black smiley face logo - no background.png" alt="Tala Thrive smiley face logo" style="height:36px;width:auto">
+      <img src="uploads/Tala Thrive Wordmark - Black - no background .png" alt="Tala Thrive" style="height:17px;width:auto">
+    </a>
+    <div style="max-width:420px">
+      <h2 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(26px,2.6vw,36px);line-height:1.12;margin:0 0 16px;color:#3B2007">Care that gets you, whenever you need it.</h2>
+      <p style="font-size:18px;line-height:1.65;margin:0;color:#3B2007">Pick up where you left off, message your practitioner, and keep your programs moving, all in one place.</p>
+    </div>
+    <p style="font-size:15px;margin:0;color:#8A6A4A">Culturally aware mental health care.</p>
+  </div>
+
+  <div class="auth-main" style="flex:1 1 56%;display:flex;align-items:center;justify-content:center;padding:clamp(32px,4vw,56px) clamp(20px,4vw,32px);min-width:0">
+    <div style="width:100%;max-width:400px">
+      <h1 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(28px,3vw,38px);line-height:1.08;margin:0 0 8px;color:#3B2007">Welcome back.</h1>
+      <p style="font-size:18px;line-height:1.6;margin:0 0 28px;color:#3B2007">Log in to your Tala Thrive account.</p>
+
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <label style="font-size:15px;font-weight:600;color:#3B2007">Email</label>
+          <input type="email" placeholder="you@example.com" style="width:100%;box-sizing:border-box;padding:13px 16px;border-radius:12px;font-size:16px;outline:none;border:1.5px solid #E4D8C4;background:#fff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;transition:border-color 0.15s" style-focus="border-color:#E96F0C">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+            <label style="font-size:15px;font-weight:600;color:#3B2007">Password</label>
+            <a href="#" style="font-size:14px">Forgot password?</a>
+          </div>
+          <input type="password" placeholder="••••••••" style="width:100%;box-sizing:border-box;padding:13px 16px;border-radius:12px;font-size:16px;outline:none;border:1.5px solid #E4D8C4;background:#fff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;transition:border-color 0.15s" style-focus="border-color:#E96F0C">
+        </div>
+        <label style="display:flex;align-items:center;gap:9px;font-size:15px;color:#3B2007;cursor:pointer">
+          <input type="checkbox" style="width:16px;height:16px;accent-color:#E96F0C;cursor:pointer">
+          Keep me signed in
+        </label>
+        <button style="width:100%;padding:15px 32px;border-radius:9999px;font-weight:500;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-size:18px;background-color:#E96F0C;color:#fff;font-family:var(--font-primary),'Outfit',sans-serif;transition:opacity 0.15s" style-hover="opacity:0.9">Log in</button>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;margin:24px 0">
+        <span style="flex:1;height:1px;background:#E4D8C4"></span>
+        <span style="font-size:14px;color:#8A6A4A">or</span>
+        <span style="flex:1;height:1px;background:#E4D8C4"></span>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <button style="width:100%;padding:13px 20px;border-radius:9999px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-size:16px;background:#fff;color:#3B2007;border:1.5px solid #E4D8C4;font-family:var(--font-primary),'Outfit',sans-serif;transition:background 0.15s" style-hover="background:#F9F2E6">
+          <svg width="17" height="17" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"></path><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"></path><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88z"></path><path fill="#EA4335" d="M12 4.75c1.62 0 3.06.56 4.21 1.64l3.15-3.15A10.5 10.5 0 0 0 12 .5 11 11 0 0 0 2.18 6.94l3.66 2.84C6.71 6.68 9.14 4.75 12 4.75z"></path></svg>
+          Continue with Google
+        </button>
+        <button style="width:100%;padding:13px 20px;border-radius:9999px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-size:16px;background:#fff;color:#3B2007;border:1.5px solid #E4D8C4;font-family:var(--font-primary),'Outfit',sans-serif;transition:background 0.15s" style-hover="background:#F9F2E6">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#3B2007"><path d="M17.05 12.54c-.02-2.05 1.67-3.03 1.75-3.08-.95-1.4-2.44-1.59-2.97-1.61-1.26-.13-2.47.74-3.11.74-.64 0-1.63-.72-2.68-.7-1.38.02-2.65.8-3.36 2.03-1.43 2.49-.37 6.17 1.03 8.19.68.99 1.49 2.1 2.56 2.06 1.03-.04 1.42-.66 2.66-.66 1.24 0 1.59.66 2.68.64 1.11-.02 1.81-1 2.49-2 .78-1.15 1.1-2.26 1.12-2.32-.02-.01-2.15-.83-2.17-3.28zM15.1 6.28c.56-.69.94-1.63.84-2.58-.81.03-1.8.54-2.38 1.22-.52.6-.98 1.57-.86 2.49.9.07 1.83-.46 2.4-1.13z"></path></svg>
+          Continue with Apple
+        </button>
+      </div>
+
+      <p style="text-align:center;font-size:16px;margin:26px 0 0;color:#3B2007">Don't have an account? <a href="SignUp.dc.html" style="font-weight:600">Sign up</a></p>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

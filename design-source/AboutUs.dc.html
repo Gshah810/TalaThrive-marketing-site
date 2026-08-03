@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/styles.css">
+  <script src="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/_ds_bundle.js"></script>
+  <style>
+    body { margin:0; background:#ffffff; color:#3B2007; font-family:var(--font-primary),'Outfit',sans-serif; }
+    a { color:#E96F0C; text-decoration:none; }
+    a:hover { color:#BD5B00; }
+  </style>
+</helmet>
+<div style="min-height:100vh;background:#ffffff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;overflow-x:clip">
+  <dc-import name="SiteHeader" hint-size="100%,116px"></dc-import>
+
+  <section style="background-color:#F6EBD8">
+    <div style="max-width:820px;margin:0 auto;padding:clamp(44px,5.5vw,80px) clamp(20px,4.5vw,32px);text-align:center">
+      <h1 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(34px,4.6vw,58px);line-height:1.04;margin:0 0 18px;color:#3B2007">Mental health care that<br>&nbsp;&nbsp;<em data-om-id="487da09f:17" style="font-style: normal; color: rgb(233, 111, 12);">gets you.</em></h1>
+      <p style="font-size:19px;line-height:1.6;margin:0 auto;max-width:600px;color:#3B2007">We're building a world where you don't have to explain your culture, identity or lived experience just to get the mental health support you deserve.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(36px,4.5vw,60px) 0 clamp(20px,3vw,32px);background:#fff">
+    <div style="max-width:960px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px)">
+      <div style="position:relative;border-radius:24px;overflow:hidden;aspect-ratio:16/9;background-color:#3B2007;box-shadow:0 24px 60px rgba(8,7,23,0.16)">
+        <sc-if value="{{ playing }}" hint-placeholder-val="{{ false }}">
+          <iframe src="https://www.youtube-nocookie.com/embed/og1_VMJYBCY?start=1&amp;autoplay=1&amp;rel=0" title="Tala Thrive" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block"></iframe>
+        </sc-if>
+        <sc-if value="{{ notPlaying }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ play }}" aria-label="Play video" style="position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;margin:0;cursor:pointer;background:none;display:block">
+            <img src="https://img.youtube.com/vi/og1_VMJYBCY/maxresdefault.jpg" alt="Tala Thrive story video" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+            <span style="position:absolute;inset:0;background:rgba(8,7,23,0.28)"></span>
+            <span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:80px;height:80px;border-radius:50%;background:#E96F0C;box-shadow:0 8px 24px rgba(8,7,23,0.3)">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff" style="pointer-events:none;margin-left:4px"><path d="M8 5v14l11-7z"></path></svg>
+            </span>
+          </button>
+        </sc-if>
+      </div>
+      <p style="text-align:center;font-size:16px;margin:16px 0 0;color:#8A6A4A">Meet Tala Thrive, our story, in our own words.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(40px,5vw,72px) 0;background:#fff">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px)">
+      <h2 style="font-family: var(--font-primary),'Outfit',sans-serif; font-weight: 700; font-size: clamp(28px,3.4vw,42px); line-height: 1.08; margin: 0 0 20px; color: #3B2007; text-align: center">Why we exist</h2>
+      <p style="font-size: 19px; line-height: 1.7; margin: 0 0 16px; color: #3B2007; text-align: center">For too many people from migrant, diaspora and multicultural communities, therapy has meant starting every session by explaining themselves, their language, their faith, their family, the weight of experiences a generic service was never designed to hold.</p>
+      <p style="font-size: 19px; line-height: 1.7; margin: 0 0 16px; color: #3B2007; text-align: center">Tala Thrive was founded to change that. We connect you with culturally aware therapists and coaches who understand your background from day one, so the work can start where it matters, not with an explanation, but with being understood.</p>
+      <p style="font-size: 19px; line-height: 1.7; margin: 0; color: #3B2007; text-align: center">Alongside therapy and coaching, we build self-guided programs and culturally specific affirmation tools, making supportive, accessible care available at your own pace, so you can heal, grow, and thrive, not just survive.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(40px,5vw,72px) 0;background-color:#F6EBD8">
+    <div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px)">
+      <h2 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(28px,3.4vw,42px);line-height:1.08;margin:0 0 clamp(28px,3.5vw,44px);color:#3B2007;text-align:center">What we stand for</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px">
+        <sc-for list="{{ values }}" as="v" hint-placeholder-count="3">
+          <div style="border-radius:20px;padding:30px;background:#fff;display:flex;flex-direction:column;gap:12px;box-shadow:0 6px 24px rgba(8,7,23,0.06)">
+            <h3 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:20px;line-height:1.2;margin:0;color:#E96F0C">{{ v.title }}</h3>
+            <p style="font-size:18px;line-height:1.65;margin:0;color:#3B2007">{{ v.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(16px,3vw,32px);background:#fff">
+    <div style="max-width:1080px;margin:0 auto">
+      <div style="border-radius:24px;padding:clamp(44px,6vw,72px) clamp(24px,4vw,40px);background-color:#FFB36C;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px">
+        <h2 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(28px,3.8vw,46px);line-height:1.06;margin:0;color:#3B2007">Ready to feel understood?</h2>
+        <p style="font-size:19px;line-height:1.6;margin:0;max-width:500px;color:#3B2007">Find a therapist or coach who gets your world, and start where it matters.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:4px">
+          <a href="Practitioners.dc.html" style="display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:9999px;color:#fff;font-weight:500;background-color:#E96F0C;transition:opacity 0.15s" style-hover="opacity:0.9">Book a session</a>
+          <a href="Stories.dc.html" style="display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:9999px;font-weight:500;background-color:#fff;color:#3B2007;transition:opacity 0.15s" style-hover="opacity:0.9">Read our stories</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { playing: false };
+  renderVals() {
+    return {
+      playing: this.state.playing,
+      notPlaying: !this.state.playing,
+      play: () => this.setState({ playing: true }),
+      values: [
+        { title: "Representation", desc: "Care that reflects who you are. Our practitioners share and understand the cultures, languages and faiths of the communities they serve." },
+        { title: "Culturally aware care", desc: "Understanding isn't a nice-to-have. We match you with people who get the nuances of migration, identity and family without you having to explain them." },
+        { title: "Accessible by design", desc: "Therapy, coaching, self-guided programs and affirmation tools, supportive, flexible support you can reach at your own pace, wherever you are." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

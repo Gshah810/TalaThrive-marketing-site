@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/styles.css">
+  <script src="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/_ds_bundle.js"></script>
+  <style>
+    body { margin:0; background:#ffffff; color:#3B2007; font-family:var(--font-primary),'Outfit',sans-serif; }
+    a { color:#3B2007; text-decoration:none; }
+    a:hover { color:#3B2007; }
+  </style>
+</helmet>
+<div style="min-height:100vh;background:#ffffff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;overflow-x:clip">
+  <dc-import name="SiteHeader" hint-size="100%,116px"></dc-import>
+
+  <section style="padding:clamp(44px,5vw,72px) 0 clamp(24px,3vw,36px);background-color:#F6EBD8">
+    <div style="max-width:760px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px);text-align:center">
+      <h1 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(38px,5vw,60px);line-height:1.03;margin:0 0 18px;color:#3B2007">Stories to help you <em style="font-style:normal;color:#E96F0C">thrive.</em></h1>
+      <p style="font-size:20px;line-height:1.6;margin:0;color:#3B2007">Reflections, research, and real talk on culturally aware mental health, from our team and community.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(28px,3.5vw,44px) 0;background:#fff">
+    <div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px)">
+      <a href="Story.dc.html" style="display:block;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 8px 32px rgba(8,7,23,0.08);transition:transform 0.25s cubic-bezier(0.22,1,0.36,1),box-shadow 0.25s" style-hover="transform:translateY(-4px);box-shadow:0 20px 48px rgba(8,7,23,0.12)">
+        <div style="display:flex;flex-wrap:wrap">
+          <div style="flex:1 1 380px;min-height:280px;background-color:#F6C59E;overflow:hidden">
+            <img src="https://framerusercontent.com/images/aIAj9pGlOYk9agp8r9eM4yb7qQ.jpg?width=1200" alt="Reflecting on family and healing" style="width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <div style="flex:1 1 380px;min-width:0;padding:clamp(28px,4vw,44px);display:flex;flex-direction:column;justify-content:center;gap:16px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="padding:5px 13px;border-radius:9999px;background:#F9F2E6;color:#3B2007;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">Healing</span>
+              <span style="font-size:15px;color:#838388">Jan 14, 2026</span>
+            </div>
+            <h2 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(26px,3vw,36px);line-height:1.15;margin:0;color:#3B2007">How to Begin Healing from Generational Trauma</h2>
+            <p style="font-size:18px;line-height:1.6;margin:0;color:#3B2007">Some of the emotional wounds we carry didn't start with us. A gentle look at where generational trauma comes from, and the first steps toward carrying it differently.</p>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:600;color:#E96F0C">Read the story <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section style="padding:clamp(20px,3vw,32px) 0 clamp(44px,5vw,72px);background:#fff">
+    <div style="max-width:1080px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px">
+        <sc-for list="{{ posts }}" as="post" hint-placeholder-count="9">
+          <a href="{{ post.href }}" style="display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 6px 24px rgba(8,7,23,0.07);transition:transform 0.25s cubic-bezier(0.22,1,0.36,1),box-shadow 0.25s" style-hover="transform:translateY(-4px);box-shadow:0 16px 40px rgba(8,7,23,0.1)">
+            <div style="aspect-ratio:16/10;background-color:#F6C59E;overflow:hidden">
+              <sc-if value="{{ post.img }}" hint-placeholder-val="{{ false }}"><img src="{{ post.img }}" alt="{{ post.title }}" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if>
+            </div>
+            <div style="padding:22px;display:flex;flex-direction:column;gap:12px;flex:1">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span style="padding:4px 11px;border-radius:9999px;background:#F9F2E6;color:#3B2007;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em">{{ post.cat }}</span>
+                <span style="font-size:14px;color:#838388">{{ post.date }}</span>
+              </div>
+              <h3 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:20px;line-height:1.25;margin:0;color:#3B2007">{{ post.title }}</h3>
+              <p style="font-size:16px;line-height:1.6;margin:0;color:#3B2007;flex:1">{{ post.excerpt }}</p>
+              <span style="display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:600;color:#E96F0C">Read more <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg></span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      posts: [
+        { title: "Affirmations 101: The Science-Backed Tool You're Using Wrong", cat: "Affirmations", date: "Apr 9, 2026", href: "#", excerpt: "Do affirmations actually work, or are they just pretty words? The neuroscience, and why repetition is the whole point.", img: "https://framerusercontent.com/images/SHjZBYkmeLGNmYdIIOl8WIBeWk.jpg?width=800" },
+        { title: "Racism and Mental Health: How Online Therapy Can Help", cat: "Wellbeing", date: "Oct 30, 2025", href: "#", excerpt: "Racism doesn't just hurt feelings, it hurts mental health. How culturally aware care meets that pain.", img: "https://framerusercontent.com/images/xKEaPwWFGfUUiG6xqldYdcEwhqQ.jpg?width=800" },
+        { title: "Integrating Faith and Therapy: Spirituality in Mental Health", cat: "Culture & Faith", date: "Oct 26, 2025", href: "#", excerpt: "For many of us, faith is a source of resilience. Therapy that honours it can foster deeper trust and healing.", img: "https://framerusercontent.com/images/0cFvoQ3c5vr7M9xpaagnN72XuMw.png?width=800" },
+        { title: "\u201CR U OK?\u201D When Was the Last Time Someone Asked You This?", cat: "Awareness", date: "Oct 7, 2025", href: "#", excerpt: "A conversation could change a life. Why checking in, and being checked on, matters more than we think.", img: "https://framerusercontent.com/images/BxF7HK1EdKvmRI7X5sdOgXKgKSg.jpg?width=800" },
+        { title: "Say It With Us: \u201CI Deserve Rest and Relaxation\u201D", cat: "Self-care", date: "Aug 22, 2025", href: "#", excerpt: "In many communities, rest has been framed as laziness. The truth? Rest is revolutionary, and a right.", img: "https://framerusercontent.com/images/ljbASKSGN17GLba44f6VQkSL2LI.png?width=800" },
+        { title: "Generational Trauma and the Healing Power of Forgiveness", cat: "Healing", date: "Jun 30, 2025", href: "#", excerpt: "Forgiveness isn't forgetting. It's releasing the hold that pain has on our hearts, for ourselves and those after us.", img: "https://images.unsplash.com/photo-1516575334481-f85287c2c82d?w=700&h=440&fit=crop&auto=format" },
+        { title: "Honouring LGBTQIA Pride Month and the Need for Cultural Awareness", cat: "Community", date: "Jun 19, 2025", href: "#", excerpt: "Culturally aware therapy goes beyond affirmation, honouring how race, faith, and queerness intersect.", img: "https://images.unsplash.com/photo-1561612217-e5147162fd31?w=700&h=440&fit=crop&auto=format" },
+        { title: "Are You Afflicted with \u201CElder Daughter Syndrome\u201D?", cat: "Culture", date: "May 21, 2025", href: "#", excerpt: "Homework tutor, emotional coach, mini-mom in training. The invisible emotional labour firstborn daughters carry.", img: "https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=700&h=440&fit=crop&auto=format" },
+        { title: "The Power of Speaking Up", cat: "Wellbeing", date: "May 6, 2025", href: "#", excerpt: "Unspoken pain doesn't disappear. Naming what we feel is the first, radical step toward healing.", img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&h=440&fit=crop&auto=format" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

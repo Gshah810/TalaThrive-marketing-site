@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/styles.css">
+  <script src="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/_ds_bundle.js"></script>
+  <style>
+    body { margin:0; background:#ffffff; color:#3B2007; font-family:var(--font-primary),'Outfit',sans-serif; }
+    a { color:#3B2007; text-decoration:none; }
+    a:hover { color:#3B2007; }
+    @media (max-width:860px){ .pdp-grid{ flex-direction:column !important; } .pdp-col{ flex:1 1 100% !important; max-width:none !important; position:static !important; } }
+  </style>
+</helmet>
+<div style="min-height:100vh;background:#ffffff;color:#3B2007;font-family:var(--font-primary),'Outfit',sans-serif;overflow-x:clip">
+  <dc-import name="SiteHeader" hint-size="100%,116px"></dc-import>
+
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(16px,3vw,28px) clamp(20px,4.5vw,32px) 8px;font-size:15px;color:#838388">
+    <a href="Shop.dc.html" style="color:#838388" style-hover="color:#3B2007">Shop</a> <span style="margin:0 6px">/</span> <span style="color:#3B2007">Cultural Affirmation &amp; Conversation Cards</span>
+  </div>
+
+  <section style="background:#fff">
+    <div class="pdp-grid" style="max-width:1180px;margin:0 auto;padding:clamp(8px,2vw,24px) clamp(20px,4.5vw,32px) clamp(40px,5vw,64px);display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,56px);align-items:flex-start">
+
+      <div class="pdp-col" style="flex:1 1 440px;min-width:0;max-width:560px">
+        <div style="border-radius:24px;overflow:hidden;aspect-ratio:1/1;background-color:#F6EBD8;box-shadow:0 20px 48px rgba(8,7,23,0.12)">
+          <img src="{{ activeImg }}" alt="Cultural Affirmation and Conversation Cards" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+          <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="6">
+            <button onClick="{{ t.select }}" aria-label="View image" style="width:72px;height:72px;flex:0 0 auto;padding:0;border-radius:14px;overflow:hidden;cursor:pointer;background:#F6EBD8;border:2px solid {{ t.border }};transition:border-color 0.15s">
+              <img src="{{ t.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+            </button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div class="pdp-col" style="flex:1 1 400px;min-width:0;max-width:520px;position:sticky;top:96px">
+        <h1 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(30px,3.6vw,44px);line-height:1.06;margin:0 0 12px;color:#3B2007">Cultural Affirmation &amp; <em style="font-style:normal;color:#E96F0C">Conversation Cards</em></h1>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+          <span style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:24px;color:#3B2007">$49.00 AUD</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:600;color:#1B3F37"><span style="width:8px;height:8px;border-radius:50%;background:#1B3F37;display:inline-block"></span>In stock</span>
+        </div>
+
+        <p style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:20px;margin:0 0 10px;color:#3B2007">Pause. Reflect. Connect.</p>
+        <p style="font-size:18px;line-height:1.65;margin:0 0 14px;color:#3B2007">Tala Thrive's Cultural Affirmation &amp; Conversation Cards are thoughtfully designed to help you nurture mindfulness, strengthen relationships, and honour cultural identity in your healing journey.</p>
+        <p style="font-size:18px;line-height:1.65;margin:0 0 24px;color:#3B2007">Each deck combines affirmations grounded in lived experiences with powerful reflection questions that encourage self-discovery, meaningful conversations, and emotional wellbeing.</p>
+
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px">
+          <div style="display:flex;align-items:center;border:1.5px solid #E4D8C4;border-radius:9999px;overflow:hidden">
+            <button onClick="{{ dec }}" aria-label="Decrease quantity" style="width:46px;height:46px;border:none;background:none;cursor:pointer;font-size:20px;color:#3B2007;display:flex;align-items:center;justify-content:center" style-hover="background:#F9F2E6">&minus;</button>
+            <span style="min-width:36px;text-align:center;font-weight:600;font-size:19px;color:#3B2007">{{ qty }}</span>
+            <button onClick="{{ inc }}" aria-label="Increase quantity" style="width:46px;height:46px;border:none;background:none;cursor:pointer;font-size:20px;color:#3B2007;display:flex;align-items:center;justify-content:center" style-hover="background:#F9F2E6">+</button>
+          </div>
+          <button onClick="{{ addToCart }}" style="flex:1 1 200px;min-width:180px;padding:15px 32px;border-radius:9999px;font-weight:500;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;font-size:18px;background-color:{{ cartBg }};color:#fff;font-family:var(--font-primary),'Outfit',sans-serif;transition:background-color 0.15s,opacity 0.15s" style-hover="opacity:0.9">{{ cartLabel }}</button>
+        </div>
+        <p style="font-size:15px;line-height:1.5;margin:0 0 28px;color:#838388">Free shipping within Australia. Ships in 2-4 business days.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
+          <span style="padding:6px 13px;border-radius:9999px;background:#F9F2E6;color:#3B2007;font-size:14px;font-weight:600">30+ cards</span>
+          <span style="padding:6px 13px;border-radius:9999px;background:#F9F2E6;color:#3B2007;font-size:14px;font-weight:600">Wooden stand included</span>
+          <span style="padding:6px 13px;border-radius:9999px;background:#F9F2E6;color:#3B2007;font-size:14px;font-weight:600">Reflection questions</span>
+        </div>
+
+        <div style="border-top:1px solid rgba(8,7,23,0.08);padding-top:24px;display:flex;flex-direction:column;gap:24px">
+          <div>
+            <h3 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;color:#3B2007">How to use on your own</h3>
+            <ul style="display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none">
+              <li style="font-size:16px;line-height:1.55;color:#3B2007"><strong style="color:#3B2007">Daily affirmation.</strong> Begin your day with an empowering message.</li>
+              <li style="font-size:16px;line-height:1.55;color:#3B2007"><strong style="color:#3B2007">Journalling prompt.</strong> Spark deeper reflection by writing freely on the guided questions.</li>
+              <li style="font-size:16px;line-height:1.55;color:#3B2007"><strong style="color:#3B2007">Visualisation.</strong> Close your eyes and imagine yourself living the affirmation fully, turning intention into reality.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;color:#3B2007">How to use with others</h3>
+            <ul style="display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none">
+              <li style="font-size:16px;line-height:1.55;color:#3B2007"><strong style="color:#3B2007">Conversation.</strong> Share cards with family, friends, or groups to create deeper conversations.</li>
+              <li style="font-size:16px;line-height:1.55;color:#3B2007"><strong style="color:#3B2007">Rituals.</strong> Incorporate them into dinner check-ins, therapy sessions, or team circles.</li>
+              <li style="font-size:16px;line-height:1.55;color:#3B2007"><strong style="color:#3B2007">Gift.</strong> Give a card to someone who needs encouragement, affirmation, or healing support.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:19px;margin:0 0 12px;color:#3B2007">Product details</h3>
+            <ul style="display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none">
+              <li style="display:flex;gap:10px;font-size:16px;line-height:1.55;color:#3B2007"><span style="color:#E96F0C;flex-shrink:0">&bull;</span>A beautifully designed deck of 30+ affirmation and reflection cards.</li>
+              <li style="display:flex;gap:10px;font-size:16px;line-height:1.55;color:#3B2007"><span style="color:#E96F0C;flex-shrink:0">&bull;</span>Durable, high-quality cards for everyday use.</li>
+              <li style="display:flex;gap:10px;font-size:16px;line-height:1.55;color:#3B2007"><span style="color:#E96F0C;flex-shrink:0">&bull;</span>Perfect for personal growth, therapy practices, classrooms, or connecting with family.</li>
+              <li style="display:flex;gap:10px;font-size:16px;line-height:1.55;color:#3B2007"><span style="color:#E96F0C;flex-shrink:0">&bull;</span>Comes with a wooden stand for your daily affirmation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(40px,5vw,72px) 0;background-color:#F6EBD8">
+    <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,4.5vw,32px);text-align:center">
+      <h2 style="font-family:var(--font-primary),'Outfit',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);line-height:1.08;margin:0 0 16px;color:#3B2007">Created for <em style="font-style:normal;color:#E96F0C">culturally aware</em> care.</h2>
+      <p style="font-size:19px;line-height:1.65;margin:0 auto 8px;max-width:600px;color:#3B2007">Affirmations that honour diverse lived experiences, a versatile tool for healing, resilience, and self-discovery, helping individuals and communities thrive, not just survive.</p>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,320px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { active: 0, qty: 1, added: false };
+  imgs() {
+    const b = "https://shop.talathrive.com/cdn/shop/files/";
+    return [
+      b + "Affirmation_cards_-_aunty_gossip.jpg?v=1775112235&width=1000",
+      b + "070-SM_TalaThrive.jpg?v=1775113203&width=1000",
+      b + "072-SM_TalaThrive.jpg?v=1775113203&width=1000",
+      b + "020_-_SM_Tala_Thrive.jpg?v=1775113203&width=1000",
+      b + "030_-_SM_Tala_Thrive.jpg?v=1775113203&width=1000",
+      b + "047-SM_TalaThrive.jpg?v=1775111469&width=1000"
+    ];
+  }
+  renderVals() {
+    const imgs = this.imgs();
+    const { active, qty, added } = this.state;
+    return {
+      activeImg: imgs[active],
+      thumbs: imgs.map((src, i) => ({ src, border: i === active ? "#E96F0C" : "transparent", select: () => this.setState({ active: i }) })),
+      qty,
+      dec: () => this.setState(s => ({ qty: Math.max(1, s.qty - 1) })),
+      inc: () => this.setState(s => ({ qty: s.qty + 1 })),
+      cartLabel: added ? "Added to cart" : "Add to cart",
+      cartBg: added ? "#1B3F37" : "#E96F0C",
+      addToCart: () => {
+        try {
+          const cart = JSON.parse(localStorage.getItem("tt_cart") || "[]");
+          const key = "cards";
+          const ex = cart.find(i => i.key === key);
+          if (ex) ex.qty += this.state.qty;
+          else cart.push({ key, id: "cards", title: "Cultural Affirmation & Conversation Cards", variant: "", price: 49, qty: this.state.qty, img: imgs[0] });
+          localStorage.setItem("tt_cart", JSON.stringify(cart));
+          window.dispatchEvent(new StorageEvent("storage", { key: "tt_cart" }));
+        } catch (e) {}
+        this.setState({ added: true }); clearTimeout(this._t); this._t = setTimeout(() => this.setState({ added: false }), 2000);
+      }
+    };
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+}
+</script>
+</body>
+</html>

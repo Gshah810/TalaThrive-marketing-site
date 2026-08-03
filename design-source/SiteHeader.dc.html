@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/styles.css">
+  <script src="_ds/tala-thrive-design-system-4704ea82-4084-4e5b-a333-d5bb635bbbbb/_ds_bundle.js"></script>
+  <style>
+    body { margin:0; background:#ffffff; color:#3B2007; font-family:var(--font-primary),'Outfit',sans-serif; }
+    a { color:#3B2007; text-decoration:none; }
+    a:hover { color:#3B2007; }
+    .tt-burger { display:none; }
+    @media (max-width: 960px) {
+      .tt-desktop-nav, .tt-desktop-auth { display:none !important; }
+      .tt-burger { display:inline-flex !important; }
+    }
+    @media (min-width: 961px) {
+      .tt-mobile-menu { display:none !important; }
+    }
+  </style>
+</helmet>
+<div style="position:sticky;top:0;z-index:50">
+<sc-if value="{{ showBanner }}" hint-placeholder-val="{{ true }}">
+  <div style="position:relative;text-align:center;padding:10px 44px;font-size:14px;font-weight:500;color:#fff;letter-spacing:0.025em;background-color:#E96F0C">
+    Get 10% off your first therapy or coaching session. <a href="Shop.dc.html" style="color:#fff;text-decoration:underline;text-underline-offset:2px" style-hover="text-decoration:none">Claim your discount</a>
+    <button onClick="{{ closeBanner }}" aria-label="Dismiss banner" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:none;background:none;cursor:pointer;color:#fff;border-radius:9999px" style-hover="background:rgba(255,255,255,0.18)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+    </button>
+  </div>
+</sc-if>
+<header style="background-color:#ffffff;border-bottom:1px solid rgba(8,7,23,0.07)">
+  <div style="max-width:1280px;margin:0 auto;padding:8px clamp(16px,4vw,32px);min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:8px 24px">
+    <a href="Homepage%20v2.dc.html" style="flex-shrink:0;display:flex;align-items:center;gap:12px">
+      <img src="uploads/Tala Thrive black smiley face logo - no background.png" alt="Tala Thrive smiley face logo" style="height:34px;width:auto">
+      <img src="uploads/Tala Thrive Wordmark - Black - no background .png" alt="Tala Thrive" style="height:16px;width:auto">
+    </a>
+    <nav class="tt-desktop-nav" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px clamp(14px,2.2vw,32px)">
+      <a href="AboutUs.dc.html" style="font-size:16px;color:#3B2007;white-space:nowrap" style-hover="color:#3B2007">About Us</a>
+      <a href="Practitioners.dc.html" style="font-size:16px;color:#3B2007;white-space:nowrap" style-hover="color:#3B2007">Practitioners</a>
+      <a href="ForBusinesses.dc.html" style="font-size:16px;color:#3B2007;white-space:nowrap" style-hover="color:#3B2007">For Businesses</a>
+      <a href="PartnerWithUs.dc.html" style="font-size:16px;color:#3B2007;white-space:nowrap" style-hover="color:#3B2007">Partner With Us</a>
+      <a href="Stories.dc.html" style="font-size:16px;color:#3B2007;white-space:nowrap" style-hover="color:#3B2007">Stories</a>
+      <a href="Shop.dc.html" style="font-size:16px;color:#3B2007;white-space:nowrap" style-hover="color:#3B2007">Shop</a>
+    </nav>
+    <div class="tt-desktop-auth" style="display:flex;align-items:center;gap:8px">
+      <a href="Cart.dc.html" aria-label="Cart" style="position:relative;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:9999px;color:#3B2007;transition:background-color 0.15s" style-hover="background-color:#F6EBD8">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+        <span style="position:absolute;top:2px;right:0;min-width:16px;height:16px;padding:0 4px;box-sizing:border-box;border-radius:9999px;background:#E96F0C;color:#fff;font-size:10px;font-weight:700;display:{{ badgeDisplay }};align-items:center;justify-content:center;line-height:1">{{ cartCount }}</span>
+      </a>
+      <a href="Login.dc.html" style="font-size:16px;padding:8px 16px;border-radius:9999px;color:#3B2007;transition:background-color 0.15s" style-hover="background-color:#F6EBD8">Log in</a>
+      <a href="SignUp.dc.html" style="font-size:16px;padding:10px 20px;border-radius:9999px;color:#fff;font-weight:500;white-space:nowrap;background-color:#E96F0C;transition:opacity 0.15s" style-hover="opacity:0.9">Sign Up</a>
+    </div>
+    <button class="tt-burger" onClick="{{ toggle }}" aria-label="Toggle menu" style="align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:none;background:none;cursor:pointer;color:#3B2007">
+      {{ burgerIcon }}
+    </button>
+  </div>
+  <div class="tt-mobile-menu" style="overflow:hidden;transition:max-height 0.28s cubic-bezier(0.22,1,0.36,1);max-height:{{ menuMaxH }};background:#ffffff;border-top:1px solid rgba(8,7,23,0.06)">
+    <nav style="display:flex;flex-direction:column;padding:8px clamp(16px,4vw,32px) 20px;gap:2px">
+      <a href="AboutUs.dc.html" style="font-size:19px;padding:13px 4px;color:#3B2007;border-bottom:1px solid rgba(8,7,23,0.06)">About Us</a>
+      <a href="Practitioners.dc.html" style="font-size:19px;padding:13px 4px;color:#3B2007;border-bottom:1px solid rgba(8,7,23,0.06)">Practitioners</a>
+      <a href="ForBusinesses.dc.html" style="font-size:19px;padding:13px 4px;color:#3B2007;border-bottom:1px solid rgba(8,7,23,0.06)">For Businesses</a>
+      <a href="PartnerWithUs.dc.html" style="font-size:19px;padding:13px 4px;color:#3B2007;border-bottom:1px solid rgba(8,7,23,0.06)">Partner With Us</a>
+      <a href="Stories.dc.html" style="font-size:19px;padding:13px 4px;color:#3B2007;border-bottom:1px solid rgba(8,7,23,0.06)">Stories</a>
+      <a href="Shop.dc.html" style="font-size:19px;padding:13px 4px;color:#3B2007;border-bottom:1px solid rgba(8,7,23,0.06)">Shop</a>
+      <a href="Cart.dc.html" style="font-size:19px;padding:13px 4px;color:#3B2007">Cart {{ cartCountText }}</a>
+      <div style="display:flex;gap:10px;margin-top:16px">
+        <a href="Login.dc.html" style="flex:1;text-align:center;font-size:18px;padding:13px 16px;border-radius:9999px;color:#3B2007;border:1.5px solid #E4D8C4">Log in</a>
+        <a href="SignUp.dc.html" style="flex:1;text-align:center;font-size:18px;padding:13px 16px;border-radius:9999px;color:#fff;font-weight:500;background-color:#E96F0C">Sign Up</a>
+      </div>
+    </nav>
+  </div>
+</header>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { open: false, count: 0, bannerClosed: false };
+  componentDidMount() {
+    try { if (localStorage.getItem("tt_banner_closed") === "1") this.setState({ bannerClosed: true }); } catch (e) {}
+    this._read();
+    this._onStorage = (e) => { if (!e || e.key === "tt_cart") this._read(); };
+    window.addEventListener("storage", this._onStorage);
+  }
+  componentWillUnmount() { window.removeEventListener("storage", this._onStorage); }
+  _read() {
+    let count = 0;
+    try {
+      const c = JSON.parse(localStorage.getItem("tt_cart") || "[]");
+      count = c.reduce((n, it) => n + (it.qty || 0), 0);
+    } catch (e) {}
+    this.setState({ count });
+  }
+  renderVals() {
+    const open = this.state.open;
+    const count = this.state.count;
+    const icon = open
+      ? React.createElement("svg", { width: 26, height: 26, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("path", { d: "M18 6 6 18" }), React.createElement("path", { d: "m6 6 12 12" }))
+      : React.createElement("svg", { width: 26, height: 26, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("path", { d: "M4 6h16" }), React.createElement("path", { d: "M4 12h16" }), React.createElement("path", { d: "M4 18h16" }));
+    return {
+      burgerIcon: icon,
+      menuMaxH: open ? "500px" : "0px",
+      cartCount: count,
+      badgeDisplay: count > 0 ? "flex" : "none",
+      cartCountText: count > 0 ? "(" + count + ")" : "",
+      toggle: () => this.setState(s => ({ open: !s.open })),
+      showBanner: !this.state.bannerClosed,
+      closeBanner: () => {
+        this.setState({ bannerClosed: true });
+        try { localStorage.setItem("tt_banner_closed", "1"); } catch (e) {}
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
