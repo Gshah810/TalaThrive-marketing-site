@@ -267,10 +267,53 @@ button { font-family: var(--font); }
 }
 .btn--outline:hover { opacity: 1; border-color: var(--ink); }
 
+/* Ghost / text link — no fill, orange text, hover to orange-dark (§4) */
+.btn--ghost { background: transparent; color: var(--orange); padding-left: 0; padding-right: 0; }
+.btn--ghost:hover { opacity: 1; color: var(--orange-dark); }
+
+/* Success — transient added-to-cart / order-confirmed state (§4) */
+.btn--success { background-color: var(--forest); color: #ffffff; }
+.btn--success:hover { color: #ffffff; }
+
+/* Sizes */
 .btn--sm { padding: 12px 24px; }
 .btn--md { padding: 14px 28px; }
+/* Full-width form submit (§4) */
+.btn--block { width: 100%; padding: 15px 32px; font-size: 18px; }
 
 .btn svg { flex-shrink: 0; }
+
+/* --------------------------------------------------------------------------
+   5b. Cards — reusable base primitive (00-foundations.md §4)
+   Page-specific card classes (serve-card, prac card, story card, …) layer
+   their own padding/content on top; this is the shared shell.
+   -------------------------------------------------------------------------- */
+
+.card {
+  background: var(--white);
+  overflow: hidden;
+  border-radius: var(--radius-round);   /* media / story / product — 24px */
+  box-shadow: var(--shadow-card);
+}
+
+.card--feature { border-radius: var(--radius-soft); }  /* 28px */
+.card--small { border-radius: var(--radius-sm); }      /* 16px */
+.card--tight { border-radius: var(--radius-card); }    /* 20px */
+.card--pad { padding: 24px; }
+
+/* Interactive cards lift on hover (§4) */
+.card--link {
+  transition: transform 0.25s var(--ease), box-shadow 0.25s;
+}
+.card--link:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card--link { transition: none; }
+  .card--link:hover { transform: none; }
+}
 
 /* --------------------------------------------------------------------------
    6. Promo banner + header
@@ -2466,7 +2509,7 @@ button { font-family: var(--font); }
 
 .field label {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--ink);
 }
 
@@ -2480,8 +2523,8 @@ button { font-family: var(--font); }
 .field textarea {
   width: 100%;
   min-height: 44px;
-  padding: 12px 16px;
-  border-radius: 14px;
+  padding: 13px 16px;
+  border-radius: var(--radius-input);
   font-size: 16px;
   border: 1.5px solid var(--border-cream);
   background: #fff;
