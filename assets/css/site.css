@@ -32,48 +32,101 @@
    -------------------------------------------------------------------------- */
 
 :root {
+  /* ---- Colour — palette (00-foundations.md §1). Hex is authoritative. ---- */
   /* Brand */
-  --orange: #E96F0C;
-  --orange-dark: #BD5B00;
-  --orange-200: #F6C59E;
-  --peach: #FFB36C;
+  --orange: #E96F0C;        /* Brand orange — primary buttons, accents, links, promo */
+  --orange-dark: #BD5B00;   /* Orange dark — link hover, step-badge text, gift-card accent */
+  --peach: #FFB36C;         /* Peach — step badges, selected chips, SignUp panel */
+  --peach-light: #F6C59E;   /* Peach light — closed FAQ indicator, image placeholders */
+  --orange-200: #F6C59E;    /* legacy alias of --peach-light */
 
   /* Cream scale */
-  --cream: #F6EBD8;
-  --cream-100: #F9F2E6;
-  --cream-50: #FCF8F1;
+  --cream: #F6EBD8;         /* Cream — alternating section bg, footer, secondary buttons */
+  --cream-light: #F9F2E6;   /* Cream light — info tags, quiet chips, hover fills */
+  --cream-100: #F9F2E6;     /* legacy alias of --cream-light */
+  --cream-50: #FCF8F1;      /* extra tint (local) */
+  --white: #FFFFFF;         /* Page background, cards */
 
   /* Text — the whole site runs on this deep brown */
-  --ink: #3B2007;
-  --brown: #522F14;
-  --brown-deep: #371B34;
-  --muted: #6B6B70;
-  --caption: #8A6A4A;
+  --ink: #3B2007;           /* Ink brown — all body + heading text sitewide */
+  --brown-mid: #654431;     /* Brown mid — footer link and body text */
+  --brown: #522F14;         /* Brown deep — info-tag text, "For Businesses" badge */
+  --brown-soft: #8A6A4A;    /* Brown soft — timestamps, trust strip, dividers, "or" */
+  --caption: #8A6A4A;       /* legacy alias of --brown-soft */
+  --mute-grey: #838388;     /* Mute grey — dates, meta, disabled/secondary, cancel */
+  --grey-text: #6B6B70;     /* Grey text — chart labels, sources, inactive tabs */
+  --muted: #6B6B70;         /* legacy alias of --grey-text */
+  --brown-deep: #371B34;    /* legacy — only .accent--brown-deep (Shop); retired in step 7 */
 
-  /* Lines */
-  --border-cream: #E4D8C4;
-  --line: #B2B2B5;
-  --hairline: rgba(8, 7, 23, 0.08);
+  /* State */
+  --forest: #1B3F37;        /* Forest green — in-stock, added-to-cart, order confirmed */
 
-  /* Geometry */
-  --radius-card: 20px;
-  --radius-round: 24px;
-  --radius-soft: 28px;
-  --radius-pill: 9999px;
+  /* Lines, borders and dividers */
+  --border-cream: #E4D8C4;                 /* Input borders, outlined buttons, light dividers */
+  --line: #B2B2B5;                         /* Outlined-button border (alt) */
+  --hairline-white: rgba(8, 7, 23, 0.07);  /* Hairline on white */
+  --hairline: rgba(8, 7, 23, 0.08);        /* Divider in lists / FAQ */
+  --divider-cream: rgba(59, 32, 7, 0.12);  /* Divider on cream */
+  --divider-menu: rgba(8, 7, 23, 0.06);    /* Divider in mobile menu */
+  --trust-rule: rgba(138, 106, 74, 0.28);  /* Trust strip rule */
 
-  /* Elevation */
-  --shadow-card: 0 6px 24px rgba(8, 7, 23, 0.07);
-  --shadow-soft: 0 4px 24px rgba(8, 7, 23, 0.06);
-  --shadow-lift: 0 16px 40px rgba(8, 7, 23, 0.1);
-  --shadow-hero: 0 24px 48px rgba(8, 7, 23, 0.12);
+  /* Geometry — radii (00-foundations.md §4) */
+  --radius-sm: 16px;        /* small inline cards */
+  --radius-card: 20px;      /* practitioner, value, step cards */
+  --radius-round: 24px;     /* media / story / product cards */
+  --radius-soft: 28px;      /* marketing feature cards */
+  --radius-input: 12px;     /* form fields */
+  --radius-pill: 9999px;    /* buttons, chips, tags */
 
-  /* Motion */
+  /* Elevation — shadows (00-foundations.md §1) */
+  --shadow-soft: 0 4px 24px rgba(8, 7, 23, 0.06);           /* Card */
+  --shadow-card: 0 6px 24px rgba(8, 7, 23, 0.07);           /* Card alt */
+  --shadow-lift: 0 16px 40px rgba(8, 7, 23, 0.1);           /* Card hover */
+  --shadow-feature: 0 8px 32px rgba(8, 7, 23, 0.08);        /* Featured story card */
+  --shadow-feature-hover: 0 20px 48px rgba(8, 7, 23, 0.12); /* Featured hover */
+  --shadow-hero: 0 24px 48px rgba(8, 7, 23, 0.12);          /* Hero photography */
+  --shadow-product: 0 18px 44px rgba(8, 7, 23, 0.1);        /* Product image */
+  --shadow-product-pdp: 0 20px 48px rgba(8, 7, 23, 0.12);   /* Product image on PDP */
+  --shadow-modal: 0 24px 60px rgba(8, 7, 23, 0.24);         /* Country picker modal */
+  --shadow-video: 0 24px 60px rgba(8, 7, 23, 0.16);         /* About Us video frame */
+
+  /* Motion (00-foundations.md §5) */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-micro: 0.15s;   /* micro-interaction */
+  --dur: 0.25s;         /* transition */
+  --dur-3: 0.3s;        /* transition (accordion, indicator) */
+  --dur-menu: 0.28s;    /* menu expand */
+  --dur-reveal: 0.7s;   /* reveal */
 
-  /* Rhythm */
+  /* Focus (00-foundations.md §6 — unified sitewide) */
+  --focus: #B85B0A;
+
+  /* Typography (00-foundations.md §2) */
+  --font: 'Athletics', 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fs-h1: clamp(38px, 4.6vw, 58px);         /* Page H1 (hero) */
+  --fs-h1-narrow: clamp(34px, 4.4vw, 52px);  /* Page H1 (narrow / legal / auth) */
+  --fs-h2: clamp(30px, 3.4vw, 42px);         /* Section H2 */
+  --fs-h2-alt: clamp(32px, 3.6vw, 46px);     /* Section H2 (heavier) */
+  --fs-h2-article: clamp(24px, 2.8vw, 32px); /* Article H2 */
+  --fs-lead: 20px;                           /* Lead paragraph */
+  --fs-body: 16px;                           /* Body */
+  --fs-article: 19px;                        /* Article body */
+
+  /* Layout — content shells (00-foundations.md §3) */
+  --shell-wide: 1280px;     /* header, hero, wide sections */
+  --shell-product: 1180px;  /* product pages, Partner, For Businesses form */
+  --shell-feature: 1152px;  /* For Businesses feature/goals */
+  --shell-footer: 1120px;   /* footer, cart, checkout */
+  --shell: 1080px;          /* practitioners, stories grid, about mission */
+  --shell-prose: 820px;     /* FAQ, legal, article wide media, about prose */
+  --shell-narrow: 720px;    /* article body */
+
+  /* Rhythm (00-foundations.md §3) */
   --gutter: clamp(20px, 4.5vw, 32px);
-  --section-y: clamp(36px, 4.5vw, 56px);
-  --font: 'Athletics', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gutter-header: clamp(16px, 4vw, 32px);
+  --section-y: clamp(36px, 4.5vw, 56px);       /* standard */
+  --section-y-lg: clamp(40px, 5vw, 72px);      /* denser */
+  --section-y-xl: clamp(44px, 5vw, 76px);      /* heaviest */
 }
 
 /* --------------------------------------------------------------------------
@@ -116,7 +169,7 @@ img { max-width: 100%; }
 button { font-family: var(--font); }
 
 :focus-visible {
-  outline: 3px solid var(--orange);
+  outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
 
