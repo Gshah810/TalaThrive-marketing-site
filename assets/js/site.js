@@ -196,27 +196,6 @@
     timer = setTimeout(reveal, 1200);
   })();
 
-  /* ------------------------------------------------------------------------
-     7. "What we offer" tabs (section is hidden by default — see README)
-     ---------------------------------------------------------------------- */
-
-  (function offerTabs() {
-    var tablist = $('[data-offer-tabs]');
-    if (!tablist) return;
-
-    var tabs = $$('[role="tab"]', tablist);
-    var panels = $$('[data-offer-panel]');
-
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        var id = tab.getAttribute('aria-controls');
-        tabs.forEach(function (t) {
-          t.setAttribute('aria-selected', String(t === tab));
-        });
-        panels.forEach(function (p) { p.hidden = p.id !== id; });
-      });
-    });
-  })();
 
   /* ------------------------------------------------------------------------
      8. Practitioners — "Where are you based?" form router
