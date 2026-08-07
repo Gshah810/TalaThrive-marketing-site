@@ -2777,6 +2777,11 @@ button { font-family: var(--font); }
   box-shadow: var(--shadow-lift);
 }
 
+/* Coming-soon cards have no article yet — inert, no hover lift */
+.story-card--soon { cursor: default; }
+.story-card--soon:hover { transform: none; box-shadow: var(--shadow-card); }
+.read-more--soon { color: var(--mute-grey); font-weight: 500; }
+
 .story-card__media {
   aspect-ratio: 16 / 10;
   background-color: var(--orange-200);
