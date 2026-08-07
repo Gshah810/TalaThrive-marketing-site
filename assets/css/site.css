@@ -2275,6 +2275,21 @@ button { font-family: var(--font); }
   font-weight: 500;
 }
 
+/* Trust strip sits at the foot of the "What you'll get" section */
+.bz-trust {
+  margin: clamp(40px, 5vw, 64px) auto 0;
+  padding-top: clamp(20px, 2.5vw, 28px);
+  border-top: 1px solid var(--trust-rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 20px;
+  text-align: center;
+}
+
+.bz-trust p { margin: 0; line-height: 1.6; color: var(--brown-soft); }
+
 /* Explicit column counts rather than auto-fit: the 1152px container resolves
    auto-fit to three tracks, orphaning the fourth card on its own row. */
 .bz-grid-4 {
