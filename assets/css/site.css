@@ -56,7 +56,6 @@
   --mute-grey: #838388;     /* Mute grey — dates, meta, disabled/secondary, cancel */
   --grey-text: #6B6B70;     /* Grey text — chart labels, sources, inactive tabs */
   --muted: #6B6B70;         /* legacy alias of --grey-text */
-  --brown-deep: #371B34;    /* legacy — only .accent--brown-deep (Shop); retired in step 7 */
 
   /* State */
   --forest: #1B3F37;        /* Forest green — in-stock, added-to-cart, order confirmed */
@@ -190,8 +189,6 @@ button { font-family: var(--font); }
 
 .accent { font-style: normal; color: var(--orange); }
 .accent--italic { font-style: italic; color: var(--orange); }
-.accent--ink { font-style: normal; color: #080717; }
-.accent--brown-deep { font-style: normal; color: var(--brown-deep); }
 
 /* --------------------------------------------------------------------------
    4. Layout
