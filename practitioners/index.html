@@ -78,7 +78,7 @@
   <div class="split-hero__inner">
     <div class="split-hero__copy">
       <h1>Calling all <em class="accent">Therapists</em> and <em class="accent">Coaches.</em></h1>
-      <p>Request your expression of interest to join our expert group of therapists and coaches, and grow your practice on your own terms, with our support behind the scenes.</p>
+      <p>Register your expression of interest to join our expert group of therapists and coaches. Grow your practice on your own terms, with our support behind the scenes.</p>
       <div class="hero-cta">
         <button class="btn btn--primary" type="button" data-picker-open>Start your journey now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></button>
       </div>
@@ -101,7 +101,7 @@
         <div class="reason-card__media"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&amp;h=440&amp;fit=crop&amp;auto=format" alt="Mission-Driven" loading="lazy"></div>
         <div class="reason-card__body">
           <h3>Mission-Driven</h3>
-          <p>We support clients from diverse backgrounds, incl. migrants, second and third generation individuals, and diaspora communities. Our mission is to connect people with therapists and coaches who 'get it', offering truly culturally aware care.</p>
+          <p>We help support clients from diverse backgrounds, incl. migrants, second and third generation individuals, and diaspora communities. Our mission is to connect people with therapists and coaches who 'get it', offering truly culturally aware care.</p>
         </div>
       </article>
       <article class="reason-card">
@@ -192,38 +192,38 @@
           <span>Do I set my own availability and rates?</span>
           <span class="faq__chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
-        <div class="faq__a"><div><p>You set your availability, session length and the areas of focus you take on. We work with you on rates so they are fair to you and accessible to clients.</p></div></div>
+        <div class="faq__a"><div><p>You set your availability and the areas of focus you take on. However, we have fixed session rates for therapists, coaches and executive coaches.</p></div></div>
       </div>
       <div class="faq__item">
         <button class="faq__q" type="button" aria-expanded="false">
           <span>How do clients get matched with me?</span>
           <span class="faq__chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
-        <div class="faq__a"><div><p>Clients complete an onboarding questionnaire covering cultural background, language, and what they're seeking. Our matching surfaces practitioners whose lived experience and expertise fit.</p></div></div>
+        <div class="faq__a"><div><p>Clients complete an onboarding questionnaire covering cultural background, language, and what they're seeking. Our matching surfaces practitioners whose lived experience and expertise fit. Clients then review those profiles and book directly with the practitioner they choose.</p></div></div>
       </div>
       <div class="faq__item">
         <button class="faq__q" type="button" aria-expanded="false">
           <span>How long does the application take?</span>
           <span class="faq__chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
-        <div class="faq__a"><div><p>Most practitioners complete the survey in about 10 minutes. We usually respond within a week to arrange a short online interview, and onboarding follows shortly after approval.</p></div></div>
+        <div class="faq__a"><div><p>Most practitioners complete the survey in about 10 minutes. We review every application and respond within a week. If it looks like a good fit, we will invite you to a short online interview, with onboarding to follow.</p></div></div>
       </div>
       <div class="faq__item">
         <button class="faq__q" type="button" aria-expanded="false">
-          <span>Can I practise outside Australia?</span>
+          <span>Can I practise outside my home country?</span>
           <span class="faq__chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
-        <div class="faq__a"><div><p>Yes. We work with practitioners internationally, choose the international form when you register your interest and we'll guide you through local requirements.</p></div></div>
+        <div class="faq__a"><div><p>In most cases yes. When you apply, choose the right form based on your location and we can help you with the assessment.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Location router: sends practitioners to the right Airtable expression-of-interest form -->
-<div class="modal" data-picker hidden role="dialog" aria-modal="true" aria-labelledby="picker-title">
+<div class="modal" data-picker hidden role="dialog" aria-modal="true" aria-labelledby="picker-title" aria-describedby="picker-desc">
   <div class="modal__panel">
     <h2 id="picker-title">Where are you <em class="accent">based?</em></h2>
-    <p>We'll take you to the right expression of interest form.</p>
+    <p id="picker-desc">We'll take you to the right expression of interest form.</p>
     <div class="modal__actions">
       <button class="btn btn--primary" type="button" data-picker-au>Australia</button>
       <button class="btn btn--outline" type="button" data-picker-intl>Outside Australia</button>

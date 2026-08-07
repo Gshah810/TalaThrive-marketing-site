@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Partner with us | Tala Thrive</title>
-<meta name="description" content="We work with brands, creators, community groups and organisations who believe in representation, honest conversations and culturally aware care.">
+<meta name="description" content="We work with brands, creators, community groups, non-profits and organisations who believe in representation, honest conversations and culturally aware care.">
 <link rel="canonical" href="https://gshah810.github.io/TalaThrive-marketing-site/partner-with-us/">
 <meta property="og:title" content="Partner with us | Tala Thrive">
-<meta property="og:description" content="We work with brands, creators, community groups and organisations who believe in representation, honest conversations and culturally aware care.">
+<meta property="og:description" content="We work with brands, creators, community groups, non-profits and organisations who believe in representation, honest conversations and culturally aware care.">
 <meta property="og:type" content="website">
 <link rel="icon" href="../assets/img/logo-mark.png">
 <link rel="stylesheet" href="../assets/css/site.css">
@@ -77,8 +77,8 @@
 <section class="page-hero partner-hero">
   <div class="partner-hero__inner">
     <div class="partner-hero__copy">
-      <h1>Partner with us to help more people thrive, <em class="accent">not just survive.</em></h1>
-      <p>We work with brands, creators, community groups and organisations who believe in representation, honest conversations and culturally aware care.</p>
+      <h1>Partner with us to help us impact <em class="accent">1 million people</em> and more</h1>
+      <p>We work with brands, creators, community groups, non-profits and organisations who believe in representation, honest conversations and culturally aware care.</p>
       <ul class="dot-list">
         <li>Content collaborations and campaigns</li>
         <li>Events, workshops and community programs</li>
@@ -100,11 +100,11 @@
         <form data-form="partner" style="display:flex;flex-direction:column;gap:16px">
           <div class="field">
             <label for="pw-name">Name</label>
-            <input id="pw-name" name="name" type="text" required placeholder="Your name">
+            <input id="pw-name" name="name" type="text" required autocomplete="name" placeholder="Your name">
           </div>
           <div class="field">
             <label for="pw-email">Email</label>
-            <input id="pw-email" name="email" type="email" required placeholder="you@example.com">
+            <input id="pw-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
           </div>
           <div class="field">
             <label for="pw-location">Location</label>
@@ -116,6 +116,7 @@
               <option>EU</option>
               <option>Other</option>
             </select>
+            <input class="field__other" data-other-for="pw-location" name="locationOther" type="text" placeholder="Where are you based?" aria-label="Please tell us your location" hidden>
           </div>
           <div class="field">
             <label for="pw-who">I'm a</label>
@@ -127,6 +128,7 @@
               <option>Brand</option>
               <option>Other</option>
             </select>
+            <input class="field__other" data-other-for="pw-who" name="roleOther" type="text" placeholder="Tell us what you are" aria-label="Please tell us what you are" hidden>
           </div>
           <div class="field">
             <label for="pw-type">Partnership type</label>
@@ -138,6 +140,7 @@
               <option>Workshop</option>
               <option>Other</option>
             </select>
+            <input class="field__other" data-other-for="pw-type" name="partnershipOther" type="text" placeholder="What kind of partnership?" aria-label="Please describe the partnership type" hidden>
           </div>
           <div class="field">
             <label for="pw-link">Website / social link</label>
