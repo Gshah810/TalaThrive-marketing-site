@@ -66,23 +66,12 @@
   })();
 
   /* ------------------------------------------------------------------------
-     2. Sticky header shadow
+     2. Footer copyright year (computed at runtime)
      ---------------------------------------------------------------------- */
 
-  (function stickyHeader() {
-    var header = $('[data-header]');
-    if (!header) return;
-
-    var scrolled = false;
-    function onScroll() {
-      var next = window.scrollY > 20;
-      if (next === scrolled) return;
-      scrolled = next;
-      header.classList.toggle('is-scrolled', scrolled);
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+  (function footerYear() {
+    var el = $('[data-year]');
+    if (el) el.textContent = String(new Date().getFullYear());
   })();
 
   /* ------------------------------------------------------------------------
