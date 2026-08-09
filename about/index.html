@@ -18,7 +18,7 @@
 <div class="chrome">
   <div class="promo" data-promo>
     Get 10% off your first therapy or coaching session.
-    <a href="../#join-the-tribe">Claim your discount</a>
+    <a href="../shop/">Claim your discount</a>
     <button class="promo__close" type="button" data-promo-close aria-label="Dismiss banner">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
     </button>
@@ -26,7 +26,7 @@
 
   <header class="site-header" data-header>
     <div class="site-header__bar">
-      <a class="brand" href="../">
+      <a class="brand" href="../" aria-label="Tala Thrive — home">
         <img class="brand__mark" src="../assets/img/logo-mark.png" alt="" width="135" height="160">
         <img class="brand__word" src="../assets/img/logo-wordmark.png" alt="Tala Thrive" width="671" height="80">
       </a>
@@ -41,6 +41,9 @@
       </nav>
 
       <div class="nav-auth">
+        <a class="nav-cart" href="https://shop.talathrive.com/cart" target="_blank" rel="noopener noreferrer" aria-label="Cart (opens in a new tab)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.2l2.2 12.2a1.6 1.6 0 0 0 1.6 1.3h8.6a1.6 1.6 0 0 0 1.6-1.3L21 7H6"/></svg>
+        </a>
         <a class="nav-auth__login" href="https://talathrive.com/login">Log in</a>
         <a class="nav-auth__signup" href="https://talathrive.com/login">Sign Up</a>
       </div>
@@ -59,6 +62,7 @@
         <a href="../partner-with-us/">Partner With Us</a>
         <a href="../stories/">Stories</a>
         <a href="../shop/">Shop</a>
+        <a href="https://shop.talathrive.com/cart" target="_blank" rel="noopener noreferrer" aria-label="Cart (opens in a new tab)">Cart</a>
         <div class="nav-mobile__auth">
           <a class="is-login" href="https://talathrive.com/login">Log in</a>
           <a class="is-signup" href="https://talathrive.com/login">Sign Up</a>
@@ -88,22 +92,24 @@
         </span>
       </button>
     </div>
-    <p class="video-caption">Meet Tala Thrive, our story, in our own words.</p>
+    <p class="video-caption">Our story in our words</p>
   </div>
 </section>
 
 <section class="section section--white section--lg">
   <div class="container container--sm prose-center">
     <h2>Why we exist</h2>
-    <p>For too many people from migrant, diaspora and multicultural communities, therapy has meant starting every session by explaining themselves, their language, their faith, their family, the weight of experiences a generic service was never designed to hold.</p>
-    <p>Tala Thrive was founded to change that. We connect you with culturally aware therapists and coaches who understand your background from day one, so the work can start where it matters, not with an explanation, but with being understood.</p>
-    <p>Alongside therapy and coaching, we build self-guided programs and culturally specific affirmation tools, making supportive, accessible care available at your own pace, so you can heal, grow, and thrive, not just survive.</p>
+    <p>Let us be honest: it is exhausting to educate your therapist. Fifty minutes on the clock and twenty of them go to explaining why your mum calls three times a day, and why “just set a boundary with your family” is not the breakthrough they think it is.</p>
+    <p>Tala Thrive was built to skip that part. We match you with therapists and coaches who already speak your language, know your faith, and understand what it costs to carry a family’s expectations and a visa application at the same time. So session one starts with you, not with a glossary.</p>
+    <p>And because the hard days do not book themselves into a 50-minute window, we built self-guided programs and culturally specific affirmations you can reach for at 2am.</p>
+    <p>Because you deserve a lot more than surviving. You deserve to thrive.</p>
   </div>
 </section>
 
 <section class="section section--cream section--lg">
   <div class="container container--md">
-    <h2 style="font-size:clamp(28px,3.4vw,42px);line-height:1.08;margin:0 0 clamp(28px,3.5vw,44px);text-align:center">What we stand for</h2>
+    <h2 style="font-size:clamp(28px,3.4vw,42px);line-height:1.08;margin:0 0 16px;text-align:center">Our mission</h2>
+      <p style="max-width:640px;margin:0 auto clamp(28px,3.5vw,44px);text-align:center;font-size:19px;line-height:1.6;color:var(--ink)">To impact <em style="font-style:normal;color:var(--orange)">1M+ people</em> and make mental health care inclusive and accessible to all</p>
     <div class="values-grid">
       <div class="value-card">
         <h3>Representation</h3>
@@ -124,10 +130,10 @@
 <section class="tribe">
   <div class="container container--md" style="padding:0">
     <div class="cta-band">
-      <h2>Ready to feel understood?</h2>
+      <h2>Ready to start thriving?</h2>
       <p>Find a therapist or coach who gets your world, and start where it matters.</p>
       <div class="cta-band__actions">
-        <a class="btn btn--primary" href="../practitioners/">Book a session</a>
+        <a class="btn btn--primary" href="https://talathrive.com/login">Book a session</a>
         <a class="btn btn--white" href="../stories/">Read our stories</a>
       </div>
     </div>
@@ -136,34 +142,58 @@
 
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <a class="brand" href="../">
-      <img class="brand__mark" src="../assets/img/logo-mark.png" alt="" width="135" height="160">
-      <img class="brand__word" src="../assets/img/logo-wordmark.png" alt="Tala Thrive" width="671" height="80">
-    </a>
+    <div class="site-footer__cols">
+      <div class="site-footer__brand">
+        <a class="brand" href="../" aria-label="Tala Thrive — home">
+          <img class="brand__mark" src="../assets/img/logo-mark.png" alt="" width="135" height="160">
+          <img class="brand__word" src="../assets/img/logo-wordmark.png" alt="Tala Thrive" width="671" height="80">
+        </a>
+        <p>Therapy, coaching and workshops with certified practitioners to support your team.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/talathrive/" target="_blank" rel="noopener noreferrer" aria-label="Tala Thrive on Instagram (opens in a new tab)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/talathrive/" target="_blank" rel="noopener noreferrer" aria-label="Tala Thrive on LinkedIn (opens in a new tab)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.65h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@talathrive" target="_blank" rel="noopener noreferrer" aria-label="Tala Thrive on TikTok (opens in a new tab)">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.1 1.5 3.6 3.5 3.9V10c-1.3.1-2.5-.2-3.6-.9v6.2c0 3.3-2.4 5.7-5.5 5.7A5.4 5.4 0 0 1 5 15.3c0-3.1 2.6-5.4 5.8-5.1v3.2c-.4-.1-.8-.2-1.2-.2-1.3 0-2.3 1-2.3 2.2 0 1.3 1 2.3 2.3 2.3 1.4 0 2.4-1.1 2.4-2.6V3z"/></svg>
+          </a>
+        </div>
+      </div>
 
-    <nav aria-label="Footer">
-      <a href="../about/">About us</a>
-      <a href="../practitioners/">Practitioners</a>
-      <a href="../stories/">Stories</a>
-      <a href="../shop/">Shop</a>
-    </nav>
+      <nav class="site-footer__col" aria-labelledby="ft-explore">
+        <h3 id="ft-explore">Explore</h3>
+        <a href="../about/">About us</a>
+        <a href="../practitioners/">Practitioners</a>
+        <a href="../stories/">Stories</a>
+        <a href="../shop/">Shop</a>
+        <a href="https://shop.talathrive.com/products/tala-thrive-digital-gift-card" target="_blank" rel="noopener noreferrer" aria-label="Gift cards (opens in a new tab)">Gift cards</a>
+      </nav>
 
-    <div class="socials">
-      <a href="https://www.instagram.com/talathrive/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/company/talathrive/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.65h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@talathrive" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.1 1.5 3.6 3.5 3.9V10c-1.3.1-2.5-.2-3.6-.9v6.2c0 3.3-2.4 5.7-5.5 5.7A5.4 5.4 0 0 1 5 15.3c0-3.1 2.6-5.4 5.8-5.1v3.2c-.4-.1-.8-.2-1.2-.2-1.3 0-2.3 1-2.3 2.2 0 1.3 1 2.3 2.3 2.3 1.4 0 2.4-1.1 2.4-2.6V3z"/></svg>
-      </a>
+      <nav class="site-footer__col" aria-labelledby="ft-org">
+        <h3 id="ft-org">For organisations</h3>
+        <a href="../for-businesses/">For businesses</a>
+        <a href="../partner-with-us/">Partner with us</a>
+        <a href="../for-businesses/#demo">Request a demo</a>
+      </nav>
+
+      <nav class="site-footer__col" aria-labelledby="ft-support">
+        <h3 id="ft-support">Support</h3>
+        <a href="../#faqs">FAQs</a>
+        <a href="mailto:hello@talathrive.com">Contact us</a>
+        <a href="https://talathrive.com/login">Log in</a>
+        <a href="https://talathrive.com/login">Create an account</a>
+      </nav>
     </div>
 
-    <div class="site-footer__legal">
-      <p>&copy; 2026 Tala Thrive. All rights reserved.</p>
-      <a href="../privacy-policy/">Privacy Policy</a>
-      <a href="../terms/">Terms &amp; conditions</a>
+    <div class="site-footer__bottom">
+      <p>&copy; <span data-year>2026</span> Tala Thrive. All rights reserved.</p>
+      <nav class="site-footer__legal" aria-label="Legal">
+        <a href="../privacy-policy/">Privacy policy</a>
+        <a href="../terms/">Terms and conditions</a>
+        <a href="../accessibility/">Accessibility</a>
+      </nav>
     </div>
   </div>
 </footer>

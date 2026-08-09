@@ -18,7 +18,7 @@
 <div class="chrome">
   <div class="promo" data-promo>
     Get 10% off your first therapy or coaching session.
-    <a href="../#join-the-tribe">Claim your discount</a>
+    <a href="../shop/">Claim your discount</a>
     <button class="promo__close" type="button" data-promo-close aria-label="Dismiss banner">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
     </button>
@@ -26,7 +26,7 @@
 
   <header class="site-header" data-header>
     <div class="site-header__bar">
-      <a class="brand" href="../">
+      <a class="brand" href="../" aria-label="Tala Thrive — home">
         <img class="brand__mark" src="../assets/img/logo-mark.png" alt="" width="135" height="160">
         <img class="brand__word" src="../assets/img/logo-wordmark.png" alt="Tala Thrive" width="671" height="80">
       </a>
@@ -41,6 +41,9 @@
       </nav>
 
       <div class="nav-auth">
+        <a class="nav-cart" href="https://shop.talathrive.com/cart" target="_blank" rel="noopener noreferrer" aria-label="Cart (opens in a new tab)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.2l2.2 12.2a1.6 1.6 0 0 0 1.6 1.3h8.6a1.6 1.6 0 0 0 1.6-1.3L21 7H6"/></svg>
+        </a>
         <a class="nav-auth__login" href="https://talathrive.com/login">Log in</a>
         <a class="nav-auth__signup" href="https://talathrive.com/login">Sign Up</a>
       </div>
@@ -59,6 +62,7 @@
         <a href="../partner-with-us/">Partner With Us</a>
         <a href="../stories/">Stories</a>
         <a href="../shop/">Shop</a>
+        <a href="https://shop.talathrive.com/cart" target="_blank" rel="noopener noreferrer" aria-label="Cart (opens in a new tab)">Cart</a>
         <div class="nav-mobile__auth">
           <a class="is-login" href="https://talathrive.com/login">Log in</a>
           <a class="is-signup" href="https://talathrive.com/login">Sign Up</a>
@@ -74,7 +78,7 @@
   <div class="bz-hero__inner">
     <div class="bz-hero__copy">
       <h1>Wellbeing support your team will <em class="accent--italic">actually use.</em></h1>
-      <p>Tala Thrive works alongside what you already have, matching your people to therapists and coaches who share their culture, language, faith or lived experience.</p>
+      <p>Traditional EAPs often fail employees from culturally and linguistically diverse backgrounds because they don't feel understood. Tala Thrive offers real help from practitioners who share similar lived experiences.</p>
       <div class="hero-cta bz-hero__cta">
         <a class="btn btn--primary" href="#demo">Request a 20 min demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
         <a class="btn btn--cream" href="#offer">See what's included</a>
@@ -83,39 +87,56 @@
     <div class="bz-hero__media">
       <div class="bz-hero__circle" aria-hidden="true"></div>
       <div class="bz-hero__frame">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&amp;h=680&amp;fit=crop&amp;auto=format" alt="Diverse team in a workplace wellbeing session">
+        <img src="../assets/img/for-business-hero.webp" alt="Diverse team in a workplace wellbeing session" width="1000" height="555">
       </div>
     </div>
-  </div>
-</section>
-
-<section class="trust-strip">
-  <div class="trust-strip__inner">
-    <p>Practitioners registered with recognised professional bodies, AHPRA, PACFA, ACA, BACP, ICF</p>
-    <span class="trust-strip__dot" aria-hidden="true"></span>
-    <p>Sessions in 35+ languages</p>
-    <span class="trust-strip__dot" aria-hidden="true"></span>
-    <p>Works alongside your existing EAP</p>
   </div>
 </section>
 
 <section class="section section--cream">
   <div class="container container--md bz-stats">
+    <div class="section-head" style="max-width:680px;margin-bottom:clamp(28px,3.5vw,44px)">
+      <h2 style="font-size:clamp(30px,3.4vw,42px);line-height:1.05;margin:0">Where general support <strong style="color:var(--orange)">quietly fails.</strong></h2>
+    </div>
     <div class="bz-stats__row">
-      <div class="bz-card">
-        <p class="bz-stat__figure">$67,400</p>
-        <p class="bz-stat__body">Is the median compensation for a serious mental health claim in Australia, against $16,300 for other injuries. Affected workers are off for a median of 35.7 weeks.</p>
-        <p class="bz-stat__source">Source: Safe Work Australia, Key Work Health and Safety Statistics 2025</p>
-      </div>
-      <div class="bz-card">
+      <div class="bz-card" style="display:flex;flex-direction:column">
         <p class="bz-stat__figure">1 in 2</p>
+        <div role="img" aria-label="Three of every six people" style="display:flex;align-items:flex-end;gap:8px;height:48px;margin:0 0 16px"><svg width="20" height="30" viewBox="0 0 20 30" fill="none" aria-hidden="true"><circle cx="10" cy="7" r="6" fill="#E96F0C"></circle><path d="M1 29c0-5.5 4-9.5 9-9.5s9 4 9 9.5" fill="#E96F0C"></path></svg><svg width="20" height="30" viewBox="0 0 20 30" fill="none" aria-hidden="true"><circle cx="10" cy="7" r="6" fill="#E96F0C"></circle><path d="M1 29c0-5.5 4-9.5 9-9.5s9 4 9 9.5" fill="#E96F0C"></path></svg><svg width="20" height="30" viewBox="0 0 20 30" fill="none" aria-hidden="true"><circle cx="10" cy="7" r="6" fill="#E96F0C"></circle><path d="M1 29c0-5.5 4-9.5 9-9.5s9 4 9 9.5" fill="#E96F0C"></path></svg><svg width="20" height="30" viewBox="0 0 20 30" fill="none" aria-hidden="true"><circle cx="10" cy="7" r="6" fill="#E3D6BF"></circle><path d="M1 29c0-5.5 4-9.5 9-9.5s9 4 9 9.5" fill="#E3D6BF"></path></svg><svg width="20" height="30" viewBox="0 0 20 30" fill="none" aria-hidden="true"><circle cx="10" cy="7" r="6" fill="#E3D6BF"></circle><path d="M1 29c0-5.5 4-9.5 9-9.5s9 4 9 9.5" fill="#E3D6BF"></path></svg><svg width="20" height="30" viewBox="0 0 20 30" fill="none" aria-hidden="true"><circle cx="10" cy="7" r="6" fill="#E3D6BF"></circle><path d="M1 29c0-5.5 4-9.5 9-9.5s9 4 9 9.5" fill="#E3D6BF"></path></svg></div>
         <p class="bz-stat__body">Australians were born overseas or have a parent who was. A diverse workforce is not a minority group, it is most of your people.</p>
-        <p class="bz-stat__source">Source: Australian Bureau of Statistics</p>
+        <p class="bz-stat__source" style="margin-top:auto">Source: Australian Bureau of Statistics</p>
+      </div>
+      <div class="bz-card" style="display:flex;flex-direction:column">
+        <p class="bz-stat__figure">57.6%</p>
+        <div role="img" aria-label="57.6 per cent overseas born compared with 49.3 per cent Australian born" style="display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:48px;margin:0 0 16px">
+          <div class="bz-bar-row" style="display:flex;align-items:center;gap:10px"><div style="flex:1 1 0;min-width:0;height:10px;border-radius:999px;background:#F1E6D2;overflow:hidden"><div style="width:57.6%;height:100%;border-radius:999px;background:#E96F0C"></div></div><p style="flex:0 0 auto;margin:0;font-size:11.5px;line-height:1;color:#6B6B70;white-space:nowrap">Overseas born 57.6%</p></div>
+          <div class="bz-bar-row" style="display:flex;align-items:center;gap:10px"><div style="flex:1 1 0;min-width:0;height:10px;border-radius:999px;background:#F1E6D2;overflow:hidden"><div style="width:49.3%;height:100%;border-radius:999px;background:#FFB36C"></div></div><p style="flex:0 0 auto;margin:0;font-size:11.5px;line-height:1;color:#6B6B70;white-space:nowrap">Australian born 49.3%</p></div>
+        </div>
+        <p class="bz-stat__body">Of overseas-born Australians delay treatment for anxiety by ten years or more, against 49.3% of the Australian born. The support exists. It is not being reached.</p>
+        <p class="bz-stat__source" style="margin-top:auto">Source: The State of Multicultural Mental Health in Australia, Western Sydney University (Dec 2025)</p>
+      </div>
+      <div class="bz-card" style="display:flex;flex-direction:column">
+        <p class="bz-stat__figure">35.7 weeks</p>
+        <div role="img" aria-label="35.7 weeks away for mental health claims against 7.6 weeks for other injuries" style="display:flex;flex-direction:column;justify-content:center;gap:12px;min-height:48px;margin:0 0 16px">
+          <div class="bz-bar-row" style="display:flex;align-items:center;gap:10px"><div style="flex:1 1 0;min-width:0;height:10px;border-radius:999px;background:#F1E6D2;overflow:hidden"><div style="width:100%;height:100%;border-radius:999px;background:#E96F0C"></div></div><p style="flex:0 0 auto;margin:0;font-size:11.5px;line-height:1;color:#6B6B70;white-space:nowrap">Mental health 35.7 wks</p></div>
+          <div class="bz-bar-row" style="display:flex;align-items:center;gap:10px"><div style="flex:1 1 0;min-width:0;height:10px;border-radius:999px;background:#F1E6D2;overflow:hidden"><div style="width:21%;height:100%;border-radius:999px;background:#FFB36C"></div></div><p style="flex:0 0 auto;margin:0;font-size:11.5px;line-height:1;color:#6B6B70;white-space:nowrap">Other injuries 7.6 wks</p></div>
+        </div>
+        <p class="bz-stat__body">Is how long someone is away after a serious mental health claim, close to five times the median for other injuries, at a median cost of $67,400. That's eight months of a job the rest of the team absorbs.</p>
+        <p class="bz-stat__source" style="margin-top:auto">Source: Safe Work Australia, Key Work Health and Safety Statistics (Oct 2025)</p>
+      </div>
+      <div class="bz-card" style="display:flex;flex-direction:column">
+        <p class="bz-stat__figure">9x</p>
+        <div role="img" aria-label="Nine times more likely" style="display:flex;align-items:center;gap:14px;height:48px;margin:0 0 16px">
+          <span style="width:10px;height:10px;border-radius:50%;background:#E3D6BF;display:block"></span>
+          <span style="width:22px;height:1.5px;background:#E3D6BF;display:block"></span>
+          <div style="display:grid;grid-template-columns:repeat(3,10px);gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:#E96F0C;display:block"></span><span style="width:10px;height:10px;border-radius:50%;background:#E96F0C;display:block"></span><span style="width:10px;height:10px;border-radius:50%;background:#E96F0C;display:block"></span><span style="width:10px;height:10px;border-radius:50%;background:#E96F0C;display:block"></span><span style="width:10px;height:10px;border-radius:50%;background:#E96F0C;display:block"></span><span style="width:10px;height:10px;border-radius:50%;background:#E96F0C;display:block"></span><span style="width:10px;height:10px;border-radius:50%;background:#E96F0C;display:block"></span><span style="width:10px;height:10px;border-radius:50%;background:#E96F0C;display:block"></span><span style="width:10px;height:10px;border-radius:50%;background:#E96F0C;display:block"></span></div>
+        </div>
+        <p class="bz-stat__body">Workers in inclusive teams are nine times more likely to be very satisfied at work than workers in teams that are not.</p>
+        <p class="bz-stat__source" style="margin-top:auto">Source: Diversity Council Australia, Inclusion at Work Index 2025 to 2026</p>
       </div>
     </div>
     <div class="bz-card bz-hazard">
       <span class="icon-circle" aria-hidden="true">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E96F0C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E96F0C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
       </span>
       <p>Racism, exclusion and bullying are recognised psychosocial hazards. Across Australia, employers now carry explicit obligations to manage them, and in NSW the Code of Practice became an enforceable benchmark on 1 July 2026.</p>
     </div>
@@ -124,30 +145,37 @@
 
 <section class="section section--white" id="offer">
   <div class="container" style="max-width:1152px">
-    <div class="section-head" style="max-width:640px">
-      <h2 style="font-size:clamp(30px,3.4vw,42px);margin:0">What your people get.</h2>
+    <div class="section-head" style="max-width:680px">
+      <h2 style="font-size:clamp(30px,3.4vw,42px);margin:0">What you'll get with <em class="accent--italic">Tala Thrive.</em></h2>
     </div>
     <div class="bz-grid-4">
       <div class="bz-card bz-feature">
-        <span class="icon-circle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E96F0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-        <h3>Culturally aware care</h3>
-        <p>Therapists and coaches who share your people's culture, language, faith or lived experience. 35+ languages across the network, in Australia and internationally.</p>
+        <span class="icon-circle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E96F0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3>Keep the people you worked hard to hire</h3>
+        <p>Retention that holds, including skilled migrant and visa-sponsored hires, who often leave because they're not being understood or supported.</p>
       </div>
       <div class="bz-card bz-feature">
-        <span class="icon-circle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E96F0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M4 3v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3"/><path d="M12 16v5"/><path d="M8 21h8"/></svg></span>
-        <h3>Live workshops</h3>
-        <p>Sessions that reduce stigma, open honest conversations, and help managers lead teams across difference.</p>
+        <span class="icon-circle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E96F0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></span>
+        <h3>Cut absenteeism, burnout and presenteeism</h3>
+        <p>When session one starts with the real issue instead of a cultural glossary, people get help earlier, before it turns into extended leave or a resignation.</p>
       </div>
       <div class="bz-card bz-feature">
-        <span class="icon-circle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E96F0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
-        <h3>Support between sessions</h3>
-        <p>Self-guided programs, tools and wellbeing resources in the app, used any time at their own pace.</p>
+        <span class="icon-circle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E96F0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <h3>Support through crises and discrimination</h3>
+        <p>Help for staff carrying crises in their home countries and communities, and a proper response when racism or discrimination surfaces at work.</p>
       </div>
       <div class="bz-card bz-feature">
-        <span class="icon-circle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E96F0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15v-4"/><path d="M12 15V7"/><path d="M17 15v-7"/></svg></span>
-        <h3>Reporting you can act on</h3>
-        <p>Anonymised engagement by language group, session volume and utilisation trends. Enough to evidence what you are doing, never enough to identify anyone.</p>
+        <span class="icon-circle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E96F0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M4 3v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3"/><path d="M12 16v5"/><path d="M8 21h8"/></svg></span>
+        <h3>Managers who can lead diverse teams</h3>
+        <p>Executive and career coaching to grow your leaders, plus workshops that equip managers to handle culture, race and religion at work.</p>
       </div>
+    </div>
+    <div class="bz-trust">
+      <p>Practitioners registered with certified professional bodies: AHPRA, PACFA, ACA, BACP, ICF</p>
+      <span class="trust-strip__dot" aria-hidden="true"></span>
+      <p>Sessions in 35+ languages</p>
+      <span class="trust-strip__dot" aria-hidden="true"></span>
+      <p>Works alongside your existing EAP</p>
     </div>
   </div>
 </section>
@@ -155,18 +183,16 @@
 <section class="section section--cream">
   <div class="bz-goals-wrap">
     <div class="bz-goals-copy">
-      <h2>Tell us your goal, we'll <em class="accent--italic">design the plan.</em></h2>
-      <p>No fixed packages. We move quickly, and we build self-guided resources specific to your organisation.</p>
-      <a class="btn btn--primary btn--md" href="#demo">Start the conversation <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      <h2>Tell us your needs, and we'll put together the <em class="accent--italic">right package for you.</em></h2>
+      <a class="btn btn--primary btn--md" href="#demo">Request a call <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
     </div>
     <div class="bz-goals">
-        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Keep the people you worked hard to hire</p></div>
-        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Cut absenteeism, burnout and presenteeism</p></div>
-        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Support staff through crises in their home countries and communities</p></div>
-        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Respond properly when racism or discrimination surfaces</p></div>
-        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Grow your leaders with executive and career coaching</p></div>
-        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Equip managers to lead across cultures</p></div>
-        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Retain skilled migrant and visa-sponsored hires</p></div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Culturally matched therapy and coaching in 35+ languages</p></div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>CALD-focused practitioners in Australia and internationally</p></div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Confidential, flexible online sessions</p></div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Group workshops and wellbeing programs</p></div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Self-guided programs and tools in the app</p></div>
+        <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><p>Anonymised usage reporting and wellbeing insights</p></div>
     </div>
   </div>
 </section>
@@ -174,7 +200,7 @@
 <section class="section section--white section--lg">
   <div class="container container--sm faq">
     <div class="faq__head">
-      <h2 style="font-size:clamp(30px,3.4vw,42px);line-height:1.05;margin:0">Questions procurement always asks.</h2>
+      <h2 style="font-size:clamp(30px,3.4vw,42px);line-height:1.05;margin:0">Questions?</h2>
     </div>
     <div class="faq__list" data-faq>
       <div class="faq__item">
@@ -203,14 +229,14 @@
           <span>How are practitioners vetted?</span>
           <span class="faq__chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
-        <div class="faq__a"><div><p>Every therapist and coach is qualified and registered with a recognised professional body before joining, and we verify registration, qualifications and professional indemnity insurance during onboarding: AHPRA for psychologists and PACFA or ACA for counsellors in Australia, BACP or UKCP in the UK, and ICF for coaches. Beyond credentials, each practitioner provides their cultural background, languages and lived experience, which is what the matching runs on, and employees can see all of it on a profile before booking.</p></div></div>
+        <div class="faq__a"><div><p>Every therapist and coach is qualified and registered with a recognised professional body before joining, and we verify registration, qualifications and professional indemnity insurance during onboarding: AHPRA for psychologists and PACFA or ACA for counsellors in Australia, BACP or UKCP in the UK, and ICF for coaches. Beyond credentials, each practitioner provides their cultural background, languages and lived experience, which is what the matching algorithm runs on, and employees can see all of it on a profile before booking.</p></div></div>
       </div>
       <div class="faq__item">
         <button class="faq__q" type="button" aria-expanded="false">
           <span>Which countries and languages do you cover?</span>
           <span class="faq__chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
-        <div class="faq__a"><div><p>Sessions are delivered by video, so coverage follows the practitioner network rather than office locations. We currently support employees in Australia, the United Kingdom and the United States, with 35+ languages across the network. If your team includes a background or language we do not yet cover well, tell us on the call. Building out the network around a partner's workforce is part of how we onboard.</p></div></div>
+        <div class="faq__a"><div><p>Sessions are delivered by video, so coverage follows the practitioner network rather than office locations. We are a global platform that offers sessions around the world, however therapy services are currently not on offer in the United States. We support 35+ languages across the network. If your team includes a background or language we do not yet cover well, tell us on the call. Building out the network around a partner's workforce is part of how we onboard.</p></div></div>
       </div>
       <div class="faq__item">
         <button class="faq__q" type="button" aria-expanded="false">
@@ -224,16 +250,17 @@
           <span>How long does rollout take?</span>
           <span class="faq__chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
-        <div class="faq__a"><div><p>There is nothing to install. Employees sign up, complete a five-minute questionnaire about what they are looking for, review matched practitioner profiles and book a time directly, on web or through the iOS and Android apps. Workshops and any organisation-specific self-guided content are built separately and take longer, and we will map that against your goal on the call.</p></div></div>
+        <div class="faq__a"><div><p>There is nothing to install, however we can look to integrate with your systems if that makes uptake easier for your employees. Employees sign up to Tala Thrive, complete a short questionnaire about what they are looking for, review matched practitioner profiles and book a time directly, on web or through the iOS and Android apps. Workshops and any organisation-specific self-guided content are built separately and may take a little longer. We will work out the roadmap and plan in our initial calls based on your goals.</p></div></div>
       </div>
       <div class="faq__item">
         <button class="faq__q" type="button" aria-expanded="false">
           <span>How are we invoiced?</span>
           <span class="faq__chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
-        <div class="faq__a"><div><p>We invoice in AUD, and in GBP for UK-based teams. There are no fixed packages, so we shape the commercial structure around what you need rather than pushing you into a tier, and we will walk you through the options on the call.</p></div></div>
+        <div class="faq__a"><div><p>We will invoice in your local currency, based on the package most relevant to your employees and your goals. We will walk through all of these options in the initial calls.</p></div></div>
       </div>
     </div>
+    <p style="text-align:center;font-style:italic;margin:clamp(20px,3vw,28px) 0 0;color:var(--grey-text)">Have more questions? Fill in the form below and we will get in touch.</p>
   </div>
 </section>
 
@@ -241,7 +268,7 @@
   <div class="bz-demo">
     <div class="bz-demo__copy">
       <h2>See how it works for <em class="accent--italic">your team.</em></h2>
-      <p>A 20-minute demo: the platform, the workshops, the self-guided library, and a plan sketched against your goal.</p>
+      <p>Twenty minutes. Tell us the outcome you are after, and we will sketch the plan that gets you there.</p>
       <ul class="check-list">
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><span>A live demo of the platform and app</span></li>
         <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg><span>Practitioner coverage by language, culture and location</span></li>
@@ -250,8 +277,6 @@
     </div>
 
     <div class="bz-demo__panel">
-      <p class="founding-note">We are onboarding a small group of founding employer partners in Australia, to provide input into how the program is built.</p>
-
       <div class="contact-card">
         <div class="form-success" data-form-success hidden>
           <span class="icon-circle" aria-hidden="true">&#10003;</span>
@@ -263,7 +288,11 @@
           <h3>Request your demo</h3>
           <div class="field">
             <label for="bd-first">First name</label>
-            <input id="bd-first" name="first_name" type="text" required placeholder="Amara">
+            <input id="bd-first" name="first_name" type="text" required autocomplete="given-name" placeholder="Amara">
+          </div>
+          <div class="field">
+            <label for="bd-last">Last name</label>
+            <input id="bd-last" name="last_name" type="text" required autocomplete="family-name" placeholder="Okafor">
           </div>
           <div class="field">
             <label for="bd-email">Work email</label>
@@ -298,6 +327,7 @@
               <option>Multiple regions</option>
               <option>Other</option>
             </select>
+            <input class="field__other" data-other-for="bd-hq" name="team_locationOther" type="text" placeholder="Where is your team based?" aria-label="Please tell us where your team is based" hidden>
           </div>
           <div class="field">
             <label for="bd-goal">What are you trying to solve?</label>
@@ -311,7 +341,9 @@
               <option>Equipping managers to lead across cultures</option>
               <option>Workshops and awareness programs</option>
               <option>Not sure yet</option>
+              <option>Other</option>
             </select>
+            <input class="field__other" data-other-for="bd-goal" name="goalOther" type="text" placeholder="Tell us what you are trying to solve" aria-label="Please tell us what you are trying to solve" hidden>
           </div>
           <div class="field">
             <label for="bd-notes">Tell us about your needs <span class="optional">(optional)</span></label>
@@ -329,34 +361,58 @@
 
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <a class="brand" href="../">
-      <img class="brand__mark" src="../assets/img/logo-mark.png" alt="" width="135" height="160">
-      <img class="brand__word" src="../assets/img/logo-wordmark.png" alt="Tala Thrive" width="671" height="80">
-    </a>
+    <div class="site-footer__cols">
+      <div class="site-footer__brand">
+        <a class="brand" href="../" aria-label="Tala Thrive — home">
+          <img class="brand__mark" src="../assets/img/logo-mark.png" alt="" width="135" height="160">
+          <img class="brand__word" src="../assets/img/logo-wordmark.png" alt="Tala Thrive" width="671" height="80">
+        </a>
+        <p>Therapy, coaching and workshops with certified practitioners to support your team.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/talathrive/" target="_blank" rel="noopener noreferrer" aria-label="Tala Thrive on Instagram (opens in a new tab)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/talathrive/" target="_blank" rel="noopener noreferrer" aria-label="Tala Thrive on LinkedIn (opens in a new tab)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.65h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@talathrive" target="_blank" rel="noopener noreferrer" aria-label="Tala Thrive on TikTok (opens in a new tab)">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.1 1.5 3.6 3.5 3.9V10c-1.3.1-2.5-.2-3.6-.9v6.2c0 3.3-2.4 5.7-5.5 5.7A5.4 5.4 0 0 1 5 15.3c0-3.1 2.6-5.4 5.8-5.1v3.2c-.4-.1-.8-.2-1.2-.2-1.3 0-2.3 1-2.3 2.2 0 1.3 1 2.3 2.3 2.3 1.4 0 2.4-1.1 2.4-2.6V3z"/></svg>
+          </a>
+        </div>
+      </div>
 
-    <nav aria-label="Footer">
-      <a href="../about/">About us</a>
-      <a href="../practitioners/">Practitioners</a>
-      <a href="../stories/">Stories</a>
-      <a href="../shop/">Shop</a>
-    </nav>
+      <nav class="site-footer__col" aria-labelledby="ft-explore">
+        <h3 id="ft-explore">Explore</h3>
+        <a href="../about/">About us</a>
+        <a href="../practitioners/">Practitioners</a>
+        <a href="../stories/">Stories</a>
+        <a href="../shop/">Shop</a>
+        <a href="https://shop.talathrive.com/products/tala-thrive-digital-gift-card" target="_blank" rel="noopener noreferrer" aria-label="Gift cards (opens in a new tab)">Gift cards</a>
+      </nav>
 
-    <div class="socials">
-      <a href="https://www.instagram.com/talathrive/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/company/talathrive/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.65h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@talathrive" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.1 1.5 3.6 3.5 3.9V10c-1.3.1-2.5-.2-3.6-.9v6.2c0 3.3-2.4 5.7-5.5 5.7A5.4 5.4 0 0 1 5 15.3c0-3.1 2.6-5.4 5.8-5.1v3.2c-.4-.1-.8-.2-1.2-.2-1.3 0-2.3 1-2.3 2.2 0 1.3 1 2.3 2.3 2.3 1.4 0 2.4-1.1 2.4-2.6V3z"/></svg>
-      </a>
+      <nav class="site-footer__col" aria-labelledby="ft-org">
+        <h3 id="ft-org">For organisations</h3>
+        <a href="../for-businesses/">For businesses</a>
+        <a href="../partner-with-us/">Partner with us</a>
+        <a href="../for-businesses/#demo">Request a demo</a>
+      </nav>
+
+      <nav class="site-footer__col" aria-labelledby="ft-support">
+        <h3 id="ft-support">Support</h3>
+        <a href="../#faqs">FAQs</a>
+        <a href="mailto:hello@talathrive.com">Contact us</a>
+        <a href="https://talathrive.com/login">Log in</a>
+        <a href="https://talathrive.com/login">Create an account</a>
+      </nav>
     </div>
 
-    <div class="site-footer__legal">
-      <p>&copy; 2026 Tala Thrive. All rights reserved.</p>
-      <a href="../privacy-policy/">Privacy Policy</a>
-      <a href="../terms/">Terms &amp; conditions</a>
+    <div class="site-footer__bottom">
+      <p>&copy; <span data-year>2026</span> Tala Thrive. All rights reserved.</p>
+      <nav class="site-footer__legal" aria-label="Legal">
+        <a href="../privacy-policy/">Privacy policy</a>
+        <a href="../terms/">Terms and conditions</a>
+        <a href="../accessibility/">Accessibility</a>
+      </nav>
     </div>
   </div>
 </footer>

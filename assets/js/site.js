@@ -66,23 +66,12 @@
   })();
 
   /* ------------------------------------------------------------------------
-     2. Sticky header shadow
+     2. Footer copyright year (computed at runtime)
      ---------------------------------------------------------------------- */
 
-  (function stickyHeader() {
-    var header = $('[data-header]');
-    if (!header) return;
-
-    var scrolled = false;
-    function onScroll() {
-      var next = window.scrollY > 20;
-      if (next === scrolled) return;
-      scrolled = next;
-      header.classList.toggle('is-scrolled', scrolled);
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+  (function footerYear() {
+    var el = $('[data-year]');
+    if (el) el.textContent = String(new Date().getFullYear());
   })();
 
   /* ------------------------------------------------------------------------
@@ -207,27 +196,6 @@
     timer = setTimeout(reveal, 1200);
   })();
 
-  /* ------------------------------------------------------------------------
-     7. "What we offer" tabs (section is hidden by default — see README)
-     ---------------------------------------------------------------------- */
-
-  (function offerTabs() {
-    var tablist = $('[data-offer-tabs]');
-    if (!tablist) return;
-
-    var tabs = $$('[role="tab"]', tablist);
-    var panels = $$('[data-offer-panel]');
-
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        var id = tab.getAttribute('aria-controls');
-        tabs.forEach(function (t) {
-          t.setAttribute('aria-selected', String(t === tab));
-        });
-        panels.forEach(function (p) { p.hidden = p.id !== id; });
-      });
-    });
-  })();
 
   /* ------------------------------------------------------------------------
      8. Practitioners — "Where are you based?" form router
@@ -239,15 +207,22 @@
 
     var lastFocused = null;
 
+    function focusable() {
+      return $$('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])', modal)
+        .filter(function (el) { return !el.disabled && el.offsetParent !== null; });
+    }
+
     function open() {
       lastFocused = document.activeElement;
       modal.hidden = false;
-      var first = $('button', modal);
-      if (first) first.focus();
+      document.body.style.overflow = 'hidden';
+      var f = focusable();
+      if (f[0]) f[0].focus();
     }
 
     function close() {
       modal.hidden = true;
+      document.body.style.overflow = '';
       if (lastFocused) lastFocused.focus();
     }
 
@@ -263,8 +238,20 @@
       if (e.target === modal) close();
     });
 
+    // Escape closes; Tab is trapped within the dialog while it is open.
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !modal.hidden) close();
+      if (modal.hidden) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key === 'Tab') {
+        var f = focusable();
+        if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
     });
 
     var au = $('[data-picker-au]', modal);
@@ -376,6 +363,25 @@
           success.hidden = false;
         }
       });
+    });
+  })();
+
+  /* ------------------------------------------------------------------------
+     9. Conditional "Other" free-text reveal for selects
+     Any <input data-other-for="selectId"> shows only when that select == "Other".
+     ---------------------------------------------------------------------- */
+
+  (function conditionalOther() {
+    $$('[data-other-for]').forEach(function (input) {
+      var sel = document.getElementById(input.getAttribute('data-other-for'));
+      if (!sel) return;
+      function sync() {
+        var show = sel.value === 'Other';
+        input.hidden = !show;
+        if (!show) input.value = '';
+      }
+      sel.addEventListener('change', sync);
+      sync();
     });
   })();
 })();

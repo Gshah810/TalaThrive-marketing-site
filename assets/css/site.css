@@ -32,48 +32,100 @@
    -------------------------------------------------------------------------- */
 
 :root {
+  /* ---- Colour — palette (00-foundations.md §1). Hex is authoritative. ---- */
   /* Brand */
-  --orange: #E96F0C;
-  --orange-dark: #BD5B00;
-  --orange-200: #F6C59E;
-  --peach: #FFB36C;
+  --orange: #E96F0C;        /* Brand orange — primary buttons, accents, links, promo */
+  --orange-dark: #BD5B00;   /* Orange dark — link hover, step-badge text, gift-card accent */
+  --peach: #FFB36C;         /* Peach — step badges, selected chips, SignUp panel */
+  --peach-light: #F6C59E;   /* Peach light — closed FAQ indicator, image placeholders */
+  --orange-200: #F6C59E;    /* legacy alias of --peach-light */
 
   /* Cream scale */
-  --cream: #F6EBD8;
-  --cream-100: #F9F2E6;
-  --cream-50: #FCF8F1;
+  --cream: #F6EBD8;         /* Cream — alternating section bg, footer, secondary buttons */
+  --cream-light: #F9F2E6;   /* Cream light — info tags, quiet chips, hover fills */
+  --cream-100: #F9F2E6;     /* legacy alias of --cream-light */
+  --cream-50: #FCF8F1;      /* extra tint (local) */
+  --white: #FFFFFF;         /* Page background, cards */
 
   /* Text — the whole site runs on this deep brown */
-  --ink: #3B2007;
-  --brown: #522F14;
-  --brown-deep: #371B34;
-  --muted: #6B6B70;
-  --caption: #8A6A4A;
+  --ink: #3B2007;           /* Ink brown — all body + heading text sitewide */
+  --brown-mid: #654431;     /* Brown mid — footer link and body text */
+  --brown: #522F14;         /* Brown deep — info-tag text, "For Businesses" badge */
+  --brown-soft: #8A6A4A;    /* Brown soft — timestamps, trust strip, dividers, "or" */
+  --caption: #8A6A4A;       /* legacy alias of --brown-soft */
+  --mute-grey: #838388;     /* Mute grey — dates, meta, disabled/secondary, cancel */
+  --grey-text: #6B6B70;     /* Grey text — chart labels, sources, inactive tabs */
+  --muted: #6B6B70;         /* legacy alias of --grey-text */
 
-  /* Lines */
-  --border-cream: #E4D8C4;
-  --line: #B2B2B5;
-  --hairline: rgba(8, 7, 23, 0.08);
+  /* State */
+  --forest: #1B3F37;        /* Forest green — in-stock, added-to-cart, order confirmed */
 
-  /* Geometry */
-  --radius-card: 20px;
-  --radius-round: 24px;
-  --radius-soft: 28px;
-  --radius-pill: 9999px;
+  /* Lines, borders and dividers */
+  --border-cream: #E4D8C4;                 /* Input borders, outlined buttons, light dividers */
+  --line: #B2B2B5;                         /* Outlined-button border (alt) */
+  --hairline-white: rgba(8, 7, 23, 0.07);  /* Hairline on white */
+  --hairline: rgba(8, 7, 23, 0.08);        /* Divider in lists / FAQ */
+  --divider-cream: rgba(59, 32, 7, 0.12);  /* Divider on cream */
+  --divider-menu: rgba(8, 7, 23, 0.06);    /* Divider in mobile menu */
+  --trust-rule: rgba(138, 106, 74, 0.28);  /* Trust strip rule */
 
-  /* Elevation */
-  --shadow-card: 0 6px 24px rgba(8, 7, 23, 0.07);
-  --shadow-soft: 0 4px 24px rgba(8, 7, 23, 0.06);
-  --shadow-lift: 0 16px 40px rgba(8, 7, 23, 0.1);
-  --shadow-hero: 0 24px 48px rgba(8, 7, 23, 0.12);
+  /* Geometry — radii (00-foundations.md §4) */
+  --radius-sm: 16px;        /* small inline cards */
+  --radius-card: 20px;      /* practitioner, value, step cards */
+  --radius-round: 24px;     /* media / story / product cards */
+  --radius-soft: 28px;      /* marketing feature cards */
+  --radius-input: 12px;     /* form fields */
+  --radius-pill: 9999px;    /* buttons, chips, tags */
 
-  /* Motion */
+  /* Elevation — shadows (00-foundations.md §1) */
+  --shadow-soft: 0 4px 24px rgba(8, 7, 23, 0.06);           /* Card */
+  --shadow-card: 0 6px 24px rgba(8, 7, 23, 0.07);           /* Card alt */
+  --shadow-lift: 0 16px 40px rgba(8, 7, 23, 0.1);           /* Card hover */
+  --shadow-feature: 0 8px 32px rgba(8, 7, 23, 0.08);        /* Featured story card */
+  --shadow-feature-hover: 0 20px 48px rgba(8, 7, 23, 0.12); /* Featured hover */
+  --shadow-hero: 0 24px 48px rgba(8, 7, 23, 0.12);          /* Hero photography */
+  --shadow-product: 0 18px 44px rgba(8, 7, 23, 0.1);        /* Product image */
+  --shadow-product-pdp: 0 20px 48px rgba(8, 7, 23, 0.12);   /* Product image on PDP */
+  --shadow-modal: 0 24px 60px rgba(8, 7, 23, 0.24);         /* Country picker modal */
+  --shadow-video: 0 24px 60px rgba(8, 7, 23, 0.16);         /* About Us video frame */
+
+  /* Motion (00-foundations.md §5) */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-micro: 0.15s;   /* micro-interaction */
+  --dur: 0.25s;         /* transition */
+  --dur-3: 0.3s;        /* transition (accordion, indicator) */
+  --dur-menu: 0.28s;    /* menu expand */
+  --dur-reveal: 0.7s;   /* reveal */
 
-  /* Rhythm */
+  /* Focus (00-foundations.md §6 — unified sitewide) */
+  --focus: #B85B0A;
+
+  /* Typography (00-foundations.md §2) */
+  --font: 'Athletics', 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fs-h1: clamp(38px, 4.6vw, 58px);         /* Page H1 (hero) */
+  --fs-h1-narrow: clamp(34px, 4.4vw, 52px);  /* Page H1 (narrow / legal / auth) */
+  --fs-h2: clamp(30px, 3.4vw, 42px);         /* Section H2 */
+  --fs-h2-alt: clamp(32px, 3.6vw, 46px);     /* Section H2 (heavier) */
+  --fs-h2-article: clamp(24px, 2.8vw, 32px); /* Article H2 */
+  --fs-lead: 20px;                           /* Lead paragraph */
+  --fs-body: 16px;                           /* Body */
+  --fs-article: 19px;                        /* Article body */
+
+  /* Layout — content shells (00-foundations.md §3) */
+  --shell-wide: 1280px;     /* header, hero, wide sections */
+  --shell-product: 1180px;  /* product pages, Partner, For Businesses form */
+  --shell-feature: 1152px;  /* For Businesses feature/goals */
+  --shell-footer: 1120px;   /* footer, cart, checkout */
+  --shell: 1080px;          /* practitioners, stories grid, about mission */
+  --shell-prose: 820px;     /* FAQ, legal, article wide media, about prose */
+  --shell-narrow: 720px;    /* article body */
+
+  /* Rhythm (00-foundations.md §3) */
   --gutter: clamp(20px, 4.5vw, 32px);
-  --section-y: clamp(36px, 4.5vw, 56px);
-  --font: 'Athletics', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gutter-header: clamp(16px, 4vw, 32px);
+  --section-y: clamp(36px, 4.5vw, 56px);       /* standard */
+  --section-y-lg: clamp(40px, 5vw, 72px);      /* denser */
+  --section-y-xl: clamp(44px, 5vw, 76px);      /* heaviest */
 }
 
 /* --------------------------------------------------------------------------
@@ -116,9 +168,12 @@ img { max-width: 100%; }
 button { font-family: var(--font); }
 
 :focus-visible {
-  outline: 3px solid var(--orange);
+  outline: 2px solid var(--focus);
   outline-offset: 2px;
 }
+
+/* Sticky header must not cover anchored targets (00-foundations.md §6) */
+:target { scroll-margin-top: 88px; }
 
 .visually-hidden {
   position: absolute;
@@ -134,8 +189,6 @@ button { font-family: var(--font); }
 
 .accent { font-style: normal; color: var(--orange); }
 .accent--italic { font-style: italic; color: var(--orange); }
-.accent--ink { font-style: normal; color: #080717; }
-.accent--brown-deep { font-style: normal; color: var(--brown-deep); }
 
 /* --------------------------------------------------------------------------
    4. Layout
@@ -214,10 +267,53 @@ button { font-family: var(--font); }
 }
 .btn--outline:hover { opacity: 1; border-color: var(--ink); }
 
+/* Ghost / text link — no fill, orange text, hover to orange-dark (§4) */
+.btn--ghost { background: transparent; color: var(--orange); padding-left: 0; padding-right: 0; }
+.btn--ghost:hover { opacity: 1; color: var(--orange-dark); }
+
+/* Success — transient added-to-cart / order-confirmed state (§4) */
+.btn--success { background-color: var(--forest); color: #ffffff; }
+.btn--success:hover { color: #ffffff; }
+
+/* Sizes */
 .btn--sm { padding: 12px 24px; }
 .btn--md { padding: 14px 28px; }
+/* Full-width form submit (§4) */
+.btn--block { width: 100%; padding: 15px 32px; font-size: 18px; }
 
 .btn svg { flex-shrink: 0; }
+
+/* --------------------------------------------------------------------------
+   5b. Cards — reusable base primitive (00-foundations.md §4)
+   Page-specific card classes (serve-card, prac card, story card, …) layer
+   their own padding/content on top; this is the shared shell.
+   -------------------------------------------------------------------------- */
+
+.card {
+  background: var(--white);
+  overflow: hidden;
+  border-radius: var(--radius-round);   /* media / story / product — 24px */
+  box-shadow: var(--shadow-card);
+}
+
+.card--feature { border-radius: var(--radius-soft); }  /* 28px */
+.card--small { border-radius: var(--radius-sm); }      /* 16px */
+.card--tight { border-radius: var(--radius-card); }    /* 20px */
+.card--pad { padding: 24px; }
+
+/* Interactive cards lift on hover (§4) */
+.card--link {
+  transition: transform 0.25s var(--ease), box-shadow 0.25s;
+}
+.card--link:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card--link { transition: none; }
+  .card--link:hover { transform: none; }
+}
 
 /* --------------------------------------------------------------------------
    6. Promo banner + header
@@ -272,18 +368,13 @@ button { font-family: var(--font); }
 
 .site-header {
   background-color: #ffffff;
-  transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.site-header.is-scrolled {
-  background-color: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 1px 0 rgba(8, 7, 23, 0.07);
+  border-bottom: 1px solid var(--hairline-white);
 }
 
 .site-header__bar {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 8px var(--gutter);
+  padding: 8px var(--gutter-header);
   min-height: 56px;
   display: flex;
   align-items: center;
@@ -341,6 +432,22 @@ button { font-family: var(--font); }
 
 .nav-auth__signup:hover { opacity: 0.9; color: #fff; }
 
+/* Cart icon — 40px circle; commerce lives on Shopify so this links out to
+   the storefront cart. No localStorage count badge (no on-site cart). */
+.nav-cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  transition: background-color 0.15s;
+}
+
+.nav-cart:hover { background-color: var(--cream); }
+
 .burger {
   display: none;
   align-items: center;
@@ -362,7 +469,7 @@ button { font-family: var(--font); }
   border-top: 1px solid rgba(8, 7, 23, 0.06);
 }
 
-.nav-mobile.is-open { max-height: 480px; }
+.nav-mobile.is-open { max-height: 500px; }
 
 .nav-mobile nav {
   display: flex;
@@ -412,83 +519,143 @@ button { font-family: var(--font); }
 }
 
 /* --------------------------------------------------------------------------
-   7. Footer
+   7. Footer (01-shared-layout.md §SiteFooter)
    -------------------------------------------------------------------------- */
 
 .site-footer {
-  padding: clamp(44px, 5vw, 64px) 0 32px;
-  background-color: var(--orange);
+  background-color: var(--cream);
+  border-top: 1px solid rgba(59, 32, 7, 0.1);
+  color: var(--ink);
 }
 
 .site-footer__inner {
-  max-width: 1080px;
+  max-width: var(--shell-footer);
   margin: 0 auto;
   padding: 0 var(--gutter);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px;
-  text-align: center;
 }
 
-.site-footer .brand__mark,
-.site-footer .brand__word { filter: invert(1); }
+/* Column block */
+.site-footer__cols {
+  padding: 48px 0 40px;
+  border-bottom: 1px solid var(--divider-cream);
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 36px 40px;
+}
 
+/* Brand column */
+.site-footer__brand {
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.site-footer .brand { min-height: 44px; }
 .site-footer .brand__mark { height: 38px; }
 .site-footer .brand__word { height: 17px; }
 
-.site-footer nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 14px 28px;
+.site-footer__brand p {
+  margin: 0;
+  max-width: 270px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--brown-mid);
+  text-wrap: pretty;
 }
 
-.site-footer nav a {
-  font-size: 18px;
-  color: var(--cream-100);
-}
-
-.site-footer nav a:hover { color: #ffffff; }
-
-.socials { display: flex; gap: 16px; }
+.socials { display: flex; gap: 12px; }
 
 .socials a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.14);
-  color: var(--cream-100);
+  background: rgba(59, 32, 7, 0.08);
+  color: var(--ink);
   transition: background 0.15s;
 }
 
-.socials a:hover { background: rgba(255, 255, 255, 0.28); }
+.socials a:hover { background: rgba(59, 32, 7, 0.16); }
 
 /* the icon must not swallow the click */
 .socials svg { pointer-events: none; }
 
-.site-footer__legal {
-  width: 100%;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+/* Link columns */
+.site-footer__col h3 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+  color: var(--ink);
+}
+
+.site-footer__col a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 16px;
+  color: var(--brown-mid);
+}
+
+.site-footer__col a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Bottom bar */
+.site-footer__bottom {
+  padding: 32px 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  gap: 10px 20px;
+  justify-content: space-between;
+  gap: 12px 24px;
 }
 
-.site-footer__legal p,
-.site-footer__legal a {
-  font-size: 15px;
+.site-footer__bottom p {
   margin: 0;
-  color: var(--orange-200);
+  font-size: 14px;
+  color: var(--brown-mid);
 }
 
-.site-footer__legal a:hover { color: #ffffff; }
+.site-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 20px;
+}
+
+.site-footer__legal a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+  color: var(--brown-mid);
+}
+
+.site-footer__legal a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 860px) {
+  .site-footer__cols { grid-template-columns: 1fr 1fr; }
+  .site-footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 520px) {
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 
 /* --------------------------------------------------------------------------
    8. Homepage — hero
@@ -801,99 +968,11 @@ button { font-family: var(--font); }
 .serve-card__body .btn { align-self: flex-start; }
 
 /* --------------------------------------------------------------------------
-   11. Homepage — What we offer (hidden by default; see README)
+   11. Utilities
    -------------------------------------------------------------------------- */
 
 [hidden] { display: none !important; }
 
-.offer__head {
-  max-width: 576px;
-  margin-bottom: 40px;
-}
-
-.offer__head h2 {
-  font-size: clamp(32px, 3.6vw, 46px);
-  line-height: 1.05;
-  margin: 0 0 20px;
-}
-
-.offer__head p {
-  font-size: 19px;
-  line-height: 1.625;
-  margin: 0;
-}
-
-.offer__tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-bottom: 32px;
-  padding: 4px;
-  border-radius: 16px;
-  background-color: var(--cream-100);
-}
-
-.offer__tab {
-  flex: 1 1 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 16px;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
-  color: var(--muted);
-  transition: all 0.2s;
-}
-
-.offer__tab[aria-selected='true'] {
-  background-color: #ffffff;
-  color: var(--orange);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-}
-
-.offer__panel {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  border-radius: var(--radius-round);
-  overflow: hidden;
-  background-color: var(--cream);
-}
-
-.offer__panel-media {
-  overflow: hidden;
-  min-height: 340px;
-  display: flex;
-}
-
-.offer__panel-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.offer__panel-body {
-  padding: clamp(24px, 4vw, 40px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.offer__panel-body h3 {
-  font-size: 24px;
-  line-height: 1.375;
-  margin: 0 0 28px;
-}
-
-.offer__panel-body p {
-  font-size: 16px;
-  line-height: 1.625;
-  margin: 0 0 36px;
-}
 
 /* --------------------------------------------------------------------------
    12. Homepage — Simple steps to start healing
@@ -2196,6 +2275,21 @@ button { font-family: var(--font); }
   font-weight: 500;
 }
 
+/* Trust strip sits at the foot of the "What you'll get" section */
+.bz-trust {
+  margin: clamp(40px, 5vw, 64px) auto 0;
+  padding-top: clamp(20px, 2.5vw, 28px);
+  border-top: 1px solid var(--trust-rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 20px;
+  text-align: center;
+}
+
+.bz-trust p { margin: 0; line-height: 1.6; color: var(--brown-soft); }
+
 /* Explicit column counts rather than auto-fit: the 1152px container resolves
    auto-fit to three tracks, orphaning the fourth card on its own row. */
 .bz-grid-4 {
@@ -2413,7 +2507,7 @@ button { font-family: var(--font); }
 
 .field label {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--ink);
 }
 
@@ -2427,8 +2521,8 @@ button { font-family: var(--font); }
 .field textarea {
   width: 100%;
   min-height: 44px;
-  padding: 12px 16px;
-  border-radius: 14px;
+  padding: 13px 16px;
+  border-radius: var(--radius-input);
   font-size: 16px;
   border: 1.5px solid var(--border-cream);
   background: #fff;
