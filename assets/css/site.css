@@ -432,22 +432,6 @@ button { font-family: var(--font); }
 
 .nav-auth__signup:hover { opacity: 0.9; color: #fff; }
 
-/* Cart icon — 40px circle; commerce lives on Shopify so this links out to
-   the storefront cart. No localStorage count badge (no on-site cart). */
-.nav-cart {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  border-radius: var(--radius-pill);
-  color: var(--ink);
-  transition: background-color 0.15s;
-}
-
-.nav-cart:hover { background-color: var(--cream); }
-
 .burger {
   display: none;
   align-items: center;
