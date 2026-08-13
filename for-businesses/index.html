@@ -301,13 +301,17 @@
             </div>
             <div class="field">
               <label for="bd-size">Company size</label>
+              <!-- The values are the CRM's four headcount_band tokens verbatim
+                   (organisations.headcount_band CHECK, CRM migration 012); the
+                   promotion path validates by exact string match and silently
+                   drops anything else. Labels may be typographic, values may
+                   not — and each label must describe its own value's band. -->
               <select id="bd-size" name="company_size">
                 <option value="">Select&hellip;</option>
-                <option>1&ndash;50 employees</option>
-                <option>51&ndash;250 employees</option>
-                <option>251&ndash;1,000 employees</option>
-                <option>1,001&ndash;5,000 employees</option>
-                <option>5,000+ employees</option>
+                <option value="1-50">1&ndash;50 employees</option>
+                <option value="51-200">51&ndash;200 employees</option>
+                <option value="201-1000">201&ndash;1,000 employees</option>
+                <option value="1000+">1,000+ employees</option>
               </select>
             </div>
           </div>
@@ -414,6 +418,6 @@
 </footer>
 
 
-<script src="../assets/js/site.js?v=5" defer></script>
+<script src="../assets/js/site.js?v=6" defer></script>
 </body>
 </html>

@@ -328,6 +328,20 @@
      ---------------------------------------------------------------------- */
 
   (function forms() {
+    // What a field says, for a human. A <select> whose options carry an
+    // explicit `value` submits a machine token rather than its own text —
+    // Company size posts the CRM's headcount band (`201-1000`) — so the email
+    // body takes the chosen option's label instead. A person reads this, and
+    // the label is what the visitor actually picked. The submitted value is
+    // untouched; only the wording of the email changes.
+    function fieldText(el) {
+      if (el.tagName === 'SELECT') {
+        var opt = el.options[el.selectedIndex];
+        if (opt) return (opt.textContent || '').trim();
+      }
+      return el.value;
+    }
+
     $$('form[data-form]').forEach(function (form) {
       var config = FORMS[form.getAttribute('data-form')];
       if (!config) return;
@@ -347,7 +361,7 @@
           if (!el.name || !el.value) return;
           var label = form.querySelector('label[for="' + el.id + '"]');
           var name = label ? label.textContent.replace(/\s*\(optional\)\s*/i, '').trim() : el.name;
-          lines.push(name + ': ' + el.value);
+          lines.push(name + ': ' + fieldText(el));
         });
 
         var href =
