@@ -2579,6 +2579,29 @@ button { font-family: var(--font); }
   font-size: 26px;
 }
 
+/* Submit error. A permanent role="alert" that JS writes into, so the message
+   is announced as well as shown; empty means nothing has gone wrong yet. */
+.form-error {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-input);
+  background: #FDEEEA;
+  border: 1.5px solid #E0A997;
+  color: #8A2F14;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.form-error:empty { display: none; }
+
+/* Turnstile draws a fixed 300px iframe. Reserve its height so the submit
+   button does not jump down the card when the widget finishes loading. */
+.cf-turnstile {
+  min-height: 65px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
 /* sticky "request a demo" bar */
 .sticky-cta {
   position: fixed;

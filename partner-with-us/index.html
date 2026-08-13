@@ -10,7 +10,7 @@
 <meta property="og:description" content="We work with brands, creators, community groups, non-profits and organisations who believe in representation, honest conversations and culturally aware care.">
 <meta property="og:type" content="website">
 <link rel="icon" href="../assets/img/logo-mark.png">
-<link rel="stylesheet" href="../assets/css/site.css?v=5">
+<link rel="stylesheet" href="../assets/css/site.css?v=6">
 <script>try{if(localStorage.getItem('tt_banner_closed')==='1')document.documentElement.classList.add('tt-banner-hidden')}catch(e){}</script>
 </head>
 <body>
@@ -86,7 +86,7 @@
     </div>
 
     <div class="partner-hero__panel">
-      <div class="contact-card">
+      <div class="contact-card" data-form-wrapper>
         <div class="form-success" data-form-success hidden>
           <span class="icon-circle" aria-hidden="true">&#10003;</span>
           <h2>Thanks, we'll be in touch.</h2>
@@ -96,11 +96,11 @@
         <form data-form="partner" style="display:flex;flex-direction:column;gap:16px">
           <div class="field">
             <label for="pw-name">Name</label>
-            <input id="pw-name" name="name" type="text" required autocomplete="name" placeholder="Your name">
+            <input id="pw-name" name="name" type="text" required maxlength="200" autocomplete="name" placeholder="Your name">
           </div>
           <div class="field">
             <label for="pw-email">Email</label>
-            <input id="pw-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+            <input id="pw-email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="you@example.com">
           </div>
           <div class="field">
             <label for="pw-location">Location</label>
@@ -112,7 +112,7 @@
               <option>EU</option>
               <option>Other</option>
             </select>
-            <input class="field__other" data-other-for="pw-location" name="locationOther" type="text" placeholder="Where are you based?" aria-label="Please tell us your location" hidden>
+            <input class="field__other" data-other-for="pw-location" name="locationOther" type="text" maxlength="200" placeholder="Where are you based?" aria-label="Please tell us your location" hidden>
           </div>
           <div class="field">
             <label for="pw-who">I'm a</label>
@@ -124,7 +124,7 @@
               <option>Brand</option>
               <option>Other</option>
             </select>
-            <input class="field__other" data-other-for="pw-who" name="roleOther" type="text" placeholder="Tell us what you are" aria-label="Please tell us what you are" hidden>
+            <input class="field__other" data-other-for="pw-who" name="roleOther" type="text" maxlength="200" placeholder="Tell us what you are" aria-label="Please tell us what you are" hidden>
           </div>
           <div class="field">
             <label for="pw-type">Partnership type</label>
@@ -136,16 +136,22 @@
               <option>Workshop</option>
               <option>Other</option>
             </select>
-            <input class="field__other" data-other-for="pw-type" name="partnershipOther" type="text" placeholder="What kind of partnership?" aria-label="Please describe the partnership type" hidden>
+            <input class="field__other" data-other-for="pw-type" name="partnershipOther" type="text" maxlength="200" placeholder="What kind of partnership?" aria-label="Please describe the partnership type" hidden>
           </div>
           <div class="field">
             <label for="pw-link">Website / social link</label>
-            <input id="pw-link" name="link" type="text" placeholder="https://">
+            <input id="pw-link" name="link" type="text" maxlength="200" placeholder="https://">
           </div>
           <div class="field">
             <label for="pw-message">Message</label>
-            <textarea id="pw-message" name="message" rows="4" placeholder="Tell us a little about what you have in mind&hellip;"></textarea>
+            <textarea id="pw-message" name="message" rows="4" maxlength="2000" placeholder="Tell us a little about what you have in mind&hellip;"></textarea>
           </div>
+          <!-- Cloudflare Turnstile. The page is static and can hold no secret,
+               so the CRM endpoint takes no credential and proves the submission
+               came from a human with this token instead. It sets no cookies,
+               which keeps these forms out of consent-banner scope. -->
+          <div class="cf-turnstile" data-turnstile></div>
+          <p class="form-error" data-form-error role="alert"></p>
           <button class="btn btn--primary" type="submit" style="width:100%;padding:15px 32px;font-size:18px">Submit <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></button>
         </form>
       </div>
@@ -212,6 +218,7 @@
 </footer>
 
 
-<script src="../assets/js/site.js?v=6" defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&amp;onload=onloadTurnstileCallback" async defer></script>
+<script src="../assets/js/site.js?v=7" defer></script>
 </body>
 </html>

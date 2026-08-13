@@ -26,6 +26,13 @@ find-and-replace across the files listed.
 | `https://airtable.com/app1i6T6CwDlQeouR/paghveMaKvWLuR4Lq/form` | 1 | assets/js/site.js |
 | `https://airtable.com/appBY6wdmaf9xevtn/pagNIHsVljQGydOeH/form` | 1 | assets/js/site.js |
 
+## Lead-capture forms (CRM)
+
+| URL | Uses | Files |
+|---|---|---|
+| `https://ddqnwbqeggjedquobzol.supabase.co/functions/v1/website-form-public` | 1 | assets/js/site.js |
+| `https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onloadTurnstileCallback` | 2 | for-businesses/index.html, partner-with-us/index.html |
+
 ## App stores
 
 | URL | Uses | Files |
@@ -109,6 +116,10 @@ find-and-replace across the files listed.
   `assets/js/site.js`, not in the HTML.
 - **Third-party imagery** is hotlinked rather than stored. If any of these break,
   download the file, drop it into `assets/img/`, and repoint the `src`.
-- **Form endpoints** are separate: see the `FORMS` config at the top of
-  `assets/js/site.js`.
+- **Lead-capture forms** (For Businesses, Partner With Us) POST JSON to the CRM's
+  public endpoint from the browser, proving they came from a human with a
+  Cloudflare Turnstile token rather than a credential. Both the endpoint and the
+  `FORMS` config that maps form fields onto the CRM's payload live at the top of
+  `assets/js/site.js`; `README.md` covers the contract, the site-key setup still
+  outstanding, and how to test against the pinned CORS allowlist.
 
