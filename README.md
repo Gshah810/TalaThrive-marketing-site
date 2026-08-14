@@ -114,21 +114,68 @@ to bring it back; the tabs are already wired.
 
 Worth knowing before you plan around it.
 
-**No server, so no form handling.** The two forms on the site (the For Businesses
-demo request and the Partner With Us enquiry) currently compose a pre-filled email
-in the visitor's own mail client on submit. Nothing is captured silently and
-nothing is lost, but it is not a real pipeline. To fix that, set an endpoint at the
-top of `assets/js/site.js`:
+**No server, so the page can hold no secret.** The two forms (the For Businesses
+demo request and the Partner With Us enquiry) POST JSON straight to the CRM's
+public endpoint from the browser. That endpoint authenticates nobody — anything
+shipped to a static page is readable by anyone — so instead of a credential, a
+submission carries a [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/)
+token that the CRM verifies server-side. Three things follow:
+
+- **`Content-Type` is the entire header list.** The endpoint's CORS preflight
+  permits no other, so an `Authorization` or `apikey` header means the POST never
+  leaves the browser. That rules out the `supabase-js` client, which attaches both;
+  the code uses a bare `fetch`.
+- **The response tells you nothing but "accepted".** Every accepted submission
+  returns `{"ok": true}`. Whether it becomes a lead, is routed to B2C follow-up, or
+  matches a suppression list is decided later, server-side. The success block is the
+  visitor's only feedback, and no confirmation email follows, so success copy says
+  "we'll be in touch", never "check your inbox".
+- **Turnstile sets no cookies**, which keeps the forms out of UK GDPR / AU Privacy
+  Act consent-banner scope.
+
+The Turnstile **site key** sits at the top of `assets/js/site.js`, and is public by
+design — it ships in the page source either way, so committing it is safe:
 
 ```js
-var FORMS = {
-  partner: { endpoint: 'https://formspree.io/f/XXXX', … },
-  demo:    { endpoint: 'https://formspree.io/f/YYYY', … }
-};
+var TURNSTILE_SITE_KEY = '0x4AAAAAAEOu0dVR7X_r08Pf';
 ```
 
-With `endpoint` set, the form POSTs there natively and the mailto fallback is
-skipped. Formspree, Tally, Basin and Airtable web forms all work this way.
+The matching **secret key** goes in the CRM (Settings → Integrations → Cloudflare
+Turnstile secret) and must never appear in this repository. The two are checked as
+a pair, and the endpoint fails closed: with no secret set, every submission returns
+`403 verification failed`. If you see a blanket 403, check that first — it is far
+and away the likeliest cause.
+
+Emptying the site key sends both forms back to composing a pre-filled email in the
+visitor's own mail client — nothing is silently swallowed, and the console says
+which form fell back and why. That is the switch to reach for if Turnstile ever
+needs to come out in a hurry. Any form configured with `mode: 'mailto'` (or no
+`endpoint`) keeps that behaviour permanently.
+
+The widget's allowed hostnames are set on the Cloudflare side, and must list
+`gshah810.github.io` and `www.talathrive.com` — the same two origins the CRM pins
+for CORS.
+
+**Testing.** `http://localhost` is deliberately not an allowed origin — the CORS
+allowlist is short and pinned server-side to `https://gshah810.github.io` and
+`https://www.talathrive.com`, so the custom-domain cutover needs no coordinated
+deploy. Test from a branch deploy of the real Pages origin; the origin is what
+matters, not the path. To check payload shape alone, curl the endpoint with an
+`Origin` header set by hand — a `403 verification failed` there is the *pass*
+signal, since it means the endpoint, CORS and your JSON were all fine and only the
+fake token failed. A `400` means the payload is wrong. Cloudflare also publishes
+always-passing test keys; pair the test site key here with the test secret in the
+CRM while building, as verification needs both halves of the same pair.
+
+**Rate limit: 5 submissions per hour per IP.** A real person filling in both forms
+is nowhere near it; an automatic retry loop is not, which is why a failed submit
+never retries on its own.
+
+**`company_size` values are load-bearing.** The four `<select>` values on the
+For Businesses form (`1-50`, `51-200`, `201-1000`, `1000+`, with a plain ASCII
+hyphen) are promoted onto the CRM's organisation record, whose column accepts
+only those exact strings. Anything else is kept on the enquiry but silently not
+promoted. Changing those options means telling the CRM side first.
 
 **No payments.** Shop CTAs link out to `shop.talathrive.com`. When the Stripe
 workflow is ready, repoint the two product buttons in `shop.html`.

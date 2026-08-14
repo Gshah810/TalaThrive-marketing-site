@@ -10,7 +10,7 @@
 <meta property="og:description" content="Therapy, coaching, workshops and self-guided support from practitioners who share your people's culture, language or faith. Works alongside your existing EAP. Request a 20 min demo.">
 <meta property="og:type" content="website">
 <link rel="icon" href="../assets/img/logo-mark.png">
-<link rel="stylesheet" href="../assets/css/site.css?v=5">
+<link rel="stylesheet" href="../assets/css/site.css?v=6">
 <script>try{if(localStorage.getItem('tt_banner_closed')==='1')document.documentElement.classList.add('tt-banner-hidden')}catch(e){}</script>
 </head>
 <body>
@@ -273,7 +273,7 @@
     </div>
 
     <div class="bz-demo__panel">
-      <div class="contact-card">
+      <div class="contact-card" data-form-wrapper>
         <div class="form-success" data-form-success hidden>
           <span class="icon-circle" aria-hidden="true">&#10003;</span>
           <h3>Thanks, we'll be in touch.</h3>
@@ -284,20 +284,20 @@
           <h3>Request your demo</h3>
           <div class="field">
             <label for="bd-first">First name</label>
-            <input id="bd-first" name="first_name" type="text" required autocomplete="given-name" placeholder="Amara">
+            <input id="bd-first" name="first_name" type="text" required maxlength="80" autocomplete="given-name" placeholder="Amara">
           </div>
           <div class="field">
             <label for="bd-last">Last name</label>
-            <input id="bd-last" name="last_name" type="text" required autocomplete="family-name" placeholder="Okafor">
+            <input id="bd-last" name="last_name" type="text" required maxlength="80" autocomplete="family-name" placeholder="Okafor">
           </div>
           <div class="field">
             <label for="bd-email">Work email</label>
-            <input id="bd-email" name="work_email" type="email" required placeholder="you@company.com">
+            <input id="bd-email" name="work_email" type="email" required maxlength="254" placeholder="you@company.com">
           </div>
           <div class="field-row">
             <div class="field">
               <label for="bd-company">Company</label>
-              <input id="bd-company" name="company" type="text" required placeholder="Company name">
+              <input id="bd-company" name="company" type="text" required maxlength="200" placeholder="Company name">
             </div>
             <div class="field">
               <label for="bd-size">Company size</label>
@@ -327,7 +327,7 @@
               <option>Multiple regions</option>
               <option>Other</option>
             </select>
-            <input class="field__other" data-other-for="bd-hq" name="team_locationOther" type="text" placeholder="Where is your team based?" aria-label="Please tell us where your team is based" hidden>
+            <input class="field__other" data-other-for="bd-hq" name="team_locationOther" type="text" maxlength="200" placeholder="Where is your team based?" aria-label="Please tell us where your team is based" hidden>
           </div>
           <div class="field">
             <label for="bd-goal">What are you trying to solve?</label>
@@ -343,12 +343,18 @@
               <option>Not sure yet</option>
               <option>Other</option>
             </select>
-            <input class="field__other" data-other-for="bd-goal" name="goalOther" type="text" placeholder="Tell us what you are trying to solve" aria-label="Please tell us what you are trying to solve" hidden>
+            <input class="field__other" data-other-for="bd-goal" name="goalOther" type="text" maxlength="200" placeholder="Tell us what you are trying to solve" aria-label="Please tell us what you are trying to solve" hidden>
           </div>
           <div class="field">
             <label for="bd-notes">Tell us about your needs <span class="optional">(optional)</span></label>
-            <textarea id="bd-notes" name="notes" rows="3" placeholder="e.g. supporting our multilingual frontline teams, manager training, reporting requirements&hellip;"></textarea>
+            <textarea id="bd-notes" name="notes" rows="3" maxlength="2000" placeholder="e.g. supporting our multilingual frontline teams, manager training, reporting requirements&hellip;"></textarea>
           </div>
+          <!-- Cloudflare Turnstile. The page is static and can hold no secret,
+               so the CRM endpoint takes no credential and proves the submission
+               came from a human with this token instead. It sets no cookies,
+               which keeps these forms out of consent-banner scope. -->
+          <div class="cf-turnstile" data-turnstile></div>
+          <p class="form-error" data-form-error role="alert"></p>
           <button class="btn btn--primary" type="submit" style="width:100%;padding:15px 32px">Request my demo <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></button>
           <p class="fine">We'll only use these details to arrange your demo. See our <a href="../privacy-policy/">privacy policy</a>.</p>
         </form>
@@ -418,6 +424,7 @@
 </footer>
 
 
-<script src="../assets/js/site.js?v=6" defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&amp;onload=onloadTurnstileCallback" async defer></script>
+<script src="../assets/js/site.js?v=8" defer></script>
 </body>
 </html>
