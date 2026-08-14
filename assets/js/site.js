@@ -21,9 +21,9 @@
 
   // Cloudflare Turnstile site key. Public by design, so committing it is safe;
   // the matching secret key lives in the CRM (Settings → Integrations) and
-  // must never appear here. Until this holds the real key, both forms fall
-  // back to mailto rather than posting submissions the endpoint would reject.
-  var TURNSTILE_SITE_KEY = '';
+  // must never appear here. Emptied, both forms fall back to mailto rather
+  // than posting submissions the endpoint would reject.
+  var TURNSTILE_SITE_KEY = '0x4AAAAAAEOu0dVR7X_r08Pf';
 
   var FORMS = {
     // `mode: 'fetch'` posts JSON to `endpoint` from the browser and swaps in

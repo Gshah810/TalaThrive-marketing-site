@@ -133,23 +133,28 @@ token that the CRM verifies server-side. Three things follow:
 - **Turnstile sets no cookies**, which keeps the forms out of UK GDPR / AU Privacy
   Act consent-banner scope.
 
-One value is still missing before this goes live — the Turnstile **site key**, at
-the top of `assets/js/site.js`:
+The Turnstile **site key** sits at the top of `assets/js/site.js`, and is public by
+design — it ships in the page source either way, so committing it is safe:
 
 ```js
-var TURNSTILE_SITE_KEY = '';   // ← from Cloudflare → Turnstile → your widget
+var TURNSTILE_SITE_KEY = '0x4AAAAAAEOu0dVR7X_r08Pf';
 ```
 
-It is public by design, so committing it is safe. The matching **secret key** goes
-in the CRM (Settings → Integrations → Cloudflare Turnstile secret) and must never
-appear in this repository. The endpoint fails closed: until that secret is set,
-every submission returns `403 verification failed`, so confirm it before shipping
-a site key here. If you see a blanket 403 in testing, check that first.
+The matching **secret key** goes in the CRM (Settings → Integrations → Cloudflare
+Turnstile secret) and must never appear in this repository. The two are checked as
+a pair, and the endpoint fails closed: with no secret set, every submission returns
+`403 verification failed`. If you see a blanket 403, check that first — it is far
+and away the likeliest cause.
 
-Until the site key is set, both forms fall back to composing a pre-filled email in
-the visitor's own mail client, exactly as they did before — nothing is silently
-swallowed, and the console says which form fell back and why. Any form configured
-with `mode: 'mailto'` (or no `endpoint`) keeps that behaviour permanently.
+Emptying the site key sends both forms back to composing a pre-filled email in the
+visitor's own mail client — nothing is silently swallowed, and the console says
+which form fell back and why. That is the switch to reach for if Turnstile ever
+needs to come out in a hurry. Any form configured with `mode: 'mailto'` (or no
+`endpoint`) keeps that behaviour permanently.
+
+The widget's allowed hostnames are set on the Cloudflare side, and must list
+`gshah810.github.io` and `www.talathrive.com` — the same two origins the CRM pins
+for CORS.
 
 **Testing.** `http://localhost` is deliberately not an allowed origin — the CORS
 allowlist is short and pinned server-side to `https://gshah810.github.io` and
