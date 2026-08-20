@@ -61,8 +61,8 @@
     }
   };
 
-  var PRACTITIONER_FORM_AU = 'https://airtable.com/appBY6wdmaf9xevtn/pagNIHsVljQGydOeH/form';
-  var PRACTITIONER_FORM_INTL = 'https://airtable.com/app1i6T6CwDlQeouR/paghveMaKvWLuR4Lq/form';
+  var PRACTITIONER_FORM_AU = 'https://airtable.com/app1i6T6CwDlQeouR/paghveMaKvWLuR4Lq/form';
+  var PRACTITIONER_FORM_INTL = 'https://airtable.com/appBY6wdmaf9xevtn/pagNIHsVljQGydOeH/form';
 
   var BANNER_KEY = 'tt_banner_closed';
 
