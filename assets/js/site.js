@@ -39,6 +39,7 @@
       mode: 'fetch',
       endpoint: CRM_FORM_ENDPOINT,
       kind: 'partnership',
+      label: 'partner',   // stable form id for analytics events
       nameFields: ['name'],
       emailField: 'email',
       companyField: '',   // partnerships carry no company
@@ -50,6 +51,7 @@
       mode: 'fetch',
       endpoint: CRM_FORM_ENDPOINT,
       kind: 'enquiry',
+      label: 'business',   // stable form id for analytics events
       nameFields: ['first_name', 'last_name'],
       emailField: 'work_email',
       companyField: 'company',
@@ -61,8 +63,8 @@
     }
   };
 
-  var PRACTITIONER_FORM_AU = 'https://airtable.com/appBY6wdmaf9xevtn/pagNIHsVljQGydOeH/form';
-  var PRACTITIONER_FORM_INTL = 'https://airtable.com/app1i6T6CwDlQeouR/paghveMaKvWLuR4Lq/form';
+  var PRACTITIONER_FORM_AU = 'https://airtable.com/app1i6T6CwDlQeouR/paghveMaKvWLuR4Lq/form';
+  var PRACTITIONER_FORM_INTL = 'https://airtable.com/appBY6wdmaf9xevtn/pagNIHsVljQGydOeH/form';
 
   var BANNER_KEY = 'tt_banner_closed';
 
@@ -291,11 +293,13 @@
     var intl = $('[data-picker-intl]', modal);
 
     if (au) au.addEventListener('click', function () {
+      if (window.ttTrack) window.ttTrack('practitioner_form_click', { region: 'au' });
       window.open(PRACTITIONER_FORM_AU, '_blank', 'noopener');
       close();
     });
 
     if (intl) intl.addEventListener('click', function () {
+      if (window.ttTrack) window.ttTrack('practitioner_form_click', { region: 'intl' });
       window.open(PRACTITIONER_FORM_INTL, '_blank', 'noopener');
       close();
     });
@@ -561,14 +565,29 @@
         if (response.ok) {
           showSuccess(form);
           form.reset();
+          // The conversion event: a real lead reached the CRM.
+          if (window.ttTrack) {
+            window.ttTrack('lead_submit', { form: config.label, kind: config.kind });
+          }
           return;
         }
         // Spent token: the visitor needs a fresh challenge before retrying.
         resetTurnstile(form);
         showError(form, messageForStatus(response.status, config));
+        if (window.ttTrack) {
+          window.ttTrack('lead_submit_error', {
+            form: config.label, kind: config.kind, status: response.status
+          });
+        }
       }).catch(function () {
         resetTurnstile(form);
         showError(form, 'Something went wrong. Please email ' + config.mailto + '.');
+        // status 0: the request never got an HTTP reply (offline or blocked).
+        if (window.ttTrack) {
+          window.ttTrack('lead_submit_error', {
+            form: config.label, kind: config.kind, status: 0
+          });
+        }
       }).then(restoreButton);   // never leave a dead form behind
     }
 
@@ -669,5 +688,53 @@
       sel.addEventListener('change', sync);
       sync();
     });
+  })();
+
+  /* ------------------------------------------------------------------------
+     13. Engagement / CTA analytics
+     One delegated click listener, so no button needs per-element markup and
+     no page HTML changes. Every event goes through ttTrack (guarded), which
+     never throws. Kept deliberately narrow: the promo banner, the app
+     sign-in / sign-up CTAs (including the "Join the tribe" 10%-off button),
+     and the shop. Generic outbound clicks are left to GA4 Enhanced
+     Measurement rather than doubled up here.
+     ---------------------------------------------------------------------- */
+
+  (function ctaTracking() {
+    var APP_LOGIN = 'talathrive.com/login';
+    var SHOP_HOST = 'shop.talathrive.com';
+
+    function label(el) {
+      return (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+    }
+
+    document.addEventListener('click', function (e) {
+      if (!window.ttTrack || !e.target || !e.target.closest) return;
+      var el = e.target.closest('a, button');
+      if (!el) return;
+
+      // Promo banner. Only the "Claim your discount" link counts; the close
+      // button shares the container and must not fire a promo_click.
+      if (el.closest('[data-promo]')) {
+        if (el.tagName === 'A') {
+          window.ttTrack('promo_click', { label: label(el), href: el.getAttribute('href') || '' });
+        }
+        return;
+      }
+
+      if (el.tagName !== 'A') return;
+      var href = el.getAttribute('href') || '';
+      if (!href) return;
+
+      // App sign-in / sign-up, including the "Join the tribe" 10%-off button.
+      if (href.indexOf(APP_LOGIN) !== -1) {
+        window.ttTrack('cta_click', { destination: 'app', label: label(el), href: href });
+        return;
+      }
+      // Shop.
+      if (href.indexOf(SHOP_HOST) !== -1) {
+        window.ttTrack('cta_click', { destination: 'shop', label: label(el), href: href });
+      }
+    }, true);
   })();
 })();
