@@ -39,6 +39,7 @@
       mode: 'fetch',
       endpoint: CRM_FORM_ENDPOINT,
       kind: 'partnership',
+      label: 'partner',   // stable form id for analytics events
       nameFields: ['name'],
       emailField: 'email',
       companyField: '',   // partnerships carry no company
@@ -50,6 +51,7 @@
       mode: 'fetch',
       endpoint: CRM_FORM_ENDPOINT,
       kind: 'enquiry',
+      label: 'business',   // stable form id for analytics events
       nameFields: ['first_name', 'last_name'],
       emailField: 'work_email',
       companyField: 'company',
@@ -291,11 +293,13 @@
     var intl = $('[data-picker-intl]', modal);
 
     if (au) au.addEventListener('click', function () {
+      if (window.ttTrack) window.ttTrack('practitioner_form_click', { region: 'au' });
       window.open(PRACTITIONER_FORM_AU, '_blank', 'noopener');
       close();
     });
 
     if (intl) intl.addEventListener('click', function () {
+      if (window.ttTrack) window.ttTrack('practitioner_form_click', { region: 'intl' });
       window.open(PRACTITIONER_FORM_INTL, '_blank', 'noopener');
       close();
     });
@@ -561,14 +565,29 @@
         if (response.ok) {
           showSuccess(form);
           form.reset();
+          // The conversion event: a real lead reached the CRM.
+          if (window.ttTrack) {
+            window.ttTrack('lead_submit', { form: config.label, kind: config.kind });
+          }
           return;
         }
         // Spent token: the visitor needs a fresh challenge before retrying.
         resetTurnstile(form);
         showError(form, messageForStatus(response.status, config));
+        if (window.ttTrack) {
+          window.ttTrack('lead_submit_error', {
+            form: config.label, kind: config.kind, status: response.status
+          });
+        }
       }).catch(function () {
         resetTurnstile(form);
         showError(form, 'Something went wrong. Please email ' + config.mailto + '.');
+        // status 0: the request never got an HTTP reply (offline or blocked).
+        if (window.ttTrack) {
+          window.ttTrack('lead_submit_error', {
+            form: config.label, kind: config.kind, status: 0
+          });
+        }
       }).then(restoreButton);   // never leave a dead form behind
     }
 
