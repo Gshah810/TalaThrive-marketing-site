@@ -7,6 +7,17 @@
 (function () {
   'use strict';
 
+  // window.ttTrack is defined in analytics.js, which loads first. But that file
+  // is named analytics.js — a name ad blockers and privacy filters commonly
+  // match — and it loads GA4 and PostHog, which are widely blocked in their own
+  // right, so a real share of visitors never execute it. Install a no-op when
+  // that happens, so every call site below stays safe without its own guard and
+  // analytics being blocked can never affect what a visitor sees (the form
+  // success block above all).
+  if (typeof window.ttTrack !== 'function') {
+    window.ttTrack = function () {};
+  }
+
   /* ------------------------------------------------------------------------
      CONFIG — the only place outbound destinations live.
      See LINKS.md for the full map of where each of these is used.
@@ -293,13 +304,13 @@
     var intl = $('[data-picker-intl]', modal);
 
     if (au) au.addEventListener('click', function () {
-      if (window.ttTrack) window.ttTrack('practitioner_form_click', { region: 'au' });
+      window.ttTrack('practitioner_form_click', { region: 'au' });
       window.open(PRACTITIONER_FORM_AU, '_blank', 'noopener');
       close();
     });
 
     if (intl) intl.addEventListener('click', function () {
-      if (window.ttTrack) window.ttTrack('practitioner_form_click', { region: 'intl' });
+      window.ttTrack('practitioner_form_click', { region: 'intl' });
       window.open(PRACTITIONER_FORM_INTL, '_blank', 'noopener');
       close();
     });
@@ -565,29 +576,25 @@
         if (response.ok) {
           showSuccess(form);
           form.reset();
-          // The conversion event: a real lead reached the CRM.
-          if (window.ttTrack) {
-            window.ttTrack('lead_submit', { form: config.label, kind: config.kind });
-          }
+          // The conversion event: a real lead reached the CRM. This runs after
+          // showSuccess above, and ttTrack is always defined, so analytics can
+          // never delay or block the success confirmation.
+          window.ttTrack('lead_submit', { form: config.label, kind: config.kind });
           return;
         }
         // Spent token: the visitor needs a fresh challenge before retrying.
         resetTurnstile(form);
         showError(form, messageForStatus(response.status, config));
-        if (window.ttTrack) {
-          window.ttTrack('lead_submit_error', {
-            form: config.label, kind: config.kind, status: response.status
-          });
-        }
+        window.ttTrack('lead_submit_error', {
+          form: config.label, kind: config.kind, status: response.status
+        });
       }).catch(function () {
         resetTurnstile(form);
         showError(form, 'Something went wrong. Please email ' + config.mailto + '.');
         // status 0: the request never got an HTTP reply (offline or blocked).
-        if (window.ttTrack) {
-          window.ttTrack('lead_submit_error', {
-            form: config.label, kind: config.kind, status: 0
-          });
-        }
+        window.ttTrack('lead_submit_error', {
+          form: config.label, kind: config.kind, status: 0
+        });
       }).then(restoreButton);   // never leave a dead form behind
     }
 
@@ -693,8 +700,9 @@
   /* ------------------------------------------------------------------------
      13. Engagement / CTA analytics
      One delegated click listener, so no button needs per-element markup and
-     no page HTML changes. Every event goes through ttTrack (guarded), which
-     never throws. Kept deliberately narrow: the promo banner, the app
+     no page HTML changes. Every event goes through ttTrack, which is always
+     defined (a no-op if analytics.js was blocked). Kept deliberately narrow:
+     the promo banner, the app
      sign-in / sign-up CTAs (including the "Join the tribe" 10%-off button),
      and the shop. Generic outbound clicks are left to GA4 Enhanced
      Measurement rather than doubled up here.
@@ -709,7 +717,7 @@
     }
 
     document.addEventListener('click', function (e) {
-      if (!window.ttTrack || !e.target || !e.target.closest) return;
+      if (!e.target || !e.target.closest) return;
       var el = e.target.closest('a, button');
       if (!el) return;
 
