@@ -453,22 +453,18 @@
   </div>
 </section>
 
-<!-- ====================== Join the tribe ====================== -->
-<section class="tribe" id="join-the-tribe">
-  <div class="tribe__card">
-    <div class="tribe__bg" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1644945581699-3cbed4b3fe8b?w=1400&amp;h=700&amp;fit=crop&amp;auto=format" alt="" loading="lazy">
-    </div>
-    <div class="tribe__body">
-      <h2>Join the tribe</h2>
-      <h3>and start thriving and not just surviving</h3>
-      <p>Sign up today and get 10% off your first therapy or coaching session.</p>
-      <div class="tribe__form">
-        <a class="btn btn--primary" style="border-radius:16px" href="https://talathrive.com/login">Join the Tribe and Get 10% Off
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
+<!-- ====================== Newsletter (Klaviyo) ====================== -->
+<!-- Email capture, ported from the live site. The heading, fields and
+     "Join the tribe" button are all rendered by the Klaviyo form itself
+     (form UaT5jm, list W7FCX8), not by the page, so this section carries no
+     page-authored copy of its own; adding any would duplicate the form's
+     heading. The sitewide Klaviyo loader (body end) renders the form into the
+     div below. The #join-the-tribe id is kept so the promo bar's "Claim your
+     discount" link still lands here. -->
+<section class="section section--white section--lg" id="join-the-tribe">
+  <div class="container container--sm">
+    <style>.klaviyo-form-UaT5jm { overflow: hidden !important; }</style>
+    <div class="klaviyo-form-UaT5jm"></div>
   </div>
 </section>
 
