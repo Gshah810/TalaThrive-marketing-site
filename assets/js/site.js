@@ -702,10 +702,9 @@
      One delegated click listener, so no button needs per-element markup and
      no page HTML changes. Every event goes through ttTrack, which is always
      defined (a no-op if analytics.js was blocked). Kept deliberately narrow:
-     the promo banner, the app
-     sign-in / sign-up CTAs (including the "Join the tribe" 10%-off button),
-     and the shop. Generic outbound clicks are left to GA4 Enhanced
-     Measurement rather than doubled up here.
+     the promo banner, the app sign-in / sign-up CTAs, and the shop. Generic
+     outbound clicks are left to GA4 Enhanced Measurement rather than doubled
+     up here.
      ---------------------------------------------------------------------- */
 
   (function ctaTracking() {
@@ -734,7 +733,7 @@
       var href = el.getAttribute('href') || '';
       if (!href) return;
 
-      // App sign-in / sign-up, including the "Join the tribe" 10%-off button.
+      // App sign-in / sign-up.
       if (href.indexOf(APP_LOGIN) !== -1) {
         window.ttTrack('cta_click', { destination: 'app', label: label(el), href: href });
         return;
@@ -745,4 +744,20 @@
       }
     }, true);
   })();
+
+  /* ------------------------------------------------------------------------
+     14. Klaviyo newsletter submissions
+     The signup forms are rendered by Klaviyo (form UaT5jm, on the homepage
+     #join-the-tribe section and on /practitioners), so their submit button is
+     not one of our elements and never reaches the click listener above.
+     Klaviyo dispatches a 'klaviyoForms' event on window for its own lifecycle;
+     type 'submit' means a real subscription. Forward that as the conversion.
+     The page URL (auto-captured by GA4 and PostHog) distinguishes which embed.
+     ---------------------------------------------------------------------- */
+
+  window.addEventListener('klaviyoForms', function (e) {
+    if (e && e.detail && e.detail.type === 'submit') {
+      window.ttTrack('newsletter_signup', { form_id: e.detail.formId || '' });
+    }
+  });
 })();
