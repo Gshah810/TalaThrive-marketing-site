@@ -3396,7 +3396,7 @@ button { font-family: var(--font); }
   font-size: 15px;
   line-height: 1.6;
   color: var(--brown-mid);
-  margin: 6px 0 20px;
+  margin: 10px 0 20px;
 }
 
 .cookie-prefs__intro a { color: var(--orange-dark); }
@@ -3424,17 +3424,6 @@ button { font-family: var(--font); }
   font-size: 14px;
   line-height: 1.55;
   color: var(--brown-mid);
-}
-
-/* Locked categories say so in words, not with a disabled switch that looks
-   like a control the visitor failed to operate. */
-.cookie-prefs__locked {
-  flex: none;
-  padding-top: 2px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--brown-soft);
-  white-space: nowrap;
 }
 
 /* ---- Switch. A real checkbox, restyled, so it stays keyboard operable

@@ -834,27 +834,16 @@
       prefs.innerHTML =
         '<div class="modal__panel cookie-prefs__panel">' +
           '<h2 id="cookie-prefs-title">Cookie preferences</h2>' +
-          '<p class="cookie-prefs__intro">Choose what Tala Thrive may store on your device. ' +
-            'Full detail is in our <a href="' + privacyHref() + '">privacy policy</a>.</p>' +
 
-          '<div class="cookie-prefs__group">' +
-            '<div class="cookie-prefs__text">' +
-              '<h3>Essential</h3>' +
-              '<p>Needed for the site to work: keeping our forms secure against ' +
-                'automated abuse, and remembering the choices you make here.</p>' +
-            '</div>' +
-            '<span class="cookie-prefs__locked">Always on</span>' +
-          '</div>' +
-
-          '<div class="cookie-prefs__group">' +
-            '<div class="cookie-prefs__text">' +
-              '<h3>Analytics</h3>' +
-              '<p>Counts visits and which pages are read, so we know what to ' +
-                'improve. We use this on every visit and it is not shared with ' +
-                'advertisers.</p>' +
-            '</div>' +
-            '<span class="cookie-prefs__locked">Always on</span>' +
-          '</div>' +
+          // What always runs is stated here rather than as two rows saying
+          // "Always on". Only one thing on this site is actually a choice, and
+          // a panel of mostly non-choices reads as if the visitor is being
+          // offered more control than they have. The disclosure still sits at
+          // the moment of decision, which the privacy policy alone would not do.
+          '<p class="cookie-prefs__intro">Essential and analytics cookies always ' +
+            'run, so the site works and we can see what to improve. They are not ' +
+            'shared with advertisers. ' +
+            '<a href="' + privacyHref() + '">Read our privacy policy</a>.</p>' +
 
           '<div class="cookie-prefs__group">' +
             '<div class="cookie-prefs__text">' +
@@ -867,7 +856,7 @@
           '</div>' +
 
           '<div class="cookie-prefs__actions">' +
-            '<button class="btn btn--primary" type="button" data-cookie-save>Save preferences</button>' +
+            '<button class="btn btn--primary" type="button" data-cookie-save>Save</button>' +
             '<button class="btn btn--outline" type="button" data-cookie-cancel>Cancel</button>' +
           '</div>' +
         '</div>';
