@@ -180,7 +180,7 @@ promoted. Changing those options means telling the CRM side first.
 **No payments.** Shop CTAs link out to `shop.talathrive.com`. When the Stripe
 workflow is ready, repoint the two product buttons in `shop.html`.
 
-**No authentication.** Log in / Sign Up link to `https://talathrive.com/login`.
+**No authentication.** Log in / Sign Up link to `https://app.talathrive.com/login`.
 
 **No redirects, rewrites, or custom headers.** GitHub Pages serves files and
 nothing else, so there is no way to set a Content-Security-Policy, add security
