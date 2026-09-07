@@ -10,19 +10,25 @@ Ported from the Claude Design prototypes kept in [`design-source/`](design-sourc
 
 ## Pages
 
+Every page is a directory with an `index.html`, so URLs end in a slash and
+carry no `.html`.
+
 | File | URL | What it is |
 |---|---|---|
 | `index.html` | `/` | Homepage |
-| `about.html` | `/about.html` | About Us, with the story video |
-| `practitioners.html` | `/practitioners.html` | Therapist and coach recruitment |
-| `for-businesses.html` | `/for-businesses.html` | Employer / B2B page with demo form |
-| `partner-with-us.html` | `/partner-with-us.html` | Partnership enquiry |
-| `stories.html` | `/stories.html` | Blog index |
-| `story-generational-trauma.html` | `/story-generational-trauma.html` | Article template |
-| `shop.html` | `/shop.html` | Product landing, links out to the Shopify store |
-| `privacy-policy.html` | `/privacy-policy.html` | Privacy Policy |
-| `terms.html` | `/terms.html` | Terms &amp; Conditions |
-| `404.html` | any unknown path | Not-found page |
+| `about/index.html` | `/about/` | About Us, with the story video |
+| `practitioners/index.html` | `/practitioners/` | Therapist and coach recruitment |
+| `for-businesses/index.html` | `/for-businesses/` | Employer / B2B page with demo form |
+| `partner-with-us/index.html` | `/partner-with-us/` | Partnership enquiry |
+| `stories/index.html` | `/stories/` | Blog index |
+| `stories/<slug>/index.html` | `/stories/<slug>/` | One directory per story (36 today) |
+| `story-generational-trauma/index.html` | `/story-generational-trauma/` | Article template, kept as the reference build |
+| `shop/index.html` | `/shop/` | Product landing, links out to the Shopify store |
+| `privacy-policy/index.html` | `/privacy-policy/` | Privacy Policy |
+| `terms/index.html` | `/terms/` | Terms &amp; Conditions |
+| `terms-conditions/index.html` | `/terms-conditions/` | Redirect stub to `/terms/` for the URL baked into shipped mobile builds |
+| `accessibility/index.html` | `/accessibility/` | Accessibility statement |
+| `404.html` | any unknown path | Not-found page, and the deep-link bridge to `app.talathrive.com` |
 
 ---
 
@@ -67,7 +73,9 @@ custom domain, update the absolute URLs in `sitemap.xml`, `robots.txt`, and the
 ## Structure
 
 ```
-├── index.html, about.html, …        one file per page, self-contained
+├── index.html                        homepage
+├── about/, practitioners/, …         one directory per page, each an index.html
+├── stories/<slug>/                   one directory per story
 ├── 404.html                          served on any unknown path
 ├── assets/
 │   ├── css/site.css                  all styling, tokens at the top
@@ -178,7 +186,7 @@ only those exact strings. Anything else is kept on the enquiry but silently not
 promoted. Changing those options means telling the CRM side first.
 
 **No payments.** Shop CTAs link out to `shop.talathrive.com`. When the Stripe
-workflow is ready, repoint the two product buttons in `shop.html`.
+workflow is ready, repoint the two product buttons in `shop/index.html`.
 
 **No authentication.** Log in / Sign Up link to `https://app.talathrive.com/login`.
 
