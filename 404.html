@@ -9,6 +9,52 @@
 <meta property="og:title" content="Page not found | Tala Thrive">
 <meta property="og:description" content="That page doesn't exist. Head back to the Tala Thrive homepage.">
 <meta property="og:type" content="website">
+<script>
+/* 404 bridge + base path. Runs before any asset or link is resolved.
+
+   GitHub Pages serves this file for every path it has no file for. Two jobs:
+
+   1. Resolve assets and links from the site root, not from the missing URL.
+      Every path in this file is relative (so the site works at the project
+      URL and at a custom domain), but a miss two levels deep such as
+      /about/typo/ would otherwise try to load /about/typo/assets/css/site.css.
+      A <base> pointing at the site root fixes that for every relative URL.
+
+   2. Deep-link bridge to the platform. Once talathrive.com and www serve this
+      site, every already-sent email, ICS calendar entry and password-reset
+      link pointing at an old apex app path lands here. Forward it, preserving
+      path, query string and hash, to app.talathrive.com. Decision (2026-09):
+      forward EVERY unmatched path except those under this site's own sections,
+      so a typo inside a marketing section stays on this page while no app
+      route can be missed. GitHub Pages cannot redirect server-side, so this is
+      client-side JS: a brief flash, needs JS, no signal to crawlers. Accepted,
+      because the app paths are noindex. Do not try to work around it. */
+(function () {
+  var APP = 'https://app.talathrive.com';
+  // Top-level sections that belong to this site. A miss under one of these
+  // is a marketing 404, never an app path. Keep in step with the directories
+  // in the repo root.
+  var MARKETING = [
+    'about', 'practitioners', 'for-businesses', 'partner-with-us', 'stories',
+    'story-generational-trauma', 'shop', 'privacy-policy', 'terms',
+    'terms-conditions', 'accessibility', 'assets', 'post', 'design-source',
+    'design_handoff', 'scripts', 'index.html', '404.html', 'sitemap.xml',
+    'robots.txt', 'favicon.ico'
+  ];
+  var onProjectPages = /\.github\.io$/i.test(location.hostname);
+  var base = onProjectPages ? '/TalaThrive-marketing-site/' : '/';
+  var b = document.createElement('base');
+  b.href = location.protocol + '//' + location.host + base;
+  document.head.appendChild(b);
+
+  var path = location.pathname;
+  if (path.indexOf(base) === 0) path = path.slice(base.length - 1);
+  var first = (path.split('/')[1] || '').toLowerCase().replace(/\.html?$/, '');
+  if (!first || MARKETING.indexOf(first) !== -1) return;
+  document.documentElement.setAttribute('data-bridging', '');
+  location.replace(APP + path + location.search + location.hash);
+})();
+</script>
 <link rel="icon" href="assets/img/logo-mark.png">
 <link rel="stylesheet" href="assets/css/site.css?v=7">
 <script defer src="assets/js/analytics.js?v=5"></script>
@@ -42,8 +88,8 @@
       </nav>
 
       <div class="nav-auth">
-        <a class="nav-auth__login" href="https://talathrive.com/login">Log in</a>
-        <a class="nav-auth__signup" href="https://talathrive.com/login">Sign Up</a>
+        <a class="nav-auth__login" href="https://app.talathrive.com/login">Log in</a>
+        <a class="nav-auth__signup" href="https://app.talathrive.com/login">Sign Up</a>
       </div>
 
       <button class="burger" type="button" data-burger aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -61,8 +107,8 @@
         <a href="./stories/">Stories</a>
         <a href="https://shop.talathrive.com/" target="_blank" rel="noopener noreferrer" aria-label="Shop (opens in a new tab)">Shop</a>
         <div class="nav-mobile__auth">
-          <a class="is-login" href="https://talathrive.com/login">Log in</a>
-          <a class="is-signup" href="https://talathrive.com/login">Sign Up</a>
+          <a class="is-login" href="https://app.talathrive.com/login">Log in</a>
+          <a class="is-signup" href="https://app.talathrive.com/login">Sign Up</a>
         </div>
       </nav>
     </div>
@@ -75,6 +121,7 @@
   <div class="container container--sm">
     <h1>We couldn't find that page.</h1>
     <p>The link may be out of date, or the page may have moved. Let's get you back to somewhere useful.</p>
+    <noscript><p>Following a link to your Tala Thrive account? Continue at <a href="https://app.talathrive.com/login">app.talathrive.com</a>.</p></noscript>
     <a class="btn btn--primary" href="./">Back to the homepage <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
   </div>
 </section>
@@ -121,8 +168,8 @@
         <h3 id="ft-support">Support</h3>
         <a href="./#faqs">FAQs</a>
         <a href="mailto:hello@talathrive.com">Contact us</a>
-        <a href="https://talathrive.com/login">Log in</a>
-        <a href="https://talathrive.com/login">Create an account</a>
+        <a href="https://app.talathrive.com/login">Log in</a>
+        <a href="https://app.talathrive.com/login">Create an account</a>
       </nav>
     </div>
 
