@@ -1,7 +1,9 @@
 # Design source (reference only)
 
 These are the original Claude Design prototypes this site was built from. They
-are **not** part of the published site and are not served by GitHub Pages.
+are **not** part of the site's navigation, but GitHub Pages serves the repository
+root verbatim, so the files in this directory are reachable by URL. Nothing links
+to them, and they reference only assets that live in this repository.
 
 They are written in Claude Design's "DC" template dialect (`<x-dc>`, `<helmet>`,
 `sc-if` / `sc-for`, `{{ }}` bindings, `style-hover`, and a `<script type="text/x-dc">`
