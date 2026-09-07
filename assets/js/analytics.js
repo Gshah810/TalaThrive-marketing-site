@@ -4,16 +4,26 @@
    Loaded (deferred) in the <head> of every content page, ahead of site.js,
    so window.ttTrack exists before site.js wires its conversion events.
 
-   Two tools, both reusing the IDs the live Framer site already reports to, so
-   history carries through the migration and nothing new is provisioned:
+   Two product-analytics tools, both reusing the IDs the live Framer site
+   already reports to, so history carries through the migration and nothing new
+   is provisioned:
      - Google Analytics 4  (property G-WP0XWRFZHJ, shared with the product app)
      - PostHog             (project 155494, shared with the product app)
 
    The product app reports to the same GA4 property and PostHog project, so
    every hit from here is tagged surface: "marketing" to stay separable.
 
-   No consent gate: the live site ships none today and matching it is the
-   brief. This is a deliberate, recorded parity choice, not an oversight.
+   Plus one advertising tool, held to a stricter rule than the two above:
+     - Meta Pixel          (consent gated, see the Meta Pixel section below)
+
+   Consent: GA4 and PostHog ship ungated, matching the live site. That is a
+   deliberate, recorded parity choice. The Meta Pixel is NOT covered by it and
+   does not inherit it. An advertising pixel that reports visits to Meta from a
+   mental-health site, including the 38 article URLs under /stories/, is a
+   different proposition from first-party product analytics, so it stays off
+   until marketing consent is explicitly granted. Nothing on the site grants it
+   yet, so the pixel is currently inert by design; wiring a cookie banner to
+   window.ttSetMarketingConsent is what turns it on.
    ========================================================================== */
 
 (function () {
@@ -27,6 +37,21 @@
   var POSTHOG_KEY = 'phc_vsC4hAEwTphIxEE9JXb7r2OVjdInSktpWoHlfIsxipT';
   var POSTHOG_HOST = 'https://us.i.posthog.com';
   var SURFACE = 'marketing';
+
+  // Meta Pixel, from Events Manager (Data sources > the number under the pixel
+  // name). Guarded by metaPixelConfigured() below, so a blanked or mistyped ID
+  // disables the pixel rather than reporting to nothing.
+  var META_PIXEL_ID = '1546227733368720';
+
+  // localStorage key holding the visitor's marketing-cookie decision:
+  // 'granted' loads the pixel, 'denied' does not, absent means not yet asked.
+  //
+  // SHARED CONTRACT: site.js §15 (the consent banner) reads and writes this
+  // same key directly. It has to. This file is named analytics.js and loads
+  // GA4 and PostHog, so ad blockers stop it outright for a real share of
+  // visitors — and the banner must still work for them, or they get asked
+  // forever and their "no" is never recorded. Change the key in both files.
+  var MARKETING_CONSENT_KEY = 'tt_marketing_consent';
 
   /* ------------------------------------------------------------------------
      Google Analytics 4
@@ -76,11 +101,112 @@
   });
 
   /* ------------------------------------------------------------------------
+     Meta Pixel — consent gated
+
+     Unlike GA4 and PostHog above, nothing here runs on page load unless the
+     visitor has already granted marketing consent. Until then no request is
+     made to connect.facebook.net at all, which is the point: a blocked-by-
+     default pixel leaks nothing, whereas Meta's own 'consent' / 'revoke' call
+     still requires loading their script first.
+
+     To turn it on, a consent banner calls:
+       window.ttSetMarketingConsent(true)    // grant: persists + loads now
+       window.ttSetMarketingConsent(false)   // decline/withdraw: persists
+     and can read the current state with window.ttHasMarketingConsent().
+
+     Granting mid-session loads the pixel immediately and fires PageView, so a
+     visitor who accepts on their first page is still counted on that page.
+     ---------------------------------------------------------------------- */
+
+  var metaPixelLoaded = false;
+
+  // An unreplaced placeholder, an empty string or a typo must never reach
+  // fbq('init'), which would otherwise start reporting to nothing.
+  function metaPixelConfigured() {
+    return /^[0-9]{10,20}$/.test(META_PIXEL_ID);
+  }
+
+  function hasMarketingConsent() {
+    try {
+      return localStorage.getItem(MARKETING_CONSENT_KEY) === 'granted';
+    } catch (e) {
+      return false;   // storage blocked or private mode: treat as no consent
+    }
+  }
+
+  function loadMetaPixel() {
+    if (metaPixelLoaded || !metaPixelConfigured()) return;
+    metaPixelLoaded = true;
+
+    /* Official Meta Pixel base code. Defines the fbq stub and queue, then
+       injects fbevents.js; calls made before the script arrives are replayed. */
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0; t.src = v;
+      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+    window.fbq('init', META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+  }
+
+  window.ttHasMarketingConsent = hasMarketingConsent;
+
+  // Three-state read for the banner: it must distinguish "declined" from
+  // "not yet asked", and only show itself for the latter.
+  window.ttMarketingConsentState = function () {
+    try {
+      var v = localStorage.getItem(MARKETING_CONSENT_KEY);
+      return v === 'granted' || v === 'denied' ? v : 'unset';
+    } catch (e) {
+      // Storage unreadable: nothing can be persisted, so a banner would
+      // reappear on every page. Report a decision to keep it quiet.
+      return 'denied';
+    }
+  };
+
+  window.ttSetMarketingConsent = function (granted) {
+    try {
+      localStorage.setItem(MARKETING_CONSENT_KEY, granted ? 'granted' : 'denied');
+    } catch (e) { /* consent must still apply for this page view */ }
+
+    if (granted) {
+      loadMetaPixel();
+      return;
+    }
+    // Withdrawn after the pixel had already loaded this session: stop it
+    // sending anything further. On the next page load it simply never loads.
+    try {
+      if (window.fbq) window.fbq('consent', 'revoke');
+    } catch (e) { /* analytics must never break the page */ }
+  };
+
+  if (hasMarketingConsent()) loadMetaPixel();
+
+  /* ------------------------------------------------------------------------
+     Site events that map onto a Meta standard event. Standard events are what
+     Meta's ad optimisation and reporting understand; everything else is sent
+     with trackCustom under its own name, which stays usable for custom
+     conversions without pretending to be a standard event.
+     Both lead forms and the Klaviyo newsletter are Lead: each one is a person
+     handing over contact details, which is exactly what Meta means by Lead.
+     ---------------------------------------------------------------------- */
+
+  var META_STANDARD_EVENTS = {
+    lead_submit: 'Lead',
+    newsletter_signup: 'Lead'
+  };
+
+  /* ------------------------------------------------------------------------
      ttTrack — the one event helper the rest of the site calls.
-     Forwards a named event with optional properties to both tools and never
-     throws, so a blocked or slow analytics load can never break a page. Each
-     call is tagged with surface for GA4 (PostHog gets it from the super
-     property registered above).
+     Forwards a named event with optional properties to every tool that is
+     active and never throws, so a blocked or slow analytics load can never
+     break a page. Each call is tagged with surface for GA4 (PostHog gets it
+     from the super property registered above). The Meta leg is a no-op unless
+     the pixel loaded, i.e. unless marketing consent was granted.
      ---------------------------------------------------------------------- */
 
   window.ttTrack = function (name, props) {
@@ -98,6 +224,13 @@
         }
         gaProps.surface = SURFACE;
         window.gtag('event', name, gaProps);
+      }
+    } catch (e) { /* analytics must never break the page */ }
+    try {
+      if (window.fbq) {
+        var standard = META_STANDARD_EVENTS[name];
+        if (standard) window.fbq('track', standard, props);
+        else window.fbq('trackCustom', name, props);
       }
     } catch (e) { /* analytics must never break the page */ }
   };
