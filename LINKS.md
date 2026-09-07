@@ -59,12 +59,6 @@ find-and-replace across the files listed.
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://framerusercontent.com/images/0cFvoQ3c5vr7M9xpaagnN72XuMw.png?width=800` | 1 | stories.html |
-| `https://framerusercontent.com/images/BxF7HK1EdKvmRI7X5sdOgXKgKSg.jpg?width=800` | 1 | stories.html |
-| `https://framerusercontent.com/images/SHjZBYkmeLGNmYdIIOl8WIBeWk.jpg?width=800` | 1 | stories.html |
-| `https://framerusercontent.com/images/aIAj9pGlOYk9agp8r9eM4yb7qQ.jpg?width=1200` | 2 | stories.html, story-generational-trauma.html |
-| `https://framerusercontent.com/images/ljbASKSGN17GLba44f6VQkSL2LI.png?width=800` | 1 | stories.html |
-| `https://framerusercontent.com/images/xKEaPwWFGfUUiG6xqldYdcEwhqQ.jpg?width=800` | 1 | stories.html |
 | `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=800&amp;h=480&amp;fit=crop&amp;auto=format` | 1 | index.html |
 | `https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=700&amp;h=600&amp;fit=crop&amp;auto=format` | 1 | index.html |
 | `https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=700&amp;h=440&amp;fit=crop&amp;auto=format` | 1 | practitioners.html |

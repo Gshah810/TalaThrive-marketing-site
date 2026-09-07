@@ -207,13 +207,13 @@ hosting. If it does not, delete the two `@font-face` blocks at the top of
 system names **Outfit** as the approved substitute if you would rather self-host
 that instead.
 
-**2. External images.** Some photography still hotlinks to `images.unsplash.com`,
-`framerusercontent.com` (the Stories hero images, from the live Framer site) and
-`shop.talathrive.com` (product photography). They load fine, but they are outside
-your control and outside this repository. Everything the brand actually owns, the
-logo, the hero portrait, the three practitioner photographs, the app screenshots,
-the press logos and the onboarding illustrations, is stored locally in
-`assets/img/` and optimised.
+**2. External images.** Some photography still hotlinks to `images.unsplash.com`
+and `shop.talathrive.com` (product photography). They load fine, but they are
+outside your control and outside this repository. Everything the brand actually
+owns, the logo, the hero portrait, the three practitioner photographs, the app
+screenshots, the press logos, the onboarding illustrations and every Stories cover
+image (`assets/img/stories/`), is stored locally in `assets/img/` and optimised.
+Nothing on this site loads from Framer's CDN any more.
 
 ---
 
