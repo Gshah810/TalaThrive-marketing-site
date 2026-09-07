@@ -13,7 +13,7 @@ Scope: `*.html`, `*.js`, `*.css`, `*.xml`, `*.txt` under the repo root, excludin
 `design-source/`, `design_handoff/`, `README.md` and this file. Own canonical and
 sitemap URLs are listed last for completeness; they are not outbound links.
 
-125 distinct URLs, 858 occurrences, generated from `a61dc33`.
+126 distinct URLs, 860 occurrences, generated from `519b6ed`.
 
 
 ## App (platform)
@@ -24,7 +24,7 @@ the marketing site, and old apex app paths are bridged by `404.html`.
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://app.talathrive.com/login` | 317 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 35 story pages under `stories/*/index.html` |
+| `https://app.talathrive.com/login` | 318 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 35 story pages under `stories/*/index.html` |
 
 ## Shopify store
 
@@ -103,6 +103,7 @@ the marketing site, and old apex app paths are bridged by `404.html`.
 
 | URL | Uses | Files |
 |---|---|---|
+| `https://app.talathrive.com` | 1 | `404.html` |
 | `https://www.talathrive.com` | 1 | `stories/please-check-on-your-strong-friend-this-month/index.html` |
 
 ## Other

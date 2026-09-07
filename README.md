@@ -188,6 +188,22 @@ headers, or configure server-side redirects. `404.html` is the one hook availabl
 If you later need any of that, Cloudflare Pages or Netlify are drop-in replacements
 for this repository, also free, and would need no code changes.
 
+Two things lean on that one hook, both client-side JavaScript because that is all
+a static host allows:
+
+- **The app deep-link bridge in `404.html`.** Once `talathrive.com` and `www`
+  serve this site, every already-sent email, calendar entry and password-reset
+  link pointing at an old app path lands on `404.html`. The inline script at the
+  top of that file forwards any unmatched path to `https://app.talathrive.com`,
+  keeping path, query string and hash, unless the path's first segment is one of
+  this site's own sections (the `MARKETING` list in the script), in which case the
+  visitor sees the normal not-found page. Add a new top-level directory to that
+  list when you create one. The same script injects a `<base>` so the page's
+  relative assets resolve from the site root however deep the missing URL is.
+- **`terms-conditions/index.html`** is a redirect stub to `/terms/`. Shipped mobile
+  builds hardcode `www.talathrive.com/terms-conditions` as their Terms link and
+  cannot be updated remotely, so the path must keep resolving. Do not delete it.
+
 **The repository is public**, so everything in it is readable by anyone, including
 the font files (see below). That is fine for a marketing site, but do not commit
 API keys, draft pricing, or internal documents here.
