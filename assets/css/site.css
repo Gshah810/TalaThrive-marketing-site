@@ -3311,3 +3311,208 @@ button { font-family: var(--font); }
   .story-featured,
   .bz-card { transition: none; }
 }
+
+/* --------------------------------------------------------------------------
+   Cookie consent — banner + preferences dialog
+
+   Markup for both is created by site.js (§15) rather than living in all 46
+   page files, so there is one copy to change. The dialog reuses .modal and
+   .modal__panel above; only the consent-specific parts are defined here.
+
+   z-index sits just under .modal (200) so the banner never covers the
+   preferences dialog opened from it.
+   -------------------------------------------------------------------------- */
+
+.cookie-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 190;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 22px 24px;
+  background: #ffffff;
+  border: 1px solid var(--border-cream);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-lift);
+}
+
+.cookie-banner[hidden] { display: none; }
+
+.cookie-banner h2 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.cookie-banner p {
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--brown-mid);
+}
+
+.cookie-banner p a { color: var(--orange-dark); }
+
+.cookie-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Tighter than the sitewide .btn, which is sized for page CTAs. */
+.cookie-banner__actions .btn { padding: 12px 24px; font-size: 15px; }
+
+.cookie-banner__manage {
+  margin-left: auto;
+  padding: 12px 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 15px;
+  color: var(--brown-mid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cookie-banner__manage:hover { color: var(--ink); }
+
+/* ---- Preferences dialog ---- */
+
+.cookie-prefs__panel {
+  max-width: 520px;
+  gap: 0;
+  /* This dialog is far taller than the location picker whose .modal styles it
+     borrows, so on a short screen it must scroll rather than push its own Save
+     button off-screen with no way to reach it. */
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.cookie-prefs__intro {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--brown-mid);
+  margin: 6px 0 20px;
+}
+
+.cookie-prefs__intro a { color: var(--orange-dark); }
+
+.cookie-prefs__group {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-top: 1px solid var(--divider-cream);
+}
+
+.cookie-prefs__group:last-of-type { border-bottom: 1px solid var(--divider-cream); }
+
+.cookie-prefs__text { flex: 1; min-width: 0; }
+
+.cookie-prefs__text h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.cookie-prefs__text p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--brown-mid);
+}
+
+/* Locked categories say so in words, not with a disabled switch that looks
+   like a control the visitor failed to operate. */
+.cookie-prefs__locked {
+  flex: none;
+  padding-top: 2px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brown-soft);
+  white-space: nowrap;
+}
+
+/* ---- Switch. A real checkbox, restyled, so it stays keyboard operable
+       and announces its own checked state to assistive tech. ---- */
+
+.cookie-switch {
+  flex: none;
+  position: relative;
+  width: 48px;
+  height: 28px;
+  margin-top: 1px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--line);
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background-color var(--dur-micro) var(--ease);
+}
+
+.cookie-switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(8, 7, 23, 0.25);
+  transition: transform var(--dur-micro) var(--ease);
+}
+
+.cookie-switch:checked { background: var(--orange); }
+.cookie-switch:checked::after { transform: translateX(20px); }
+
+.cookie-prefs__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.cookie-prefs__actions .btn { padding: 13px 26px; font-size: 15px; }
+
+/* Footer entry point. Hidden until site.js reveals it, so a visitor whose JS
+   never runs is not shown a control that could not open anything. */
+.site-footer__cookie {
+  /* Matches .site-footer__legal a exactly: it sits in that row and must not
+     read as a different kind of thing. A button inherits none of the anchor
+     rules and defaults to the UA's own font, so every value is restated. */
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: inherit;
+  color: var(--brown-mid);
+}
+
+.site-footer__cookie:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .cookie-banner { padding: 20px; }
+  .cookie-banner__actions .btn { flex: 1 1 auto; }
+  .cookie-banner__manage { margin-left: 0; width: 100%; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cookie-switch,
+  .cookie-switch::after { transition: none; }
+}

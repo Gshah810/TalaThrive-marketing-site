@@ -760,4 +760,229 @@
       window.ttTrack('newsletter_signup', { form_id: e.detail.formId || '' });
     }
   });
+
+  /* ------------------------------------------------------------------------
+     15. Cookie consent — banner and preferences
+
+     Governs the Meta Pixel only. GA4 and PostHog are first-party measurement
+     that runs for every visitor (analytics.js records why), so this UI states
+     that in words rather than offering a switch that would not do anything.
+     A control that ignores the visitor is worse than no control.
+
+     Consent state lives in localStorage under tt_marketing_consent, the key
+     analytics.js reads on load. This section talks to that key directly and
+     only uses analytics.js's helpers when they exist, because analytics.js is
+     blocked for a real share of visitors — and for them the banner still has
+     to record a decision, or it reappears on every page forever.
+
+     Markup is built here rather than duplicated across 46 page files.
+     ---------------------------------------------------------------------- */
+
+  (function cookieConsent() {
+    var CONSENT_KEY = 'tt_marketing_consent';   // shared with analytics.js
+
+    function readState() {
+      // analytics.js owns this when it loaded; fall back when it was blocked.
+      if (typeof window.ttMarketingConsentState === 'function') {
+        return window.ttMarketingConsentState();
+      }
+      try {
+        var v = localStorage.getItem(CONSENT_KEY);
+        return v === 'granted' || v === 'denied' ? v : 'unset';
+      } catch (e) {
+        return 'denied';   // no storage: never nag a visitor we cannot remember
+      }
+    }
+
+    function writeState(granted) {
+      // Always persist here, even when analytics.js is present and would also
+      // persist, so a decision survives analytics.js being blocked.
+      try {
+        localStorage.setItem(CONSENT_KEY, granted ? 'granted' : 'denied');
+      } catch (e) { /* decision still applies to this page view */ }
+
+      // Present only when analytics.js ran. Loads the pixel on the spot when
+      // granted, so a visitor who accepts is counted on this page, not the next.
+      if (typeof window.ttSetMarketingConsent === 'function') {
+        window.ttSetMarketingConsent(!!granted);
+      }
+    }
+
+    // Every page's footer links to the privacy policy, at a depth that differs
+    // per page (./, ../, ../../). Reuse that href instead of guessing.
+    function privacyHref() {
+      var link = $('.site-footer__legal a[href*="privacy-policy"]');
+      return link ? link.getAttribute('href') : '/privacy-policy/';
+    }
+
+    var banner = null;
+    var prefs = null;
+    var marketingSwitch = null;
+    var lastFocused = null;
+
+    /* ---- Preferences dialog ------------------------------------------- */
+
+    function buildPrefs() {
+      if (prefs) return;
+
+      prefs = document.createElement('div');
+      prefs.className = 'modal';
+      prefs.hidden = true;
+      prefs.setAttribute('role', 'dialog');
+      prefs.setAttribute('aria-modal', 'true');
+      prefs.setAttribute('aria-labelledby', 'cookie-prefs-title');
+      prefs.innerHTML =
+        '<div class="modal__panel cookie-prefs__panel">' +
+          '<h2 id="cookie-prefs-title">Cookie preferences</h2>' +
+          '<p class="cookie-prefs__intro">Choose what Tala Thrive may store on your device. ' +
+            'Full detail is in our <a href="' + privacyHref() + '">privacy policy</a>.</p>' +
+
+          '<div class="cookie-prefs__group">' +
+            '<div class="cookie-prefs__text">' +
+              '<h3>Essential</h3>' +
+              '<p>Needed for the site to work: keeping our forms secure against ' +
+                'automated abuse, and remembering the choices you make here.</p>' +
+            '</div>' +
+            '<span class="cookie-prefs__locked">Always on</span>' +
+          '</div>' +
+
+          '<div class="cookie-prefs__group">' +
+            '<div class="cookie-prefs__text">' +
+              '<h3>Analytics</h3>' +
+              '<p>Counts visits and which pages are read, so we know what to ' +
+                'improve. We use this on every visit and it is not shared with ' +
+                'advertisers.</p>' +
+            '</div>' +
+            '<span class="cookie-prefs__locked">Always on</span>' +
+          '</div>' +
+
+          '<div class="cookie-prefs__group">' +
+            '<div class="cookie-prefs__text">' +
+              '<h3><label for="cookie-marketing">Advertising</label></h3>' +
+              '<p>Lets Meta (Facebook and Instagram) know which pages you visit ' +
+                'here, so we can measure our ads. Off unless you turn it on.</p>' +
+            '</div>' +
+            '<input class="cookie-switch" type="checkbox" id="cookie-marketing" ' +
+              'role="switch" data-cookie-marketing>' +
+          '</div>' +
+
+          '<div class="cookie-prefs__actions">' +
+            '<button class="btn btn--primary" type="button" data-cookie-save>Save preferences</button>' +
+            '<button class="btn btn--outline" type="button" data-cookie-cancel>Cancel</button>' +
+          '</div>' +
+        '</div>';
+
+      document.body.appendChild(prefs);
+      marketingSwitch = $('[data-cookie-marketing]', prefs);
+
+      $('[data-cookie-save]', prefs).addEventListener('click', function () {
+        var granted = !!marketingSwitch.checked;
+        writeState(granted);
+        window.ttTrack('cookie_consent', {
+          choice: granted ? 'accepted' : 'declined', via: 'preferences'
+        });
+        closePrefs();
+        hideBanner();
+      });
+
+      $('[data-cookie-cancel]', prefs).addEventListener('click', closePrefs);
+
+      prefs.addEventListener('click', function (e) {
+        if (e.target === prefs) closePrefs();
+      });
+
+      // Escape closes; Tab is trapped within the dialog while it is open.
+      document.addEventListener('keydown', function (e) {
+        if (prefs.hidden) return;
+        if (e.key === 'Escape') { closePrefs(); return; }
+        if (e.key === 'Tab') {
+          var f = focusable();
+          if (!f.length) return;
+          var first = f[0], last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault(); last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault(); first.focus();
+          }
+        }
+      });
+    }
+
+    function focusable() {
+      return $$('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])', prefs)
+        .filter(function (el) { return !el.disabled && el.offsetParent !== null; });
+    }
+
+    function openPrefs() {
+      buildPrefs();
+      lastFocused = document.activeElement;
+      // Reflect what is actually stored, so the dialog never opens showing a
+      // state the visitor did not choose.
+      marketingSwitch.checked = readState() === 'granted';
+      prefs.hidden = false;
+      document.body.style.overflow = 'hidden';
+      var f = focusable();
+      if (f[0]) f[0].focus();
+    }
+
+    function closePrefs() {
+      if (!prefs || prefs.hidden) return;
+      prefs.hidden = true;
+      document.body.style.overflow = '';
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    /* ---- Banner -------------------------------------------------------- */
+
+    function hideBanner() {
+      if (banner) banner.hidden = true;
+    }
+
+    function showBanner() {
+      banner = document.createElement('div');
+      banner.className = 'cookie-banner';
+      banner.setAttribute('role', 'region');
+      banner.setAttribute('aria-label', 'Cookie consent');
+      banner.innerHTML =
+        '<h2>Cookies on Tala Thrive</h2>' +
+        '<p>Essential cookies keep this site working and we measure visits to ' +
+          'improve it. We would also like to set advertising cookies from Meta ' +
+          'to measure our ads. Those stay off unless you accept. ' +
+          '<a href="' + privacyHref() + '">Read our privacy policy</a>.</p>' +
+        '<div class="cookie-banner__actions">' +
+          '<button class="btn btn--primary" type="button" data-cookie-accept>Accept</button>' +
+          '<button class="btn btn--outline" type="button" data-cookie-decline>Decline</button>' +
+          '<button class="cookie-banner__manage" type="button" data-cookie-manage>Manage preferences</button>' +
+        '</div>';
+
+      document.body.appendChild(banner);
+
+      $('[data-cookie-accept]', banner).addEventListener('click', function () {
+        writeState(true);
+        window.ttTrack('cookie_consent', { choice: 'accepted', via: 'banner' });
+        hideBanner();
+      });
+
+      // Declining is one click, same as accepting. Anything more lopsided is
+      // not a free choice.
+      $('[data-cookie-decline]', banner).addEventListener('click', function () {
+        writeState(false);
+        window.ttTrack('cookie_consent', { choice: 'declined', via: 'banner' });
+        hideBanner();
+      });
+
+      $('[data-cookie-manage]', banner).addEventListener('click', openPrefs);
+    }
+
+    /* ---- Wire up ------------------------------------------------------- */
+
+    // Footer entry point, so a decision can always be revisited. It ships
+    // hidden and is revealed only here, so it is never a dead control.
+    $$('[data-cookie-settings]').forEach(function (btn) {
+      btn.hidden = false;
+      btn.addEventListener('click', openPrefs);
+    });
+
+    if (readState() === 'unset') showBanner();
+  })();
 })();

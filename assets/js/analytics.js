@@ -43,8 +43,14 @@
   // disables the pixel rather than reporting to nothing.
   var META_PIXEL_ID = '1546227733368720';
 
-  // localStorage key holding the visitor's marketing-cookie decision.
-  // 'granted' loads the pixel; anything else (including absent) does not.
+  // localStorage key holding the visitor's marketing-cookie decision:
+  // 'granted' loads the pixel, 'denied' does not, absent means not yet asked.
+  //
+  // SHARED CONTRACT: site.js §15 (the consent banner) reads and writes this
+  // same key directly. It has to. This file is named analytics.js and loads
+  // GA4 and PostHog, so ad blockers stop it outright for a real share of
+  // visitors — and the banner must still work for them, or they get asked
+  // forever and their "no" is never recorded. Change the key in both files.
   var MARKETING_CONSENT_KEY = 'tt_marketing_consent';
 
   /* ------------------------------------------------------------------------
@@ -148,6 +154,19 @@
   }
 
   window.ttHasMarketingConsent = hasMarketingConsent;
+
+  // Three-state read for the banner: it must distinguish "declined" from
+  // "not yet asked", and only show itself for the latter.
+  window.ttMarketingConsentState = function () {
+    try {
+      var v = localStorage.getItem(MARKETING_CONSENT_KEY);
+      return v === 'granted' || v === 'denied' ? v : 'unset';
+    } catch (e) {
+      // Storage unreadable: nothing can be persisted, so a banner would
+      // reappear on every page. Report a decision to keep it quiet.
+      return 'denied';
+    }
+  };
 
   window.ttSetMarketingConsent = function (granted) {
     try {
