@@ -46,6 +46,25 @@ relative paths behave better over HTTP.
 
 ---
 
+## Checks
+
+`.github/workflows/ci.yml` runs `scripts/check_site.py` on every pull request and
+on `main`. It is not a build; it only verifies the files are consistent. Run it
+locally before pushing:
+
+```bash
+python3 scripts/check_site.py
+```
+
+It fails when a relative `href`/`src` (or a CSS `url()`) points at a file that does
+not exist, when an indexable page is missing from `sitemap.xml` or its canonical
+URL does not match its path, when a page's site header or footer differs from
+`index.html`, when start and end tags do not balance, or when `LINKS.md` is stale.
+Redirect stubs marked `noindex` are exempt from the sitemap and header/footer
+checks.
+
+---
+
 ## Deploying to GitHub Pages
 
 1. Push to `main`.
