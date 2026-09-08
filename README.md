@@ -51,22 +51,28 @@ relative paths behave better over HTTP.
 1. Push to `main`.
 2. **Settings → Pages → Build and deployment**: source `Deploy from a branch`,
    branch `main`, folder `/ (root)`.
-3. The site publishes at `https://gshah810.github.io/TalaThrive-marketing-site/`.
+3. The site publishes at the project URL, `https://gshah810.github.io/TalaThrive-marketing-site/`,
+   which stays the preview URL until DNS moves. The live site is `https://talathrive.com/`.
 
 `.nojekyll` is committed so GitHub serves the files as-is rather than running them
 through Jekyll.
 
 ### Custom domain
 
-Add a file named `CNAME` at the repository root containing just the hostname
-(for example `www.talathrive.com`), point a DNS `CNAME` record at
-`<org>.github.io`, then tick **Enforce HTTPS** in Settings → Pages. Certificates
-are issued automatically and free.
+The custom domain is the apex, `talathrive.com`; `www` redirects to it. Point DNS
+at GitHub Pages first (`A`/`AAAA` records for the apex, a `CNAME` for `www` at
+`gshah810.github.io`), and only then add a file named `CNAME` at the repository
+root containing just `talathrive.com` and tick **Enforce HTTPS** in Settings →
+Pages. Certificates are issued automatically and free. Do not commit `CNAME`
+before DNS points here: GitHub would start redirecting the working project URL to
+a host that does not serve this site yet.
 
 Every internal link and asset path in this repository is **relative**, so the site
-works unchanged at the project-page URL and at a custom domain. If you move to a
-custom domain, update the absolute URLs in `sitemap.xml`, `robots.txt`, and the
-`<link rel="canonical">` / `og:` tags in each page's `<head>`.
+works unchanged at the project-page URL and at the custom domain. The absolute
+URLs in `sitemap.xml`, `robots.txt`, the `<link rel="canonical">` / `og:` tags in
+each page's `<head>`, and `OWN_PREFIX` in `scripts/gen_links.py` all name
+`https://talathrive.com/`. `404.html` detects a `github.io` host at runtime, so
+the project URL keeps working for previews without any of those changing.
 
 ---
 

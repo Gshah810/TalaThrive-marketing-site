@@ -7,7 +7,7 @@ SKIP_DIRS = {'.git', 'design-source', 'design_handoff'}
 SKIP_FILES = {'LINKS.md', 'README.md'}
 EXTS = {'.html', '.js', '.css', '.xml', '.txt'}
 URL_RE = re.compile(r'https?://[^\s"\'<>()\\`]+')
-OWN_PREFIX = 'https://gshah810.github.io/TalaThrive-marketing-site/'
+OWN_PREFIX = 'https://talathrive.com/'
 
 def files():
     for dp, dns, fns in os.walk(ROOT):
@@ -80,8 +80,8 @@ for g in ORDER:
         out.append('`/login`. Never point these at the apex or `www`: those hosts are (or will be)')
         out.append('the marketing site, and old apex app paths are bridged by `404.html`.\n')
     if g == 'Own canonical / sitemap URLs':
-        out.append('Still on the GitHub Pages project URL. Switching these to the custom domain is')
-        out.append('part of the domain cutover, not before it.\n')
+        out.append('These name the custom domain, `talathrive.com` (apex, not `www`). The site is')
+        out.append('also served at the GitHub Pages project URL, which `404.html` handles at runtime.\n')
     out.append('| URL | Uses | Files |')
     out.append('|---|---|---|')
     for u in groups[g]:
