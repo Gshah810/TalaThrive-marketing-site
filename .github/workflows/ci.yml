@@ -1,0 +1,21 @@
+# Static checks on every pull request and on main. There is no build: GitHub Pages
+# serves the repository as-is, so this only verifies the files are consistent.
+# Run the same thing locally with `python3 scripts/check_site.py`.
+name: Site checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links, sitemap, header/footer, HTML balance and LINKS.md
+        run: python3 scripts/check_site.py
