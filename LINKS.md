@@ -13,7 +13,7 @@ Scope: `*.html`, `*.js`, `*.css`, `*.xml`, `*.txt` under the repo root, excludin
 `design-source/`, `design_handoff/`, `README.md` and this file. Own canonical and
 sitemap URLs are listed last for completeness; they are not outbound links.
 
-126 distinct URLs, 860 occurrences, generated from `519b6ed`.
+126 distinct URLs, 860 occurrences, generated from `ee2a405`.
 
 
 ## App (platform)
@@ -125,93 +125,93 @@ the marketing site, and old apex app paths are bridged by `404.html`.
 
 ## Own canonical / sitemap URLs
 
-Still on the GitHub Pages project URL. Switching these to the custom domain is
-part of the domain cutover, not before it.
+These name the custom domain, `talathrive.com` (apex, not `www`). The site is
+also served at the GitHub Pages project URL, which `404.html` handles at runtime.
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://gshah810.github.io/TalaThrive-marketing-site/` | 2 | `index.html`, `sitemap.xml` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/404.html` | 1 | `404.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/about/` | 2 | `about/index.html`, `sitemap.xml` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/accessibility/` | 2 | `accessibility/index.html`, `sitemap.xml` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/0cFvoQ3c5vr7M9xpaagnN72XuMw.png` | 1 | `stories/integrating-faith-and-therapy-the-role-of-spirituality-in-mental-health/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/1V8WUHpXNVS0hgLj2m7N4FNKU.png` | 1 | `stories/elder-daughter-syndrome/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/2ZtuvH1RzlOAfZFAY3doB9CdFeM.png` | 1 | `stories/the-power-of-speaking-up/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/2gZMlqr6V7e2VYNqEzzmXNweeuY.png` | 1 | `stories/studying-abroad-and-struggling-you-re-not-failing---you-re-carrying-a-lot./index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/6pZOabqlNknCr1iFZfhQ3KVK5A.png` | 1 | `stories/refill-your-cup-this-international-self-care-day/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/8k6gdpsITzqnjyJW2zJiY5lZM.png` | 1 | `stories/everybody-knows-millennials-and-gen-z-but-have-you-heard-about-the-odyssey-years---finding-your-way-through-the-wandering/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/9pzmlf52qPtusuczM3rpuPWXC78.png` | 1 | `stories/how-to-manage-stress-this-stress-awareness-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/AmV9kXsqeqQLTsRwJDZVrjBYaUQ.png` | 1 | `stories/how-are-you-taking-care-of-yourself-mentally/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/BxF7HK1EdKvmRI7X5sdOgXKgKSg.jpg` | 1 | `stories/r-u-ok-when-was-the-last-time-someone-asked-you-this/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/EdnMXcIc6SyXFicxJ9JffVg8.png` | 1 | `stories/have-you-heard-of-mrs-bibi-syndrome-no-it-s-not-a-medical-condition/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/FVOQUsHo7OWSyHhVTJjlDPuwbJU.png` | 1 | `stories/cultural-awareness-in-therapy-for-bipoc-mental-health-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/IepZgnaZKJs7Nx6jQTERrnFYXs.png` | 1 | `stories/the-mid-year-reset-how-to-recalibrate-your-goals-without-burnout/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/L08II4SBck4r4sl5wPXMJI61LI.png` | 1 | `stories/generational-trauma-forgiveness/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/Rjo38v2oeEq1akQBSwwm6yDF8HU.png` | 1 | `stories/getting-ahead-in-2025-the-power-of-affirmations/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/SHjZBYkmeLGNmYdIIOl8WIBeWk.jpg` | 1 | `stories/affirmations-101-the-science-backed-mental-health-tool-you-re-not-using-correctly/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/UnOoGj1p6e93K0S378mk4S37JKc.png` | 1 | `stories/welcome-to-our-month-of-love-selv-love/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/YbLd3N81Hq7HNv1AqO9DGFt59sI.png` | 1 | `stories/culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/dZCtmxvXsSFIdSayvlWMKKeve8.png` | 1 | `stories/dry-january-a-fresh-start-for-your-body-and-mind/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/gUCPhVRdTnNNeYlW25N5yLZ1uiU.png` | 1 | `stories/how-are-you-mentally-easing-into-2024/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/gesM3YfmuzhFZ426shL9eZ3yDQ.png` | 1 | `stories/we-re-building-a-community-of-culturally-competent-therapists-and-coaches/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/kazUK9bWyqN6JtOoDPc1mHv3NVE.png` | 1 | `stories/focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/ljbASKSGN17GLba44f6VQkSL2LI.png` | 1 | `stories/rest-relaxation/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/n8mVDOy93oapevoNOxDgS59kEQ.png` | 1 | `stories/honouring-black-history-month-a-spotlight-on-mental-health-for-black-communities/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/nCgF9hyIh2NF24hHxn3Ss8WBkxU.png` | 1 | `stories/manifesting-soft-lives-for-black-women-this-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/nUWLYNavmYBHqBDsOeXoc5Elo.png` | 1 | `stories/mental-health-wellness-tips-from-the-tala-thrive-team/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/nUgtYhDx7qxgyGpCG4FwR1WA.png` | 1 | `stories/reflecting-on-earth-day-and-how-we-care-for-ourselves/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/nw1y8Q72QWT84QDJU3gEtjZ8.png` | 1 | `stories/please-check-on-your-strong-friend-this-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/oYpAKYg0RzxCRvtecINhNpOmsjI.jpg` | 1 | `stories/how-to-train-your-mind-like-you-train-your-body/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/pJicPKhvf6UkkuCUz87GO32cmd4.png` | 1 | `stories/let-s-talk-about-resilience-this-women-s-history-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/rgXYLnE6bx9bMVi0jfUhhikr0.png` | 1 | `stories/let-s-talk-about-men-s-mental-health/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/rsl3Nfp27BVJaahquIbiTqlHZEo.png` | 1 | `stories/what-are-you-thankful-for-this-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/wju7xzDg5uT8rgoGMmsKWLda4M.png` | 1 | `stories/minority-mental-health-awareness-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/xKEaPwWFGfUUiG6xqldYdcEwhqQ.jpg` | 1 | `stories/racism-and-mental-health-how-online-therapy-can-help/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/yfKVwe9pj3XzyssMv428W4Iv2c.png` | 1 | `stories/what-exactly-does-culturally-competent-mental-health-care-mean/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/assets/img/stories/zfI0f5FcWQvmN1ujux3VE6UTQU.png` | 1 | `stories/lgbtqia-mental-health/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/for-businesses/` | 2 | `for-businesses/index.html`, `sitemap.xml` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/partner-with-us/` | 2 | `partner-with-us/index.html`, `sitemap.xml` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/practitioners/` | 2 | `practitioners/index.html`, `sitemap.xml` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/privacy-policy/` | 2 | `privacy-policy/index.html`, `sitemap.xml` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/sitemap.xml` | 1 | `robots.txt` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/` | 2 | `sitemap.xml`, `stories/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/affirmations-101-the-science-backed-mental-health-tool-you-re-not-using-correctly/` | 2 | `sitemap.xml`, `stories/affirmations-101-the-science-backed-mental-health-tool-you-re-not-using-correctly/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/cultural-awareness-in-therapy-for-bipoc-mental-health-month/` | 2 | `sitemap.xml`, `stories/cultural-awareness-in-therapy-for-bipoc-mental-health-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/` | 2 | `sitemap.xml`, `stories/culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/dry-january-a-fresh-start-for-your-body-and-mind/` | 2 | `sitemap.xml`, `stories/dry-january-a-fresh-start-for-your-body-and-mind/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/elder-daughter-syndrome/` | 2 | `sitemap.xml`, `stories/elder-daughter-syndrome/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/everybody-knows-millennials-and-gen-z-but-have-you-heard-about-the-odyssey-years---finding-your-way-through-the-wandering/` | 2 | `sitemap.xml`, `stories/everybody-knows-millennials-and-gen-z-but-have-you-heard-about-the-odyssey-years---finding-your-way-through-the-wandering/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/` | 2 | `sitemap.xml`, `stories/focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/generational-trauma-forgiveness/` | 2 | `sitemap.xml`, `stories/generational-trauma-forgiveness/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/getting-ahead-in-2025-the-power-of-affirmations/` | 2 | `sitemap.xml`, `stories/getting-ahead-in-2025-the-power-of-affirmations/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/have-you-heard-of-mrs-bibi-syndrome-no-it-s-not-a-medical-condition/` | 2 | `sitemap.xml`, `stories/have-you-heard-of-mrs-bibi-syndrome-no-it-s-not-a-medical-condition/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/honouring-black-history-month-a-spotlight-on-mental-health-for-black-communities/` | 2 | `sitemap.xml`, `stories/honouring-black-history-month-a-spotlight-on-mental-health-for-black-communities/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/how-are-you-mentally-easing-into-2024/` | 2 | `sitemap.xml`, `stories/how-are-you-mentally-easing-into-2024/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/how-are-you-taking-care-of-yourself-mentally/` | 2 | `sitemap.xml`, `stories/how-are-you-taking-care-of-yourself-mentally/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/how-to-manage-stress-this-stress-awareness-month/` | 2 | `sitemap.xml`, `stories/how-to-manage-stress-this-stress-awareness-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/how-to-train-your-mind-like-you-train-your-body/` | 2 | `sitemap.xml`, `stories/how-to-train-your-mind-like-you-train-your-body/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/integrating-faith-and-therapy-the-role-of-spirituality-in-mental-health/` | 2 | `sitemap.xml`, `stories/integrating-faith-and-therapy-the-role-of-spirituality-in-mental-health/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/let-s-talk-about-men-s-mental-health/` | 2 | `sitemap.xml`, `stories/let-s-talk-about-men-s-mental-health/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/let-s-talk-about-resilience-this-women-s-history-month/` | 2 | `sitemap.xml`, `stories/let-s-talk-about-resilience-this-women-s-history-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/lgbtqia-mental-health/` | 2 | `sitemap.xml`, `stories/lgbtqia-mental-health/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/manifesting-soft-lives-for-black-women-this-month/` | 2 | `sitemap.xml`, `stories/manifesting-soft-lives-for-black-women-this-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/mental-health-wellness-tips-from-the-tala-thrive-team/` | 2 | `sitemap.xml`, `stories/mental-health-wellness-tips-from-the-tala-thrive-team/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/minority-mental-health-awareness-month/` | 2 | `sitemap.xml`, `stories/minority-mental-health-awareness-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/please-check-on-your-strong-friend-this-month/` | 2 | `sitemap.xml`, `stories/please-check-on-your-strong-friend-this-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/r-u-ok-when-was-the-last-time-someone-asked-you-this/` | 2 | `sitemap.xml`, `stories/r-u-ok-when-was-the-last-time-someone-asked-you-this/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/racism-and-mental-health-how-online-therapy-can-help/` | 2 | `sitemap.xml`, `stories/racism-and-mental-health-how-online-therapy-can-help/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/refill-your-cup-this-international-self-care-day/` | 2 | `sitemap.xml`, `stories/refill-your-cup-this-international-self-care-day/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/reflecting-on-earth-day-and-how-we-care-for-ourselves/` | 2 | `sitemap.xml`, `stories/reflecting-on-earth-day-and-how-we-care-for-ourselves/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/rest-relaxation/` | 2 | `sitemap.xml`, `stories/rest-relaxation/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/studying-abroad-and-struggling-you-re-not-failing---you-re-carrying-a-lot./` | 2 | `sitemap.xml`, `stories/studying-abroad-and-struggling-you-re-not-failing---you-re-carrying-a-lot./index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/the-mid-year-reset-how-to-recalibrate-your-goals-without-burnout/` | 2 | `sitemap.xml`, `stories/the-mid-year-reset-how-to-recalibrate-your-goals-without-burnout/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/the-power-of-speaking-up/` | 2 | `sitemap.xml`, `stories/the-power-of-speaking-up/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/we-re-building-a-community-of-culturally-competent-therapists-and-coaches/` | 2 | `sitemap.xml`, `stories/we-re-building-a-community-of-culturally-competent-therapists-and-coaches/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/welcome-to-our-month-of-love-selv-love/` | 2 | `sitemap.xml`, `stories/welcome-to-our-month-of-love-selv-love/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/what-are-you-thankful-for-this-month/` | 2 | `sitemap.xml`, `stories/what-are-you-thankful-for-this-month/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/stories/what-exactly-does-culturally-competent-mental-health-care-mean/` | 2 | `sitemap.xml`, `stories/what-exactly-does-culturally-competent-mental-health-care-mean/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/story-generational-trauma/` | 3 | `sitemap.xml`, `stories/how-to-begin-healing-from-generational-trauma/index.html`, `story-generational-trauma/index.html` |
-| `https://gshah810.github.io/TalaThrive-marketing-site/terms/` | 3 | `sitemap.xml`, `terms-conditions/index.html`, `terms/index.html` |
+| `https://talathrive.com/` | 2 | `index.html`, `sitemap.xml` |
+| `https://talathrive.com/404.html` | 1 | `404.html` |
+| `https://talathrive.com/about/` | 2 | `about/index.html`, `sitemap.xml` |
+| `https://talathrive.com/accessibility/` | 2 | `accessibility/index.html`, `sitemap.xml` |
+| `https://talathrive.com/assets/img/stories/0cFvoQ3c5vr7M9xpaagnN72XuMw.png` | 1 | `stories/integrating-faith-and-therapy-the-role-of-spirituality-in-mental-health/index.html` |
+| `https://talathrive.com/assets/img/stories/1V8WUHpXNVS0hgLj2m7N4FNKU.png` | 1 | `stories/elder-daughter-syndrome/index.html` |
+| `https://talathrive.com/assets/img/stories/2ZtuvH1RzlOAfZFAY3doB9CdFeM.png` | 1 | `stories/the-power-of-speaking-up/index.html` |
+| `https://talathrive.com/assets/img/stories/2gZMlqr6V7e2VYNqEzzmXNweeuY.png` | 1 | `stories/studying-abroad-and-struggling-you-re-not-failing---you-re-carrying-a-lot./index.html` |
+| `https://talathrive.com/assets/img/stories/6pZOabqlNknCr1iFZfhQ3KVK5A.png` | 1 | `stories/refill-your-cup-this-international-self-care-day/index.html` |
+| `https://talathrive.com/assets/img/stories/8k6gdpsITzqnjyJW2zJiY5lZM.png` | 1 | `stories/everybody-knows-millennials-and-gen-z-but-have-you-heard-about-the-odyssey-years---finding-your-way-through-the-wandering/index.html` |
+| `https://talathrive.com/assets/img/stories/9pzmlf52qPtusuczM3rpuPWXC78.png` | 1 | `stories/how-to-manage-stress-this-stress-awareness-month/index.html` |
+| `https://talathrive.com/assets/img/stories/AmV9kXsqeqQLTsRwJDZVrjBYaUQ.png` | 1 | `stories/how-are-you-taking-care-of-yourself-mentally/index.html` |
+| `https://talathrive.com/assets/img/stories/BxF7HK1EdKvmRI7X5sdOgXKgKSg.jpg` | 1 | `stories/r-u-ok-when-was-the-last-time-someone-asked-you-this/index.html` |
+| `https://talathrive.com/assets/img/stories/EdnMXcIc6SyXFicxJ9JffVg8.png` | 1 | `stories/have-you-heard-of-mrs-bibi-syndrome-no-it-s-not-a-medical-condition/index.html` |
+| `https://talathrive.com/assets/img/stories/FVOQUsHo7OWSyHhVTJjlDPuwbJU.png` | 1 | `stories/cultural-awareness-in-therapy-for-bipoc-mental-health-month/index.html` |
+| `https://talathrive.com/assets/img/stories/IepZgnaZKJs7Nx6jQTERrnFYXs.png` | 1 | `stories/the-mid-year-reset-how-to-recalibrate-your-goals-without-burnout/index.html` |
+| `https://talathrive.com/assets/img/stories/L08II4SBck4r4sl5wPXMJI61LI.png` | 1 | `stories/generational-trauma-forgiveness/index.html` |
+| `https://talathrive.com/assets/img/stories/Rjo38v2oeEq1akQBSwwm6yDF8HU.png` | 1 | `stories/getting-ahead-in-2025-the-power-of-affirmations/index.html` |
+| `https://talathrive.com/assets/img/stories/SHjZBYkmeLGNmYdIIOl8WIBeWk.jpg` | 1 | `stories/affirmations-101-the-science-backed-mental-health-tool-you-re-not-using-correctly/index.html` |
+| `https://talathrive.com/assets/img/stories/UnOoGj1p6e93K0S378mk4S37JKc.png` | 1 | `stories/welcome-to-our-month-of-love-selv-love/index.html` |
+| `https://talathrive.com/assets/img/stories/YbLd3N81Hq7HNv1AqO9DGFt59sI.png` | 1 | `stories/culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/index.html` |
+| `https://talathrive.com/assets/img/stories/dZCtmxvXsSFIdSayvlWMKKeve8.png` | 1 | `stories/dry-january-a-fresh-start-for-your-body-and-mind/index.html` |
+| `https://talathrive.com/assets/img/stories/gUCPhVRdTnNNeYlW25N5yLZ1uiU.png` | 1 | `stories/how-are-you-mentally-easing-into-2024/index.html` |
+| `https://talathrive.com/assets/img/stories/gesM3YfmuzhFZ426shL9eZ3yDQ.png` | 1 | `stories/we-re-building-a-community-of-culturally-competent-therapists-and-coaches/index.html` |
+| `https://talathrive.com/assets/img/stories/kazUK9bWyqN6JtOoDPc1mHv3NVE.png` | 1 | `stories/focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/index.html` |
+| `https://talathrive.com/assets/img/stories/ljbASKSGN17GLba44f6VQkSL2LI.png` | 1 | `stories/rest-relaxation/index.html` |
+| `https://talathrive.com/assets/img/stories/n8mVDOy93oapevoNOxDgS59kEQ.png` | 1 | `stories/honouring-black-history-month-a-spotlight-on-mental-health-for-black-communities/index.html` |
+| `https://talathrive.com/assets/img/stories/nCgF9hyIh2NF24hHxn3Ss8WBkxU.png` | 1 | `stories/manifesting-soft-lives-for-black-women-this-month/index.html` |
+| `https://talathrive.com/assets/img/stories/nUWLYNavmYBHqBDsOeXoc5Elo.png` | 1 | `stories/mental-health-wellness-tips-from-the-tala-thrive-team/index.html` |
+| `https://talathrive.com/assets/img/stories/nUgtYhDx7qxgyGpCG4FwR1WA.png` | 1 | `stories/reflecting-on-earth-day-and-how-we-care-for-ourselves/index.html` |
+| `https://talathrive.com/assets/img/stories/nw1y8Q72QWT84QDJU3gEtjZ8.png` | 1 | `stories/please-check-on-your-strong-friend-this-month/index.html` |
+| `https://talathrive.com/assets/img/stories/oYpAKYg0RzxCRvtecINhNpOmsjI.jpg` | 1 | `stories/how-to-train-your-mind-like-you-train-your-body/index.html` |
+| `https://talathrive.com/assets/img/stories/pJicPKhvf6UkkuCUz87GO32cmd4.png` | 1 | `stories/let-s-talk-about-resilience-this-women-s-history-month/index.html` |
+| `https://talathrive.com/assets/img/stories/rgXYLnE6bx9bMVi0jfUhhikr0.png` | 1 | `stories/let-s-talk-about-men-s-mental-health/index.html` |
+| `https://talathrive.com/assets/img/stories/rsl3Nfp27BVJaahquIbiTqlHZEo.png` | 1 | `stories/what-are-you-thankful-for-this-month/index.html` |
+| `https://talathrive.com/assets/img/stories/wju7xzDg5uT8rgoGMmsKWLda4M.png` | 1 | `stories/minority-mental-health-awareness-month/index.html` |
+| `https://talathrive.com/assets/img/stories/xKEaPwWFGfUUiG6xqldYdcEwhqQ.jpg` | 1 | `stories/racism-and-mental-health-how-online-therapy-can-help/index.html` |
+| `https://talathrive.com/assets/img/stories/yfKVwe9pj3XzyssMv428W4Iv2c.png` | 1 | `stories/what-exactly-does-culturally-competent-mental-health-care-mean/index.html` |
+| `https://talathrive.com/assets/img/stories/zfI0f5FcWQvmN1ujux3VE6UTQU.png` | 1 | `stories/lgbtqia-mental-health/index.html` |
+| `https://talathrive.com/for-businesses/` | 2 | `for-businesses/index.html`, `sitemap.xml` |
+| `https://talathrive.com/partner-with-us/` | 2 | `partner-with-us/index.html`, `sitemap.xml` |
+| `https://talathrive.com/practitioners/` | 2 | `practitioners/index.html`, `sitemap.xml` |
+| `https://talathrive.com/privacy-policy/` | 2 | `privacy-policy/index.html`, `sitemap.xml` |
+| `https://talathrive.com/sitemap.xml` | 1 | `robots.txt` |
+| `https://talathrive.com/stories/` | 2 | `sitemap.xml`, `stories/index.html` |
+| `https://talathrive.com/stories/affirmations-101-the-science-backed-mental-health-tool-you-re-not-using-correctly/` | 2 | `sitemap.xml`, `stories/affirmations-101-the-science-backed-mental-health-tool-you-re-not-using-correctly/index.html` |
+| `https://talathrive.com/stories/cultural-awareness-in-therapy-for-bipoc-mental-health-month/` | 2 | `sitemap.xml`, `stories/cultural-awareness-in-therapy-for-bipoc-mental-health-month/index.html` |
+| `https://talathrive.com/stories/culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/` | 2 | `sitemap.xml`, `stories/culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/index.html` |
+| `https://talathrive.com/stories/dry-january-a-fresh-start-for-your-body-and-mind/` | 2 | `sitemap.xml`, `stories/dry-january-a-fresh-start-for-your-body-and-mind/index.html` |
+| `https://talathrive.com/stories/elder-daughter-syndrome/` | 2 | `sitemap.xml`, `stories/elder-daughter-syndrome/index.html` |
+| `https://talathrive.com/stories/everybody-knows-millennials-and-gen-z-but-have-you-heard-about-the-odyssey-years---finding-your-way-through-the-wandering/` | 2 | `sitemap.xml`, `stories/everybody-knows-millennials-and-gen-z-but-have-you-heard-about-the-odyssey-years---finding-your-way-through-the-wandering/index.html` |
+| `https://talathrive.com/stories/focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/` | 2 | `sitemap.xml`, `stories/focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/index.html` |
+| `https://talathrive.com/stories/generational-trauma-forgiveness/` | 2 | `sitemap.xml`, `stories/generational-trauma-forgiveness/index.html` |
+| `https://talathrive.com/stories/getting-ahead-in-2025-the-power-of-affirmations/` | 2 | `sitemap.xml`, `stories/getting-ahead-in-2025-the-power-of-affirmations/index.html` |
+| `https://talathrive.com/stories/have-you-heard-of-mrs-bibi-syndrome-no-it-s-not-a-medical-condition/` | 2 | `sitemap.xml`, `stories/have-you-heard-of-mrs-bibi-syndrome-no-it-s-not-a-medical-condition/index.html` |
+| `https://talathrive.com/stories/honouring-black-history-month-a-spotlight-on-mental-health-for-black-communities/` | 2 | `sitemap.xml`, `stories/honouring-black-history-month-a-spotlight-on-mental-health-for-black-communities/index.html` |
+| `https://talathrive.com/stories/how-are-you-mentally-easing-into-2024/` | 2 | `sitemap.xml`, `stories/how-are-you-mentally-easing-into-2024/index.html` |
+| `https://talathrive.com/stories/how-are-you-taking-care-of-yourself-mentally/` | 2 | `sitemap.xml`, `stories/how-are-you-taking-care-of-yourself-mentally/index.html` |
+| `https://talathrive.com/stories/how-to-manage-stress-this-stress-awareness-month/` | 2 | `sitemap.xml`, `stories/how-to-manage-stress-this-stress-awareness-month/index.html` |
+| `https://talathrive.com/stories/how-to-train-your-mind-like-you-train-your-body/` | 2 | `sitemap.xml`, `stories/how-to-train-your-mind-like-you-train-your-body/index.html` |
+| `https://talathrive.com/stories/integrating-faith-and-therapy-the-role-of-spirituality-in-mental-health/` | 2 | `sitemap.xml`, `stories/integrating-faith-and-therapy-the-role-of-spirituality-in-mental-health/index.html` |
+| `https://talathrive.com/stories/let-s-talk-about-men-s-mental-health/` | 2 | `sitemap.xml`, `stories/let-s-talk-about-men-s-mental-health/index.html` |
+| `https://talathrive.com/stories/let-s-talk-about-resilience-this-women-s-history-month/` | 2 | `sitemap.xml`, `stories/let-s-talk-about-resilience-this-women-s-history-month/index.html` |
+| `https://talathrive.com/stories/lgbtqia-mental-health/` | 2 | `sitemap.xml`, `stories/lgbtqia-mental-health/index.html` |
+| `https://talathrive.com/stories/manifesting-soft-lives-for-black-women-this-month/` | 2 | `sitemap.xml`, `stories/manifesting-soft-lives-for-black-women-this-month/index.html` |
+| `https://talathrive.com/stories/mental-health-wellness-tips-from-the-tala-thrive-team/` | 2 | `sitemap.xml`, `stories/mental-health-wellness-tips-from-the-tala-thrive-team/index.html` |
+| `https://talathrive.com/stories/minority-mental-health-awareness-month/` | 2 | `sitemap.xml`, `stories/minority-mental-health-awareness-month/index.html` |
+| `https://talathrive.com/stories/please-check-on-your-strong-friend-this-month/` | 2 | `sitemap.xml`, `stories/please-check-on-your-strong-friend-this-month/index.html` |
+| `https://talathrive.com/stories/r-u-ok-when-was-the-last-time-someone-asked-you-this/` | 2 | `sitemap.xml`, `stories/r-u-ok-when-was-the-last-time-someone-asked-you-this/index.html` |
+| `https://talathrive.com/stories/racism-and-mental-health-how-online-therapy-can-help/` | 2 | `sitemap.xml`, `stories/racism-and-mental-health-how-online-therapy-can-help/index.html` |
+| `https://talathrive.com/stories/refill-your-cup-this-international-self-care-day/` | 2 | `sitemap.xml`, `stories/refill-your-cup-this-international-self-care-day/index.html` |
+| `https://talathrive.com/stories/reflecting-on-earth-day-and-how-we-care-for-ourselves/` | 2 | `sitemap.xml`, `stories/reflecting-on-earth-day-and-how-we-care-for-ourselves/index.html` |
+| `https://talathrive.com/stories/rest-relaxation/` | 2 | `sitemap.xml`, `stories/rest-relaxation/index.html` |
+| `https://talathrive.com/stories/studying-abroad-and-struggling-you-re-not-failing---you-re-carrying-a-lot./` | 2 | `sitemap.xml`, `stories/studying-abroad-and-struggling-you-re-not-failing---you-re-carrying-a-lot./index.html` |
+| `https://talathrive.com/stories/the-mid-year-reset-how-to-recalibrate-your-goals-without-burnout/` | 2 | `sitemap.xml`, `stories/the-mid-year-reset-how-to-recalibrate-your-goals-without-burnout/index.html` |
+| `https://talathrive.com/stories/the-power-of-speaking-up/` | 2 | `sitemap.xml`, `stories/the-power-of-speaking-up/index.html` |
+| `https://talathrive.com/stories/we-re-building-a-community-of-culturally-competent-therapists-and-coaches/` | 2 | `sitemap.xml`, `stories/we-re-building-a-community-of-culturally-competent-therapists-and-coaches/index.html` |
+| `https://talathrive.com/stories/welcome-to-our-month-of-love-selv-love/` | 2 | `sitemap.xml`, `stories/welcome-to-our-month-of-love-selv-love/index.html` |
+| `https://talathrive.com/stories/what-are-you-thankful-for-this-month/` | 2 | `sitemap.xml`, `stories/what-are-you-thankful-for-this-month/index.html` |
+| `https://talathrive.com/stories/what-exactly-does-culturally-competent-mental-health-care-mean/` | 2 | `sitemap.xml`, `stories/what-exactly-does-culturally-competent-mental-health-care-mean/index.html` |
+| `https://talathrive.com/story-generational-trauma/` | 3 | `sitemap.xml`, `stories/how-to-begin-healing-from-generational-trauma/index.html`, `story-generational-trauma/index.html` |
+| `https://talathrive.com/terms/` | 3 | `sitemap.xml`, `terms-conditions/index.html`, `terms/index.html` |
 
 ## Namespaces (not links)
 
