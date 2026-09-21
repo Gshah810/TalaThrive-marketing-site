@@ -139,6 +139,12 @@
       // attribute has to be toggled directly.
       if (iconOpen) iconOpen.toggleAttribute('hidden', open);
       if (iconClose) iconClose.toggleAttribute('hidden', !open);
+
+      // The consent banner is fixed to the bottom of the viewport and appended
+      // to <body>, so it has no DOM relationship with this menu and sits on
+      // top of it. The menu is what the visitor just asked for, so mark the
+      // root and let CSS stand the banner down until the menu closes.
+      document.documentElement.classList.toggle('tt-menu-open', open);
     });
   })();
 
@@ -925,6 +931,7 @@
 
     function hideBanner() {
       if (banner) banner.hidden = true;
+      document.documentElement.classList.remove('tt-consent-open');
     }
 
     function showBanner() {
@@ -934,9 +941,18 @@
       banner.setAttribute('aria-label', 'Cookie consent');
       banner.innerHTML =
         '<h2>Cookies on Tala Thrive</h2>' +
-        '<p>Essential cookies keep this site working and we measure visits to ' +
+        // Two wordings of the same two disclosures, one shown at a time by CSS.
+        // On a phone the full version made the banner 310px tall, about half
+        // the screen, sitting over both hero buttons. The short version says
+        // the same two things (we measure visits; Meta advertising is off
+        // until you say otherwise) in a third of the height. Change one and
+        // change the other.
+        '<p class="cookie-banner__full">Essential cookies keep this site working and we measure visits to ' +
           'improve it. We would also like to set advertising cookies from Meta ' +
           'to measure our ads. Those stay off unless you accept. ' +
+          '<a href="' + privacyHref() + '">Read our privacy policy</a>.</p>' +
+        '<p class="cookie-banner__brief">We measure visits to improve this site. Advertising cookies ' +
+          'from Meta stay off unless you accept. ' +
           '<a href="' + privacyHref() + '">Read our privacy policy</a>.</p>' +
         '<div class="cookie-banner__actions">' +
           '<button class="btn btn--primary" type="button" data-cookie-accept>Accept</button>' +
@@ -945,6 +961,11 @@
         '</div>';
 
       document.body.appendChild(banner);
+
+      // Lets a page that is shorter than the screen make room for a banner it
+      // cannot see. Only the 404 page needs it today: its one way out is a
+      // single button, and a bottom-fixed banner lands right on top of it.
+      document.documentElement.classList.add('tt-consent-open');
 
       $('[data-cookie-accept]', banner).addEventListener('click', function () {
         writeState(true);
