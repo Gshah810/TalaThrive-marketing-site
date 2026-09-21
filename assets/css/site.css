@@ -2652,7 +2652,21 @@ button { font-family: var(--font); }
   transition: border-color 0.15s;
 }
 
-.field select { appearance: none; }
+/* appearance: none takes the native arrow away, and nothing replaced it, so
+   every select on these forms read as one more text input. Put a chevron back,
+   drawn rather than borrowed so it matches the site's stroke weight, and keep
+   the right padding clear of it so a long option label never runs underneath.
+   background-position is measured from the right edge, so it holds in both
+   reading directions. */
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 42px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23654431' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px 8px;
+}
 .field textarea { resize: vertical; }
 
 .field input:focus,
@@ -2707,6 +2721,19 @@ button { font-family: var(--font); }
   min-height: 65px;
   max-width: 100%;
   overflow: hidden;
+}
+
+/* That 300px is a floor, not a preference: given less room the widget clips its
+   own content rather than shrinking. At 375px the card's 24px side padding left
+   an interior of 287px and the widget lost its right edge, which it did not at
+   393 or 412. Trimming the padding to 16px on the narrowest phones buys the
+   interior back to 303px, which is enough, and the fields either side of it are
+   full-width anyway so nothing else changes shape. */
+@media (max-width: 400px) {
+  .contact-card {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 /* sticky "request a demo" bar */
