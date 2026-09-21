@@ -38,7 +38,11 @@
     'about', 'practitioners', 'for-businesses', 'partner-with-us', 'stories',
     'user-stories', 'story-generational-trauma', 'shop', 'privacy-policy',
     'terms', 'terms-conditions', 'accessibility', 'assets', 'post',
-    'design-source', 'design_handoff', 'scripts', 'index.html', '404.html',
+    // Compared after the first segment is lowercased and a trailing .html is
+    // stripped, so these two are listed without it. Spelled 'index.html' and
+    // '404.html' they could never match, and a request for /404.html bridged
+    // to the app instead of showing this page.
+    'design-source', 'design_handoff', 'scripts', 'index', '404',
     'sitemap.xml', 'robots.txt', 'favicon.ico'
   ];
   var onProjectPages = /\.github\.io$/i.test(location.hostname);

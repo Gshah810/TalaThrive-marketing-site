@@ -511,13 +511,19 @@ button { font-family: var(--font); }
   background-color: var(--orange);
 }
 
-@media (max-width: 960px) {
+/* The desktop nav used to appear at 961px, which is about 100px before it
+   fits. Between there and roughly 1060 the six nav links wrapped onto a second
+   line and "Log in" broke across three, taking the header from 63px to 84px.
+   Measured here, one line holds from 1061px up; 1100 leaves headroom for engines
+   whose font metrics run a little wider. Below that the burger menu covers it,
+   which it already did for every width under 961. */
+@media (max-width: 1099px) {
   .nav-desktop,
   .nav-auth { display: none; }
   .burger { display: inline-flex; }
 }
 
-@media (min-width: 961px) {
+@media (min-width: 1100px) {
   .nav-mobile { display: none; }
 }
 
@@ -653,6 +659,14 @@ button { font-family: var(--font); }
   .site-footer__brand { grid-column: 1 / -1; }
 }
 
+/* Two columns for three link groups leaves "Support" alone under "Explore"
+   with an empty cell beside it, on every page of the site. Three columns fit
+   comfortably from 640px up, so only phones need the two-column fallback
+   above. */
+@media (min-width: 640px) and (max-width: 860px) {
+  .site-footer__cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 @media (max-width: 520px) {
   .site-footer__bottom {
     flex-direction: column;
@@ -785,6 +799,33 @@ button { font-family: var(--font); }
   .hero-cta > a { width: 100%; }
 }
 
+/* The copy column asks for 440px and the photo is a fixed 560px block, so the
+   row needs 1048px of content and only gets 960 at 1024. A wrapped flex row
+   decides its breaks on those asking sizes, before any shrinking, so the hero
+   collapsed to one column: the copy sat in a half-empty row and the photo
+   landed below the buttons, outside a 768px-tall screen. /practitioners/ and
+   /for-businesses/ hold two columns at the same widths because their two
+   columns ask for less than the row has.
+
+   Ask for less here too, and let both columns grow into whatever is left, with
+   the photo capped at the 560px it was drawn for. At 1280 and above that cap is
+   reached and the hero is pixel for pixel what it was.
+
+   960 rather than lower because the two hero buttons need 403px of row: below
+   that the copy column is too narrow to hold them side by side, and one column
+   reads better than a two-column hero with a stacked call to action. */
+@media (min-width: 960px) {
+  .hero__copy { flex: 1 1 400px; }
+
+  .hero__media {
+    flex: 1 1 380px;
+    min-width: 0;
+    max-width: 560px;
+  }
+
+  .hero__frame { width: 100%; }
+}
+
 /* --------------------------------------------------------------------------
    9. Homepage — "As featured in" ticker
    -------------------------------------------------------------------------- */
@@ -842,6 +883,24 @@ button { font-family: var(--font); }
 .logo-sifted           { height: 39px; }
 .logo-reuters          { height: 34px; }
 .logo-guardian         { height: 39px; }
+
+/* On a phone the desktop sizing puts one logo on screen at a time: a 1455px
+   loop scrolling through a 375px window, so the strip reads as one masthead
+   with the next one sliced by the edge. Tightening the gaps and taking the
+   logos to roughly 70% shortens the loop to 779px, which is just under three
+   logos per screen at 375px, and the same 30s cycle then drifts rather than
+   marches. Heights stay in the same proportion to each other so the wordmarks
+   keep their matched optical size. */
+@media (max-width: 640px) {
+  .ticker-track > div { padding: 0 14px; }
+
+  .logo-huffpost         { height: 18px; }
+  .logo-evening-standard { height: 20px; }
+  .logo-asian-voice      { height: 31px; }
+  .logo-sifted           { height: 27px; }
+  .logo-reuters          { height: 24px; }
+  .logo-guardian         { height: 27px; }
+}
 
 /* --------------------------------------------------------------------------
    10. Homepage — Who we serve
@@ -1158,6 +1217,20 @@ button { font-family: var(--font); }
   }
 }
 
+/* Above the stacked layout the three cards are a numbered sequence with a
+   dashed connector drawn across all of them. A 260px flex basis needs about
+   960px of viewport before three fit, so from 721 to 959 the third card wrapped
+   onto its own row while the connector still stopped at step 2, breaking the
+   sequence it exists to show. Equal columns that cannot wrap keep the three in
+   step. At 721, the narrowest they get, each card is 198px, still comfortably
+   wider than the 150px phone mockup inside it. */
+@media (min-width: 721px) {
+  .step-card {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
 /* --------------------------------------------------------------------------
    13. Homepage — App download
    -------------------------------------------------------------------------- */
@@ -1290,12 +1363,19 @@ button { font-family: var(--font); }
   font-size: 18px;
 }
 
+/* Three cards, so the same rule as .values-grid and .reason-grid: auto-fit
+   resolves to two tracks through the tablet range and leaves the third alone
+   with an empty cell beside it. Three across or one across, never two. */
 .prac-grid {
   max-width: 1040px;
   margin: 0 auto 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 28px;
+}
+
+@media (min-width: 768px) {
+  .prac-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .prac-card {
@@ -1366,11 +1446,10 @@ button { font-family: var(--font); }
   gap: 24px;
 }
 
-@media (max-width: 860px) {
-  .quote-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 560px) {
+/* Three quotes, so the two-column step only ever left the third alone with an
+   empty cell beside it, everywhere from 561 to 860. Three across or one
+   across. */
+@media (max-width: 767px) {
   .quote-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
@@ -1762,10 +1841,18 @@ button { font-family: var(--font); }
 
 .prose-center p:last-child { margin-bottom: 0; }
 
+/* Explicit column counts rather than auto-fit, for the same reason .bz-grid-4
+   uses them: auto-fit resolves to two tracks through the whole tablet range and
+   there are three cards, so the third sat alone at half width with an empty
+   cell beside it. Three cards go three across or one across, never two. */
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .values-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .value-card {
@@ -1889,10 +1976,16 @@ button { font-family: var(--font); }
   }
 }
 
+/* Three cards, so the same rule as .values-grid: three across or one across,
+   never two with the last one orphaned. */
 .reason-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .reason-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .reason-card {
@@ -1984,6 +2077,15 @@ button { font-family: var(--font); }
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
+}
+
+/* Four cards at a 200px minimum need about 924px of viewport before all four
+   fit on one line. Between 641 and 1023 they laid out 3 + 1: the first three
+   squeezed to about 220px, "Complete your profile" broke onto two lines while
+   its siblings did not, and the fourth spanned the full width with its
+   illustration blown up to match. Two even rows of two instead. */
+@media (min-width: 641px) and (max-width: 1023px) {
+  .onboard-step { flex: 1 1 calc(50% - 10px); }
 }
 
 .center-cta {
@@ -2316,7 +2418,12 @@ button { font-family: var(--font); }
   font-size: clamp(11px, 1.32vw, 16px);
 }
 
-@media (max-width: 767px) {
+/* Stack until the three nowrap items genuinely fit on one line, the same
+   correction .trust-strip__inner already carries. At 767 the fluid font size is
+   already pinned to its 11px floor and cannot shrink any further, so the line
+   ran 774px wide in a 768px viewport and pushed past both edges: the only
+   horizontal overflow anywhere on the site. */
+@media (max-width: 899px) {
   .bz-trust { flex-wrap: wrap; flex-direction: column; gap: 8px; }
   .bz-trust p { white-space: normal; font-size: 15px; }
   .bz-trust .trust-strip__dot { display: none; }
@@ -2564,7 +2671,21 @@ button { font-family: var(--font); }
   transition: border-color 0.15s;
 }
 
-.field select { appearance: none; }
+/* appearance: none takes the native arrow away, and nothing replaced it, so
+   every select on these forms read as one more text input. Put a chevron back,
+   drawn rather than borrowed so it matches the site's stroke weight, and keep
+   the right padding clear of it so a long option label never runs underneath.
+   background-position is measured from the right edge, so it holds in both
+   reading directions. */
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 42px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23654431' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px 8px;
+}
 .field textarea { resize: vertical; }
 
 .field input:focus,
@@ -2619,6 +2740,19 @@ button { font-family: var(--font); }
   min-height: 65px;
   max-width: 100%;
   overflow: hidden;
+}
+
+/* That 300px is a floor, not a preference: given less room the widget clips its
+   own content rather than shrinking. At 375px the card's 24px side padding left
+   an interior of 287px and the widget lost its right edge, which it did not at
+   393 or 412. Trimming the padding to 16px on the narrowest phones buys the
+   interior back to 303px, which is enough, and the fields either side of it are
+   full-width anyway so nothing else changes shape. */
+@media (max-width: 400px) {
+  .contact-card {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 /* sticky "request a demo" bar */
@@ -3297,7 +3431,40 @@ button { font-family: var(--font); }
    -------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-  .ticker-track { animation: none; }
+  /* Stopping the animation on its own leaves the track parked at its start
+     offset, so the strip freezes showing one and a half logos for good and the
+     other four are simply unreachable. Reduce Motion is common enough that this
+     was most of what a real visitor saw. Lay the mastheads out as a static
+     block instead, so all six are readable without anything moving.
+
+     A grid rather than a wrapped flex row: these logos differ in width by more
+     than three to one, so letting the content decide the breaks strands one
+     masthead alone on a final row at most widths. Equal columns cannot. */
+  .ticker-track {
+    animation: none;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    gap: 22px 12px;
+    /* The scrolling strip runs edge to edge on purpose, but a block that has
+       stopped needs the page's own gutter, or the widest wordmark sits flush
+       against the screen on a narrow phone. */
+    padding-inline: var(--gutter);
+    /* And it needs a ceiling, or on a wide screen three equal columns put half
+       a metre of white space between mastheads and the row stops reading as a
+       group. Narrower than the page container on purpose. */
+    max-width: 880px;
+    margin-inline: auto;
+  }
+
+  /* Gaps come from the grid here, so the track's own scrolling spacing would
+     only push the logos off their column centres. */
+  .ticker-track > div { padding: 0; }
+
+  /* The second set is a duplicate that exists only to make the scroll loop
+     seamless. Standing still it would print every logo twice. */
+  .ticker-track > div[aria-hidden='true'] { display: none; }
 
   .step-card {
     opacity: 1;
@@ -3329,6 +3496,13 @@ button { font-family: var(--font); }
   .story-card,
   .story-featured,
   .bz-card { transition: none; }
+}
+
+/* Three across once there is room for it, so the static block reads as two
+   tidy rows rather than three. Deliberately not six across: at 1280 that would
+   leave each masthead a narrower column than the HuffPost wordmark needs. */
+@media (prefers-reduced-motion: reduce) and (min-width: 768px) {
+  .ticker-track { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 /* --------------------------------------------------------------------------
@@ -3514,10 +3688,73 @@ button { font-family: var(--font); }
   text-underline-offset: 3px;
 }
 
-@media (max-width: 560px) {
-  .cookie-banner { padding: 20px; }
-  .cookie-banner__actions .btn { flex: 1 1 auto; }
-  .cookie-banner__manage { margin-left: 0; width: 100%; text-align: center; }
+/* The short wording is the phone one, so it stays out of the way until the
+   phone breakpoint below asks for it. */
+.cookie-banner__brief { display: none; }
+
+/* The menu a visitor just opened outranks a banner they have not answered.
+   Standing it down is a display toggle, not a decision: it returns, unanswered,
+   the moment the menu closes. */
+.tt-menu-open .cookie-banner { display: none; }
+
+/* Phone layout. At 310px tall the card covered about half an iPhone screen,
+   including both hero buttons, which are the whole point of that screen. The
+   short wording, a heading that only screen readers need, and one row of
+   controls bring it to roughly a third of that. */
+@media (max-width: 640px) {
+  .cookie-banner {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 16px 18px;
+  }
+
+  /* Kept in the accessibility tree: it is the region's heading, and the
+     region is announced by its aria-label either way. It is the line a
+     sighted visitor least needs, because the text below says the same. */
+  .cookie-banner h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .cookie-banner__full { display: none; }
+
+  .cookie-banner__brief {
+    display: block;
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .cookie-banner__actions { gap: 8px; }
+
+  /* Accept and Decline share the row evenly, so neither is the easier tap. */
+  .cookie-banner__actions .btn {
+    flex: 1 1 0;
+    padding: 11px 12px;
+    font-size: 15px;
+  }
+
+  .cookie-banner__manage {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 6px 4px 0;
+    font-size: 14px;
+  }
+
+  /* The 404 page is the one page shorter than the screen whose content lands
+     where the banner sits, and the one page where that content is the only way
+     back. Lifting it while the banner is up clears the button; the page
+     returns to its normal spacing the moment the visitor answers. */
+  .tt-consent-open .notfound { padding-top: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
