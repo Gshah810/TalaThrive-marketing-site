@@ -339,10 +339,15 @@ button { font-family: var(--font); }
   background-color: var(--orange);
 }
 
+/* The accessibility statement commits to touch targets of at least 44 by 44 on
+   navigation and controls, and this link was 132 by 14. Vertical padding on an
+   inline element does not enter the line box, so it grows the tappable area to
+   44px without moving a pixel of the bar. */
 .promo a {
   color: #fff;
   text-decoration: underline;
   text-underline-offset: 2px;
+  padding: 15px 0;
 }
 
 .promo a:hover { text-decoration: none; }
@@ -365,6 +370,20 @@ button { font-family: var(--font); }
 }
 
 .promo__close:hover { background: rgba(255, 255, 255, 0.18); }
+
+/* Same 44 by 44 commitment. The button is a 30px circle on purpose, sized to
+   the bar rather than to a thumb, so the target grows around it instead: an
+   empty pseudo-element centred on the button, which takes the tap without
+   painting anything or changing the hover pill. */
+.promo__close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
 
 .site-header {
   background-color: #ffffff;
