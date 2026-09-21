@@ -13,7 +13,7 @@ Scope: `*.html`, `*.js`, `*.css`, `*.xml`, `*.txt` under the repo root, excludin
 `design-source/`, `design_handoff/`, `README.md` and this file. Own canonical and
 sitemap URLs are listed last for completeness; they are not outbound links.
 
-126 distinct URLs, 886 occurrences, generated from `1db918b`.
+127 distinct URLs, 887 occurrences, generated from `27514d9`.
 
 
 ## App (platform)
@@ -218,3 +218,4 @@ also served at the GitHub Pages project URL, which `404.html` handles at runtime
 | URL | Uses | Files |
 |---|---|---|
 | `http://www.sitemaps.org/schemas/sitemap/0.9` | 1 | `sitemap.xml` |
+| `http://www.w3.org/2000/svg` | 1 | `assets/css/site.css` |
