@@ -24,7 +24,7 @@ deliberately not restated here. When it fails it names the file and the problem.
 Fix the cause, never the check.
 
 Everything below is invisible to it. It will pass a change that breaks any of
-the four things on this page.
+the five things on this page.
 
 ---
 
@@ -166,6 +166,39 @@ Listed but absent is harmless. Present but unlisted is the bug.
 
 Do not touch `onProjectPages` or `base` in that script. They are what let the
 same files work both at the GitHub Pages project URL and at `talathrive.com`.
+
+---
+
+## 5. The canonical host is written down in two places outside this repository
+
+`talathrive.com` is the host that serves this site. `www.talathrive.com` 301s to
+it, so a browser is never left sitting on `www`. That name is also pinned, by
+hand, in two systems nothing here can read:
+
+- the **CRM's allowed origins**, on the `website-form-public` function, which is
+  what the two lead forms POST to;
+- the **Turnstile widget's allowed hostnames**, on the Cloudflare side.
+
+**Move the canonical host and all three move together, in the same change.** Not
+afterwards, and not as a follow-up ticket. A host that is live here but missing
+from either list is not a degraded form, it is no form at all.
+
+The reason this one earns a section is that it fails completely silently on this
+side. `check_site.py` passes. Every page loads. The header, the footer, the
+sitemap and the links are all exactly right. The only symptom is that both lead
+forms reject every submission, the CRM answering `origin not allowed`, and the
+visitor is shown "Please complete the verification check above" beside a
+verification widget that never rendered. They are told they did something wrong
+and given nothing to fix.
+
+It has already happened. The 8 September 2026 cutover moved the canonical host to
+the apex and left both allowlists naming `gshah810.github.io` and
+`www.talathrive.com`, the only reachable one of which nobody was ever on. Twelve
+days, 8 to 20 September, with no lead able to reach the CRM from either form.
+
+The README covers how the forms work and how to test them, including why
+`http://localhost` is deliberately not an allowed origin. What it cannot do is
+notice when someone has changed the domain and stopped there.
 
 ---
 
