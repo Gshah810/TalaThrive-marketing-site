@@ -86,6 +86,11 @@ Pages. Certificates are issued automatically and free. Do not commit `CNAME`
 before DNS points here: GitHub would start redirecting the working project URL to
 a host that does not serve this site yet.
 
+Changing the canonical host is never only a change here: the CRM's allowed
+origins and the Turnstile widget's allowed hostnames both name it too, and both
+have to be updated in the same piece of work or the two lead forms stop
+accepting anything. See **What GitHub Pages cannot do** below.
+
 Every internal link and asset path in this repository is **relative**, so the site
 works unchanged at the project-page URL and at the custom domain. The absolute
 URLs in `sitemap.xml`, `robots.txt`, the `<link rel="canonical">` / `og:` tags in
@@ -186,19 +191,32 @@ needs to come out in a hurry. Any form configured with `mode: 'mailto'` (or no
 `endpoint`) keeps that behaviour permanently.
 
 The widget's allowed hostnames are set on the Cloudflare side, and must list
-`gshah810.github.io` and `www.talathrive.com` — the same two origins the CRM pins
-for CORS.
+`talathrive.com` first — that is the canonical host, and the only one a real
+visitor is ever on. `www.talathrive.com` stays listed as rollback protection,
+and `gshah810.github.io` for branch previews. The CRM pins the same three
+origins for CORS, and the two lists have to agree.
 
 **Testing.** `http://localhost` is deliberately not an allowed origin — the CORS
-allowlist is short and pinned server-side to `https://gshah810.github.io` and
-`https://www.talathrive.com`, so the custom-domain cutover needs no coordinated
-deploy. Test from a branch deploy of the real Pages origin; the origin is what
+allowlist is short and pinned server-side to `https://talathrive.com`,
+`https://www.talathrive.com` and `https://gshah810.github.io`. Moving the
+canonical host means updating that allowlist and Turnstile's in the same change,
+not afterwards. Test from a branch deploy of the real Pages origin; the origin is what
 matters, not the path. To check payload shape alone, curl the endpoint with an
 `Origin` header set by hand — a `403 verification failed` there is the *pass*
 signal, since it means the endpoint, CORS and your JSON were all fine and only the
 fake token failed. A `400` means the payload is wrong. Cloudflare also publishes
 always-passing test keys; pair the test site key here with the test secret in the
 CRM while building, as verification needs both halves of the same pair.
+
+**The canonical host lives in two systems outside this repository.** It is in
+the CRM's allowed origins on the `website-form-public` function, and in the
+Turnstile widget's allowed hostnames on the Cloudflare side. Move the canonical
+host and all three have to move together, in the same piece of work — nothing
+here can see either list, so nothing here can catch a stale one. `check_site.py`
+passes, every page loads and looks perfectly healthy, and the only symptom is
+that both lead forms fail for every visitor, the CRM answering `origin not
+allowed`. That is what happened between 8 and 20 September 2026, for twelve
+days.
 
 **Rate limit: 5 submissions per hour per IP.** A real person filling in both forms
 is nowhere near it; an automatic retry loop is not, which is why a failed submit
