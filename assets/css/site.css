@@ -1739,6 +1739,12 @@ button { font-family: var(--font); }
 
 .page-hero--center .page-hero__inner { text-align: center; }
 
+/* Legal pages set their body to the article measure, so the title has to
+   come with it or it sits 50px to the left of the text it introduces. A
+   story article already does exactly this: its header and its body share one
+   720px shell. */
+.page-hero--narrow .page-hero__inner { max-width: 720px; }
+
 .page-hero h1 {
   font-size: clamp(34px, 4.4vw, 52px);
   line-height: 1.05;
