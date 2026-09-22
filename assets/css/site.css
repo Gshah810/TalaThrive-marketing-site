@@ -1000,9 +1000,21 @@ body::after {
   box-shadow: var(--shadow-lift);
 }
 
+/* A ratio, not a height. The card's width is fluid, so a fixed 200px gave this
+   box a shape that swung from 1.68:1 on a phone to 2.98:1 on a desktop, and
+   object-fit: cover threw away whatever did not fit: 44% of the photo's height
+   at 1280, off the top and bottom. Faces live at the top, so the two standing
+   men in the For Businesses photo were cut at the neck and chin.
+
+   Unsplash delivers these at 5:3 with crop=faces centring the faces in the
+   middle, which is the band that survived, which is why the two seated people
+   came through and the two standing ones did not. Matching the box to 5:3 means
+   cover has nothing left to crop at any width. Below 1024 the box barely moves,
+   because 200px was already about right there; on a desktop the image gets
+   taller, which is the point. */
 .serve-card__media {
   position: relative;
-  height: 200px;
+  aspect-ratio: 5 / 3;
   overflow: hidden;
   background-color: var(--orange-200);
 }
