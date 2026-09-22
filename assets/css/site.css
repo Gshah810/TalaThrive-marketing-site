@@ -1387,6 +1387,12 @@ body::after {
   font-size: clamp(32px, 3.6vw, 46px);
   line-height: 1.05;
   margin: 0 0 12px;
+  /* At 1280 this heading is 46px inside a 640px measure, so it has to take two
+     lines. Left to itself it breaks 515 / 152 and the second line reads as a
+     leftover; balanced it breaks 271 / 396. The nowrap on "for you." in the
+     markup is what actually guarantees no single word is stranded, so a browser
+     without text-wrap still gets the fix. */
+  text-wrap: balance;
 }
 
 .prac-head p {
@@ -1793,6 +1799,12 @@ body::after {
 }
 
 .page-hero--center .page-hero__inner { text-align: center; }
+
+/* Legal pages set their body to the article measure, so the title has to
+   come with it or it sits 50px to the left of the text it introduces. A
+   story article already does exactly this: its header and its body share one
+   720px shell. */
+.page-hero--narrow .page-hero__inner { max-width: 720px; }
 
 .page-hero h1 {
   font-size: clamp(34px, 4.4vw, 52px);
@@ -2467,20 +2479,26 @@ body::after {
   text-align: center;
 }
 
+/* The three phrases cannot break and the row cannot wrap, so the type has to be
+   small enough for all three to fit inside the rule above them. At 16px they
+   needed 1183px against a 1088px divider and ran 47px past each end of it,
+   coming within 6px of the screen edge at 960. 13px fits with 6% or better to
+   spare at every width, and the 12px floor is the smallest this site asks anyone
+   to read, so below 1000px the strip stacks rather than shrink past it. */
 .bz-trust p {
   margin: 0;
   line-height: 1.6;
   color: var(--brown-soft);
   white-space: nowrap;
-  font-size: clamp(11px, 1.32vw, 16px);
+  font-size: clamp(12px, 1.1vw, 13px);
 }
 
-/* Stack until the three nowrap items genuinely fit on one line, the same
-   correction .trust-strip__inner already carries. At 767 the fluid font size is
-   already pinned to its 11px floor and cannot shrink any further, so the line
-   ran 774px wide in a 768px viewport and pushed past both edges: the only
-   horizontal overflow anywhere on the site. */
-@media (max-width: 899px) {
+/* Stack until the three nowrap items genuinely fit on one line, inside the rule
+   rather than past it. At 767 the fluid size was pinned to its floor and could
+   not shrink any further, so the line ran 774px wide in a 768px viewport and
+   pushed past both screen edges. 999 rather than 899 because fitting the
+   divider at 900 would have meant type below 12px. */
+@media (max-width: 999px) {
   .bz-trust { flex-wrap: wrap; flex-direction: column; gap: 8px; }
   .bz-trust p { white-space: normal; font-size: 15px; }
   .bz-trust .trust-strip__dot { display: none; }
@@ -3007,11 +3025,14 @@ body::after {
   gap: 12px;
 }
 
+/* 12px is the floor for anything a visitor has to read. Uppercase with 0.1em
+   tracking reads smaller than its nominal size, and at 11px, 10px on a card,
+   these category chips were the smallest type on the site. */
 .tag {
   padding: 5px 13px;
   border-radius: var(--radius-pill);
   background: var(--cream-100);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -3089,7 +3110,7 @@ body::after {
 }
 
 .story-card .story-meta { gap: 10px; }
-.story-card .tag { padding: 4px 11px; font-size: 10px; }
+.story-card .tag { padding: 4px 11px; }
 .story-card .story-date { font-size: 14px; }
 .story-card .read-more { font-size: 15px; gap: 6px; }
 
@@ -3648,6 +3669,29 @@ body::after {
 /* Tighter than the sitewide .btn, which is sized for page CTAs. */
 .cookie-banner__actions .btn { padding: 12px 24px; font-size: 15px; }
 
+/* The accessibility statement commits to touch targets of at least 44 by 44 on
+   controls, and these three are 40, 42 and 23 tall on a phone. Grow the target
+   rather than the control: an empty pseudo-element centred on each, the same
+   way the promo bar's close button does it. It costs no layout height, which
+   is the point. The phone banner is deliberately short so the hero copy stays
+   readable above it, and real padding here would undo that.
+
+   Absolutely positioned, so it is not a flex item and adds nothing to the
+   button's own width or gap. */
+.cookie-banner__actions .btn,
+.cookie-banner__manage { position: relative; }
+
+.cookie-banner__actions .btn::after,
+.cookie-banner__manage::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 44px;
+  transform: translateY(-50%);
+}
+
 .cookie-banner__manage {
   margin-left: auto;
   padding: 12px 4px;
@@ -3816,14 +3860,22 @@ body::after {
 
   .cookie-banner__full { display: none; }
 
-  .cookie-banner__brief {
+  /* Qualified with the element, because .cookie-banner p outranks a lone class
+     and was quietly winning: the short wording rendered at the full 15px/1.6
+     with an 18px margin rather than the 14px/1.5 and 14px asked for here. That
+     is 13px of banner height this block thought it had already saved. */
+  .cookie-banner p.cookie-banner__brief {
     display: block;
     margin: 0 0 14px;
     font-size: 14px;
     line-height: 1.5;
   }
 
-  .cookie-banner__actions { gap: 8px; }
+  /* The gap between the two rows has to clear the tap targets, not just the
+     boxes they are drawn on. Manage preferences is a 23px control with a 44px
+     target, so it reaches 10.5px above itself, and Accept and Decline reach 2px
+     below theirs. 8px was not enough and the two overlapped. */
+  .cookie-banner__actions { gap: 14px 8px; }
 
   /* Accept and Decline share the row evenly, so neither is the easier tap. */
   .cookie-banner__actions .btn {
