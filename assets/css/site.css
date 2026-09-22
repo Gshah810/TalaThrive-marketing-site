@@ -1332,6 +1332,12 @@ button { font-family: var(--font); }
   font-size: clamp(32px, 3.6vw, 46px);
   line-height: 1.05;
   margin: 0 0 12px;
+  /* At 1280 this heading is 46px inside a 640px measure, so it has to take two
+     lines. Left to itself it breaks 515 / 152 and the second line reads as a
+     leftover; balanced it breaks 271 / 396. The nowrap on "for you." in the
+     markup is what actually guarantees no single word is stranded, so a browser
+     without text-wrap still gets the fix. */
+  text-wrap: balance;
 }
 
 .prac-head p {
@@ -2416,20 +2422,26 @@ button { font-family: var(--font); }
   text-align: center;
 }
 
+/* The three phrases cannot break and the row cannot wrap, so the type has to be
+   small enough for all three to fit inside the rule above them. At 16px they
+   needed 1183px against a 1088px divider and ran 47px past each end of it,
+   coming within 6px of the screen edge at 960. 13px fits with 6% or better to
+   spare at every width, and the 12px floor is the smallest this site asks anyone
+   to read, so below 1000px the strip stacks rather than shrink past it. */
 .bz-trust p {
   margin: 0;
   line-height: 1.6;
   color: var(--brown-soft);
   white-space: nowrap;
-  font-size: clamp(11px, 1.32vw, 16px);
+  font-size: clamp(12px, 1.1vw, 13px);
 }
 
-/* Stack until the three nowrap items genuinely fit on one line, the same
-   correction .trust-strip__inner already carries. At 767 the fluid font size is
-   already pinned to its 11px floor and cannot shrink any further, so the line
-   ran 774px wide in a 768px viewport and pushed past both edges: the only
-   horizontal overflow anywhere on the site. */
-@media (max-width: 899px) {
+/* Stack until the three nowrap items genuinely fit on one line, inside the rule
+   rather than past it. At 767 the fluid size was pinned to its floor and could
+   not shrink any further, so the line ran 774px wide in a 768px viewport and
+   pushed past both screen edges. 999 rather than 899 because fitting the
+   divider at 900 would have meant type below 12px. */
+@media (max-width: 999px) {
   .bz-trust { flex-wrap: wrap; flex-direction: column; gap: 8px; }
   .bz-trust p { white-space: normal; font-size: 15px; }
   .bz-trust .trust-strip__dot { display: none; }
@@ -2940,11 +2952,14 @@ button { font-family: var(--font); }
   gap: 12px;
 }
 
+/* 12px is the floor for anything a visitor has to read. Uppercase with 0.1em
+   tracking reads smaller than its nominal size, and at 11px, 10px on a card,
+   these category chips were the smallest type on the site. */
 .tag {
   padding: 5px 13px;
   border-radius: var(--radius-pill);
   background: var(--cream-100);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -3022,7 +3037,7 @@ button { font-family: var(--font); }
 }
 
 .story-card .story-meta { gap: 10px; }
-.story-card .tag { padding: 4px 11px; font-size: 10px; }
+.story-card .tag { padding: 4px 11px; }
 .story-card .story-date { font-size: 14px; }
 .story-card .read-more { font-size: 15px; gap: 6px; }
 
