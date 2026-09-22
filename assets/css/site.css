@@ -3564,6 +3564,29 @@ button { font-family: var(--font); }
 /* Tighter than the sitewide .btn, which is sized for page CTAs. */
 .cookie-banner__actions .btn { padding: 12px 24px; font-size: 15px; }
 
+/* The accessibility statement commits to touch targets of at least 44 by 44 on
+   controls, and these three are 40, 42 and 23 tall on a phone. Grow the target
+   rather than the control: an empty pseudo-element centred on each, the same
+   way the promo bar's close button does it. It costs no layout height, which
+   is the point. The phone banner is deliberately short so the hero copy stays
+   readable above it, and real padding here would undo that.
+
+   Absolutely positioned, so it is not a flex item and adds nothing to the
+   button's own width or gap. */
+.cookie-banner__actions .btn,
+.cookie-banner__manage { position: relative; }
+
+.cookie-banner__actions .btn::after,
+.cookie-banner__manage::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 44px;
+  transform: translateY(-50%);
+}
+
 .cookie-banner__manage {
   margin-left: auto;
   padding: 12px 4px;
@@ -3732,14 +3755,22 @@ button { font-family: var(--font); }
 
   .cookie-banner__full { display: none; }
 
-  .cookie-banner__brief {
+  /* Qualified with the element, because .cookie-banner p outranks a lone class
+     and was quietly winning: the short wording rendered at the full 15px/1.6
+     with an 18px margin rather than the 14px/1.5 and 14px asked for here. That
+     is 13px of banner height this block thought it had already saved. */
+  .cookie-banner p.cookie-banner__brief {
     display: block;
     margin: 0 0 14px;
     font-size: 14px;
     line-height: 1.5;
   }
 
-  .cookie-banner__actions { gap: 8px; }
+  /* The gap between the two rows has to clear the tap targets, not just the
+     boxes they are drawn on. Manage preferences is a 23px control with a 44px
+     target, so it reaches 10.5px above itself, and Accept and Decline reach 2px
+     below theirs. 8px was not enough and the two overlapped. */
+  .cookie-banner__actions { gap: 14px 8px; }
 
   /* Accept and Decline share the row evenly, so neither is the easier tap. */
   .cookie-banner__actions .btn {
