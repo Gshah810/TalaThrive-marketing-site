@@ -13,7 +13,7 @@ Scope: `*.html`, `*.js`, `*.css`, `*.xml`, `*.txt` under the repo root, excludin
 `design-source/`, `design_handoff/`, `README.md` and this file. Own canonical and
 sitemap URLs are listed last for completeness; they are not outbound links.
 
-127 distinct URLs, 887 occurrences, generated from `27514d9`.
+137 distinct URLs, 899 occurrences, generated from `bd4fa4d`.
 
 
 ## App (platform)
@@ -75,12 +75,22 @@ the marketing site, and old apex app paths are bridged by `404.html`.
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=800&amp;h=480&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=1200&amp;h=720&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=1600&amp;h=960&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=1800&amp;h=1080&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=400&amp;h=240&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=600&amp;h=360&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=800&amp;h=480&amp;fit=crop&amp;crop=faces&amp;auto=format` | 2 | `index.html` |
 | `https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=700&amp;h=440&amp;fit=crop&amp;auto=format` | 1 | `practitioners/index.html` |
 | `https://images.unsplash.com/photo-1507152832244-10d45c7eda57?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
 | `https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&amp;h=440&amp;fit=crop&amp;auto=format` | 1 | `practitioners/index.html` |
 | `https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&amp;h=440&amp;fit=crop&amp;auto=format` | 1 | `practitioners/index.html` |
-| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=800&amp;h=480&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1200&amp;h=720&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1600&amp;h=960&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1800&amp;h=1080&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=400&amp;h=240&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=600&amp;h=360&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=800&amp;h=480&amp;fit=crop&amp;crop=faces&amp;auto=format` | 2 | `index.html` |
 | `https://images.unsplash.com/photo-1611432579699-484f7990b127?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
 | `https://images.unsplash.com/photo-1656473031961-9d5d9ee19f40?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
 | `https://images.unsplash.com/photo-1662850886700-4ec19bd30d11?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
