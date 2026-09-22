@@ -132,8 +132,8 @@
     var iconOpen = $('[data-icon-open]', burger);
     var iconClose = $('[data-icon-close]', burger);
 
-    burger.addEventListener('click', function () {
-      var open = menu.classList.toggle('is-open');
+    function setOpen(open) {
+      menu.classList.toggle('is-open', open);
       burger.setAttribute('aria-expanded', String(open));
       // `.hidden` is an HTMLElement property; these are SVG elements, so the
       // attribute has to be toggled directly.
@@ -143,8 +143,31 @@
       // The consent banner is fixed to the bottom of the viewport and appended
       // to <body>, so it has no DOM relationship with this menu and sits on
       // top of it. The menu is what the visitor just asked for, so mark the
-      // root and let CSS stand the banner down until the menu closes.
+      // root and let CSS stand the banner down until the menu closes. The same
+      // class draws the scrim over the page behind the menu (§6 of the CSS).
       document.documentElement.classList.toggle('tt-menu-open', open);
+    }
+
+    burger.addEventListener('click', function () {
+      setOpen(!menu.classList.contains('is-open'));
+    });
+
+    // The scrim dims the page, so a tap on it has to mean something. It is a
+    // pseudo-element and cannot carry a listener of its own, but it covers
+    // everything outside the sticky chrome, so any click that lands outside
+    // .chrome while the menu is open is a click on the scrim.
+    document.addEventListener('click', function (e) {
+      if (!menu.classList.contains('is-open')) return;
+      if (e.target.closest && e.target.closest('.chrome')) return;
+      setOpen(false);
+    });
+
+    // Escape closes it too, for anyone driving the menu from a keyboard.
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+        setOpen(false);
+        burger.focus();
+      }
     });
   })();
 

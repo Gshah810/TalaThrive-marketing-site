@@ -267,6 +267,31 @@ button { font-family: var(--font); }
 }
 .btn--outline:hover { opacity: 1; border-color: var(--ink); }
 
+/* For a button whose label is long enough to wrap. A .btn is a flex row, so the
+   arrow is a sibling of the whole label rather than part of it: on two lines it
+   parks against the middle of the right edge, level with the gap between them,
+   and the label is pushed off centre by the space it leaves. Laid out as inline
+   text the arrow follows the last word wherever that falls. */
+.btn--wrap {
+  display: inline-block;
+  text-align: center;
+}
+
+.btn--wrap svg {
+  vertical-align: -2px;
+  margin-left: 6px;
+}
+
+/* "Join our Community of Practitioners" wants 355px of button and has 280 to
+   353 on a phone. Trimming the sides holds it on one line from 375 up; below
+   that it wraps, with its arrow attached. */
+@media (max-width: 411px) {
+  .btn--wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 /* Ghost / text link — no fill, orange text, hover to orange-dark (§4) */
 .btn--ghost { background: transparent; color: var(--orange); padding-left: 0; padding-right: 0; }
 .btn--ghost:hover { opacity: 1; color: var(--orange-dark); }
@@ -474,6 +499,29 @@ button { font-family: var(--font); }
 
 .nav-mobile.is-open { max-height: 500px; }
 
+/* The menu panel is only as tall as its items, so without this the page behind
+   it stays fully lit and the menu reads as floating rather than taking over.
+   Sits under .chrome (z-index 50) so the promo bar, the header and the panel
+   itself stay above it. Always present at zero opacity so it can fade in step
+   with the panel, and it takes the tap that closes the menu: site.js treats a
+   click outside .chrome as a request to close. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(8, 7, 23, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.28s var(--ease), visibility 0s linear 0.28s;
+}
+
+.tt-menu-open body::after {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.28s var(--ease), visibility 0s;
+}
+
 .nav-mobile nav {
   display: flex;
   flex-direction: column;
@@ -672,6 +720,13 @@ button { font-family: var(--font); }
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Four legal links, and between 376 and 559 exactly three of them fit on a
+   line, which leaves "Cookie settings" alone underneath on every page of the
+   site. Two even rows instead, until all four fit. */
+@media (max-width: 559px) {
+  .site-footer__legal > * { flex: 0 0 calc(50% - 10px); }
 }
 
 /* --------------------------------------------------------------------------
@@ -2093,6 +2148,8 @@ button { font-family: var(--font); }
   margin-top: clamp(32px, 4vw, 48px);
 }
 
+
+
 .head-lg {
   max-width: 620px;
   margin: 0 auto clamp(32px, 4vw, 48px);
@@ -2506,6 +2563,22 @@ button { font-family: var(--font); }
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 12px 32px;
+}
+
+/* The copy column is capped at 380px so it sits beside the checklist on a wide
+   screen. Below about 960 the two no longer fit side by side and the checklist
+   drops underneath, at which point the cap leaves the heading in the left half
+   of the section with the right half empty. Once they are stacked, let the copy
+   have the width it is standing in. */
+@media (max-width: 959px) {
+  .bz-goals-wrap > .bz-goals-copy { max-width: none; }
+}
+
+/* Six items in one column is a long thin list under a full-width heading. Two
+   columns from 560 up, and again once the section is side by side and wide
+   enough for it. */
+@media (min-width: 560px) and (max-width: 959px) {
+  .bz-goals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (min-width: 1100px) {
@@ -3187,6 +3260,20 @@ button { font-family: var(--font); }
   text-underline-offset: 2px;
 }
 .article-body a:hover { color: var(--orange-dark); }
+
+/* A .btn placed in story prose loses to .article-body a, which is one class and
+   one element against a single class, so it came out orange text on an orange
+   fill with a link underline through it. Restate what the button asked for. */
+.article-body a.btn {
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.article-body a.btn--primary,
+.article-body a.btn--primary:hover { color: #ffffff; }
+
+.article-body a.btn--outline,
+.article-body a.btn--outline:hover { color: var(--ink); }
 .article-body strong { font-weight: 700; }
 .article-body img {
   display: block;
@@ -3490,6 +3577,9 @@ button { font-family: var(--font); }
   }
 
   .sticky-cta { transition: none; }
+
+  body::after,
+  .tt-menu-open body::after { transition: none; }
 
   .serve-card,
   .reason-card,
