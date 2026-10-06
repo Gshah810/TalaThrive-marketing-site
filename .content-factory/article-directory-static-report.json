@@ -1,0 +1,15 @@
+{
+  "check": "directory_static_policy",
+  "findings": [],
+  "render_shell_path": "stories/index.html",
+  "required_slots": [
+    "directory_container",
+    "seo_metadata",
+    "article_registry",
+    "page_heading",
+    "article_list",
+    "article_link"
+  ],
+  "success": true,
+  "target_style_proven": true
+}
