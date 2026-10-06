@@ -1,0 +1,22 @@
+{
+  "check": "directory_dependency_validation",
+  "findings": [],
+  "ignored_diagnostic_files": [
+    ".content-factory/article-directory-component-audit.json",
+    ".content-factory/article-directory-page-spec.json",
+    ".content-factory/article-directory-component-manifest.json",
+    ".content-factory/article-directory-dependency-report.json",
+    ".content-factory/article-directory-static-report.json",
+    ".content-factory/article-directory-llm-patch-plan.json",
+    ".content-factory/article-directory-category-navigation-repair.json",
+    ".content-factory/article-directory-original-route-source.txt",
+    ".content-factory/article-setup-scaffold-process-map.json",
+    ".content-factory/article-setup-existing-route-delta-audit.json",
+    ".content-factory/article-directory-model-adapter-report.json"
+  ],
+  "manifest_slot_count": 20,
+  "missing_required_slots": [],
+  "render_shell_path": "stories/index.html",
+  "success": true,
+  "verified_imports": []
+}
