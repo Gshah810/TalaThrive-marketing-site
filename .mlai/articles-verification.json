@@ -1,0 +1,86 @@
+{
+  "artifact_digest": "7fcec08b6fe80e9739ee626443c2a2e5b6b921db84badb1a95b79cff9bef1dbd",
+  "baseline_sha": "4f6342a0dee638d40bd56bbb67fe2f0dc00110f8",
+  "contract": {
+    "app_root": ".",
+    "baseline": {
+      "kind": "static_source",
+      "paths": [
+        "stories/index.html"
+      ]
+    },
+    "build_command": [
+      "python3",
+      "scripts/materialize_articles.py",
+      "--output",
+      "cf-static-preview"
+    ],
+    "build_cwd": ".",
+    "content_path_pattern": "data/articles.json",
+    "content_source_kind": "shared_collection",
+    "environment_names": [],
+    "install_command": [],
+    "install_cwd": ".",
+    "listing_route": "/stories/index.html",
+    "lockfiles": [],
+    "materialize_command": [],
+    "materialize_cwd": ".",
+    "package_manager": "",
+    "preview_command": [
+      "python3",
+      "-m",
+      "http.server",
+      "3000",
+      "--bind",
+      "127.0.0.1",
+      "--directory",
+      "cf-static-preview"
+    ],
+    "preview_cwd": ".",
+    "route_template": "/stories/{slug}",
+    "runtime_family": "static",
+    "runtime_version": "3.11",
+    "static_source_materialization": {
+      "app_root": "",
+      "detail_source_path_pattern": "stories/{slug}/index.html",
+      "listing_source_path": "stories/index.html",
+      "materializer_command": [
+        "python3",
+        "scripts/materialize_articles.py",
+        "--output",
+        "cf-static-preview"
+      ],
+      "preview_output_dir": "cf-static-preview",
+      "schema_version": 1
+    },
+    "verify_steps": [
+      {
+        "command": [
+          "python3",
+          "scripts/materialize_articles.py",
+          "--output",
+          "cf-static-preview"
+        ],
+        "cwd": "."
+      }
+    ]
+  },
+  "execution_schema_version": 1,
+  "expected_h1": "Example Article",
+  "identity": {
+    "adapter_id": "stack_native",
+    "adapter_version": 1,
+    "connection_generation": 3,
+    "contract_digest": "56e1c210dcbda5f5199e012c0b6b75e0b23863daa2a93ee996af71a05e0a489e",
+    "deletion_epoch": 0,
+    "github_repo": "Gshah810/TalaThrive-marketing-site",
+    "operation_attempt": 1,
+    "operation_id": "de587203-8975-46df-8e95-b92a84a6bebb",
+    "repository_id": 1321130567,
+    "target_id": "stack_native_collection_data_articles_json_static",
+    "website_connection_id": "3276537d-9612-43ce-9b34-80998d10cb56"
+  },
+  "port": 3000,
+  "schema_version": 1,
+  "seed_slug": "example-article"
+}
