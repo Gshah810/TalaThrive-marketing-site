@@ -1,0 +1,87 @@
+{
+  "attempted_repair": true,
+  "branch_commit_sha": "",
+  "branch_name": "",
+  "check": "article_directory_dom_slot_compliance",
+  "component_status": {
+    "ArticleCalendarSection": {
+      "patched": "false",
+      "path": "",
+      "source": "missing_import"
+    },
+    "HeroSection": {
+      "patched": "false",
+      "path": "",
+      "source": "missing_import"
+    }
+  },
+  "marker_inventory": {
+    "article-card": [
+      "scripts/materialize_articles.py",
+      "stories/index.html"
+    ],
+    "article-link": [
+      "scripts/materialize_articles.py",
+      "stories/index.html"
+    ],
+    "article-list": [
+      "scripts/materialize_articles.py",
+      "stories/index.html"
+    ],
+    "category-navigation": [
+      "scripts/materialize_articles.py",
+      "stories/index.html"
+    ],
+    "directory-container": [
+      "stories/index.html"
+    ],
+    "empty-state": [
+      "scripts/materialize_articles.py",
+      "stories/index.html"
+    ],
+    "featured-articles": [
+      "stories/index.html"
+    ],
+    "page-heading": [
+      "stories/index.html"
+    ],
+    "page-intro": [
+      "stories/index.html"
+    ],
+    "pagination": [
+      "scripts/materialize_articles.py",
+      "stories/index.html"
+    ]
+  },
+  "missing_dom_slots": [],
+  "repair_diagnostics": [
+    {
+      "action": "stamped_inspector_component_ids",
+      "count": 13
+    },
+    {
+      "action": "inspector_bridge_skipped",
+      "reason": "no_default_function_export"
+    }
+  ],
+  "required_dom_slots": [
+    "directory-container",
+    "page-heading",
+    "page-intro",
+    "featured-articles",
+    "article-list",
+    "category-navigation",
+    "article-card",
+    "article-link",
+    "empty-state",
+    "pagination"
+  ],
+  "route_shell_path": "stories/index.html",
+  "route_source_sha": "7bc915c3421bb99e19fbbc3290841b598d0874257ca526fa4540d9ef977e2f7d",
+  "served_route_shell_path": "stories/index.html",
+  "status": "ready",
+  "success": true,
+  "updated_files": [
+    "stories/index.html"
+  ]
+}
