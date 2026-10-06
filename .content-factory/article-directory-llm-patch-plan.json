@@ -1,0 +1,85 @@
+{
+  "accepted_slots": [
+    "directory_container",
+    "seo_metadata",
+    "page_heading",
+    "article_list",
+    "article_link"
+  ],
+  "attempted": true,
+  "framework_notes": [
+    "The route is plain static HTML with ordinary anchors, images, and a shared CSS stylesheet; semantic slots do not require framework components.",
+    "Existing SEO metadata satisfies the slot without a separate support file.",
+    "The repository reports no build tool. TypeScript modules and Markdown frontmatter will not automatically render or update this HTML.",
+    "The advertised static_markdown adapter reports index_shell_supported=false and detail_shell_supported=false. Confirm a supported static rendering integration before relying on it to patch HTML shells.",
+    "Do not use React, Next.js, Vue, Svelte, or framework-specific metadata APIs."
+  ],
+  "model": "gpt-6.1-sol",
+  "patch_plan": [
+    {
+      "action": "Create a metadata-only registry in a format supported by the chosen static generation workflow, such as JSON or collected Markdown frontmatter. Extract the existing article metadata without inventing unavailable authors, content paths, or publication details.",
+      "constraints": [
+        "Represent the ArticleRecord contract and define handling for unknown or optional fields.",
+        "Preserve existing article destinations, including the featured story's root-level URL.",
+        "Verify content files before assigning hasContent."
+      ],
+      "priority": "required",
+      "target": "article registry support source"
+    },
+    {
+      "action": "Connect the registry to an explicit static rendering or update step that emits the existing featured-story and story-grid markup. Creating an unused registry file alone does not complete the missing slot.",
+      "constraints": [
+        "Reuse existing containers, headings, cards, links, metadata, and CSS classes.",
+        "Keep the initial article listing in generated HTML.",
+        "Read registry metadata without eagerly importing article bodies.",
+        "Do not introduce a framework or assume an existing build command."
+      ],
+      "priority": "required",
+      "target": "stories/index.html and static generation workflow"
+    },
+    {
+      "action": "Inspect the complete source, validate generated HTML and resolve article links against deployed directory URLs. Confirm any /stories to /stories/ redirect and preserve intentional legacy URLs.",
+      "priority": "verification",
+      "target": "complete route and article destinations"
+    },
+    {
+      "action": "When implementing the planned hundreds-article scale, generate paginated directory pages with the configured page size of 24. Pagination is not a missing required slot in this audit.",
+      "priority": "scale_follow_up",
+      "target": "static directory generation"
+    }
+  ],
+  "rejected_slots": [
+    "article_registry"
+  ],
+  "risk_flags": [
+    "{'code': 'TRUNCATED_ROUTE_SOURCE', 'severity': 'medium', 'detail': 'The excerpt ends inside an unfinished story-card anchor. Visible completed sections support the positive classifications, but the full document and any later registry integration cannot be verified.'}",
+    "{'code': 'PRELIMINARY_AUDIT_FALSE_NEGATIVES', 'severity': 'medium', 'detail': 'The preliminary audit marks directory_container, seo_metadata, and article_list missing despite direct implementation evidence. Generating replacements would duplicate existing functionality.'}",
+    "{'code': 'REGISTRY_NOT_DEMONSTRATED', 'severity': 'medium', 'detail': 'Hardcoded cards demonstrate a listing, not a separate reusable article registry. Registry presence remains unverified outside the supplied excerpts.'}",
+    "{'code': 'MIXED_ARTICLE_URL_LAYOUT', 'severity': 'medium', 'detail': 'The featured story uses a root-level destination while regular cards use destinations relative to /stories/. Do not normalize every article to /stories/{slug} without verifying existing routes.'}",
+    "{'code': 'UNSUPPORTED_SUPPORT_FILE_ASSUMPTION', 'severity': 'medium', 'detail': 'Configured .ts support paths conflict with a plain HTML repository lacking demonstrated TypeScript tooling. Unconsumed support files would not satisfy the registry integration.'}"
+  ],
+  "status": "completed",
+  "support_modules": {
+    "article_registry": {
+      "configured_path": "stories/registry.ts",
+      "integration_required": true,
+      "needed": true,
+      "recommendation": "Use a static-compatible metadata source and an explicit consumer. Prefer JSON or frontmatter unless TypeScript execution tooling is deliberately added."
+    },
+    "article_resources": {
+      "configured_path": "stories/article-resources.ts",
+      "needed": false,
+      "recommendation": "No downloadable-resource implementation or requirement is demonstrated. Do not create this module solely because the preliminary audit lists it."
+    },
+    "author_registry": {
+      "configured_path": "stories/authorRegistry.ts",
+      "needed": false,
+      "recommendation": "Optional; no author registry is required for the six audited slots."
+    },
+    "seo_metadata": {
+      "configured_path": "stories/seo-config.ts",
+      "needed": false,
+      "recommendation": "Reuse the existing head metadata. A centralized SEO configuration is optional, not necessary to satisfy this slot."
+    }
+  }
+}
