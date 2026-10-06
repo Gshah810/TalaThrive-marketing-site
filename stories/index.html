@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- cf-slot: seo-metadata -->
+<!-- cf-slot: article-registry -->
+<!-- cf-slot: author-registry -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -13,7 +16,7 @@
 <link rel="stylesheet" href="../assets/css/site.css?v=7">
 <script defer src="../assets/js/analytics.js?v=5"></script>
 <script>try{if(localStorage.getItem('tt_banner_closed')==='1')document.documentElement.classList.add('tt-banner-hidden')}catch(e){}</script>
-</head>
+<meta name="mlai-artifact-digest" content="503eb03ceb3939869777a16b00d255dae8ef82e13967f231e1879b4718a88c7b" /></head>
 <body>
 
 <div class="chrome">
@@ -71,16 +74,26 @@
 
 
 
+<main data-cf-slot="directory-container" data-cf-component-id="directory-container" data-cf-component-type="directory-container" data-cf-component-label="Articles container">
 <section class="page-hero page-hero--center" style="padding-bottom:clamp(24px,3vw,36px)">
   <div class="page-hero__inner" style="max-width:760px">
-    <h1 style="font-size:clamp(38px,5vw,60px);line-height:1.03;margin:0 0 18px">Stories to help you <em class="accent">thrive.</em></h1>
-    <p class="page-hero__lede" style="font-size:20px">Reflections, research, and real talk on culturally competent mental health, from our team and community.</p>
+    <h1 data-cf-slot="page-heading" data-cf-component-id="page-heading" data-cf-component-type="page-heading" data-cf-component-label="Page heading" style="font-size:clamp(38px,5vw,60px);line-height:1.03;margin:0 0 18px">Stories to help you <em class="accent">thrive.</em></h1>
+    <p data-cf-slot="page-intro" data-cf-component-id="page-intro" data-cf-component-type="page-intro" data-cf-component-label="Intro text" class="page-hero__lede" style="font-size:20px">Reflections, research, and real talk on culturally competent mental health, from our team and community.</p>
   </div>
 </section>
 
-<section class="section section--white" style="padding:clamp(28px,3.5vw,44px) 0">
+<!-- cf:categories:start -->
+<nav data-cf-slot="category-navigation" data-cf-component-id="category-navigation" data-cf-component-type="category-navigation" data-cf-component-label="Category navigation" aria-label="Story categories" class="container container--md" hidden>
+<a class="tag" href="/stories/?category=culturally-competent-therapy">Culturally competent therapy</a>
+<a class="tag" href="/stories/?category=generational-trauma-identity">Generational trauma &amp; identity</a>
+<a class="tag" href="/stories/?category=mental-health-stigma-faith">Mental health stigma &amp; faith</a>
+<a class="tag" href="/stories/?category=inclusive-workplace-wellbeing">Inclusive workplace wellbeing</a>
+<a class="tag" href="/stories/?category=diverse-practitioner-growth">Diverse practitioner growth</a>
+</nav>
+<!-- cf:categories:end -->
+<section data-cf-slot="featured-articles" data-cf-component-id="featured-articles" data-cf-component-type="featured-articles" data-cf-component-label="Featured articles" class="section section--white" style="padding:clamp(28px,3.5vw,44px) 0">
   <div class="container container--md">
-    <a class="story-featured" href="../story-generational-trauma/">
+    <article data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card"><a class="story-featured" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link" href="../story-generational-trauma/">
       <div class="story-featured__inner">
         <div class="story-featured__media">
           <img src="../assets/img/stories/aIAj9pGlOYk9agp8r9eM4yb7qQ.jpg" alt="">
@@ -95,9 +108,21 @@
           <span class="read-more">Read the story <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
         </div>
       </div>
-    </a>
+    </a></article>
+<!-- cf:featured:start -->
+<!-- cf:featured:end -->
   </div>
 </section>
+
+<!-- cf:articles:start -->
+<section data-cf-slot="article-list" data-cf-component-id="article-list" data-cf-component-type="article-list" data-cf-component-label="Article list" data-cf-native-list class="section section--white" style="padding:clamp(20px,3vw,32px) 0" hidden>
+  <div class="container container--md">
+    <div class="story-grid"></div>
+    <div data-cf-slot="empty-state" data-cf-component-id="empty-state" data-cf-component-type="empty-state" data-cf-component-label="Empty state" hidden><h2>No stories in this category yet</h2><p>Reflections from our team and community are on their way. Check back soon.</p></div>
+    <p data-cf-slot="pagination" data-cf-component-id="pagination" data-cf-component-type="pagination" data-cf-component-label="Pagination" class="story-date">Latest stories</p>
+  </div>
+</section>
+<!-- cf:articles:end -->
 
 <section class="section section--white" style="padding:clamp(20px,3vw,32px) 0 clamp(44px,5vw,72px)">
   <div class="container container--md">
@@ -526,6 +551,30 @@
   </div>
 </section>
 
+</main>
+<script>
+(function(){
+  var category = new URLSearchParams(window.location.search).get('category');
+  if (!category) return;
+  var records = Array.from(document.querySelectorAll('[data-cf-record]'));
+  var visible = 0;
+  records.forEach(function(record){
+    var matches = record.getAttribute('data-cf-category') === category;
+    record.hidden = !matches;
+    record.style.display = matches ? 'contents' : 'none';
+    if(matches) visible++;
+  });
+  var section = document.querySelector('[data-cf-native-list]');
+  if(section){
+    section.hidden = false;
+    section.querySelector('[data-cf-slot="empty-state" data-cf-component-id="empty-state" data-cf-component-type="empty-state" data-cf-component-label="Empty state"]').hidden = visible !== 0;
+    section.querySelector('[data-cf-slot="pagination" data-cf-component-id="pagination" data-cf-component-type="pagination" data-cf-component-label="Pagination"]').textContent = visible + ' recent stories in this category';
+  }
+  document.querySelectorAll('[data-cf-slot="category-navigation" data-cf-component-id="category-navigation" data-cf-component-type="category-navigation" data-cf-component-label="Category navigation"] a').forEach(function(link){
+    if(new URL(link.href).searchParams.get('category') === category) link.setAttribute('aria-current','page');
+  });
+})();
+</script>
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div class="site-footer__cols">
