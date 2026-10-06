@@ -1,0 +1,82 @@
+{
+  "accepted_slots": [
+    "directory_container",
+    "seo_metadata",
+    "page_heading",
+    "article_list",
+    "article_link"
+  ],
+  "attempted": true,
+  "framework_notes": [
+    "This is a plain static HTML route with file-based routing, shared CSS, and native anchors; component extraction is not necessary for semantic slot satisfaction.",
+    "No React, Next.js, Vue, Svelte, TypeScript compilation, or existing build pipeline is demonstrated.",
+    "The selected adapter reports index_shell_supported=false and detail_shell_supported=false. Automatic frontmatter-to-HTML route integration must not be assumed; provide an explicit rendering step.",
+    "Only article_registry is missing among the required slots. Existing containers, listing markup, and head metadata supersede the preliminary audit's missing classifications."
+  ],
+  "model": "gpt-6.1-sol",
+  "patch_plan": [
+    {
+      "action": "Create a static-compatible metadata registry, using frontmatter or JSON with an explicit reader. Extract verified article titles, descriptions, dates, categories, images, featured status, and existing destinations. Populate contentPath and hasContent only after checking actual article files; do not invent missing author or editorial data.",
+      "priority": "required",
+      "scope": "support",
+      "slot": "article_registry"
+    },
+    {
+      "action": "Add an explicit static generation or setup-time rendering step that reads registry metadata and updates the existing featured-story and story-grid markup. Keep article bodies out of index generation and preserve the site's existing CSS classes and native anchors.",
+      "priority": "required",
+      "scope": "route_integration",
+      "slot": "article_registry",
+      "target": "stories/index.html"
+    },
+    {
+      "action": "Inspect the complete file before editing, validate generated HTML, and check article links and image paths. The supplied excerpt ends inside an unfinished anchor and cannot establish the full document's validity.",
+      "priority": "verification",
+      "scope": "route",
+      "target": "stories/index.html"
+    },
+    {
+      "action": "For growth to hundreds of articles, implement statically generated pagination with the configured page size of 24 rather than rendering or fetching all article bodies.",
+      "priority": "scale",
+      "scope": "static_generation"
+    }
+  ],
+  "rejected_slots": [
+    "article_registry"
+  ],
+  "risk_flags": [
+    "{'code': 'truncated_route_source', 'severity': 'warning', 'detail': 'The excerpt ends at an incomplete a.story-card anchor. Full-document structure, closing tags, and remaining content are unverified.'}",
+    "{'code': 'mixed_article_destinations', 'severity': 'warning', 'detail': 'The featured article resolves outside /stories/{slug}, while grid links are relative children of /stories/. Preserve verified legacy URLs or explicitly plan redirects; do not derive all destinations from slugs alone.'}",
+    "{'code': 'unverified_link_targets', 'severity': 'warning', 'detail': 'Anchors satisfy article_link structurally, but destination files and deployed responses were not supplied.'}",
+    "{'code': 'unsupported_support_file_execution', 'severity': 'warning', 'detail': 'Creating the configured .ts support files alone would not make them usable by this static HTML page.'}"
+  ],
+  "status": "completed",
+  "support_modules": {
+    "article_registry": {
+      "configured_path": "stories/registry.ts",
+      "needed": true,
+      "notes": "No TypeScript build or runtime is demonstrated. Use a format consumed by an explicit static generation step, or provide tooling before adopting the configured .ts path.",
+      "recommended_format": "frontmatter or JSON"
+    },
+    "article_resources": {
+      "configured_path": "stories/article-resources.ts",
+      "needed": false,
+      "notes": "Downloadable resources are optional and no resource implementation or requirement is demonstrated."
+    },
+    "author_alias": {
+      "configured_path": "stories/authors.ts",
+      "needed": false,
+      "notes": "No alias consumer is demonstrated."
+    },
+    "author_registry": {
+      "configured_path": "stories/authorRegistry.ts",
+      "needed": false,
+      "notes": "Optional; no author records are shown. Add only when verified author data or consumers require it."
+    },
+    "seo_metadata": {
+      "configured_path": "stories/seo-config.ts",
+      "existing_implementation": "stories/index.html head",
+      "needed": false,
+      "notes": "Centralization is optional. Do not replace working inline metadata with an unconsumed support file."
+    }
+  }
+}
