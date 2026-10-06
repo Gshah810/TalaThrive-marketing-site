@@ -1,0 +1,25 @@
+/* Editorial additions inherit Athletics and the existing site tokens. */
+.cf-directory { padding: clamp(28px, 3.5vw, 44px) 0; }
+.cf-directory [hidden] { display: none !important; }
+.cf-categories { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+.cf-categories .tag { display: inline-flex; align-items: center; min-height: 44px; font-weight: 400; }
+.cf-categories [aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
+.cf-directory #cf-featured:not([hidden]) { margin-bottom: 28px; }
+.cf-directory .cf-feature-text .story-featured__inner { display: block; }
+.cf-directory .cf-byline { font-family: var(--font); font-size: 14px; font-weight: 400; color: var(--brown-mid); margin: 0; }
+.cf-directory .story-featured__body .cf-byline { font-size: 15px; }
+.cf-empty { padding: clamp(72px, 8vw, 96px) 0; text-align: center; }
+.cf-empty h2 { font-size: clamp(28px, 3vw, 38px); line-height: 1.2; margin: 0 0 16px; }
+.cf-empty p { font-size: var(--fs-body); color: var(--brown-mid); line-height: 1.6; margin: 0 auto; max-width: 520px; }
+.cf-pagination { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 32px; color: var(--brown-mid); }
+.cf-pagination a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+.cf-pagination p { margin: 0; font-size: 15px; }
+.cf-archive-heading { font-size: clamp(24px, 2.8vw, 32px); margin: 0 0 24px; }
+.cf-detail-category { margin: 0 0 20px; }
+.cf-detail-intro { font-size: var(--fs-lead); line-height: 1.6; color: var(--brown-mid); }
+.cf-detail-byline { margin-top: 20px; }
+@media (max-width: 640px) {
+  .cf-directory .story-featured__inner { display: block; }
+  .cf-directory .story-featured__media { aspect-ratio: 16 / 10; }
+  .cf-categories { gap: 8px; }
+}
