@@ -1,0 +1,71 @@
+{
+  "directory_name": "stories",
+  "empty_state_copy": "No articles yet. Check back soon.",
+  "featured_policy": "Use getFeaturedArticles when available; otherwise show the newest registry records.",
+  "intro": "Browse the latest articles and resources from TALA THRIVE.",
+  "optional_semantic_slots": [
+    "author_registry",
+    "page_intro",
+    "featured_articles",
+    "article_card",
+    "category_navigation",
+    "empty_state",
+    "pagination",
+    "structured_data",
+    "search",
+    "date_archive",
+    "newsletter_cta",
+    "rich_image_cards",
+    "downloadable_resources",
+    "author_avatar"
+  ],
+  "page_title": "Stories",
+  "pagination_policy": {
+    "avoid_eager_body_imports": true,
+    "bounded_initial_render": true,
+    "page_size": 24
+  },
+  "pillars": [
+    {
+      "description": "Educational and guiding content exploring the importance of culturally competent mental health support, how it differs from traditional therapy, and how to find practitioners who understand specific lived experiences.",
+      "slug": "culturally-competent-therapy",
+      "title": "Culturally Competent Care & Therapy"
+    },
+    {
+      "description": "Resources and stories dedicated to understanding and healing from generational trauma, migration stress, systemic racism, and the pressure of intergenerational family expectations.",
+      "slug": "generational-trauma-identity",
+      "title": "Generational Trauma & Identity"
+    },
+    {
+      "description": "Content addressing the intersection of mental wellbeing, religious beliefs, and cultural stigmas, helping readers navigate help-seeking while honoring their community ties.",
+      "slug": "mental-health-stigma-faith",
+      "title": "Mental Health Stigma & Faith"
+    },
+    {
+      "description": "B2B-focused content guiding HR and business leaders on how to provide mental health support that culturally and linguistically diverse (CALD) employees will actually trust and use.",
+      "slug": "inclusive-workplace-wellbeing",
+      "title": "Inclusive Workplace Wellbeing"
+    },
+    {
+      "description": "Professional resources and community content for culturally diverse therapists and coaches looking to grow their practice, find matched clients, and work on their own terms.",
+      "slug": "diverse-practitioner-growth",
+      "title": "Therapist & Coach Practice Growth"
+    }
+  ],
+  "required_semantic_slots": [
+    "directory_container",
+    "seo_metadata",
+    "article_registry",
+    "page_heading",
+    "article_list",
+    "article_link"
+  ],
+  "route_path": "/stories",
+  "route_shell_path": "stories/index.html",
+  "schema_version": 1,
+  "seo_record": {
+    "canonical_path": "/stories",
+    "description": "Latest articles and resources from TALA THRIVE.",
+    "title": "Stories | TALA THRIVE"
+  }
+}
