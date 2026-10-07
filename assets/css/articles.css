@@ -1,0 +1,15 @@
+/* Native Stories extensions; site.css supplies typography, cards and tokens. */
+[data-cf-slot="directory-container"] [hidden] { display: none !important; }
+[data-cf-slot="page-heading"] .accent { font-style: normal; }
+.cf-story-item { min-width: 0; }
+.cf-story-item > .story-card { height: 100%; }
+.cf-categories { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+.cf-categories button { font-family: inherit; cursor: pointer; border: 0; }
+.cf-categories button[aria-pressed="true"] { background: var(--cream); }
+.cf-categories button:focus-visible, .cf-pagination button:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+.cf-byline { color: var(--brown-mid); font-size: var(--fs-body); line-height: 1.6; }
+.cf-pagination { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 24px; margin-top: 32px; }
+.cf-pagination button:disabled { opacity: .5; cursor: default; }
+.cf-empty { padding: clamp(64px, 7vw, 96px) 0; text-align: center; }
+.cf-empty h2 { font-size: var(--fs-h2-article); color: var(--ink); }
+.cf-empty p { color: var(--brown-mid); max-width: 580px; margin: 16px auto 24px; }
