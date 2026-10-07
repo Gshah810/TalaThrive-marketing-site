@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- cf-slot: seo-metadata -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stories | Tala Thrive</title>
@@ -11,9 +12,11 @@
 <meta property="og:type" content="website">
 <link rel="icon" href="../assets/img/logo-mark.png">
 <link rel="stylesheet" href="../assets/css/site.css?v=7">
+<link rel="stylesheet" href="../assets/css/articles.css">
+<script defer src="../assets/js/articles.js"></script>
 <script defer src="../assets/js/analytics.js?v=5"></script>
 <script>try{if(localStorage.getItem('tt_banner_closed')==='1')document.documentElement.classList.add('tt-banner-hidden')}catch(e){}</script>
-</head>
+<meta name="mlai-artifact-digest" content="972604005cd436f63f5c594935ac6b43f310ffb9af1ed400937ff312b24e692f" /></head>
 <body>
 
 <div class="chrome">
@@ -71,17 +74,19 @@
 
 
 
+<main data-cf-slot="directory-container" data-cf-component-id="directory-container" data-cf-component-type="directory-container" data-cf-component-label="Articles container">
 <section class="page-hero page-hero--center" style="padding-bottom:clamp(24px,3vw,36px)">
   <div class="page-hero__inner" style="max-width:760px">
-    <h1 style="font-size:clamp(38px,5vw,60px);line-height:1.03;margin:0 0 18px">Stories to help you <em class="accent">thrive.</em></h1>
-    <p class="page-hero__lede" style="font-size:20px">Reflections, research, and real talk on culturally competent mental health, from our team and community.</p>
+    <h1 data-cf-slot="page-heading" data-cf-component-id="page-heading" data-cf-component-type="page-heading" data-cf-component-label="Page heading" style="font-size:clamp(38px,5vw,60px);line-height:1.03;margin:0 0 18px">Stories to help you <em class="accent">thrive.</em></h1>
+    <p data-cf-slot="page-intro" data-cf-component-id="page-intro" data-cf-component-type="page-intro" data-cf-component-label="Intro text" class="page-hero__lede" style="font-size:20px">Reflections, research, and real talk on culturally competent mental health, from our team and community.</p>
   </div>
 </section>
 
-<section class="section section--white" style="padding:clamp(28px,3.5vw,44px) 0">
+<section data-cf-slot="featured-articles" data-cf-component-id="featured-articles" data-cf-component-type="featured-articles" data-cf-component-label="Featured articles" aria-label="Featured story" class="section section--white" style="padding:clamp(28px,3.5vw,44px) 0">
   <div class="container container--md">
-    <a class="story-featured" href="../story-generational-trauma/">
-      <div class="story-featured__inner">
+    <p class="story-date">Featured story</p>
+    <a data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link" class="story-featured" href="../story-generational-trauma/">
+      <div data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" class="story-featured__inner">
         <div class="story-featured__media">
           <img src="../assets/img/stories/aIAj9pGlOYk9agp8r9eM4yb7qQ.jpg" alt="">
         </div>
@@ -101,7 +106,13 @@
 
 <section class="section section--white" style="padding:clamp(20px,3vw,32px) 0 clamp(44px,5vw,72px)">
   <div class="container container--md">
-    <div class="story-grid">
+    <!-- cf-slot: article-registry -->
+    <!-- cf-slot: author-registry -->
+    <!-- cf:controls:start -->
+    <nav data-cf-slot="category-navigation" data-cf-component-id="category-navigation" data-cf-component-type="category-navigation" data-cf-component-label="Category navigation" class="cf-categories" aria-label="Story categories"><button class="tag" type="button" data-category="" aria-pressed="true">All stories</button></nav>
+    <!-- cf:controls:end -->
+    <div class="story-grid" id="cf-article-list" data-cf-slot="article-list" data-cf-component-id="article-list" data-cf-component-type="article-list" data-cf-component-label="Article list">
+    <!-- cf:grid:start -->
       <a class="story-card" href="refill-your-cup-this-international-self-care-day/">
         <div class="story-card__media"><img src="../assets/img/stories/6pZOabqlNknCr1iFZfhQ3KVK5A.png" alt="" loading="lazy"></div>
         <div class="story-card__body">
@@ -522,9 +533,24 @@
           <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
         </div>
       </a>
+    <!-- cf:grid:end -->
     </div>
+    <!-- cf:catalog:start -->
+    <template id="cf-story-catalog"></template>
+    <!-- cf:catalog:end -->
+    <div id="cf-empty" data-cf-slot="empty-state" data-cf-component-id="empty-state" data-cf-component-type="empty-state" data-cf-component-label="Empty state" class="cf-empty" hidden>
+      <h2>New stories are on their way</h2>
+      <p>There are no stories to read here yet. In the meantime, find support that understands you.</p>
+      <a class="btn btn--secondary" href="../practitioners/">Find your practitioner</a>
+    </div>
+    <nav id="cf-pagination" data-cf-slot="pagination" data-cf-component-id="pagination" data-cf-component-type="pagination" data-cf-component-label="Pagination" class="cf-pagination" aria-label="Story pages" hidden>
+      <button class="btn btn--secondary" type="button" data-page-step="-1">Newer stories</button>
+      <span class="story-date" id="cf-page-status" aria-live="polite"></span>
+      <button class="btn btn--secondary" type="button" data-page-step="1">Older stories</button>
+    </nav>
   </div>
 </section>
+</main>
 
 <footer class="site-footer">
   <div class="site-footer__inner">
