@@ -2,7 +2,7 @@
 """Materialize native /stories routes and a complete isolated static preview.
 
 No installation is needed. The JSON array is a controlled, read-only input.
-Only stories/index.html and registry-owned detail HTML are written in source.
+Only stories/index.html, registry-owned detail HTML and LINKS.md are written in source.
 """
 # cf-slot: article-registry
 # cf-slot: author-registry
@@ -14,6 +14,7 @@ import json
 from pathlib import Path
 import re
 import shutil
+import subprocess
 from string import Template
 import sys
 from urllib.parse import urlencode, urlsplit, urlunsplit
@@ -176,7 +177,7 @@ def mark_link(raw):
     if 'data-cf-slot' in anchor.attrs:
         raise ValueError('Unexpected existing story link slot')
     position = anchor.open_end - 1
-    return raw[:position] + ' data-cf-slot="article-link"' + raw[position:]
+    return raw[:position] + ' data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link"' + raw[position:]
 
 def legacy_cards(doc, wrapper):
     banks = [node for node in doc.nodes if node.tag == 'template' and node.attrs.get('id') == 'cf-article-bank']
@@ -196,7 +197,7 @@ def legacy_cards(doc, wrapper):
         card_doc = Document(raw)
         tags = [node for node in card_doc.nodes if node.has_class('tag')]
         category = plain(card_doc.inner(tags[0])) if tags else ''
-        result = '<article class="cf-story-result" data-cf-slot="article-card" data-cf-origin="legacy" data-cf-category="' + escape(category) + '">' + mark_link(raw) + '</article>'
+        result = '<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="' + escape(category) + '">' + mark_link(raw) + '</article>'
         results.append((category, result))
     return results
 
@@ -204,8 +205,8 @@ def new_card(record):
     e = {name: escape(record[name]) for name in ('slug', 'title', 'category', 'author', 'author_slug', 'published_at', 'description', 'image_url')}
     image = '<div class="story-card__media"><img src="' + e['image_url'] + '" alt="' + escape(record.get('image_alt') or '') + '" loading="lazy"></div>' if record['image_url'] else ''
     setup = '<span class="tag">Setup example</span>' if record.get('is_setup_example') is True else ''
-    start = ('<article class="cf-story-result" data-cf-slot="article-card" data-cf-origin="registry" data-cf-category="{category}" data-author-slug="{author_slug}">'
-             '<a class="story-card" data-cf-slot="article-link" href="{slug}/" aria-label="{title}">').format(**e)
+    start = ('<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="registry" data-cf-category="{category}" data-author-slug="{author_slug}">'
+             '<a class="story-card" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link" href="{slug}/" aria-label="{title}">').format(**e)
     metadata = ('<div class="story-card__body"><div class="story-meta"><span class="tag">{category}</span>'
                 '<time class="story-date" datetime="{published_at}">').format(**e)
     body = ('</div><h3>{title}</h3><p>{description}</p><p class="cf-story-byline">By {author}</p>'
@@ -230,11 +231,11 @@ def listing_content(cards):
     empty = '' if not cards else ' hidden'
     count = '1–' + str(len(visible)) + ' of ' + str(len(cards)) + ' stories' if cards else '0 stories'
     return ('\n<!-- Managed card bank retains every original story preview. -->\n'
-            '<nav id="cf-category-navigation" class="cf-story-controls" data-cf-slot="category-navigation" aria-label="Story categories">' + ''.join(links) + '</nav>\n'
+            '<nav id="cf-category-navigation" class="cf-story-controls" data-cf-slot="category-navigation" data-cf-component-id="category-navigation" data-cf-component-type="category-navigation" data-cf-component-label="Category navigation" aria-label="Story categories">' + ''.join(links) + '</nav>\n'
             '<p id="cf-result-count" class="story-date cf-story-count" aria-live="polite">' + count + '</p>\n'
-            '<div class="story-grid" id="cf-article-list" data-cf-slot="article-list">' + '\n'.join(card for _, card in visible) + '</div>\n'
-            '<div id="cf-empty-state" class="cf-story-empty" data-cf-slot="empty-state"' + empty + '><h2>More stories are on their way.</h2><p>No stories in this category yet. Explore another category or check back soon for reflections and resources from our team and community.</p></div>\n'
-            '<nav id="cf-pagination" class="cf-story-controls" data-cf-slot="pagination" aria-label="Story pages">' + pagination + '</nav>\n'
+            '<div class="story-grid" id="cf-article-list" data-cf-slot="article-list" data-cf-component-id="article-list" data-cf-component-type="article-list" data-cf-component-label="Article list">' + '\n'.join(card for _, card in visible) + '</div>\n'
+            '<div id="cf-empty-state" class="cf-story-empty" data-cf-slot="empty-state" data-cf-component-id="empty-state" data-cf-component-type="empty-state" data-cf-component-label="Empty state"' + empty + '><h2>More stories are on their way.</h2><p>No stories in this category yet. Explore another category or check back soon for reflections and resources from our team and community.</p></div>\n'
+            '<nav id="cf-pagination" class="cf-story-controls" data-cf-slot="pagination" data-cf-component-id="pagination" data-cf-component-type="pagination" data-cf-component-label="Pagination" aria-label="Story pages">' + pagination + '</nav>\n'
             '<template id="cf-article-bank">' + '\n'.join(card for _, card in cards) + '</template>\n')
 
 def public_shell():
@@ -307,6 +308,12 @@ def run():
     for target, rendered in details:
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(rendered, encoding='utf-8')
+    # Keep the site's existing outbound-link inventory in sync with new routes.
+    links = subprocess.run(
+        [sys.executable, str(ROOT / 'scripts/gen_links.py')],
+        cwd=ROOT, check=True, capture_output=True, text=True,
+    )
+    (ROOT / 'LINKS.md').write_text(links.stdout, encoding='utf-8')
     if output.exists():
         shutil.rmtree(output)
     output.mkdir()

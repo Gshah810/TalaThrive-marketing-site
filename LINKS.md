@@ -10,10 +10,11 @@ python3 scripts/gen_links.py > LINKS.md
 ```
 
 Scope: `*.html`, `*.js`, `*.css`, `*.xml`, `*.txt` under the repo root, excluding
-`design-source/`, `design_handoff/`, `README.md` and this file. Own canonical and
+`design-source/`, `design_handoff/`, `scripts/`, `.content-factory/`,
+`_cf_article_preview/`, `README.md` and this file. Own canonical and
 sitemap URLs are listed last for completeness; they are not outbound links.
 
-137 distinct URLs, 899 occurrences, generated from `bd4fa4d`.
+139 distinct URLs, 917 occurrences, generated from `32b86c1`.
 
 
 ## App (platform)
@@ -24,14 +25,14 @@ the marketing site, and old apex app paths are bridged by `404.html`.
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://app.talathrive.com/login` | 318 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 35 story pages under `stories/*/index.html` |
+| `https://app.talathrive.com/login` | 324 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 36 story pages under `stories/*/index.html` |
 
 ## Shopify store
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://shop.talathrive.com/` | 143 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `shop/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 35 story pages under `stories/*/index.html` |
-| `https://shop.talathrive.com/products/tala-thrive-digital-gift-card` | 46 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 35 story pages under `stories/*/index.html` |
+| `https://shop.talathrive.com/` | 146 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `shop/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 36 story pages under `stories/*/index.html` |
+| `https://shop.talathrive.com/products/tala-thrive-digital-gift-card` | 47 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 36 story pages under `stories/*/index.html` |
 
 ## Practitioner intake forms (Airtable)
 
@@ -58,10 +59,10 @@ the marketing site, and old apex app paths are bridged by `404.html`.
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://www.instagram.com/talathrive/` | 46 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 35 story pages under `stories/*/index.html` |
-| `https://www.linkedin.com/company/talathrive/` | 46 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 35 story pages under `stories/*/index.html` |
+| `https://www.instagram.com/talathrive/` | 47 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 36 story pages under `stories/*/index.html` |
+| `https://www.linkedin.com/company/talathrive/` | 47 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 36 story pages under `stories/*/index.html` |
 | `https://www.linkedin.com/in/normankim/` | 1 | `stories/culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/index.html` |
-| `https://www.tiktok.com/@talathrive` | 46 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 35 story pages under `stories/*/index.html` |
+| `https://www.tiktok.com/@talathrive` | 47 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 36 story pages under `stories/*/index.html` |
 
 ## Video
 
@@ -99,7 +100,7 @@ the marketing site, and old apex app paths are bridged by `404.html`.
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://static.klaviyo.com/onsite/js/XQvfkj/klaviyo.js?company_id=XQvfkj` | 46 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 35 story pages under `stories/*/index.html` |
+| `https://static.klaviyo.com/onsite/js/XQvfkj/klaviyo.js?company_id=XQvfkj` | 47 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 36 story pages under `stories/*/index.html` |
 
 ## Analytics and pixels
 
@@ -191,6 +192,7 @@ also served at the GitHub Pages project URL, which `404.html` handles at runtime
 | `https://talathrive.com/stories/dry-january-a-fresh-start-for-your-body-and-mind/` | 3 | `sitemap.xml`, `stories/dry-january-a-fresh-start-for-your-body-and-mind/index.html`, `user-stories/dry-january-a-fresh-start-for-your-body-and-mind/index.html` |
 | `https://talathrive.com/stories/elder-daughter-syndrome/` | 3 | `sitemap.xml`, `stories/elder-daughter-syndrome/index.html`, `user-stories/are-you-afflicted-with-elder-daughter-syndrome-we-ve-got-you/index.html` |
 | `https://talathrive.com/stories/everybody-knows-millennials-and-gen-z-but-have-you-heard-about-the-odyssey-years---finding-your-way-through-the-wandering/` | 2 | `sitemap.xml`, `stories/everybody-knows-millennials-and-gen-z-but-have-you-heard-about-the-odyssey-years---finding-your-way-through-the-wandering/index.html` |
+| `https://talathrive.com/stories/example-article/` | 2 | `stories/example-article/index.html` |
 | `https://talathrive.com/stories/focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/` | 3 | `sitemap.xml`, `stories/focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/index.html`, `user-stories/focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/index.html` |
 | `https://talathrive.com/stories/generational-trauma-forgiveness/` | 3 | `sitemap.xml`, `stories/generational-trauma-forgiveness/index.html`, `user-stories/navigating-generational-trauma-and-the-healing-power-of-forgiveness/index.html` |
 | `https://talathrive.com/stories/getting-ahead-in-2025-the-power-of-affirmations/` | 3 | `sitemap.xml`, `stories/getting-ahead-in-2025-the-power-of-affirmations/index.html`, `user-stories/getting-ahead-in-2025-the-power-of-affirmations/index.html` |
@@ -229,3 +231,4 @@ also served at the GitHub Pages project URL, which `404.html` handles at runtime
 |---|---|---|
 | `http://www.sitemaps.org/schemas/sitemap/0.9` | 1 | `sitemap.xml` |
 | `http://www.w3.org/2000/svg` | 1 | `assets/css/site.css` |
+| `https://schema.org` | 2 | `stories/example-article/index.html` |
