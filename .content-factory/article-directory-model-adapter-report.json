@@ -367,7 +367,7 @@
         "kind": "ephemeral_container",
         "lockfile_digests": {},
         "network": "registry_allowlist",
-        "runtime_image": "sha256:7146328ad5cf292767e63673ac87f9e725c99f0d702f13b72aaf65e106599ead",
+        "runtime_image": "sha256:6472fe48d16298de91cf3fa6ef6430af4bf049454be3ca12f55097d7647a9166",
         "runtime_image_reference": "",
         "source_sha": "4f6342a0dee638d40bd56bbb67fe2f0dc00110f8",
         "source_tree_sha": ""
