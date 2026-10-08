@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- cf-slot: seo-metadata -->
+<!-- cf-slot: article-registry — data/articles.json consumed by scripts/materialize_articles.py -->
+<!-- cf-slot: author-registry — publication author and author_slug -->
+<title>Stories | Tala Thrive</title>
+<meta name="description" content="Reflections, research, and real talk on culturally competent mental health, from the Tala Thrive team and community.">
+<link rel="canonical" href="https://talathrive.com/stories/">
+<meta property="og:title" content="Stories | Tala Thrive">
+<meta property="og:description" content="Reflections, research, and real talk on culturally competent mental health, from the Tala Thrive team and community.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../assets/img/logo-mark.png">
+<link rel="stylesheet" href="../assets/css/site.css?v=7">
+<link rel="stylesheet" href="../assets/css/articles.css">
+<script defer src="../assets/js/analytics.js?v=5"></script>
+<script>try{if(localStorage.getItem('tt_banner_closed')==='1')document.documentElement.classList.add('tt-banner-hidden')}catch(e){}</script>
+</head>
+<body>
+
+<div class="chrome">
+  <div class="promo" data-promo>
+    Get 10% off your first therapy or coaching session.
+    <a href="../#join-the-tribe">Claim your discount</a>
+    <button class="promo__close" type="button" data-promo-close aria-label="Dismiss banner">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="site-header__bar">
+      <a class="brand" href="../" aria-label="Tala Thrive — home">
+        <img class="brand__mark" src="../assets/img/logo-mark.png" alt="" width="135" height="160">
+        <img class="brand__word" src="../assets/img/logo-wordmark.png" alt="Tala Thrive" width="671" height="80">
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main">
+        <a href="../about/">About Us</a>
+        <a href="../practitioners/">Practitioners</a>
+        <a href="../for-businesses/">For Businesses</a>
+        <a href="../partner-with-us/">Partner With Us</a>
+        <a href="../stories/">Stories</a>
+        <a href="https://shop.talathrive.com/" target="_blank" rel="noopener noreferrer" aria-label="Shop (opens in a new tab)">Shop</a>
+      </nav>
+
+      <div class="nav-auth">
+        <a class="nav-auth__login" href="https://app.talathrive.com/login">Log in</a>
+        <a class="nav-auth__signup" href="https://app.talathrive.com/login">Sign Up</a>
+      </div>
+
+      <button class="burger" type="button" data-burger aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg data-icon-open width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+        <svg data-icon-close hidden width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="nav-mobile" id="mobile-menu" data-mobile-menu>
+      <nav aria-label="Main, mobile">
+        <a href="../about/">About Us</a>
+        <a href="../practitioners/">Practitioners</a>
+        <a href="../for-businesses/">For Businesses</a>
+        <a href="../partner-with-us/">Partner With Us</a>
+        <a href="../stories/">Stories</a>
+        <a href="https://shop.talathrive.com/" target="_blank" rel="noopener noreferrer" aria-label="Shop (opens in a new tab)">Shop</a>
+        <div class="nav-mobile__auth">
+          <a class="is-login" href="https://app.talathrive.com/login">Log in</a>
+          <a class="is-signup" href="https://app.talathrive.com/login">Sign Up</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+</div>
+
+
+
+<main data-cf-slot="directory-container" data-cf-component-id="directory-container" data-cf-component-type="directory-container" data-cf-component-label="Articles container">
+<section class="page-hero page-hero--center" style="padding-bottom:clamp(24px,3vw,36px)">
+  <div class="page-hero__inner" style="max-width:760px">
+    <h1 data-cf-slot="page-heading" data-cf-component-id="page-heading" data-cf-component-type="page-heading" data-cf-component-label="Page heading" style="font-size:clamp(38px,5vw,60px);line-height:1.03;margin:0 0 18px">Stories to help you <em class="accent">thrive.</em></h1>
+    <p data-cf-slot="page-intro" data-cf-component-id="page-intro" data-cf-component-type="page-intro" data-cf-component-label="Intro text" class="page-hero__lede" style="font-size:20px">Reflections, research, and real talk on culturally competent mental health, from our team and community.</p>
+  </div>
+</section>
+
+<section data-cf-slot="featured-articles" data-cf-component-id="featured-articles" data-cf-component-type="featured-articles" data-cf-component-label="Featured articles" aria-label="Featured story outside category results" class="section section--white" style="padding:clamp(28px,3.5vw,44px) 0">
+  <div class="container container--md">
+    <p class="story-date">Featured story</p>
+    <a data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link" class="story-featured" href="../story-generational-trauma/">
+      <div class="story-featured__inner">
+        <div class="story-featured__media">
+          <img src="../assets/img/stories/aIAj9pGlOYk9agp8r9eM4yb7qQ.jpg" alt="">
+        </div>
+        <div class="story-featured__body">
+          <div class="story-meta">
+            <span class="tag">Healing</span>
+            <span class="story-date">Jan 14, 2026</span>
+          </div>
+          <h2>How to Begin Healing from Generational Trauma</h2>
+          <p>Sometimes, we carry emotional wounds that didn’t start with us. Invisible threads tie us to the pain, resilience, and experiences of our ancestors.</p>
+          <span class="read-more">Read the story <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="section section--white" style="padding:clamp(20px,3vw,32px) 0 clamp(44px,5vw,72px)">
+  <div class="container container--md">
+    <div id="cf-article-results" data-cf-managed-listing>
+<!-- Managed card bank retains every original story preview. -->
+<nav id="cf-category-navigation" class="cf-story-controls" data-cf-slot="category-navigation" data-cf-component-id="category-navigation" data-cf-component-type="category-navigation" data-cf-component-label="Category navigation" aria-label="Story categories"><a class="tag" data-cf-category="" aria-current="true" href="#category=&amp;page=1">All stories</a><a class="tag" data-cf-category="generational-trauma-identity" href="#category=generational-trauma-identity&amp;page=1">generational-trauma-identity</a><a class="tag" data-cf-category="Self-care" href="#category=Self-care&amp;page=1">Self-care</a><a class="tag" data-cf-category="Healing" href="#category=Healing&amp;page=1">Healing</a><a class="tag" data-cf-category="Wellbeing" href="#category=Wellbeing&amp;page=1">Wellbeing</a><a class="tag" data-cf-category="Affirmations" href="#category=Affirmations&amp;page=1">Affirmations</a><a class="tag" data-cf-category="Culture &amp; Faith" href="#category=Culture+%26+Faith&amp;page=1">Culture &amp; Faith</a><a class="tag" data-cf-category="Community" href="#category=Community&amp;page=1">Community</a><a class="tag" data-cf-category="Awareness" href="#category=Awareness&amp;page=1">Awareness</a></nav>
+<p id="cf-result-count" class="story-date cf-story-count" aria-live="polite">1–24 of 36 stories</p>
+<div class="story-grid" id="cf-article-list" data-cf-slot="article-list" data-cf-component-id="article-list" data-cf-component-type="article-list" data-cf-component-label="Article list"><article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="registry" data-cf-category="generational-trauma-identity" data-author-slug="sonia-kaurah"><a class="story-card" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link" href="example-article/" aria-label="Example Article"><div class="story-card__body"><div class="story-meta"><span class="tag">generational-trauma-identity</span><time class="story-date" datetime="2026-01-01">Jan 1, 2026</time><span class="tag">Setup example</span></div><h3>Example Article</h3><p>A setup example for review. Replace it with your first published article.</p><p class="cf-story-byline">By Sonia Kaurah</p><span class="read-more">Read more</span></div></a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="refill-your-cup-this-international-self-care-day/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/6pZOabqlNknCr1iFZfhQ3KVK5A.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Jul 24, 2026</span>
+          </div>
+          <h3>Refill Your Cup This International Self-Care Day</h3>
+          <p>International Self-Care Day falls on 24 July, and the date carries a quiet message. It stands for looking after yourself 24 hours a day, 7 days a week.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="the-mid-year-reset-how-to-recalibrate-your-goals-without-burnout/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/IepZgnaZKJs7Nx6jQTERrnFYXs.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Jun 20, 2026</span>
+          </div>
+          <h3>The Mid-Year Reset: How to Recalibrate Your Goals Without Burnout</h3>
+          <p>We have officially reached the midpoint of the year. For many of us, June brings a familiar wave of panic.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Healing"><a class="story-card" href="everybody-knows-millennials-and-gen-z-but-have-you-heard-about-the-odyssey-years---finding-your-way-through-the-wandering/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/8k6gdpsITzqnjyJW2zJiY5lZM.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Healing</span>
+            <span class="story-date">May 25, 2026</span>
+          </div>
+          <h3>Everybody Knows Millennials and Gen Z, but Have You Heard About the &#x27;Odyssey Years&#x27;? - Finding Your Way Through the Wandering</h3>
+          <p>Lately, a concept has been resonating deeply with many young adults: the &quot;Odyssey Years.&quot;</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Wellbeing"><a class="story-card" href="studying-abroad-and-struggling-you-re-not-failing---you-re-carrying-a-lot./" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/2gZMlqr6V7e2VYNqEzzmXNweeuY.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Wellbeing</span>
+            <span class="story-date">May 18, 2026</span>
+          </div>
+          <h3>Studying Abroad and Struggling? You&#x27;re Not Failing - You&#x27;re Carrying a Lot.</h3>
+          <p>Moving to a new country to study takes real courage. But nobody tells you about the other side of it.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Wellbeing"><a class="story-card" href="how-to-train-your-mind-like-you-train-your-body/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/oYpAKYg0RzxCRvtecINhNpOmsjI.jpg" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Wellbeing</span>
+            <span class="story-date">Apr 21, 2026</span>
+          </div>
+          <h3>How to train your mind like you train your body</h3>
+          <p>As much as we would love to wave a magic wand to automatically become fit, our bodies don’t get strong because we simply wish for it.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Affirmations"><a class="story-card" href="affirmations-101-the-science-backed-mental-health-tool-you-re-not-using-correctly/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/SHjZBYkmeLGNmYdIIOl8WIBeWk.jpg" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Affirmations</span>
+            <span class="story-date">Apr 9, 2026</span>
+          </div>
+          <h3>Affirmations 101: The Science-Backed Mental Health Tool You&#x27;re Not Using Correctly</h3>
+          <p>You&#x27;ve seen affirmations everywhere - on Instagram, in journals, on cards. But here&#x27;s the question nobody answers honestly: Do they actually work, or are they just pretty words?</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Wellbeing"><a class="story-card" href="racism-and-mental-health-how-online-therapy-can-help/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/xKEaPwWFGfUUiG6xqldYdcEwhqQ.jpg" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Wellbeing</span>
+            <span class="story-date">Oct 30, 2025</span>
+          </div>
+          <h3>Racism and Mental Health: How Online Therapy Can Help</h3>
+          <p>October is Mental Health Month in Australia, and the intersection between racism and mental health is something many of us feel deeply, yet often struggle to put into words.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Culture &amp; Faith"><a class="story-card" href="integrating-faith-and-therapy-the-role-of-spirituality-in-mental-health/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/0cFvoQ3c5vr7M9xpaagnN72XuMw.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Culture & Faith</span>
+            <span class="story-date">Oct 26, 2025</span>
+          </div>
+          <h3>Integrating Faith and Therapy: The Role of Spirituality in Mental Health</h3>
+          <p>In recent years, there has been growing recognition of the importance of integrating spirituality and religion into therapy.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Community"><a class="story-card" href="r-u-ok-when-was-the-last-time-someone-asked-you-this/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/BxF7HK1EdKvmRI7X5sdOgXKgKSg.jpg" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Community</span>
+            <span class="story-date">Oct 7, 2025</span>
+          </div>
+          <h3>“R U OK?” - When was the last time someone asked you this?</h3>
+          <p>Then the conversation switches to something mundane like the weather. Most of us have had similar moments, where we truly wished they had lingered on that question.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="rest-relaxation/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/ljbASKSGN17GLba44f6VQkSL2LI.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Aug 22, 2025</span>
+          </div>
+          <h3>Say It With Us: “I Deserve Rest and Relaxation”</h3>
+          <p>Let’s face it: the idea of &quot;rest&quot; isn&#x27;t always simple.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="minority-mental-health-awareness-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/wju7xzDg5uT8rgoGMmsKWLda4M.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">Jul 28, 2025</span>
+          </div>
+          <h3>It’s Minority Mental Health Awareness month! Time to get the culturally competent care you deserve</h3>
+          <p>Did you know it’s currently Minority Mental Health Awareness Month?</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Healing"><a class="story-card" href="generational-trauma-forgiveness/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/L08II4SBck4r4sl5wPXMJI61LI.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Healing</span>
+            <span class="story-date">Jun 30, 2025</span>
+          </div>
+          <h3>Navigating Generational Trauma and the Healing Power of Forgiveness</h3>
+          <p>One of the most difficult phrases to say is: I’m sorry.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="lgbtqia-mental-health/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/zfI0f5FcWQvmN1ujux3VE6UTQU.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">Jun 19, 2025</span>
+          </div>
+          <h3>Honouring LGBTQIA Pride Month and the Need for Cultural Competency in Mental Health Care</h3>
+          <p>June marks LGBTQIA Pride Month worldwide. A time to honour the resilience, visibility, and rights of lesbian, gay, bisexual, transgender, non-binary, and queer individuals.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Wellbeing"><a class="story-card" href="elder-daughter-syndrome/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/1V8WUHpXNVS0hgLj2m7N4FNKU.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Wellbeing</span>
+            <span class="story-date">May 21, 2025</span>
+          </div>
+          <h3>Are you Afflicted with “Elder Daughter Syndrome”? We’ve got you!</h3>
+          <p>When I first came across the phrase “Elder Daughter Syndrome”, I closed my eyes and let out a deep breath.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/kazUK9bWyqN6JtOoDPc1mHv3NVE.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">May 12, 2025</span>
+          </div>
+          <h3>Focusing on Mothers and Mother-Figures this Mental Health Awareness Month</h3>
+          <p>May is a powerful month of reflection and action. It’s Mental Health Awareness Month, a time dedicated to breaking the stigma around mental health and ensuring that everyone, everywhere, has access to…</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Community"><a class="story-card" href="the-power-of-speaking-up/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/2ZtuvH1RzlOAfZFAY3doB9CdFeM.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Community</span>
+            <span class="story-date">May 6, 2025</span>
+          </div>
+          <h3>The Power of Speaking Up</h3>
+          <p>“You can only hold your breath under water for so long,” a close friend once told me. “If you don’t surface for air, you will drown.”</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="how-to-manage-stress-this-stress-awareness-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/9pzmlf52qPtusuczM3rpuPWXC78.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">Apr 25, 2025</span>
+          </div>
+          <h3>How to Manage Stress this Stress Awareness Month</h3>
+          <p>Stress is a natural response to life&#x27;s challenges, but when left unmanaged, it can affect our overall well-being in serious ways.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Community"><a class="story-card" href="we-re-building-a-community-of-culturally-competent-therapists-and-coaches/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/gesM3YfmuzhFZ426shL9eZ3yDQ.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Community</span>
+            <span class="story-date">Mar 19, 2025</span>
+          </div>
+          <h3>We’re Building a Community of Culturally Competent Therapists and Coaches</h3>
+          <p>Did you know that 50% of people drop off from their therapist within the first three sessions?</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="dry-january-a-fresh-start-for-your-body-and-mind/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/dZCtmxvXsSFIdSayvlWMKKeve8.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Jan 31, 2025</span>
+          </div>
+          <h3>Dry January: A Fresh Start for Your Body and Mind</h3>
+          <p>Every year, as New Year’s celebrations fade and champagne flutes are washed and stored, millions of people around the globe take on a challenge: Dry January.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Affirmations"><a class="story-card" href="getting-ahead-in-2025-the-power-of-affirmations/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/Rjo38v2oeEq1akQBSwwm6yDF8HU.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Affirmations</span>
+            <span class="story-date">Jan 10, 2025</span>
+          </div>
+          <h3>Getting Ahead in 2025 - The Power of Affirmations</h3>
+          <p>In a world that moves faster than ever, where digital distractions abound and challenges to our mental health and well-being are on the rise, the simple practice of daily affirmations can be a…</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/YbLd3N81Hq7HNv1AqO9DGFt59sI.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Dec 29, 2024</span>
+          </div>
+          <h3>Culturally Competent Tips for Setting Boundaries this Holiday Season with Dr. Norman Kim</h3>
+          <p>“You must be happy because you’ve gained weight!”</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="what-are-you-thankful-for-this-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/rsl3Nfp27BVJaahquIbiTqlHZEo.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Nov 12, 2024</span>
+          </div>
+          <h3>What are You Thankful for this Month?</h3>
+          <p>A healthy practice we often advocate at Tala Thrive is a regular practice of gratitude - whether it’s keeping a daily journal, writing things you’re grateful for, or taking quality time off for…</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="manifesting-soft-lives-for-black-women-this-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/nCgF9hyIh2NF24hHxn3Ss8WBkxU.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Oct 29, 2024</span>
+          </div>
+          <h3>Manifesting Soft Lives for Black Women this Month</h3>
+          <p>I recently met with a male doctor to discuss a medical procedure.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article></div>
+<div id="cf-empty-state" class="cf-story-empty" data-cf-slot="empty-state" data-cf-component-id="empty-state" data-cf-component-type="empty-state" data-cf-component-label="Empty state" hidden><h2>More stories are on their way.</h2><p>No stories in this category yet. Explore another category or check back soon for reflections and resources from our team and community.</p></div>
+<nav id="cf-pagination" class="cf-story-controls" data-cf-slot="pagination" data-cf-component-id="pagination" data-cf-component-type="pagination" data-cf-component-label="Pagination" aria-label="Story pages"><span class="story-date">Page 1 of 2</span><a class="tag" href="#category=&amp;page=2">Older stories</a></nav>
+<template id="cf-article-bank"><article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="registry" data-cf-category="generational-trauma-identity" data-author-slug="sonia-kaurah"><a class="story-card" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link" href="example-article/" aria-label="Example Article"><div class="story-card__body"><div class="story-meta"><span class="tag">generational-trauma-identity</span><time class="story-date" datetime="2026-01-01">Jan 1, 2026</time><span class="tag">Setup example</span></div><h3>Example Article</h3><p>A setup example for review. Replace it with your first published article.</p><p class="cf-story-byline">By Sonia Kaurah</p><span class="read-more">Read more</span></div></a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="refill-your-cup-this-international-self-care-day/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/6pZOabqlNknCr1iFZfhQ3KVK5A.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Jul 24, 2026</span>
+          </div>
+          <h3>Refill Your Cup This International Self-Care Day</h3>
+          <p>International Self-Care Day falls on 24 July, and the date carries a quiet message. It stands for looking after yourself 24 hours a day, 7 days a week.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="the-mid-year-reset-how-to-recalibrate-your-goals-without-burnout/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/IepZgnaZKJs7Nx6jQTERrnFYXs.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Jun 20, 2026</span>
+          </div>
+          <h3>The Mid-Year Reset: How to Recalibrate Your Goals Without Burnout</h3>
+          <p>We have officially reached the midpoint of the year. For many of us, June brings a familiar wave of panic.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Healing"><a class="story-card" href="everybody-knows-millennials-and-gen-z-but-have-you-heard-about-the-odyssey-years---finding-your-way-through-the-wandering/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/8k6gdpsITzqnjyJW2zJiY5lZM.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Healing</span>
+            <span class="story-date">May 25, 2026</span>
+          </div>
+          <h3>Everybody Knows Millennials and Gen Z, but Have You Heard About the &#x27;Odyssey Years&#x27;? - Finding Your Way Through the Wandering</h3>
+          <p>Lately, a concept has been resonating deeply with many young adults: the &quot;Odyssey Years.&quot;</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Wellbeing"><a class="story-card" href="studying-abroad-and-struggling-you-re-not-failing---you-re-carrying-a-lot./" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/2gZMlqr6V7e2VYNqEzzmXNweeuY.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Wellbeing</span>
+            <span class="story-date">May 18, 2026</span>
+          </div>
+          <h3>Studying Abroad and Struggling? You&#x27;re Not Failing - You&#x27;re Carrying a Lot.</h3>
+          <p>Moving to a new country to study takes real courage. But nobody tells you about the other side of it.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Wellbeing"><a class="story-card" href="how-to-train-your-mind-like-you-train-your-body/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/oYpAKYg0RzxCRvtecINhNpOmsjI.jpg" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Wellbeing</span>
+            <span class="story-date">Apr 21, 2026</span>
+          </div>
+          <h3>How to train your mind like you train your body</h3>
+          <p>As much as we would love to wave a magic wand to automatically become fit, our bodies don’t get strong because we simply wish for it.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Affirmations"><a class="story-card" href="affirmations-101-the-science-backed-mental-health-tool-you-re-not-using-correctly/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/SHjZBYkmeLGNmYdIIOl8WIBeWk.jpg" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Affirmations</span>
+            <span class="story-date">Apr 9, 2026</span>
+          </div>
+          <h3>Affirmations 101: The Science-Backed Mental Health Tool You&#x27;re Not Using Correctly</h3>
+          <p>You&#x27;ve seen affirmations everywhere - on Instagram, in journals, on cards. But here&#x27;s the question nobody answers honestly: Do they actually work, or are they just pretty words?</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Wellbeing"><a class="story-card" href="racism-and-mental-health-how-online-therapy-can-help/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/xKEaPwWFGfUUiG6xqldYdcEwhqQ.jpg" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Wellbeing</span>
+            <span class="story-date">Oct 30, 2025</span>
+          </div>
+          <h3>Racism and Mental Health: How Online Therapy Can Help</h3>
+          <p>October is Mental Health Month in Australia, and the intersection between racism and mental health is something many of us feel deeply, yet often struggle to put into words.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Culture &amp; Faith"><a class="story-card" href="integrating-faith-and-therapy-the-role-of-spirituality-in-mental-health/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/0cFvoQ3c5vr7M9xpaagnN72XuMw.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Culture & Faith</span>
+            <span class="story-date">Oct 26, 2025</span>
+          </div>
+          <h3>Integrating Faith and Therapy: The Role of Spirituality in Mental Health</h3>
+          <p>In recent years, there has been growing recognition of the importance of integrating spirituality and religion into therapy.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Community"><a class="story-card" href="r-u-ok-when-was-the-last-time-someone-asked-you-this/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/BxF7HK1EdKvmRI7X5sdOgXKgKSg.jpg" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Community</span>
+            <span class="story-date">Oct 7, 2025</span>
+          </div>
+          <h3>“R U OK?” - When was the last time someone asked you this?</h3>
+          <p>Then the conversation switches to something mundane like the weather. Most of us have had similar moments, where we truly wished they had lingered on that question.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="rest-relaxation/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/ljbASKSGN17GLba44f6VQkSL2LI.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Aug 22, 2025</span>
+          </div>
+          <h3>Say It With Us: “I Deserve Rest and Relaxation”</h3>
+          <p>Let’s face it: the idea of &quot;rest&quot; isn&#x27;t always simple.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="minority-mental-health-awareness-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/wju7xzDg5uT8rgoGMmsKWLda4M.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">Jul 28, 2025</span>
+          </div>
+          <h3>It’s Minority Mental Health Awareness month! Time to get the culturally competent care you deserve</h3>
+          <p>Did you know it’s currently Minority Mental Health Awareness Month?</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Healing"><a class="story-card" href="generational-trauma-forgiveness/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/L08II4SBck4r4sl5wPXMJI61LI.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Healing</span>
+            <span class="story-date">Jun 30, 2025</span>
+          </div>
+          <h3>Navigating Generational Trauma and the Healing Power of Forgiveness</h3>
+          <p>One of the most difficult phrases to say is: I’m sorry.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="lgbtqia-mental-health/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/zfI0f5FcWQvmN1ujux3VE6UTQU.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">Jun 19, 2025</span>
+          </div>
+          <h3>Honouring LGBTQIA Pride Month and the Need for Cultural Competency in Mental Health Care</h3>
+          <p>June marks LGBTQIA Pride Month worldwide. A time to honour the resilience, visibility, and rights of lesbian, gay, bisexual, transgender, non-binary, and queer individuals.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Wellbeing"><a class="story-card" href="elder-daughter-syndrome/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/1V8WUHpXNVS0hgLj2m7N4FNKU.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Wellbeing</span>
+            <span class="story-date">May 21, 2025</span>
+          </div>
+          <h3>Are you Afflicted with “Elder Daughter Syndrome”? We’ve got you!</h3>
+          <p>When I first came across the phrase “Elder Daughter Syndrome”, I closed my eyes and let out a deep breath.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/kazUK9bWyqN6JtOoDPc1mHv3NVE.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">May 12, 2025</span>
+          </div>
+          <h3>Focusing on Mothers and Mother-Figures this Mental Health Awareness Month</h3>
+          <p>May is a powerful month of reflection and action. It’s Mental Health Awareness Month, a time dedicated to breaking the stigma around mental health and ensuring that everyone, everywhere, has access to…</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Community"><a class="story-card" href="the-power-of-speaking-up/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/2ZtuvH1RzlOAfZFAY3doB9CdFeM.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Community</span>
+            <span class="story-date">May 6, 2025</span>
+          </div>
+          <h3>The Power of Speaking Up</h3>
+          <p>“You can only hold your breath under water for so long,” a close friend once told me. “If you don’t surface for air, you will drown.”</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="how-to-manage-stress-this-stress-awareness-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/9pzmlf52qPtusuczM3rpuPWXC78.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">Apr 25, 2025</span>
+          </div>
+          <h3>How to Manage Stress this Stress Awareness Month</h3>
+          <p>Stress is a natural response to life&#x27;s challenges, but when left unmanaged, it can affect our overall well-being in serious ways.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Community"><a class="story-card" href="we-re-building-a-community-of-culturally-competent-therapists-and-coaches/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/gesM3YfmuzhFZ426shL9eZ3yDQ.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Community</span>
+            <span class="story-date">Mar 19, 2025</span>
+          </div>
+          <h3>We’re Building a Community of Culturally Competent Therapists and Coaches</h3>
+          <p>Did you know that 50% of people drop off from their therapist within the first three sessions?</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="dry-january-a-fresh-start-for-your-body-and-mind/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/dZCtmxvXsSFIdSayvlWMKKeve8.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Jan 31, 2025</span>
+          </div>
+          <h3>Dry January: A Fresh Start for Your Body and Mind</h3>
+          <p>Every year, as New Year’s celebrations fade and champagne flutes are washed and stored, millions of people around the globe take on a challenge: Dry January.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Affirmations"><a class="story-card" href="getting-ahead-in-2025-the-power-of-affirmations/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/Rjo38v2oeEq1akQBSwwm6yDF8HU.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Affirmations</span>
+            <span class="story-date">Jan 10, 2025</span>
+          </div>
+          <h3>Getting Ahead in 2025 - The Power of Affirmations</h3>
+          <p>In a world that moves faster than ever, where digital distractions abound and challenges to our mental health and well-being are on the rise, the simple practice of daily affirmations can be a…</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/YbLd3N81Hq7HNv1AqO9DGFt59sI.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Dec 29, 2024</span>
+          </div>
+          <h3>Culturally Competent Tips for Setting Boundaries this Holiday Season with Dr. Norman Kim</h3>
+          <p>“You must be happy because you’ve gained weight!”</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="what-are-you-thankful-for-this-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/rsl3Nfp27BVJaahquIbiTqlHZEo.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Nov 12, 2024</span>
+          </div>
+          <h3>What are You Thankful for this Month?</h3>
+          <p>A healthy practice we often advocate at Tala Thrive is a regular practice of gratitude - whether it’s keeping a daily journal, writing things you’re grateful for, or taking quality time off for…</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="manifesting-soft-lives-for-black-women-this-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/nCgF9hyIh2NF24hHxn3Ss8WBkxU.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Oct 29, 2024</span>
+          </div>
+          <h3>Manifesting Soft Lives for Black Women this Month</h3>
+          <p>I recently met with a male doctor to discuss a medical procedure.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="honouring-black-history-month-a-spotlight-on-mental-health-for-black-communities/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/n8mVDOy93oapevoNOxDgS59kEQ.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">Oct 22, 2024</span>
+          </div>
+          <h3>Honouring Black History Month: A Spotlight on Mental Health for Black Communities</h3>
+          <p>This October, we’re celebrating Black History Month (BHM).</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Community"><a class="story-card" href="please-check-on-your-strong-friend-this-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/nw1y8Q72QWT84QDJU3gEtjZ8.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Community</span>
+            <span class="story-date">Sep 18, 2024</span>
+          </div>
+          <h3>Please Check on your “Strong” Friend this Month</h3>
+          <p>Chances are you’ve also felt the shock of learning someone you considered “strong” and “unflappable” succumbed to suicide.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Wellbeing"><a class="story-card" href="what-exactly-does-culturally-competent-mental-health-care-mean/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/yfKVwe9pj3XzyssMv428W4Iv2c.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Wellbeing</span>
+            <span class="story-date">Aug 28, 2024</span>
+          </div>
+          <h3>What exactly does Culturally Competent Mental Health Care mean?</h3>
+          <p>&quot;It’s exhausting to have to educate your therapist.&quot;</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="mental-health-wellness-tips-from-the-tala-thrive-team/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/nUWLYNavmYBHqBDsOeXoc5Elo.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Aug 8, 2024</span>
+          </div>
+          <h3>Mental Health Wellness Tips from the Tala Thrive Team</h3>
+          <p>Culturally competent mental health care is our priority both internally within our team and externally for our various communities.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="cultural-awareness-in-therapy-for-bipoc-mental-health-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/FVOQUsHo7OWSyHhVTJjlDPuwbJU.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">Jul 29, 2024</span>
+          </div>
+          <h3>Cultural Awareness in Therapy for BIPOC Mental Health Month</h3>
+          <p>Let’s face it. No matter how much you try to walk in other people&#x27;s shoes in a show of solidarity, their experiences are so unique that all you can really do is listen to their stories and offer your…</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Wellbeing"><a class="story-card" href="have-you-heard-of-mrs-bibi-syndrome-no-it-s-not-a-medical-condition/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/EdnMXcIc6SyXFicxJ9JffVg8.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Wellbeing</span>
+            <span class="story-date">Jul 17, 2024</span>
+          </div>
+          <h3>Have You Heard of Mrs Bibi Syndrome? No, it’s Not a Medical Condition</h3>
+          <p>In the UK, there’s a particularly disturbing stereotype within the health system that specifically marginalises and, ultimately, harms South Asian women.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="let-s-talk-about-men-s-mental-health/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/rgXYLnE6bx9bMVi0jfUhhikr0.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">Jun 27, 2024</span>
+          </div>
+          <h3>Let’s Talk about Men&#x27;s Mental Health</h3>
+          <p>June is Men’s Health Month and every year, it’s observed to encourage men and boys to proactively take care of their health.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="how-are-you-taking-care-of-yourself-mentally/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/AmV9kXsqeqQLTsRwJDZVrjBYaUQ.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">May 29, 2024</span>
+          </div>
+          <h3>How are You Taking Care of Yourself Mentally?</h3>
+          <p>This was a question I recently posed to a dear friend who has been dealing with a lot of her emotions publicly.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="reflecting-on-earth-day-and-how-we-care-for-ourselves/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/nUgtYhDx7qxgyGpCG4FwR1WA.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">Apr 24, 2024</span>
+          </div>
+          <h3>Reflecting on Earth Day and How We Care for Ourselves</h3>
+          <p>You’ve probably seen posts popping up all around social media celebrating “Earth Month” and urging us to celebrate our planet, reevaluate our relationship with it, and take sustainable actions…</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Awareness"><a class="story-card" href="let-s-talk-about-resilience-this-women-s-history-month/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/pJicPKhvf6UkkuCUz87GO32cmd4.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Awareness</span>
+            <span class="story-date">Mar 15, 2024</span>
+          </div>
+          <h3>Let&#x27;s Talk about Resilience this Women&#x27;s History Month</h3>
+          <p>As we celebrate the incredible achievements, historical importance, and modern tenacity of what it means to be a woman navigating this world, I want to take a moment to reflect on the word…</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Self-care"><a class="story-card" href="welcome-to-our-month-of-love-selv-love/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/UnOoGj1p6e93K0S378mk4S37JKc.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Self-care</span>
+            <span class="story-date">Feb 15, 2024</span>
+          </div>
+          <h3>Welcome to Our Month of Love... Self-Love</h3>
+          <p>I’d like to tell you a little story…</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article>
+<article class="cf-story-result" data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" data-cf-origin="legacy" data-cf-category="Wellbeing"><a class="story-card" href="how-are-you-mentally-easing-into-2024/" data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link">
+        <div class="story-card__media"><img src="../assets/img/stories/gUCPhVRdTnNNeYlW25N5yLZ1uiU.png" alt="" loading="lazy"></div>
+        <div class="story-card__body">
+          <div class="story-meta">
+            <span class="tag">Wellbeing</span>
+            <span class="story-date">Feb 1, 2024</span>
+          </div>
+          <h3>How are You Mentally Easing into 2024?</h3>
+          <p>At the beginning of each year, we often create long lists of resolutions with good intentions, but they can actually cause undue mental stress.</p>
+          <span class="read-more">Read more <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a></article></template>
+</div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__cols">
+      <div class="site-footer__brand">
+        <a class="brand" href="../" aria-label="Tala Thrive — home">
+          <img class="brand__mark" src="../assets/img/logo-mark.png" alt="" width="135" height="160">
+          <img class="brand__word" src="../assets/img/logo-wordmark.png" alt="Tala Thrive" width="671" height="80">
+        </a>
+        <p>Therapy, coaching and workshops with certified practitioners to support your team.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/talathrive/" target="_blank" rel="noopener noreferrer" aria-label="Tala Thrive on Instagram (opens in a new tab)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/talathrive/" target="_blank" rel="noopener noreferrer" aria-label="Tala Thrive on LinkedIn (opens in a new tab)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3zM9 9h3.8v1.65h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@talathrive" target="_blank" rel="noopener noreferrer" aria-label="Tala Thrive on TikTok (opens in a new tab)">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.3 2.1 1.5 3.6 3.5 3.9V10c-1.3.1-2.5-.2-3.6-.9v6.2c0 3.3-2.4 5.7-5.5 5.7A5.4 5.4 0 0 1 5 15.3c0-3.1 2.6-5.4 5.8-5.1v3.2c-.4-.1-.8-.2-1.2-.2-1.3 0-2.3 1-2.3 2.2 0 1.3 1 2.3 2.3 2.3 1.4 0 2.4-1.1 2.4-2.6V3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="site-footer__col" aria-labelledby="ft-explore">
+        <h3 id="ft-explore">Explore</h3>
+        <a href="../about/">About us</a>
+        <a href="../practitioners/">Practitioners</a>
+        <a href="../stories/">Stories</a>
+        <a href="https://shop.talathrive.com/" target="_blank" rel="noopener noreferrer" aria-label="Shop (opens in a new tab)">Shop</a>
+        <a href="https://shop.talathrive.com/products/tala-thrive-digital-gift-card" target="_blank" rel="noopener noreferrer" aria-label="Gift cards (opens in a new tab)">Gift cards</a>
+      </nav>
+
+      <nav class="site-footer__col" aria-labelledby="ft-org">
+        <h3 id="ft-org">For organisations</h3>
+        <a href="../for-businesses/">For businesses</a>
+        <a href="../partner-with-us/">Partner with us</a>
+        <a href="../for-businesses/#demo">Request a demo</a>
+      </nav>
+
+      <nav class="site-footer__col" aria-labelledby="ft-support">
+        <h3 id="ft-support">Support</h3>
+        <a href="../#faqs">FAQs</a>
+        <a href="mailto:hello@talathrive.com">Contact us</a>
+        <a href="https://app.talathrive.com/login">Log in</a>
+        <a href="https://app.talathrive.com/login">Create an account</a>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>&copy; <span data-year>2026</span> Tala Thrive. All rights reserved.</p>
+      <nav class="site-footer__legal" aria-label="Legal">
+        <a href="../privacy-policy/">Privacy policy</a>
+        <a href="../terms/">Terms and conditions</a>
+        <a href="../accessibility/">Accessibility</a>
+        <button class="site-footer__cookie" type="button" data-cookie-settings hidden>Cookie settings</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../assets/js/site.js?v=14" defer></script>
+<script src="../assets/js/articles.js" defer></script>
+<!-- Klaviyo onsite loader (company XQvfkj) -->
+<script async src="https://static.klaviyo.com/onsite/js/XQvfkj/klaviyo.js?company_id=XQvfkj"></script>
+</body>
+</html>
