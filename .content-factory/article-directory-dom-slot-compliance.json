@@ -1,0 +1,76 @@
+{
+  "attempted_repair": true,
+  "branch_commit_sha": "",
+  "branch_name": "",
+  "check": "article_directory_dom_slot_compliance",
+  "component_status": {
+    "ArticleCalendarSection": {
+      "patched": "false",
+      "path": "",
+      "source": "missing_import"
+    },
+    "HeroSection": {
+      "patched": "false",
+      "path": "",
+      "source": "missing_import"
+    }
+  },
+  "existing_listing": true,
+  "marker_inventory": {
+    "article-card": [
+      "stories/index.html"
+    ],
+    "article-link": [
+      "stories/index.html"
+    ],
+    "article-list": [
+      "stories/index.html"
+    ],
+    "category-navigation": [
+      "stories/index.html"
+    ],
+    "directory-container": [
+      "stories/index.html"
+    ],
+    "empty-state": [
+      "stories/index.html"
+    ],
+    "featured-articles": [
+      "stories/index.html"
+    ],
+    "page-heading": [
+      "stories/index.html"
+    ],
+    "page-intro": [
+      "stories/index.html"
+    ],
+    "pagination": [
+      "stories/index.html"
+    ]
+  },
+  "missing_dom_slots": [],
+  "repair_diagnostics": [
+    {
+      "action": "stamped_inspector_component_ids",
+      "count": 57
+    },
+    {
+      "action": "inspector_bridge_skipped",
+      "reason": "no_default_function_export"
+    }
+  ],
+  "required_dom_slots": [
+    "directory-container",
+    "page-heading",
+    "article-list",
+    "article-link"
+  ],
+  "route_shell_path": "stories/index.html",
+  "route_source_sha": "788bfe40bca12f53b2fa11554960095279c28292f6c2effe704962dbd12a0a4e",
+  "served_route_shell_path": "stories/index.html",
+  "status": "ready",
+  "success": true,
+  "updated_files": [
+    "stories/index.html"
+  ]
+}
