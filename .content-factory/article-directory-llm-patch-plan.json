@@ -1,0 +1,100 @@
+{
+  "accepted_slots": [
+    "directory_container",
+    "page_heading",
+    "article_list",
+    "article_link",
+    "seo_metadata"
+  ],
+  "attempted": true,
+  "framework_notes": [
+    "This is a plain static HTML, file-based route with no demonstrated build tool, rendering framework, or TypeScript compilation.",
+    "Use standard HTML anchors and images and the existing plain CSS conventions; do not introduce React, Next.js, or Tailwind patterns.",
+    "The adapter is labeled static_markdown with frontmatter registry language, but the actual route shell is HTML and both shell-support flags are false. Adapter availability alone does not establish an operational HTML generation pipeline.",
+    "Standalone TypeScript files or Markdown frontmatter will not update the served HTML without an explicit supported consumer.",
+    "Semantic slot satisfaction does not require separately named or imported components."
+  ],
+  "model": "gpt-6.1-sol",
+  "patch_plan": [
+    {
+      "action": "create_article_registry",
+      "format_note": "JSON is a proposed adaptation of the configured stories/registry.ts path. If the selected adapter requires frontmatter, use its supported metadata format and implement collection into the registry instead.",
+      "priority": 1,
+      "scope": "support",
+      "slot": "article_registry",
+      "target": "stories/registry.json",
+      "work": [
+        "Create a static-compatible, metadata-only registry seeded from the existing featured story and article cards.",
+        "Represent the supplied ArticleRecord contract with verified values and explicit unknown or empty values where permitted; do not invent authors, modification dates, analytics identifiers, or content availability.",
+        "Verify actual article files before assigning contentPath and hasContent.",
+        "Preserve legacy destinations explicitly rather than deriving every existing URL from /stories/{slug}."
+      ]
+    },
+    {
+      "action": "connect_registry_to_static_output",
+      "precondition": "Confirm or implement a static HTML generation path; the declared adapter does not support index or detail shell generation.",
+      "priority": 2,
+      "scope": "route_integration",
+      "target": "stories/index.html",
+      "work": [
+        "Provide a setup-time or generation-time consumer using an available, confirmed runtime so registry metadata produces the listing HTML.",
+        "Reuse page-hero, container, story-featured, story-grid, story-card, story-meta, tag, and read-more markup and existing site.css styling.",
+        "Keep article bodies out of the index-generation input and preserve server-readable static HTML.",
+        "Preserve the existing heading, introduction, SEO tags, navigation, footer, and unrelated scripts."
+      ]
+    },
+    {
+      "action": "apply_scale_policy_and_validate",
+      "notes": [
+        "Pagination is currently absent but is not one of the required semantic slots; this work follows the supplied scale policy."
+      ],
+      "priority": 3,
+      "scope": "scale_and_verification",
+      "target": "/stories",
+      "work": [
+        "Generate static listing pages with the planned page size of 24 and ordinary pagination links for the remaining records.",
+        "Verify generated output, article destinations, image paths, unique records, and trailing-slash behavior with verify-static.",
+        "Ensure paginated pages have appropriate titles and canonical URLs rather than copying the first page's canonical indiscriminately."
+      ]
+    }
+  ],
+  "rejected_slots": [
+    "article_registry"
+  ],
+  "risk_flags": [
+    "{'code': 'preliminary_audit_false_negatives', 'severity': 'medium', 'detail': 'The preliminary audit marks directory_container, article_list, and seo_metadata missing, but the supplied route implements all three. Generating replacements would duplicate existing functionality.'}",
+    "{'code': 'registry_integration_gap', 'severity': 'high', 'detail': 'Creating a registry file without connecting it to static output would leave the required registry integration unimplemented.'}",
+    "{'code': 'legacy_article_destination', 'severity': 'medium', 'detail': 'The featured link resolves to /story-generational-trauma/, outside the planned /stories/{slug} template. Preserve and verify it; the excerpt does not prove it is broken.'}",
+    "{'code': 'unbounded_listing', 'severity': 'medium', 'detail': 'The current listing exceeds the planned page size of 24 and has no visible pagination. This is a scale-policy gap, not grounds to mark article_list absent.'}",
+    "{'code': 'relative_url_base_dependency', 'severity': 'medium', 'detail': 'Article and asset URLs are relative. Verify that /stories resolves or redirects to /stories/ so browser URL resolution matches the intended directory layout.'}"
+  ],
+  "status": "completed",
+  "support_modules": {
+    "article_registry": {
+      "action": "create_and_connect_to_static_generation",
+      "configured_path": "stories/registry.ts",
+      "present": false,
+      "proposed_static_path": "stories/registry.json",
+      "reason": "Hard-coded cards are a listing, not an implemented structured metadata registry."
+    },
+    "article_resources": {
+      "action": "defer",
+      "configured_path": "stories/article-resources.ts",
+      "file_presence": "not established",
+      "reason": "No downloadable-resource requirement or resource links are demonstrated. Do not create this module solely because the preliminary audit requested it."
+    },
+    "author_registry": {
+      "action": "defer",
+      "alias_path": "stories/authors.ts",
+      "configured_path": "stories/authorRegistry.ts",
+      "file_presence": "not established",
+      "reason": "Author registry is optional, and the listing does not expose verified author records."
+    },
+    "seo_config": {
+      "action": "not_required_for_slot_completion",
+      "configured_path": "stories/seo-config.ts",
+      "file_presence": "not established",
+      "reason": "Directory SEO metadata already exists in the HTML head. Extract configuration only if the generation pipeline needs a shared source."
+    }
+  }
+}

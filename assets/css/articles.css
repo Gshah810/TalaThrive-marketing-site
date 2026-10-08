@@ -1,0 +1,12 @@
+/* Editorial extensions use the site's existing Athletics, tags and card system. */
+.cf-story-controls { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:0 0 24px; }
+.cf-story-controls a { text-decoration:none; }
+.cf-story-controls a[aria-current] { background:var(--cream); color:var(--ink); }
+.cf-story-controls a:focus-visible { outline:2px solid var(--focus); outline-offset:4px; }
+.cf-story-result { min-width:0; }
+.cf-story-result > .story-card { height:100%; }
+.cf-story-byline { font-size:14px; line-height:1.6; color:var(--brown-mid); }
+.cf-story-count { margin:0 0 24px; }
+.cf-story-empty { padding:48px 0; color:var(--ink); text-align:center; }
+#cf-pagination { margin-top:32px; }
+#cf-article-results [hidden] { display:none !important; }

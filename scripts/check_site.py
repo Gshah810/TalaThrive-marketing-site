@@ -16,7 +16,8 @@ import glob, os, re, subprocess, sys
 from html.parser import HTMLParser
 
 SITE = 'https://talathrive.com/'
-SKIP_DIRS = ('design-source/', 'design_handoff/', '.git/')
+# Templates and the isolated build output are inputs/copies, not public routes.
+SKIP_DIRS = ('design-source/', 'design_handoff/', '.git/', 'scripts/templates/', '_cf_article_preview/')
 failures = []
 
 def fail(check, msg):
