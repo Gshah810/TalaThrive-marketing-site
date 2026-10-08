@@ -8,119 +8,118 @@
   ],
   "attempted": true,
   "framework_notes": [
-    "The supplied implementation is plain static HTML with CSS and JavaScript assets, not a React, Next.js, Vue, or Svelte route.",
-    "No build tool, package manager, or TypeScript execution pipeline is evidenced.",
-    "The static_markdown adapter is available but reports index_shell_supported=false and detail_shell_supported=false; availability does not establish that it can rewrite this HTML shell.",
-    "Frontmatter requires an explicit generation step to produce deployable HTML; raw frontmatter is not a browser rendering mechanism.",
-    "Existing story cards, featured presentation, images, and introduction can be preserved without generating replacement components."
+    "This is a static HTML route with file-based routing, plain CSS, and no demonstrated build tool or component framework.",
+    "Existing inline HTML implements the required UI slots semantically; separate generated components are unnecessary.",
+    "Use standard anchors and images, retaining existing site.css conventions rather than introducing React, JSX, Next.js, or another framework.",
+    "Browsers cannot consume TypeScript support modules directly. Any such modules require an explicit generation-time consumer.",
+    "The selected static_markdown adapter advertises frontmatter support but does not support index or detail shells. Its declared availability does not establish that it can regenerate stories/index.html.",
+    "The supplied head metadata corrects the current audit's missing seo_metadata finding; the existing containers and grid likewise correct its missing directory_container and article_list findings."
   ],
   "model": "gpt-6.1-sol",
   "patch_plan": [
     {
-      "acceptance_criteria": [
-        "Article records have stable, unique identifiers and valid destinations.",
-        "Featured status is explicit.",
-        "The registry contains metadata rather than eagerly imported article bodies."
+      "action": "establish_article_registry",
+      "details": [
+        "Check for an existing authoritative article metadata source before creating a duplicate.",
+        "If none exists, create a static-compatible registry and migrate metadata for the featured story and all 35 grid entries.",
+        "Follow the ArticleRecord contract, preserving titles, descriptions, dates, categories, images, featured status, and existing destinations.",
+        "Verify content files and author information before assigning contentPath, hasContent, author keys, or editorial metadata; do not invent unavailable values.",
+        "Reconcile the configured stories/registry.ts path with the static/frontmatter adapter. JSON is a proposed compatible alternative, not an existing file."
       ],
-      "actions": [
-        "Check the repository for an existing article metadata source before creating a duplicate.",
-        "If none exists, create a metadata-only registry covering the 35 grid entries and the featured article.",
-        "Preserve titles, descriptions, dates, categories, images, and actual destination paths from the existing HTML.",
-        "Implement the ArticleRecord contract using verified detail-page or content metadata; do not invent authors, content paths, modification dates, editorial data, or download records.",
-        "Represent unavailable fields according to an explicitly defined schema policy."
-      ],
-      "priority": 1,
-      "required": true,
-      "work": "Establish the article registry"
+      "priority": "required",
+      "targets": [
+        "stories/registry.json"
+      ]
     },
     {
-      "acceptance_criteria": [
-        "Registry changes are reflected in published listing HTML.",
-        "The directory remains readable and navigable without client-side JavaScript.",
-        "No unconfigured TypeScript or frontmatter runtime dependency is introduced."
+      "action": "connect_registry_to_static_output",
+      "details": [
+        "Make the registry the metadata source for generating the featured story and listing markup.",
+        "Use an explicit generation-time integration that emits deployable HTML; an unused support file is not sufficient.",
+        "Preserve the existing hero, containers, story-grid, story-card, story-featured, metadata, and target-site styling.",
+        "Keep index generation metadata-only rather than importing article bodies.",
+        "If the selected adapter cannot patch HTML shells, provide a compatible deterministic generation step or require manual adapter work instead of assuming shell support."
       ],
-      "actions": [
-        "Define an offline generation or setup step that consumes the registry and updates the existing featured section and story grid.",
-        "Use an HTML-capable adapter or an explicit route patch because the supplied adapter does not support index-shell generation.",
-        "Preserve the existing hero, site chrome, footer, SEO tags, CSS classes, and standard HTML anchors.",
-        "Do not replace the already implemented directory container, heading, list, or links with redundant components."
-      ],
-      "priority": 2,
-      "required": true,
-      "work": "Connect registry maintenance to static output"
+      "priority": "required",
+      "targets": [
+        "stories/index.html",
+        "Content Factory static generation/publish integration"
+      ]
     },
     {
-      "acceptance_criteria": [
-        "Every eligible article remains reachable.",
-        "Each generated listing page respects the configured page-size policy."
+      "action": "verify_generated_directory",
+      "details": [
+        "Verify registry-to-output parity and unique records.",
+        "Check article destinations and image assets without assuming supplied links resolve.",
+        "Preserve the featured article's legacy destination unless a verified migration and redirect are supplied.",
+        "Confirm directory URL normalization to /stories/ so relative links resolve correctly.",
+        "Verify that existing heading, listing, links, and head metadata remain intact."
       ],
-      "actions": [
-        "Generate static pagination with the configured page size of 24 when adopting the scale policy.",
-        "Keep featured placement explicit and avoid unintended duplication.",
-        "Define canonical URLs for additional listing pages and verify navigation between them."
-      ],
-      "priority": 3,
-      "required": false,
-      "work": "Apply the planned listing scale policy"
+      "priority": "required",
+      "targets": [
+        "stories/index.html",
+        "stories/registry.json",
+        "static verification"
+      ]
     },
     {
-      "actions": [
-        "Run static verification for HTML structure, duplicate registry identifiers, destination paths, assets, and metadata.",
-        "Verify that /stories redirects or resolves consistently to /stories/ so relative article URLs resolve correctly.",
-        "Check the featured article's root-level destination separately from the nested /stories/{slug}/ destinations."
+      "action": "add_static_pagination",
+      "details": [
+        "The current grid has 35 entries, exceeding the surface plan's page size of 24.",
+        "For growth to hundreds of articles, generate paginated HTML with ordinary navigation links and page-specific metadata.",
+        "Pagination is not required to recognize the existing article_list slot."
       ],
-      "priority": 4,
-      "required": true,
-      "work": "Verify the patched static route"
+      "priority": "optional_scalability",
+      "targets": [
+        "stories/index.html",
+        "additional static listing pages"
+      ]
     }
   ],
   "rejected_slots": [
     "article_registry"
   ],
   "risk_flags": [
-    "{'severity': 'warning', 'code': 'AUDIT_FALSE_NEGATIVES', 'detail': 'The current audit incorrectly marks directory_container, article_list, and seo_metadata missing despite direct route-source evidence.'}",
-    "{'severity': 'warning', 'code': 'SUPPORT_FILE_INTEGRATION_GAP', 'detail': 'Creating the proposed .ts support files alone would not connect them to this static HTML route.'}",
-    "{'severity': 'warning', 'code': 'ADAPTER_SHELL_LIMITATION', 'detail': 'Automatic index-shell and detail-shell generation are unsupported by the supplied adapter.'}",
-    "{'severity': 'warning', 'code': 'MIXED_ARTICLE_ROUTE_LAYOUT', 'detail': 'The featured article links to /story-generational-trauma/, while grid articles use nested /stories/ destinations. Preserve existing URLs until detail routes and redirect requirements are verified.'}",
-    "{'severity': 'warning', 'code': 'SCALE_POLICY_NOT_IMPLEMENTED', 'detail': 'The directory renders 35 grid entries plus a featured article without pagination; the surface plan specifies a page size of 24 and growth to hundreds of articles.'}",
-    "{'severity': 'info', 'code': 'SOURCE_SCOPE_LIMITATION', 'detail': 'Only the route source was provided. Support-file existence, article content, destination availability, and asset availability remain unverified.'}"
+    "{'code': 'support_source_visibility', 'severity': 'info', 'detail': 'Only the route source is supplied. Referenced shared scripts, other content files, and support modules were not inspected.'}",
+    "{'code': 'static_adapter_integration_gap', 'severity': 'warning', 'detail': 'Frontmatter adapter capabilities and configured TypeScript support paths do not demonstrate a working HTML-generation pipeline.'}",
+    "{'code': 'legacy_featured_destination', 'severity': 'warning', 'detail': 'The featured article links outside /stories/{slug}/ to /story-generational-trauma/. Preserve or explicitly migrate this destination; do not derive it blindly from the route template.'}",
+    "{'code': 'relative_url_normalization', 'severity': 'warning', 'detail': 'Relative article and asset links assume /stories/ as the directory URL. Hosting behavior for /stories without a trailing slash must be verified.'}",
+    "{'code': 'hardcoded_listing_scalability', 'severity': 'warning', 'detail': 'The listing is implemented, but hardcoded metadata and an unpaginated 35-card grid do not meet the planned registry-driven scaling approach.'}"
   ],
   "status": "completed",
   "support_modules": {
     "article_registry": {
+      "action": "create_or_reuse_and_integrate",
       "configured_path": "stories/registry.ts",
-      "notes": [
-        "JSON is a suitable metadata-only input for an offline generator without TypeScript compilation.",
-        "If the configured TypeScript path is mandatory, provide an explicit supported consumer and compilation or interpretation step.",
-        "Update support-path configuration if selecting JSON instead of the configured path."
-      ],
-      "recommended_static_path": "stories/registry.json",
-      "required": true,
-      "status": "not_evidenced"
+      "proposed_static_path": "stories/registry.json",
+      "status": "not_demonstrated"
     },
     "article_resources": {
       "action": "defer",
       "configured_path": "stories/article-resources.ts",
-      "notes": "No downloadable-resource requirement or implementation is shown. Create this support module only when verified resource data needs it.",
-      "required": false,
-      "status": "not_evidenced"
+      "notes": [
+        "Downloadable resources are optional and no resource links are shown. This file is not required to close the missing required slot."
+      ],
+      "status": "not_demonstrated"
     },
     "author_registry": {
-      "action": "defer",
+      "action": "defer_unless_verified_author_data_requires_it",
       "configured_paths": [
         "stories/authorRegistry.ts",
         "stories/authors.ts"
       ],
-      "notes": "Author information is not supplied by the listing; verify article sources before creating author records.",
-      "required": false,
-      "status": "not_evidenced"
+      "notes": [
+        "The author registry is optional; team/community introductory copy does not establish author records."
+      ],
+      "status": "not_demonstrated"
     },
     "seo_metadata": {
-      "action": "reuse",
+      "action": "retain_existing_metadata",
       "configured_path": "stories/seo-config.ts",
-      "implementation_path": "stories/index.html",
-      "notes": "Extract SEO configuration only if a generator needs it; creating a file alone does not improve or connect the existing metadata.",
-      "required": true,
+      "existing_location": "stories/index.html: head",
+      "notes": [
+        "Extract configuration only if a generation-time consumer needs it; do not create an unused TypeScript module."
+      ],
       "status": "implemented_inline"
     }
   }
