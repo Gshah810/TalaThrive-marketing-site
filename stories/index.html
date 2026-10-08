@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- cf-slot: seo-metadata -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stories | Tala Thrive</title>
@@ -11,9 +12,11 @@
 <meta property="og:type" content="website">
 <link rel="icon" href="../assets/img/logo-mark.png">
 <link rel="stylesheet" href="../assets/css/site.css?v=7">
+<link rel="stylesheet" href="../assets/css/articles.css">
+<script defer src="../assets/js/articles.js"></script>
 <script defer src="../assets/js/analytics.js?v=5"></script>
 <script>try{if(localStorage.getItem('tt_banner_closed')==='1')document.documentElement.classList.add('tt-banner-hidden')}catch(e){}</script>
-</head>
+<meta name="mlai-artifact-digest" content="f5d91c6db8f1944a476481fe1e5a857875fafe5d3a5987fc0948697f56bbeca1" /></head>
 <body>
 
 <div class="chrome">
@@ -71,17 +74,19 @@
 
 
 
+<main data-cf-slot="directory-container" data-cf-component-id="directory-container" data-cf-component-type="directory-container" data-cf-component-label="Articles container">
 <section class="page-hero page-hero--center" style="padding-bottom:clamp(24px,3vw,36px)">
   <div class="page-hero__inner" style="max-width:760px">
-    <h1 style="font-size:clamp(38px,5vw,60px);line-height:1.03;margin:0 0 18px">Stories to help you <em class="accent">thrive.</em></h1>
-    <p class="page-hero__lede" style="font-size:20px">Reflections, research, and real talk on culturally competent mental health, from our team and community.</p>
+    <h1 data-cf-slot="page-heading" data-cf-component-id="page-heading" data-cf-component-type="page-heading" data-cf-component-label="Page heading" style="font-size:clamp(38px,5vw,60px);line-height:1.03;margin:0 0 18px">Stories to help you <em class="accent">thrive.</em></h1>
+    <p data-cf-slot="page-intro" data-cf-component-id="page-intro" data-cf-component-type="page-intro" data-cf-component-label="Intro text" class="page-hero__lede" style="font-size:20px">Reflections, research, and real talk on culturally competent mental health, from our team and community.</p>
   </div>
 </section>
 
-<section class="section section--white" style="padding:clamp(28px,3.5vw,44px) 0">
+<section data-cf-slot="featured-articles" data-cf-component-id="featured-articles" data-cf-component-type="featured-articles" data-cf-component-label="Featured articles" aria-label="Featured story" class="section section--white" style="padding:clamp(28px,3.5vw,44px) 0">
   <div class="container container--md">
-    <a class="story-featured" href="../story-generational-trauma/">
-      <div class="story-featured__inner">
+    <p class="story-date">Featured story</p>
+    <a data-cf-slot="article-link" data-cf-component-id="article-link" data-cf-component-type="article-link" data-cf-component-label="Article link" class="story-featured" href="../story-generational-trauma/">
+      <div data-cf-slot="article-card" data-cf-component-id="article-card" data-cf-component-type="article-card" data-cf-component-label="Article card" class="story-featured__inner">
         <div class="story-featured__media">
           <img src="../assets/img/stories/aIAj9pGlOYk9agp8r9eM4yb7qQ.jpg" alt="">
         </div>
@@ -99,8 +104,19 @@
   </div>
 </section>
 
-<section class="section section--white" style="padding:clamp(20px,3vw,32px) 0 clamp(44px,5vw,72px)">
+<section class="section section--white" aria-label="Story results" style="padding:clamp(20px,3vw,32px) 0 clamp(44px,5vw,72px)">
   <div class="container container--md">
+    <!-- cf-slot: article-registry; materialized from data/articles.json -->
+    <nav id="cf-categories" class="cf-categories" data-cf-slot="category-navigation" data-cf-component-id="category-navigation" data-cf-component-type="category-navigation" data-cf-component-label="Category navigation" aria-label="Story categories"><a class="tag" href="?page=1#cf-results">All stories</a></nav>
+    <!-- cf:results:start -->
+    <div id="cf-results" class="story-grid cf-results" data-cf-slot="article-list" data-cf-component-id="article-list" data-cf-component-type="article-list" data-cf-component-label="Article list" tabindex="-1"></div>
+    <div id="cf-empty" class="cf-empty" data-cf-slot="empty-state" data-cf-component-id="empty-state" data-cf-component-type="empty-state" data-cf-component-label="Empty state" hidden><h2>New stories are on their way.</h2><p>We’re gathering reflections and resources to support your journey. Check back soon.</p></div>
+    <nav id="cf-pagination" class="cf-pagination" data-cf-slot="pagination" data-cf-component-id="pagination" data-cf-component-type="pagination" data-cf-component-label="Pagination" aria-label="Story pages" hidden></nav>
+    <!-- cf:results:end -->
+    <!-- cf:data:start -->
+    <script id="cf-records" type="application/json">[]</script>
+    <!-- cf:data:end -->
+    <template id="cf-legacy-stories">
     <div class="story-grid">
       <a class="story-card" href="refill-your-cup-this-international-self-care-day/">
         <div class="story-card__media"><img src="../assets/img/stories/6pZOabqlNknCr1iFZfhQ3KVK5A.png" alt="" loading="lazy"></div>
@@ -523,8 +539,10 @@
         </div>
       </a>
     </div>
+    </template>
   </div>
 </section>
+</main>
 
 <footer class="site-footer">
   <div class="site-footer__inner">
