@@ -1,0 +1,395 @@
+{
+  "adapter_mode": "model_synthesized",
+  "attempted": true,
+  "blocking_code": "",
+  "blocking_reason": "",
+  "build_commands": {
+    "build": [
+      "python3",
+      "scripts/materialize_articles.py"
+    ],
+    "install": []
+  },
+  "data_store_path": "data/articles.json",
+  "dependency_assumptions": [],
+  "dependency_report": {
+    "check": "directory_dependency_validation",
+    "findings": [],
+    "ignored_diagnostic_files": [],
+    "manifest_slot_count": 20,
+    "missing_required_slots": [],
+    "preserved_existing_content_imports": [],
+    "render_shell_path": "stories/index.html",
+    "success": true,
+    "verified_imports": []
+  },
+  "detail_route_path": "/stories/{slug}",
+  "detail_route_shell_path": "scripts/materialize_articles.py",
+  "detail_template_path": "scripts/templates/article.html",
+  "dom_slot_compliance": {
+    "branch_commit_sha": "",
+    "branch_name": "",
+    "check": "article_directory_dom_slot_compliance",
+    "existing_listing": true,
+    "marker_inventory": {
+      "article-card": [],
+      "article-link": [
+        "stories/index.html"
+      ],
+      "article-list": [
+        "stories/index.html"
+      ],
+      "category-navigation": [
+        "stories/index.html"
+      ],
+      "directory-container": [
+        "stories/index.html"
+      ],
+      "empty-state": [],
+      "featured-articles": [
+        "stories/index.html"
+      ],
+      "page-heading": [
+        "stories/index.html"
+      ],
+      "page-intro": [
+        "stories/index.html"
+      ],
+      "pagination": []
+    },
+    "missing_dom_slots": [],
+    "required_dom_slots": [
+      "directory-container",
+      "page-heading",
+      "article-list",
+      "article-link"
+    ],
+    "route_shell_path": "stories/index.html",
+    "route_source_sha": "34e25182e5d6993be27089e259723653248e7ed9b9b97fe92020626d7febf483",
+    "served_route_shell_path": "stories/index.html",
+    "status": "ready",
+    "success": true
+  },
+  "evidence_cited": [
+    {
+      "claim": "Existing /stories/ static route has native metadata, featured story, story cards and shared chrome. Small patches preserve the pinned listing instead of replacing its original content.",
+      "repo_path": "stories/index.html"
+    },
+    {
+      "claim": "Existing desktop and mobile navigation link directly to ./stories/; no router registration edit is necessary.",
+      "repo_path": "index.html"
+    },
+    {
+      "claim": "Reuses Athletics, native palette variables, container--md, story-grid, story-card, story-meta, tag, article-head and article-body.",
+      "repo_path": "assets/css/site.css"
+    },
+    {
+      "claim": "Native detail supplies the exact public header, footer, scripts and SEO structure; it remains unchanged.",
+      "repo_path": "stories/mental-health-wellness-tips-from-the-tala-thrive-team/index.html"
+    },
+    {
+      "claim": "Generated standard-library build consumes the JSON store, materializes source details and bounded listing results, and copies original public routes and assets into an excluded preview directory.",
+      "repo_path": "scripts/materialize_articles.py"
+    },
+    {
+      "claim": "Complete pinned selected listing retained with bounded literal patches",
+      "repo_path": "stories/index.html",
+      "source_digest": "093d70feed3a5dd0d25397b340c5fd550d32f5c9bb2517c651f180cacc6f88d9",
+      "source_sha": "4f6342a0dee638d40bd56bbb67fe2f0dc00110f8"
+    }
+  ],
+  "final_validation": {
+    "dependency_validation": true,
+    "dom_slot_compliance": true,
+    "local_build": true,
+    "local_build_skipped": true,
+    "static_policy": true
+  },
+  "final_validation_status": "not_run",
+  "framework": "static-html",
+  "model": "gpt-6.1-sol",
+  "preview_strategy": {
+    "output_dir": "cf-articles-preview",
+    "runtime_kind": "static"
+  },
+  "prompt_contract_version": "article_directory_model_adapter_v2",
+  "proposed_files": [
+    {
+      "bytes": 3,
+      "path": "data/articles.json"
+    },
+    {
+      "bytes": 913,
+      "path": "scripts/templates/article.html"
+    },
+    {
+      "bytes": 1266,
+      "path": "assets/css/articles.css"
+    },
+    {
+      "bytes": 2567,
+      "path": "assets/js/articles.js"
+    },
+    {
+      "bytes": 12641,
+      "path": "scripts/materialize_articles.py"
+    },
+    {
+      "bytes": 43402,
+      "path": "stories/index.html"
+    }
+  ],
+  "publish_surface_proof": {
+    "data_store_path": "data/articles.json",
+    "detail_route_shell_path": "scripts/materialize_articles.py",
+    "detail_template_path": "scripts/templates/article.html",
+    "findings": [],
+    "required": true,
+    "runtime_family": "static",
+    "success": true
+  },
+  "rejected_assumptions": [],
+  "repair_attempts": [],
+  "repo_evidence_summary": {
+    "build_verify_build_command": "",
+    "build_verify_install_command": "",
+    "declared_packages": [],
+    "framework": "static-html",
+    "has_package_json": false,
+    "language": "html",
+    "package_json_paths": [],
+    "repo_path_count": 184,
+    "route_or_page_paths": [
+      "stories/index.html",
+      "404.html",
+      "about/index.html",
+      "accessibility/index.html",
+      "for-businesses/index.html",
+      "index.html",
+      "partner-with-us/index.html",
+      "practitioners/index.html",
+      "privacy-policy/index.html",
+      "shop/index.html",
+      "stories/affirmations-101-the-science-backed-mental-health-tool-you-re-not-using-correctly/index.html",
+      "stories/cultural-awareness-in-therapy-for-bipoc-mental-health-month/index.html",
+      "stories/culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/index.html",
+      "stories/dry-january-a-fresh-start-for-your-body-and-mind/index.html",
+      "stories/elder-daughter-syndrome/index.html",
+      "stories/everybody-knows-millennials-and-gen-z-but-have-you-heard-about-the-odyssey-years---finding-your-way-through-the-wandering/index.html",
+      "stories/focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/index.html",
+      "stories/generational-trauma-forgiveness/index.html",
+      "stories/getting-ahead-in-2025-the-power-of-affirmations/index.html",
+      "stories/have-you-heard-of-mrs-bibi-syndrome-no-it-s-not-a-medical-condition/index.html",
+      "stories/honouring-black-history-month-a-spotlight-on-mental-health-for-black-communities/index.html",
+      "stories/how-are-you-mentally-easing-into-2024/index.html",
+      "stories/how-are-you-taking-care-of-yourself-mentally/index.html",
+      "stories/how-to-begin-healing-from-generational-trauma/index.html",
+      "stories/how-to-manage-stress-this-stress-awareness-month/index.html",
+      "stories/how-to-train-your-mind-like-you-train-your-body/index.html",
+      "stories/integrating-faith-and-therapy-the-role-of-spirituality-in-mental-health/index.html",
+      "stories/let-s-talk-about-men-s-mental-health/index.html",
+      "stories/let-s-talk-about-resilience-this-women-s-history-month/index.html",
+      "stories/lgbtqia-mental-health/index.html",
+      "stories/manifesting-soft-lives-for-black-women-this-month/index.html",
+      "stories/mental-health-wellness-tips-from-the-tala-thrive-team/index.html",
+      "stories/minority-mental-health-awareness-month/index.html",
+      "stories/please-check-on-your-strong-friend-this-month/index.html",
+      "stories/r-u-ok-when-was-the-last-time-someone-asked-you-this/index.html",
+      "stories/racism-and-mental-health-how-online-therapy-can-help/index.html",
+      "stories/refill-your-cup-this-international-self-care-day/index.html",
+      "stories/reflecting-on-earth-day-and-how-we-care-for-ourselves/index.html",
+      "stories/rest-relaxation/index.html",
+      "stories/studying-abroad-and-struggling-you-re-not-failing---you-re-carrying-a-lot./index.html",
+      "stories/the-mid-year-reset-how-to-recalibrate-your-goals-without-burnout/index.html",
+      "stories/the-power-of-speaking-up/index.html",
+      "stories/we-re-building-a-community-of-culturally-competent-therapists-and-coaches/index.html",
+      "stories/welcome-to-our-month-of-love-selv-love/index.html",
+      "stories/what-are-you-thankful-for-this-month/index.html",
+      "stories/what-exactly-does-culturally-competent-mental-health-care-mean/index.html",
+      "story-generational-trauma/index.html",
+      "terms-conditions/index.html",
+      "terms/index.html",
+      "user-stories/are-you-afflicted-with-elder-daughter-syndrome-we-ve-got-you/index.html",
+      "user-stories/cultural-awareness-in-therapy-for-bipoc-mental-health-month/index.html",
+      "user-stories/culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/index.html",
+      "user-stories/dry-january-a-fresh-start-for-your-body-and-mind/index.html",
+      "user-stories/focusing-on-mothers-and-mother-figures-this-mental-health-awareness-month/index.html",
+      "user-stories/getting-ahead-in-2025-the-power-of-affirmations/index.html",
+      "user-stories/have-you-heard-of-mrs-bibi-syndrome-no-it-s-not-a-medical-condition/index.html",
+      "user-stories/honouring-black-history-month-a-spotlight-on-mental-health-for-black-communities/index.html",
+      "user-stories/honouring-lgbtqia-pride-month-and-the-need-for-cultural-competency-in-mental-health-care/index.html",
+      "user-stories/how-are-you-mentally-easing-into-2024/index.html",
+      "user-stories/how-are-you-taking-care-of-yourself-mentally/index.html",
+      "user-stories/how-to-manage-stress-this-stress-awareness-month/index.html",
+      "user-stories/it-s-minority-mental-health-awareness-month-time-to-get-the-culturally-competent-care-you-deserve/index.html",
+      "user-stories/let-s-talk-about-men-s-mental-health/index.html",
+      "user-stories/let-s-talk-about-resilience-this-women-s-history-month/index.html",
+      "user-stories/manifesting-soft-lives-for-black-women-this-month/index.html",
+      "user-stories/mental-health-wellness-tips-from-the-tala-thrive-team/index.html",
+      "user-stories/navigating-generational-trauma-and-the-healing-power-of-forgiveness/index.html",
+      "user-stories/please-check-on-your-strong-friend-this-month/index.html",
+      "user-stories/reflecting-on-earth-day-and-how-we-care-for-ourselves/index.html",
+      "user-stories/say-it-with-us-i-deserve-rest-and-relaxation/index.html",
+      "user-stories/the-power-of-speaking-up/index.html",
+      "user-stories/we-re-building-a-community-of-culturally-competent-therapists-and-coaches-1/index.html",
+      "user-stories/welcome-to-our-month-of-love-self-love/index.html",
+      "user-stories/what-are-you-thankful-for-this-month/index.html",
+      "user-stories/what-exactly-does-culturally-competent-mental-health-care-mean/index.html"
+    ],
+    "runtime_family": "static",
+    "scripts": {},
+    "source_files": [],
+    "source_ref": "4f6342a0dee638d40bd56bbb67fe2f0dc00110f8",
+    "static_preview": {
+      "build_tool": "none",
+      "dependency_manifest_required": false,
+      "runtime_kind": "static"
+    },
+    "web_confidence": "medium"
+  },
+  "route_path": "/stories",
+  "route_proof": {
+    "convention_proven": false,
+    "evidence_cited": [
+      {
+        "claim": "Existing /stories/ static route has native metadata, featured story, story cards and shared chrome. Small patches preserve the pinned listing instead of replacing its original content.",
+        "repo_path": "stories/index.html"
+      },
+      {
+        "claim": "Existing desktop and mobile navigation link directly to ./stories/; no router registration edit is necessary.",
+        "repo_path": "index.html"
+      },
+      {
+        "claim": "Reuses Athletics, native palette variables, container--md, story-grid, story-card, story-meta, tag, article-head and article-body.",
+        "repo_path": "assets/css/site.css"
+      },
+      {
+        "claim": "Native detail supplies the exact public header, footer, scripts and SEO structure; it remains unchanged.",
+        "repo_path": "stories/mental-health-wellness-tips-from-the-tala-thrive-team/index.html"
+      },
+      {
+        "claim": "Generated standard-library build consumes the JSON store, materializes source details and bounded listing results, and copies original public routes and assets into an excluded preview directory.",
+        "repo_path": "scripts/materialize_articles.py"
+      },
+      {
+        "claim": "Complete pinned selected listing retained with bounded literal patches",
+        "repo_path": "stories/index.html",
+        "source_digest": "093d70feed3a5dd0d25397b340c5fd550d32f5c9bb2517c651f180cacc6f88d9",
+        "source_sha": "4f6342a0dee638d40bd56bbb67fe2f0dc00110f8"
+      }
+    ],
+    "findings": [],
+    "framework": "static html",
+    "parent_route_root_proven": true,
+    "route_evidence_paths": [
+      "stories/index.html",
+      "index.html",
+      "assets/css/site.css",
+      "stories/mental-health-wellness-tips-from-the-tala-thrive-team/index.html",
+      "scripts/materialize_articles.py",
+      "stories/index.html"
+    ],
+    "route_path": "/stories",
+    "route_registration_proven": false,
+    "route_shell_path": "stories/index.html",
+    "success": true
+  },
+  "route_shell_path": "stories/index.html",
+  "runtime_family": "static",
+  "scaffold_agent": {
+    "model": "gpt-6.1-sol",
+    "source_ref": "4f6342a0dee638d40bd56bbb67fe2f0dc00110f8",
+    "tokens": 320425,
+    "tool_calls": 7,
+    "tool_log": [
+      {
+        "args": {
+          "offset": 4000,
+          "path": "stories/mental-health-wellness-tips-from-the-tala-thrive-team/index.html"
+        },
+        "tool": "read_file"
+      },
+      {
+        "args": {
+          "path_glob": "{stories/index.html,assets/css/site.css}",
+          "pattern": "story-grid|story-card|story-featured|</section>|<footer|<main|article-body|article-head|\\.tag|pagination"
+        },
+        "tool": "grep"
+      },
+      {
+        "args": {
+          "offset": 33000,
+          "path": "stories/index.html"
+        },
+        "tool": "read_file"
+      },
+      {
+        "args": {
+          "path_glob": "assets/css/site.css",
+          "pattern": "story-grid|story-card|story-featured|article-head|article-body|\\.tag|page-hero--center|container--md"
+        },
+        "tool": "grep"
+      },
+      {
+        "tool": "validate"
+      },
+      {
+        "tool": "validate"
+      },
+      {
+        "args": {
+          "offset": 8000,
+          "path": "stories/index.html"
+        },
+        "tool": "read_file"
+      }
+    ],
+    "turns": 8
+  },
+  "scaffold_agent_status": "generated",
+  "schema_version": 1,
+  "static_publication_witness": {
+    "proof": {
+      "listing_quality": {
+        "byline": true,
+        "category_filter": true,
+        "older_article_reachable": true
+      },
+      "materializer_isolation": {
+        "kind": "ephemeral_container",
+        "lockfile_digests": {},
+        "network": "registry_allowlist",
+        "runtime_image": "sha256:6ec8775489aa5d6b519ce069227f0cf7dc37506e0aed86a134a4a579d0ca2611",
+        "runtime_image_reference": "",
+        "source_sha": "4f6342a0dee638d40bd56bbb67fe2f0dc00110f8",
+        "source_tree_sha": ""
+      },
+      "source_files": [
+        "stories/cf-publication-witness/index.html",
+        "stories/index.html"
+      ],
+      "source_sha": "4f6342a0dee638d40bd56bbb67fe2f0dc00110f8"
+    },
+    "required": true,
+    "success": true
+  },
+  "static_report": {
+    "check": "directory_static_policy",
+    "findings": [],
+    "missing_native_style_classes": [],
+    "render_shell_path": "stories/index.html",
+    "required_slots": [
+      "directory_container",
+      "page_heading",
+      "article_list",
+      "article_link",
+      "seo_metadata",
+      "article_registry"
+    ],
+    "success": true,
+    "target_style_proven": true
+  },
+  "success": true,
+  "support_level": "candidate_pending_validation",
+  "validation_findings": []
+}
