@@ -11,10 +11,10 @@ python3 scripts/gen_links.py > LINKS.md
 
 Scope: `*.html`, `*.js`, `*.css`, `*.xml`, `*.txt` under the repo root, excluding
 `design-source/`, `design_handoff/`, `scripts/`, `.content-factory/`,
-`_cf_article_preview/`, `README.md` and this file. Own canonical and
+`_cf_article_preview/`, `_cf_native_articles_preview/`, `README.md` and this file. Own canonical and
 sitemap URLs are listed last for completeness; they are not outbound links.
 
-139 distinct URLs, 917 occurrences, generated from `32b86c1`.
+139 distinct URLs, 917 occurrences, generated from `af0f8a5`.
 
 
 ## App (platform)

@@ -17,7 +17,7 @@ from html.parser import HTMLParser
 
 SITE = 'https://talathrive.com/'
 # Templates and the isolated build output are inputs/copies, not public routes.
-SKIP_DIRS = ('design-source/', 'design_handoff/', '.git/', 'scripts/templates/', '_cf_article_preview/')
+SKIP_DIRS = ('design-source/', 'design_handoff/', '.git/', 'scripts/templates/', '_cf_article_preview/', '_cf_native_articles_preview/')
 failures = []
 
 def fail(check, msg):
