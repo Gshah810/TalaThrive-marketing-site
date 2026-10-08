@@ -1,0 +1,121 @@
+{
+  "accepted_slots": [
+    "directory_container",
+    "page_heading",
+    "article_list",
+    "article_link",
+    "seo_metadata"
+  ],
+  "attempted": true,
+  "framework_notes": [
+    "The route is a complete static HTML document, with plain CSS and conventional script references. No component framework or build tool is demonstrated.",
+    "Reuse semantic HTML structures rather than generating React, Next.js, Vue, or Svelte components.",
+    "Existing page_intro, featured article, article cards, and image previews also provide reusable optional functionality.",
+    "The static_markdown adapter reports both index_shell_supported and detail_shell_supported as false. Adapter availability alone does not establish that it can safely patch this HTML shell.",
+    "Frontmatter or JSON requires a publishing consumer to become rendered HTML; TypeScript support paths require tooling not demonstrated here."
+  ],
+  "model": "gpt-6.1-sol",
+  "patch_plan": [
+    {
+      "action": "create_article_registry",
+      "details": [
+        "Create a metadata-only article registry in a format supported by the static publishing workflow; JSON is a proposed alternative to the planned TypeScript module.",
+        "Seed it from the 35 grid entries and the featured entry, checking identities before deduplication.",
+        "Represent the ArticleRecord contract using an explicit schema. Preserve known titles, descriptions, dates, categories, images, featured status, and existing destinations.",
+        "Resolve contentPath, hasContent, authors, modification dates, editorial fields, and analytics identifiers from verified repository content rather than inventing values.",
+        "Preserve the featured story's legacy destination explicitly through routing or canonical-path metadata instead of deriving every URL from /stories/{slug}."
+      ],
+      "priority": "required",
+      "targets": [
+        "stories/registry.json"
+      ]
+    },
+    {
+      "action": "connect_registry_to_static_publication",
+      "details": [
+        "Identify or implement a supported deterministic publishing step that consumes registry metadata and emits the existing listing markup into HTML.",
+        "Document and connect that step to article publication so registry updates actually update the directory.",
+        "Keep the existing hero, containers, story-featured and story-card structures, stylesheet conventions, and inline SEO metadata.",
+        "Do not eagerly load article bodies to generate previews, and do not rely on browser execution of TypeScript or unprocessed frontmatter.",
+        "If no static generator is available, establish the publishing integration explicitly rather than leaving an unused registry file."
+      ],
+      "priority": "required",
+      "targets": [
+        "stories/index.html",
+        "static bundle-generation workflow"
+      ]
+    },
+    {
+      "action": "implement_static_listing_pagination",
+      "details": [
+        "Apply the configured page size of 24 to registry-backed listing generation.",
+        "Define whether the separate featured entry counts toward the page size and prevent accidental duplication.",
+        "Emit ordinary HTML pagination links and appropriate canonical metadata for generated listing pages."
+      ],
+      "notes": "Pagination is not a missing required slot, but the current 35-entry grid exceeds the supplied scale policy.",
+      "priority": "scale_policy",
+      "targets": [
+        "stories/index.html",
+        "additional static listing pages",
+        "static bundle-generation workflow"
+      ]
+    },
+    {
+      "action": "verify_static_output",
+      "details": [
+        "Check registry/output parity, unique identities, destination files, image paths, and canonical URLs.",
+        "Verify /stories redirects to /stories/ or otherwise resolves relative URLs correctly.",
+        "Confirm the generated page retains its heading, existing styling, article links, and metadata."
+      ],
+      "priority": "validation",
+      "targets": [
+        "stories/index.html",
+        "article registry",
+        "generated listing pages"
+      ]
+    }
+  ],
+  "rejected_slots": [
+    "article_registry"
+  ],
+  "risk_flags": [
+    "{'code': 'STALE_AUDIT_CLASSIFICATION', 'severity': 'medium', 'evidence': 'The current audit marks directory_container, article_list, and seo_metadata missing despite direct implementations in the route.', 'recommendation': 'Correct those classifications and suppress duplicate scaffold generation.'}",
+    "{'code': 'SUPPORT_FORMAT_AND_CONSUMER_MISMATCH', 'severity': 'high', 'evidence': 'The repository has no detected build tool, the adapter declares frontmatter, and planned support files use .ts.', 'recommendation': 'Select a supported data format and explicitly connect its consumer to static publication.'}",
+    "{'code': 'LEGACY_FEATURED_ROUTE', 'severity': 'medium', 'evidence': 'The featured href resolves to /story-generational-trauma/, outside the configured /stories/{slug} template.', 'recommendation': 'Verify and preserve its actual destination or introduce a deliberate redirect; do not silently rewrite it.'}",
+    "{'code': 'TRAILING_SLASH_DEPENDENCY', 'severity': 'medium', 'evidence': 'Grid links are relative, while the requested route is /stories and the canonical URL is /stories/.', 'recommendation': 'Verify directory URL normalization before treating relative destination resolution as reliable.'}",
+    "{'code': 'STATIC_SCALE_POLICY_GAP', 'severity': 'medium', 'evidence': 'The page renders 35 grid entries plus a featured entry, with no pagination, against a configured page size of 24.', 'recommendation': 'Use metadata-only static pagination when wiring the registry.'}",
+    "{'code': 'DESTINATIONS_AND_SUPPORT_FILES_UNVERIFIED', 'severity': 'info', 'evidence': 'Only the listing route source is provided; article files, asset contents, support modules, and deployment behavior are not shown.', 'recommendation': 'Validate these during implementation without treating unverified links as confirmed broken.'}"
+  ],
+  "status": "completed",
+  "support_modules": {
+    "article_registry": {
+      "notes": "Confirm consumer support before selecting the format. The adapter declares frontmatter registries, while the support plan specifies TypeScript; neither can be assumed operational in this plain-HTML repository.",
+      "planned_path": "stories/registry.ts",
+      "recommended_path": "stories/registry.json",
+      "required": true,
+      "status": "missing_from_supplied_evidence"
+    },
+    "article_resources": {
+      "notes": "Downloads are optional, and the supplied listing contains no downloadable-resource implementation requiring this module.",
+      "planned_path": "stories/article-resources.ts",
+      "required_new_file": false,
+      "status": "not_demonstrated"
+    },
+    "author_registry": {
+      "notes": "Do not generate optional author modules solely because they appear in the scaffold plan.",
+      "planned_paths": [
+        "stories/authorRegistry.ts",
+        "stories/authors.ts"
+      ],
+      "required_new_file": false,
+      "status": "not_demonstrated"
+    },
+    "seo_metadata": {
+      "existing_path": "stories/index.html",
+      "notes": "Reuse current head metadata. Centralize configuration only if an actual static generator consumes it.",
+      "planned_path": "stories/seo-config.ts",
+      "required_new_file": false,
+      "status": "implemented_inline"
+    }
+  }
+}
