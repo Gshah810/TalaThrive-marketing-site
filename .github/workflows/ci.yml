@@ -19,5 +19,3 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check links, sitemap, header/footer, HTML balance and LINKS.md
         run: python3 scripts/check_site.py
-      - name: Check article materialization and hosted preview output
-        run: python3 scripts/test_article_materializer.py

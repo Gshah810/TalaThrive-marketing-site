@@ -11,6 +11,7 @@ Checks, in order:
             are normalised (they are duplicated by hand, see README)
   html      start and end tags balance in every served HTML file
   links-md  LINKS.md matches what scripts/gen_links.py generates
+  articles  article materialization preserves inventory and isolates hosted previews
 """
 import glob, os, re, subprocess, sys
 from html.parser import HTMLParser
@@ -187,6 +188,12 @@ def check_links_md():
     if strip(gen.stdout) != strip(read('LINKS.md')):
         fail('links-md', 'LINKS.md is stale; run `python3 scripts/gen_links.py > LINKS.md` and commit')
 
+def check_article_materializer():
+    result = subprocess.run([sys.executable, 'scripts/test_article_materializer.py'],
+                            capture_output=True, text=True)
+    if result.returncode != 0:
+        fail('articles', f'Article materializer regression checks failed:\n{result.stderr.strip()}')
+
 # ---------------------------------------------------------------- main
 def main():
     os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -196,6 +203,8 @@ def main():
     print(f'html      {check_html()} files checked for tag balance')
     check_links_md()
     print('links-md  LINKS.md compared with scripts/gen_links.py output')
+    check_article_materializer()
+    print('articles  article materializer regression checks completed')
     if failures:
         print(f'\n{len(failures)} problem(s):')
         for line in failures:
