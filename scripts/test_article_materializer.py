@@ -1,4 +1,4 @@
-"""Check the public inventory and the hosted builder's native output contract."""
+"""Check public inventory and the hosted builder's isolated output contracts."""
 import subprocess
 import sys
 import unittest
@@ -13,13 +13,15 @@ class ArticleMaterializerTests(unittest.TestCase):
         anchors = [node for node in doc.nodes if node.tag == 'a' and grid.open_end <= node.start < grid.close_start]
         self.assertEqual(len(anchors), 30)
 
-    def test_hosted_native_output_builds_without_recursive_previews(self):
-        result = subprocess.run([sys.executable, 'scripts/materialize_articles.py', '--output', '_cf_native_articles_preview'], cwd=ROOT, capture_output=True, text=True)
-        self.assertEqual(result.returncode, 0, result.stderr)
-        preview = ROOT / '_cf_native_articles_preview'
-        self.assertTrue((preview / 'stories/index.html').is_file())
-        self.assertFalse((preview / '_cf_article_preview').exists())
-        self.assertFalse((preview / '_cf_native_articles_preview').exists())
+    def test_hosted_outputs_build_without_recursive_previews(self):
+        for output in ('_cf_native_articles_preview', '_cf_articles_static_preview'):
+            with self.subTest(output=output):
+                result = subprocess.run([sys.executable, 'scripts/materialize_articles.py', '--output', output], cwd=ROOT, capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                preview = ROOT / output
+                self.assertTrue((preview / 'stories/index.html').is_file())
+                for excluded in ('_cf_article_preview', '_cf_native_articles_preview', '_cf_articles_static_preview'):
+                    self.assertFalse((preview / excluded).exists())
         source = (ROOT / 'stories/index.html').read_text()
         self.assertNotIn('href="example-article/"', source)
 
