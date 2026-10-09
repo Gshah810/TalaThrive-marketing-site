@@ -1,0 +1,48 @@
+{
+  "run_id": "dd14481c-8221-4c04-be58-8fdb62afd3d6",
+  "feedback_batch_id": "7d9a35a0-9ba0-463b-92af-a3e78013b75b",
+  "request_source": "founder_tools_article_system_feedback",
+  "comments": [
+    {
+      "comment_id": "1096b2f9-bbab-5075-98f1-511196307b15",
+      "file_path": "",
+      "selector": "[data-cf-component-id=\"article-link--09f213fd8140\"]",
+      "anchor": {
+        "x": 0.49958779884583676,
+        "y": 0.11783772480133835,
+        "createdFrom": "live_preview_click"
+      },
+      "context": {
+        "rect": {
+          "top": 391.390625,
+          "left": 8.0,
+          "right": 1221.0,
+          "width": 1213.0,
+          "bottom": 540.828125,
+          "height": 149.4375
+        },
+        "click": {
+          "x": 614.0,
+          "y": 409.0,
+          "pageX": 614.0,
+          "pageY": 2697.0
+        },
+        "domPath": "body > main:nth-of-type(1) > section:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(13) > a:nth-of-type(1)",
+        "pageUrl": "https://api.mlai.au/api/v1/vibe-marketing/article-preview/.eJxNzltuwyAQheG9zDNU3IyxN2MBM3aQCESYtEqq7r12pEh5P_-n8wvtXmAGRGmMk5E7pSQ3URgeaHDcrRis8itqtMCgts2X9PQ91aPSggHWq0-n0H32_dLSN33Fej22t9q6D5lgXn3eiUEqnUpfMG20d5jLPWcGPxT21GmJtRSKp7skPDitRjvoEflkpeJGR-JT0IY7MU0OpYhhOA99ZBsVau9nDBrd6iHX9niBUisptRjs-PcP6jdNuA%3A1xF7ZD%3AUptxSSuZHtg4cB6UY-MXgAJ0Ho6J6hS1WaVPF8Hyb1w/dd14481c-8221-4c04-be58-8fdb62afd3d6/?cfInspector=1&cfRev=486071dbd18d94519e9a065817509262af56f6a8",
+        "textHash": "-1409391733",
+        "viewport": {
+          "width": 1229.0,
+          "height": 820.0,
+          "scrollX": 0.0,
+          "scrollY": 2288.0,
+          "devicePixelRatio": 2.0
+        },
+        "operationId": "84e02c3c-92ac-485f-89b5-8e4292b0978f",
+        "previewMode": "platform_deployment",
+        "textExcerpt": "Awareness Jun 19, 2025 Honouring LGBTQIA Pride Month and the Need for Cultural Competency in Mental Health Care June marks LGBTQIA Pride Month worldwide. A time to honour the resilience, visibility, and rights of lesbian, gay, bisexual, transgender, non-binary, and queer individuals. Read more"
+      },
+      "body": "Preserve the deployed public Stories corpus from main 625399d2. This setup draft reintroduces stories/example-article-2 and hides older cards in cf-article-bank. The unchanged production corpus checker passes main (36 real articles) but rejects this draft with inventory_mismatch: an article in the listing is absent from sitemap.xml. Keep every real article link directly crawlable in the initial HTML. Keep setup examples confined to the isolated private preview, never add example articles to the public listing, detail source or sitemap. Repair scripts/build_articles.py so repeated builds preserve that invariant, all 35 listing cards plus the featured story, existing native styling and category behavior, and the approved isolated output _cf_articles_static_preview. Do not change any real article body or the read-only data/articles.json store."
+    }
+  ],
+  "recorded_at": "2026-10-09T13:22:09.097106+00:00"
+}
