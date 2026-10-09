@@ -25,6 +25,7 @@ LISTING = ROOT / 'stories/index.html'
 REFERENCE = ROOT / 'stories/mental-health-wellness-tips-from-the-tala-thrive-team/index.html'
 DETAIL_TEMPLATE = ROOT / 'scripts/templates/article.html'
 PREVIEW_NAME = '_cf_article_preview'
+PREVIEW_NAMES = {PREVIEW_NAME, '_cf_native_articles_preview'}
 OWNER = 'Tala Thrive article preview v1\n'
 PAGE_SIZE = 24
 VOID = set('area base br col embed hr img input link meta param source track wbr'.split())
@@ -223,7 +224,8 @@ def listing_content(cards):
     for label in labels.values():
         href = '#' + urlencode({'category': label, 'page': 1})
         links.append('<a class="tag" data-cf-category="' + escape(label) + '" href="' + escape(href) + '">' + escape(label) + '</a>')
-    visible = cards[:PAGE_SIZE]
+    # Serve the complete inventory without JavaScript; the controller paginates it.
+    visible = cards
     pages = max(1, (len(cards) + PAGE_SIZE - 1) // PAGE_SIZE)
     pagination = '<span class="story-date">Page 1 of ' + str(pages) + '</span>'
     if pages > 1:
@@ -271,15 +273,16 @@ def run():
     parser.add_argument('--output', default=PREVIEW_NAME)
     args = parser.parse_args()
     output = ROOT / args.output
-    if output.resolve() != ROOT / PREVIEW_NAME or output.is_symlink():
-        raise ValueError('Preview must use the isolated ' + PREVIEW_NAME + ' directory')
+    if args.output not in PREVIEW_NAMES or output.resolve() != ROOT / args.output or output.is_symlink():
+        raise ValueError('Preview must use an approved isolated preview directory')
     if output.exists() and (not output.is_dir() or not (output / '.cf-preview-owner').is_file() or (output / '.cf-preview-owner').read_text(encoding='utf-8') != OWNER):
         raise ValueError('Refusing to overwrite an unrelated preview namespace')
     articles, authors = load_articles()
     source = LISTING.read_text(encoding='utf-8')
     doc = Document(source)
     wrapper = doc.one(lambda node: node.attrs.get('id') == 'cf-article-results')
-    cards = [new_card(record) for record in articles] + legacy_cards(doc, wrapper)
+    # Setup fixtures keep their noindex detail route for review, outside publication.
+    cards = [new_card(record) for record in articles if not record.get('is_setup_example')] + legacy_cards(doc, wrapper)
     canonical = doc.one(lambda node: node.tag == 'link' and node.attrs.get('rel') == 'canonical').attrs.get('href')
     parts = urlsplit(canonical or '')
     if parts.scheme not in ('https', 'http') or not parts.netloc or parts.path.rstrip('/') != '/stories':
@@ -318,7 +321,7 @@ def run():
         shutil.rmtree(output)
     output.mkdir()
     (output / '.cf-preview-owner').write_text(OWNER, encoding='utf-8')
-    excluded = {PREVIEW_NAME, '.git', '.github', '.content-factory', '__pycache__'}
+    excluded = PREVIEW_NAMES | {'.git', '.github', '.content-factory', '__pycache__'}
     def ignore(directory, names):
         return [name for name in names if name in excluded]
     # Preserve the complete site, including non-story routes, legacy details and 404.
@@ -329,7 +332,7 @@ def run():
             shutil.copytree(child, output / child.name, ignore=ignore)
         else:
             shutil.copy2(child, output / child.name)
-    print('Materialized ' + str(len(articles)) + ' articles by ' + str(len(authors)) + ' authors; preview: ' + PREVIEW_NAME)
+    print('Materialized ' + str(len(articles)) + ' articles by ' + str(len(authors)) + ' authors; preview: ' + args.output)
 
 if __name__ == '__main__':
     try:
