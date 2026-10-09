@@ -3,7 +3,7 @@
 import os, re, collections, subprocess
 
 ROOT = os.getcwd()
-SKIP_DIRS = {'.git', 'design-source', 'design_handoff', 'scripts', '.content-factory', '_cf_article_preview', '_cf_native_articles_preview'}
+SKIP_DIRS = {'.git', 'design-source', 'design_handoff', 'scripts', '.content-factory', '_cf_article_preview', '_cf_native_articles_preview', '_cf_articles_static_preview'}
 SKIP_FILES = {'LINKS.md', 'README.md'}
 EXTS = {'.html', '.js', '.css', '.xml', '.txt'}
 URL_RE = re.compile(r'https?://[^\s"\'<>()\\`]+')
@@ -69,7 +69,7 @@ out.append('python3 scripts/gen_links.py > LINKS.md')
 out.append('```\n')
 out.append(f'Scope: `*.html`, `*.js`, `*.css`, `*.xml`, `*.txt` under the repo root, excluding')
 out.append('`design-source/`, `design_handoff/`, `scripts/`, `.content-factory/`,')
-out.append('`_cf_article_preview/`, `_cf_native_articles_preview/`, `README.md` and this file. Own canonical and')
+out.append('`_cf_article_preview/`, `_cf_native_articles_preview/`, `_cf_articles_static_preview/`, `README.md` and this file. Own canonical and')
 out.append('sitemap URLs are listed last for completeness; they are not outbound links.\n')
 total = sum(sum(c.values()) for c in counts.values())
 out.append(f'{len(counts)} distinct URLs, {total} occurrences, generated from `{sha}`.\n')

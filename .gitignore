@@ -3,4 +3,5 @@ Thumbs.db
 *.log
 _cf_article_preview/
 _cf_native_articles_preview/
+_cf_articles_static_preview/
 __pycache__/
