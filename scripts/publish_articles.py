@@ -252,22 +252,13 @@ def listing_content(cards, legacy):
         pagination += '<a class="tag" href="#category=&amp;page=2">Older stories</a>'
     count = '1–' + str(len(visible)) + ' of ' + str(len(cards)) + ' stories' if cards else '0 stories'
     empty = ' hidden' if cards else ''
-    # Every original card remains in initial readable HTML, not only a template.
-    # Distinguish the preserved archive from the bounded active category results.
-    initially_visible = {raw for _, raw in visible}
-    archive_cards = [raw for _, raw in legacy if raw not in initially_visible]
-    archive = ''
-    if archive_cards:
-        archive = ('<section id="cf-original-archive" aria-label="Original story archive outside category results" style="margin-top:64px">'
-                   '<h2>Original story archive</h2><p class="story-date">More original stories, outside the category results above.</p>'
-                   '<div class="story-grid">' + '\n'.join(archive_cards) + '</div></section>\n')
     return ('\n<!-- Managed previews contain no article bodies. -->\n'
             '<nav id="cf-category-navigation" class="cf-story-controls" data-cf-slot="category-navigation" aria-label="Story categories">' + ''.join(links) + '</nav>\n'
             '<p id="cf-result-count" class="story-date cf-story-count" aria-live="polite">' + count + '</p>\n'
             '<div class="story-grid" id="cf-article-list" data-cf-slot="article-list">' + '\n'.join(raw for _, raw in visible) + '</div>\n'
             '<div id="cf-empty-state" class="cf-story-empty" data-cf-slot="empty-state"' + empty + '><h2>More stories are on their way.</h2><p>No stories in this category yet. Explore another category or check back soon for reflections and resources from our team and community.</p></div>\n'
             '<nav id="cf-pagination" class="cf-story-controls" data-cf-slot="pagination" aria-label="Story pages">' + pagination + '</nav>\n'
-            + archive + '<template id="cf-article-bank">' + '\n'.join(raw for _, raw in cards) + '</template>\n')
+            '<template id="cf-article-bank">' + '\n'.join(raw for _, raw in cards) + '</template>\n')
 
 
 def public_shell():
