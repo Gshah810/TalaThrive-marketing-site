@@ -244,8 +244,10 @@ def listing_content(cards, legacy):
     for label in labels.values():
         href = '#' + urlencode({'category': label, 'page': 1})
         links.append('<a class="tag" data-cf-category="' + escape(label) + '" href="' + escape(href) + '">' + escape(label) + '</a>')
-    # The client filters the complete inert preview bank before pagination.
-    visible = cards[:PAGE_SIZE]
+    # Every card stays in the initial HTML so crawlers and readers without
+    # JavaScript see the whole inventory; the client re-renders one page from
+    # the complete inert preview bank.
+    visible = cards
     pages = max(1, (len(cards) + PAGE_SIZE - 1) // PAGE_SIZE)
     pagination = '<span class="story-date">Page 1 of ' + str(pages) + '</span>'
     if pages > 1:

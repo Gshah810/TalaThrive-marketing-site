@@ -10,6 +10,15 @@ from publish_articles import Document, PREVIEW_NAMES, ROOT
 
 
 class PublicationTests(unittest.TestCase):
+    def test_all_cards_are_readable_without_javascript(self):
+        from publish_articles import listing_content
+        cards = [('Self-care', '<article><a class="story-card" href="story-' + str(i) + '/"><h3>Story</h3></a></article>') for i in range(30)]
+        source = listing_content(cards, [])
+        doc = Document(source)
+        grid = doc.one(lambda node: node.attrs.get('id') == 'cf-article-list')
+        anchors = [node for node in doc.nodes if node.tag == 'a' and grid.open_end <= node.start < grid.close_start]
+        self.assertEqual(len(anchors), 30)
+
     def test_isolated_publication(self):
         excluded = PREVIEW_NAMES | {'.git', '.github', '.content-factory', '__pycache__'}
         with tempfile.TemporaryDirectory() as temporary:
@@ -41,7 +50,11 @@ class PublicationTests(unittest.TestCase):
                 doc = Document(source)
                 grid = doc.one(lambda node: node.attrs.get('id') == 'cf-article-list')
                 cards = [node for node in doc.nodes if node.parent is grid and node.attrs.get('data-cf-slot') == 'article-card']
-                self.assertEqual(len(cards), 24)
+                bank = doc.one(lambda node: node.tag == 'template' and node.attrs.get('id') == 'cf-article-bank')
+                banked = [node for node in doc.nodes if node.parent is bank and node.attrs.get('data-cf-slot') == 'article-card']
+                # Every public card stays in the initial HTML; the client pages them 24 at a time.
+                self.assertEqual(len(cards), len(banked))
+                self.assertGreater(len(cards), 30)
                 self.assertNotIn('publication-check-setup/', source)
                 detail = (root / 'stories/publication-check-0/index.html').read_text(encoding='utf-8')
                 self.assertIn(fragment, detail)
