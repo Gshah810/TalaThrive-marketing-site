@@ -29,6 +29,10 @@ CHECK_NAME = "MLAI articles native adapter verification"
 # harness.gate_classification.IGNORABLE_VERCEL_ANALYTICS_PATHS (path-exact; any
 # other failed asset, including other `/_vercel/*` paths, still fails).
 OPTIONAL_PLATFORM_ASSET_PATHS = {"/_vercel/insights/script.js"}
+# Every link's resolved path, without trailing slashes, as the browser would follow it.
+LINKED_PATHS_SCRIPT = r"""() => Array.from(document.querySelectorAll("a[href]"), (link) => {
+  try { return new URL(link.href, document.baseURI).pathname.replace(/\/+$/, ""); } catch (error) { return ""; }
+})"""
 
 
 def canonical(value):
@@ -269,11 +273,13 @@ def browser_proof(base, config):
                 if not page.evaluate("document.documentElement.scrollWidth <= window.innerWidth + 2"):
                     raise ValueError("Article layout overflows its viewport")
                 if route == listing:
-                    seed_link = page.locator(f'a[href="{detail}"],a[href$="{detail}"]')
+                    # Compare link paths as a browser resolves them. A static listing can link
+                    # its stories relatively with a trailing slash (TalaThrive: href="slug/").
+                    seed_linked = detail.rstrip("/") in set(page.evaluate(LINKED_PATHS_SCRIPT))
                     if setup_example:
-                        if seed_link.count() or config["expected_h1"] in page.locator("body").inner_text():
+                        if seed_linked or config["expected_h1"] in page.locator("body").inner_text():
                             raise ValueError("A setup example leaked into the public listing")
-                    elif not seed_link.count():
+                    elif not seed_linked:
                         raise ValueError("The listing does not link to the seeded detail")
                 if route == detail and setup_example:
                     robots = page.locator('head meta[name="robots"]')
