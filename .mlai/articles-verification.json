@@ -1,0 +1,94 @@
+{
+  "artifact_digest": "82d080dabc54123654393d677d3c5df9b933d58728721a0872c6a8cbbe1e096f",
+  "artifact_marker_routes": [
+    "/stories"
+  ],
+  "baseline_sha": "f361e7ec574a4a54f0417289e68407025e739670",
+  "contract": {
+    "app_root": ".",
+    "baseline": {
+      "kind": "static_source",
+      "paths": [
+        "stories/index.html"
+      ]
+    },
+    "build_command": [
+      "python3",
+      "scripts/publish_articles.py",
+      "--output",
+      "_cf_articles_static_preview"
+    ],
+    "build_cwd": ".",
+    "content_path_pattern": "data/articles.json",
+    "content_source_kind": "shared_collection",
+    "environment_names": [],
+    "install_command": [],
+    "install_cwd": ".",
+    "listing_route": "/stories",
+    "lockfiles": [],
+    "materialize_command": [],
+    "materialize_cwd": ".",
+    "package_manager": "",
+    "preview_command": [
+      "python3",
+      "-m",
+      "http.server",
+      "3000",
+      "--bind",
+      "127.0.0.1",
+      "--directory",
+      "_cf_articles_static_preview"
+    ],
+    "preview_cwd": ".",
+    "route_template": "/stories/{slug}",
+    "runtime_family": "static",
+    "runtime_version": "3.11",
+    "static_source_materialization": {
+      "app_root": "",
+      "detail_source_path_pattern": "stories/{slug}/index.html",
+      "listing_source_path": "stories/index.html",
+      "materializer_command": [
+        "python3",
+        "scripts/publish_articles.py",
+        "--output",
+        "_cf_articles_static_preview"
+      ],
+      "preview_output_dir": "_cf_articles_static_preview",
+      "schema_version": 1
+    },
+    "verify_steps": [
+      {
+        "command": [
+          "python3",
+          "scripts/publish_articles.py",
+          "--output",
+          "_cf_articles_static_preview"
+        ],
+        "cwd": "."
+      }
+    ]
+  },
+  "execution_schema_version": 1,
+  "existing_seed_source": {
+    "path": "stories/affirmations-101-the-science-backed-mental-health-tool-you-re-not-using-correctly/index.html",
+    "sha256": "d95e93e8d506a3572f03b29eebfae74fa9f37cae3a2b94a3818c2d84e9b8a704"
+  },
+  "expected_h1": "Affirmations 101: The Science-Backed Mental Health Tool You're Not Using Correctly",
+  "identity": {
+    "adapter_id": "stack_native",
+    "adapter_version": 1,
+    "connection_generation": 3,
+    "contract_digest": "56ef9317fc8818b1a83672fed24dba5e12d5a6409e3b5ba6de453c01f790cea3",
+    "deletion_epoch": 0,
+    "github_repo": "Gshah810/TalaThrive-marketing-site",
+    "operation_attempt": 1,
+    "operation_id": "346c8de4-227b-4963-8e04-3a0fcca2a0c3",
+    "repository_id": 1321130567,
+    "target_id": "stack_native_collection_data_articles_json_static",
+    "website_connection_id": "3276537d-9612-43ce-9b34-80998d10cb56"
+  },
+  "port": 3000,
+  "schema_version": 1,
+  "seed_is_setup_example": false,
+  "seed_slug": "affirmations-101-the-science-backed-mental-health-tool-you-re-not-using-correctly"
+}
