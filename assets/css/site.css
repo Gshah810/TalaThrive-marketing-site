@@ -1949,6 +1949,49 @@ body::after {
   font-size: 14px !important;
 }
 
+/* Inside the homepage "Join the tribe" photo card (section 17): the page
+   carries the heading and offer line, so the form drops its own heading and
+   card and takes the original design's fields and button. Text sits on a dark
+   photo, so anything Klaviyo writes outside the fields is cream. */
+.tribe .klaviyo-form-UaT5jm form {
+  max-width: 384px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.tribe .klaviyo-form-UaT5jm [data-testid="form-row"]:has(h2),
+.tribe .klaviyo-form-UaT5jm form h2 { display: none !important; }
+
+.tribe .klaviyo-form-UaT5jm [data-testid="form-component"] { padding: 6px 0 !important; }
+
+.tribe .klaviyo-form-UaT5jm form p,
+.tribe .klaviyo-form-UaT5jm form div,
+.tribe .klaviyo-form-UaT5jm form span { color: var(--cream-50) !important; }
+
+.tribe .klaviyo-form-UaT5jm form input {
+  min-height: 54px !important;
+  padding: 16px 20px !important;
+  border: 1px solid var(--border-cream) !important;
+  border-radius: 16px !important;
+  background: #FBE2CE !important;
+  color: var(--ink) !important;
+}
+
+.tribe .klaviyo-form-UaT5jm form input::placeholder { color: var(--brown-mid) !important; }
+
+.tribe .klaviyo-form-UaT5jm form button:not([aria-label*="lose"]) {
+  min-height: 54px !important;
+  border-radius: 16px !important;
+  background: var(--orange) !important;
+  color: #ffffff !important;
+}
+
+.tribe .klaviyo-form-UaT5jm form button:not([aria-label*="lose"]) * { color: #ffffff !important; }
+
+.tribe .klaviyo-form-UaT5jm form [id*="error"],
+.tribe .klaviyo-form-UaT5jm form [id*="error"] * { color: var(--peach) !important; }
+
 /* --------------------------------------------------------------------------
    18. Page hero (shared by About / Stories / legal)
    -------------------------------------------------------------------------- */

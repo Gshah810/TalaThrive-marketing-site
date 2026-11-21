@@ -14,7 +14,7 @@ Scope: `*.html`, `*.js`, `*.css`, `*.xml`, `*.txt` under the repo root, excludin
 `_cf_article_preview/`, `_cf_native_articles_preview/`, `_cf_articles_static_preview/`, `README.md` and this file. Own canonical and
 sitemap URLs are listed last for completeness; they are not outbound links.
 
-140 distinct URLs, 935 occurrences, generated from `e204852`.
+141 distinct URLs, 1020 occurrences, generated from `c14b1c1`.
 
 
 ## App (platform)
@@ -25,76 +25,77 @@ the marketing site, and old apex app paths are bridged by `404.html`.
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://app.talathrive.com/login` | 330 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
+| `https://app.talathrive.com/login` | 348 | `.preview/index.html`, `.preview/single.html`, `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
 
 ## Shopify store
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://shop.talathrive.com/` | 149 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `shop/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
-| `https://shop.talathrive.com/products/tala-thrive-digital-gift-card` | 48 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
+| `https://shop.talathrive.com/` | 155 | `.preview/index.html`, `.preview/single.html`, `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `shop/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
+| `https://shop.talathrive.com/products/tala-thrive-digital-gift-card` | 50 | `.preview/index.html`, `.preview/single.html`, `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
 
 ## Practitioner intake forms (Airtable)
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://airtable.com/app1i6T6CwDlQeouR/paghveMaKvWLuR4Lq/form` | 1 | `assets/js/site.js` |
-| `https://airtable.com/appBY6wdmaf9xevtn/pagNIHsVljQGydOeH/form` | 1 | `assets/js/site.js` |
+| `https://airtable.com/app1i6T6CwDlQeouR/paghveMaKvWLuR4Lq/form` | 3 | `.preview/assets/js/site.js`, `.preview/single.html`, `assets/js/site.js` |
+| `https://airtable.com/appBY6wdmaf9xevtn/pagNIHsVljQGydOeH/form` | 3 | `.preview/assets/js/site.js`, `.preview/single.html`, `assets/js/site.js` |
 
 ## Lead-capture forms (CRM + Turnstile)
 
 | URL | Uses | Files |
 |---|---|---|
 | `https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&amp;onload=onloadTurnstileCallback` | 2 | `for-businesses/index.html`, `partner-with-us/index.html` |
-| `https://ddqnwbqeggjedquobzol.supabase.co/functions/v1/website-form-public` | 1 | `assets/js/site.js` |
+| `https://ddqnwbqeggjedquobzol.supabase.co/functions/v1/website-form-public` | 3 | `.preview/assets/js/site.js`, `.preview/single.html`, `assets/js/site.js` |
 
 ## App stores
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://apps.apple.com/app/tala-thrive/id6747018959` | 1 | `index.html` |
-| `https://play.google.com/store/apps/details?id=com.talathrive.android` | 1 | `index.html` |
+| `https://apps.apple.com/app/tala-thrive/id6747018959` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://play.google.com/store/apps/details?id=com.talathrive.android` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
 
 ## Social
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://www.instagram.com/talathrive/` | 48 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
-| `https://www.linkedin.com/company/talathrive/` | 48 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
+| `https://www.instagram.com/talathrive/` | 50 | `.preview/index.html`, `.preview/single.html`, `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
+| `https://www.linkedin.com/company/talathrive/` | 50 | `.preview/index.html`, `.preview/single.html`, `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
 | `https://www.linkedin.com/in/normankim/` | 1 | `stories/culturally-competent-tips-for-setting-boundaries-this-holiday-season-with-dr-norman-kim/index.html` |
-| `https://www.tiktok.com/@talathrive` | 48 | `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
+| `https://www.tiktok.com/@talathrive` | 50 | `.preview/index.html`, `.preview/single.html`, `404.html`, `about/index.html`, `accessibility/index.html`, `for-businesses/index.html`, `index.html`, `partner-with-us/index.html`, `practitioners/index.html`, `privacy-policy/index.html`, `stories/index.html`, `story-generational-trauma/index.html`, `terms/index.html`, 37 story pages under `stories/*/index.html` |
 
 ## Video
 
 | URL | Uses | Files |
 |---|---|---|
 | `https://img.youtube.com/vi/og1_VMJYBCY/maxresdefault.jpg` | 1 | `about/index.html` |
-| `https://www.youtube-nocookie.com/embed/og1_VMJYBCY?start=1&autoplay=1&rel=0` | 1 | `assets/js/site.js` |
+| `https://www.youtube-nocookie.com/embed/og1_VMJYBCY?start=1&autoplay=1&rel=0` | 3 | `.preview/assets/js/site.js`, `.preview/single.html`, `assets/js/site.js` |
 | `https://www.youtube.com/watch?v=ZHN8A8Dr660` | 1 | `stories/dry-january-a-fresh-start-for-your-body-and-mind/index.html` |
 
 ## Third-party imagery (not owned, hotlinked)
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=1200&amp;h=720&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=1600&amp;h=960&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=1800&amp;h=1080&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=400&amp;h=240&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=600&amp;h=360&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=800&amp;h=480&amp;fit=crop&amp;crop=faces&amp;auto=format` | 2 | `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=1200&amp;h=720&amp;fit=crop&amp;crop=faces&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=1600&amp;h=960&amp;fit=crop&amp;crop=faces&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=1800&amp;h=1080&amp;fit=crop&amp;crop=faces&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=400&amp;h=240&amp;fit=crop&amp;crop=faces&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=600&amp;h=360&amp;fit=crop&amp;crop=faces&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1461468611824-46457c0e11fd?w=800&amp;h=480&amp;fit=crop&amp;crop=faces&amp;auto=format` | 6 | `.preview/index.html`, `.preview/single.html`, `index.html` |
 | `https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=700&amp;h=440&amp;fit=crop&amp;auto=format` | 1 | `practitioners/index.html` |
-| `https://images.unsplash.com/photo-1507152832244-10d45c7eda57?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1507152832244-10d45c7eda57?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
 | `https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&amp;h=440&amp;fit=crop&amp;auto=format` | 1 | `practitioners/index.html` |
 | `https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&amp;h=440&amp;fit=crop&amp;auto=format` | 1 | `practitioners/index.html` |
-| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1200&amp;h=720&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1600&amp;h=960&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1800&amp;h=1080&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=400&amp;h=240&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=600&amp;h=360&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=800&amp;h=480&amp;fit=crop&amp;crop=faces&amp;auto=format` | 2 | `index.html` |
-| `https://images.unsplash.com/photo-1611432579699-484f7990b127?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1656473031961-9d5d9ee19f40?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
-| `https://images.unsplash.com/photo-1662850886700-4ec19bd30d11?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1200&amp;h=720&amp;fit=crop&amp;crop=faces&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1600&amp;h=960&amp;fit=crop&amp;crop=faces&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=1800&amp;h=1080&amp;fit=crop&amp;crop=faces&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=400&amp;h=240&amp;fit=crop&amp;crop=faces&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=600&amp;h=360&amp;fit=crop&amp;crop=faces&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=800&amp;h=480&amp;fit=crop&amp;crop=faces&amp;auto=format` | 6 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1611432579699-484f7990b127?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1644945581699-3cbed4b3fe8b?w=1400&amp;h=700&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1656473031961-9d5d9ee19f40?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
+| `https://images.unsplash.com/photo-1662850886700-4ec19bd30d11?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 3 | `.preview/index.html`, `.preview/single.html`, `index.html` |
 
 ## Klaviyo
 
@@ -141,7 +142,7 @@ also served at the GitHub Pages project URL, which `404.html` handles at runtime
 
 | URL | Uses | Files |
 |---|---|---|
-| `https://talathrive.com/` | 2 | `index.html`, `sitemap.xml` |
+| `https://talathrive.com/` | 4 | `.preview/index.html`, `.preview/single.html`, `index.html`, `sitemap.xml` |
 | `https://talathrive.com/404.html` | 1 | `404.html` |
 | `https://talathrive.com/about/` | 2 | `about/index.html`, `sitemap.xml` |
 | `https://talathrive.com/accessibility/` | 2 | `accessibility/index.html`, `sitemap.xml` |
@@ -231,5 +232,5 @@ also served at the GitHub Pages project URL, which `404.html` handles at runtime
 | URL | Uses | Files |
 |---|---|---|
 | `http://www.sitemaps.org/schemas/sitemap/0.9` | 1 | `sitemap.xml` |
-| `http://www.w3.org/2000/svg` | 1 | `assets/css/site.css` |
+| `http://www.w3.org/2000/svg` | 3 | `.preview/assets/css/site.css`, `.preview/single.html`, `assets/css/site.css` |
 | `https://schema.org` | 4 | `stories/example-article-2/index.html`, `stories/example-article/index.html` |
