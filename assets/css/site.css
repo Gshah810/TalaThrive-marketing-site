@@ -1876,9 +1876,11 @@ body::after {
 
 /* Fields: same look as the site's lead forms (.field input) */
 .klaviyo-form-UaT5jm form input {
+  box-sizing: border-box !important;
   width: 100% !important;
-  height: auto !important;
-  min-height: 50px !important;
+  height: 50px !important;
+  min-height: 0 !important;
+  letter-spacing: normal !important;
   padding: 13px 18px !important;
   border: 1.5px solid var(--border-cream) !important;
   border-radius: var(--radius-input) !important;
@@ -1893,6 +1895,7 @@ body::after {
 
 .klaviyo-form-UaT5jm form input::placeholder {
   color: var(--brown-soft) !important;
+  letter-spacing: normal !important;
   opacity: 1 !important;
 }
 
@@ -1903,13 +1906,22 @@ body::after {
   outline-offset: 2px !important;
 }
 
-/* Button: the site's primary pill (.btn--primary) */
+/* Button: the site's primary pill (.btn--primary). The height is fixed
+   rather than left to padding: Klaviyo's button markup adds its own height,
+   which made it render about 85px tall on the live site against 54px fields.
+   A set height with the label centred keeps it the same size as the fields
+   whatever Klaviyo puts inside it. */
 .klaviyo-form-UaT5jm form button {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   width: 100% !important;
-  height: auto !important;
-  min-height: 52px !important;
+  height: 52px !important;
+  min-height: 0 !important;
+  max-height: none !important;
   margin-top: 6px !important;
-  padding: 16px 32px !important;
+  padding: 0 32px !important;
   border: 0 !important;
   border-radius: var(--radius-pill) !important;
   background: var(--orange) !important;
@@ -1923,7 +1935,13 @@ body::after {
   transition: opacity 0.15s !important;
 }
 
-.klaviyo-form-UaT5jm form button * { color: inherit !important; font: inherit !important; }
+.klaviyo-form-UaT5jm form button * {
+  color: inherit !important;
+  font: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
+}
 
 .klaviyo-form-UaT5jm form button:hover { opacity: 0.9 !important; }
 
@@ -1935,6 +1953,7 @@ body::after {
 /* Keep the close/dismiss X (if Klaviyo shows one) out of the restyle. */
 .klaviyo-form-UaT5jm form button[aria-label*="lose"] {
   width: auto !important;
+  height: auto !important;
   min-height: 0 !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -1970,7 +1989,7 @@ body::after {
 .tribe .klaviyo-form-UaT5jm form span { color: var(--cream-50) !important; }
 
 .tribe .klaviyo-form-UaT5jm form input {
-  min-height: 54px !important;
+  height: 54px !important;
   padding: 16px 20px !important;
   border: 1px solid var(--border-cream) !important;
   border-radius: 16px !important;
@@ -1981,7 +2000,7 @@ body::after {
 .tribe .klaviyo-form-UaT5jm form input::placeholder { color: var(--brown-mid) !important; }
 
 .tribe .klaviyo-form-UaT5jm form button:not([aria-label*="lose"]) {
-  min-height: 54px !important;
+  height: 54px !important;
   border-radius: 16px !important;
   background: var(--orange) !important;
   color: #ffffff !important;
