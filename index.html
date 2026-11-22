@@ -12,7 +12,7 @@
 <meta property="og:image" content="assets/img/hero.webp">
 <link rel="icon" href="assets/img/logo-mark.png">
 <link rel="preload" href="assets/fonts/Athletics-Bold.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=7">
+<link rel="stylesheet" href="assets/css/site.css?v=8">
 <script defer src="assets/js/analytics.js?v=5"></script>
 <script>try{if(localStorage.getItem('tt_banner_closed')==='1')document.documentElement.classList.add('tt-banner-hidden')}catch(e){}</script>
 </head>
@@ -471,18 +471,28 @@
   </div>
 </section>
 
-<!-- ====================== Newsletter (Klaviyo) ====================== -->
-<!-- Email capture, ported from the live site. The heading, fields and
-     "Join the tribe" button are all rendered by the Klaviyo form itself
-     (form UaT5jm, list W7FCX8), not by the page, so this section carries no
-     page-authored copy of its own; adding any would duplicate the form's
-     heading. The sitewide Klaviyo loader (body end) renders the form into the
-     div below. The #join-the-tribe id is kept so the promo bar's "Claim your
-     discount" link still lands here. -->
-<section class="section section--white section--lg" id="join-the-tribe">
-  <div class="container container--sm">
-    <style>.klaviyo-form-UaT5jm { overflow: hidden !important; }</style>
-    <div class="klaviyo-form-UaT5jm"></div>
+<!-- ====================== Join the tribe (Klaviyo) ====================== -->
+<!-- Email capture, in the original "Join the tribe" design: photo card, dark
+     gradient, page-authored heading, subhead and offer line. The fields and
+     button are the Klaviyo form (form UaT5jm, list W7FCX8), rendered into the
+     div below by the sitewide Klaviyo loader (body end) and restyled in
+     site.css section 17b. The form's own heading is hidden here because the
+     page carries the copy. The #join-the-tribe id is kept so the promo bar's
+     "Claim your discount" link still lands here. -->
+<section class="tribe" id="join-the-tribe">
+  <div class="tribe__card">
+    <div class="tribe__bg" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1644945581699-3cbed4b3fe8b?w=1400&amp;h=700&amp;fit=crop&amp;auto=format" alt="" loading="lazy">
+    </div>
+    <div class="tribe__body">
+      <h2>Join the tribe</h2>
+      <h3>You deserve care that truly sees you.</h3>
+      <p>Sign up today and get 10% off your first therapy or coaching session.</p>
+      <div class="tribe__form">
+        <style>.klaviyo-form-UaT5jm { overflow: hidden !important; }</style>
+        <div class="klaviyo-form-UaT5jm"></div>
+      </div>
+    </div>
   </div>
 </section>
 

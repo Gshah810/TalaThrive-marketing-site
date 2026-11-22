@@ -1799,6 +1799,200 @@ body::after {
 .tribe__form button:hover { opacity: 0.9; }
 
 /* --------------------------------------------------------------------------
+   17b. Klaviyo newsletter form (UaT5jm), homepage #join-the-tribe and
+   /practitioners
+   The form's markup and copy are rendered by Klaviyo, which writes its own
+   fonts (Satoshi, Arial, Helvetica), colours and borders as inline styles.
+   These rules restyle it in the site's own type and tokens, so the heading,
+   fields and button read like the rest of the site: Athletics, ink text, an
+   orange "10% OFF", cream-bordered fields and the standard pill button.
+   !important is needed throughout because it is the only way a stylesheet
+   beats an inline style. The selectors stick to tag names and Klaviyo's
+   stable data-testid hooks, never its generated class names, which change.
+   Editing the form in Klaviyo (copy, fields, steps) still works as before.
+   -------------------------------------------------------------------------- */
+
+.klaviyo-form-UaT5jm form {
+  max-width: 560px !important;
+  margin: 0 auto !important;
+  padding: clamp(28px, 4vw, 44px) clamp(20px, 4vw, 40px) !important;
+  background: var(--cream) !important;
+  border: 0 !important;
+  border-radius: var(--radius-soft) !important;
+  box-shadow: none !important;
+  min-height: 0 !important;
+}
+
+/* On a cream section (/practitioners) the card goes white instead. */
+.section--cream .klaviyo-form-UaT5jm form { background: #ffffff !important; }
+
+/* Every piece of Klaviyo text, including the thank-you step, in Athletics. */
+.klaviyo-form-UaT5jm form,
+.klaviyo-form-UaT5jm form * {
+  font-family: var(--font) !important;
+  letter-spacing: normal !important;
+}
+
+.klaviyo-form-UaT5jm [data-testid="form-component"] {
+  padding: 6px 0 !important;
+}
+
+/* Heading: "Get 10% OFF your First Session and Join our Community!" */
+.klaviyo-form-UaT5jm form h1,
+.klaviyo-form-UaT5jm form h2,
+.klaviyo-form-UaT5jm form h3,
+.klaviyo-form-UaT5jm form p,
+.klaviyo-form-UaT5jm form div,
+.klaviyo-form-UaT5jm form span {
+  color: var(--ink) !important;
+  background-color: transparent !important;
+}
+
+.klaviyo-form-UaT5jm form h2 {
+  margin: 0 0 8px !important;
+  text-align: center !important;
+}
+
+.klaviyo-form-UaT5jm form h2,
+.klaviyo-form-UaT5jm form h2 span {
+  font-size: clamp(24px, 2.8vw, 32px) !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  text-wrap: balance;
+}
+
+.klaviyo-form-UaT5jm form h2 strong,
+.klaviyo-form-UaT5jm form h2 b {
+  color: var(--orange) !important;
+  font-weight: 700 !important;
+}
+
+/* Thank-you step ("THANKS FOR SIGNING UP!") */
+.klaviyo-form-UaT5jm form div[style*="text-align: center"] > span {
+  font-size: clamp(20px, 2.2vw, 24px) !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+/* Fields: same look as the site's lead forms (.field input) */
+.klaviyo-form-UaT5jm form input {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 50px !important;
+  padding: 13px 18px !important;
+  border: 1.5px solid var(--border-cream) !important;
+  border-radius: var(--radius-input) !important;
+  background: #ffffff !important;
+  color: var(--ink) !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  transition: border-color 0.15s !important;
+}
+
+.klaviyo-form-UaT5jm form input::placeholder {
+  color: var(--brown-soft) !important;
+  opacity: 1 !important;
+}
+
+.klaviyo-form-UaT5jm form input:focus { border-color: var(--orange) !important; }
+
+.klaviyo-form-UaT5jm form input:focus-visible {
+  outline: 2px solid var(--focus) !important;
+  outline-offset: 2px !important;
+}
+
+/* Button: the site's primary pill (.btn--primary) */
+.klaviyo-form-UaT5jm form button {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 52px !important;
+  margin-top: 6px !important;
+  padding: 16px 32px !important;
+  border: 0 !important;
+  border-radius: var(--radius-pill) !important;
+  background: var(--orange) !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  transition: opacity 0.15s !important;
+}
+
+.klaviyo-form-UaT5jm form button * { color: inherit !important; font: inherit !important; }
+
+.klaviyo-form-UaT5jm form button:hover { opacity: 0.9 !important; }
+
+.klaviyo-form-UaT5jm form button:focus-visible {
+  outline: 2px solid var(--focus) !important;
+  outline-offset: 2px !important;
+}
+
+/* Keep the close/dismiss X (if Klaviyo shows one) out of the restyle. */
+.klaviyo-form-UaT5jm form button[aria-label*="lose"] {
+  width: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  color: var(--ink) !important;
+}
+
+/* Klaviyo's inline error text */
+.klaviyo-form-UaT5jm form [id*="error"],
+.klaviyo-form-UaT5jm form [id*="error"] * {
+  color: #B3261E !important;
+  font-size: 14px !important;
+}
+
+/* Inside the homepage "Join the tribe" photo card (section 17): the page
+   carries the heading and offer line, so the form drops its own heading and
+   card and takes the original design's fields and button. Text sits on a dark
+   photo, so anything Klaviyo writes outside the fields is cream. */
+.tribe .klaviyo-form-UaT5jm form {
+  max-width: 384px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.tribe .klaviyo-form-UaT5jm [data-testid="form-row"]:has(h2),
+.tribe .klaviyo-form-UaT5jm form h2 { display: none !important; }
+
+.tribe .klaviyo-form-UaT5jm [data-testid="form-component"] { padding: 6px 0 !important; }
+
+.tribe .klaviyo-form-UaT5jm form p,
+.tribe .klaviyo-form-UaT5jm form div,
+.tribe .klaviyo-form-UaT5jm form span { color: var(--cream-50) !important; }
+
+.tribe .klaviyo-form-UaT5jm form input {
+  min-height: 54px !important;
+  padding: 16px 20px !important;
+  border: 1px solid var(--border-cream) !important;
+  border-radius: 16px !important;
+  background: #FBE2CE !important;
+  color: var(--ink) !important;
+}
+
+.tribe .klaviyo-form-UaT5jm form input::placeholder { color: var(--brown-mid) !important; }
+
+.tribe .klaviyo-form-UaT5jm form button:not([aria-label*="lose"]) {
+  min-height: 54px !important;
+  border-radius: 16px !important;
+  background: var(--orange) !important;
+  color: #ffffff !important;
+}
+
+.tribe .klaviyo-form-UaT5jm form button:not([aria-label*="lose"]) * { color: #ffffff !important; }
+
+.tribe .klaviyo-form-UaT5jm form [id*="error"],
+.tribe .klaviyo-form-UaT5jm form [id*="error"] * { color: var(--peach) !important; }
+
+/* --------------------------------------------------------------------------
    18. Page hero (shared by About / Stories / legal)
    -------------------------------------------------------------------------- */
 

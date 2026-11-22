@@ -14,7 +14,7 @@ Scope: `*.html`, `*.js`, `*.css`, `*.xml`, `*.txt` under the repo root, excludin
 `_cf_article_preview/`, `_cf_native_articles_preview/`, `_cf_articles_static_preview/`, `README.md` and this file. Own canonical and
 sitemap URLs are listed last for completeness; they are not outbound links.
 
-140 distinct URLs, 935 occurrences, generated from `7aebe04`.
+141 distinct URLs, 936 occurrences, generated from `d6d3014`.
 
 
 ## App (platform)
@@ -93,6 +93,7 @@ the marketing site, and old apex app paths are bridged by `404.html`.
 | `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=600&amp;h=360&amp;fit=crop&amp;crop=faces&amp;auto=format` | 1 | `index.html` |
 | `https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=800&amp;h=480&amp;fit=crop&amp;crop=faces&amp;auto=format` | 2 | `index.html` |
 | `https://images.unsplash.com/photo-1611432579699-484f7990b127?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
+| `https://images.unsplash.com/photo-1644945581699-3cbed4b3fe8b?w=1400&amp;h=700&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
 | `https://images.unsplash.com/photo-1656473031961-9d5d9ee19f40?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
 | `https://images.unsplash.com/photo-1662850886700-4ec19bd30d11?w=80&amp;h=80&amp;fit=crop&amp;auto=format` | 1 | `index.html` |
 
