@@ -1,9 +1,9 @@
 {
-  "artifact_digest": "82d080dabc54123654393d677d3c5df9b933d58728721a0872c6a8cbbe1e096f",
+  "artifact_digest": "4c3532a2d59badbf2ae3384ddec4c3935a8dc02c3bb4b5543fdf63baec78f81f",
   "artifact_marker_routes": [
     "/stories"
   ],
-  "baseline_sha": "f361e7ec574a4a54f0417289e68407025e739670",
+  "baseline_sha": "14507e59b8e55d33f20c0ed581d6955f5c06e1be",
   "contract": {
     "app_root": ".",
     "baseline": {
@@ -78,11 +78,11 @@
     "adapter_id": "stack_native",
     "adapter_version": 1,
     "connection_generation": 3,
-    "contract_digest": "56ef9317fc8818b1a83672fed24dba5e12d5a6409e3b5ba6de453c01f790cea3",
+    "contract_digest": "f5faf36c4487376d4dffde450e265dba0d4bb1d58f4136a51ddb13e413445d75",
     "deletion_epoch": 0,
     "github_repo": "Gshah810/TalaThrive-marketing-site",
     "operation_attempt": 1,
-    "operation_id": "346c8de4-227b-4963-8e04-3a0fcca2a0c3",
+    "operation_id": "6ad8b016-9101-43f2-8a1c-8c4221832fee",
     "repository_id": 1321130567,
     "target_id": "stack_native_collection_data_articles_json_static",
     "website_connection_id": "3276537d-9612-43ce-9b34-80998d10cb56"
